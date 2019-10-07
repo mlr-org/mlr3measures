@@ -1,11 +1,10 @@
 #' @title Mean Absolute Errors
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \frac{1}{n} \sum_{i=1}^n \left| t_i - r_i \right|.
 #' }{
-#'   mean(abs(t - r))
+#'   mean(abs(t - r)).
 #' }
 #'
 #' @templateVar mid mae

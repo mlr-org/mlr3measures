@@ -1,15 +1,15 @@
-#' @title True Positive Rate
+#' @title False Negative Rate
 #'
-#' @aliases recall sensitivity
+#' @aliases miss_rate
 #' @description
 #' Binary classification measure defined as \deqn{
-#'   \frac{TP}{TP + FN}.
+#'    \frac{FN}{TP + FN}.
 #' }{
-#'   TP / (TP + FN).
+#'    FN / (TP + FN).
 #' }
-#' Also know as "recall" or "sensitivity".
+#' Also know as "miss rate".
 #'
-#' @templateVar mid tpr
+#' @templateVar mid fnr
 #' @template classif_metainfo
 #'
 #' @references
@@ -20,10 +20,10 @@
 #' @template na_value
 #' @template classif_return
 #' @export
-tpr = function(truth, response, positive, na_value = NaN) {
+fnr = function(truth, response, positive, na_value = NaN) {
   m = confusion(truth, response, positive)
-  div(m[1L, 1L], sum(m[, 1L]), na_value)
+  div(m[2L, 1L], sum(m[, 1L]), na_value)
 }
 
 #' @include metainfo.R
-add_info(tpr, "classif", 0, 1, FALSE)
+add_info(fnr, "classif", 0, 1, FALSE)

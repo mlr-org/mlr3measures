@@ -1,11 +1,10 @@
 #' @title Mean Absolute Percent Error
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \frac{1}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{t_i}.
 #'  }{
-#'    mean(abs(t - r) / t)
+#'    mean(abs(t - r) / t).
 #'  }
 #'
 #' @note

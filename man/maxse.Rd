@@ -19,11 +19,10 @@ Must have the same length as \code{truth}.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Definition:
-\deqn{
-  \max \left( t_i - r_i \right)^2
+Regression measure defined as \deqn{
+  \max \left( t_i - r_i \right)^2.
  }{
-   max((t - r)^2)
+   max((t - r)^2).
  }
 }
 \section{Meta Information}{

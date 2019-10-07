@@ -23,11 +23,10 @@ Value that should be returned if the measure is not defined for the input
 Performance value as \code{numeric(1)}.
 }
 \description{
-Definition:
-\deqn{
+Regression measure defined as \deqn{
   \sqrt{\frac{1}{n} \sum_{i=1}^n \left( \ln (1 + t_i) - \ln (1 + r_i) \right)^2}.
 }{
-  sqrt(mean(log(1 + t) - log(1 + r))^2)
+  sqrt(mean(log(1 + t) - log(1 + r))^2).
 }
 }
 \note{

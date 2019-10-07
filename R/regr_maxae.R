@@ -1,11 +1,10 @@
 #' @title Max Absolue Error
 #'
 #' @description
-#' Definition:
-#' \deqn{
-#'   \max \left( \left| t_i - r_i \right| \right)
+#' Regression measure defined as \deqn{
+#'   \max \left( \left| t_i - r_i \right| \right).
 #'  }{
-#'    max(abs(t - r))
+#'    max(abs(t - r)).
 #'  }
 #'
 #' @templateVar mid maxae

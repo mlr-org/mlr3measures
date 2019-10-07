@@ -1,11 +1,10 @@
 #' @title Median Absolute Errors
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \mathop{\mathrm{median}}_i \left| t_i - r_i \right|.
 #' }{
-#'   median(abs(t - r))
+#'   median(abs(t - r)).
 #' }
 #'
 #' @templateVar mid medae

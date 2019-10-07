@@ -1,7 +1,7 @@
 #' @title Kendall's tau
 #'
 #' @description
-#' Defined as Kendall rank correlation coefficent between truth and response.
+#' Regression measure defined as Kendall's rank correlation coefficient between truth and response.
 #' Calls [stats::cor()] with `method` set to `"kendall"`.
 #'
 #' @templateVar mid kendalls_tau

@@ -1,11 +1,10 @@
 #' @title Sum of Squared Errors
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \sum_{i=1}^n \left( t_i - r_i \right)^2.
 #' }{
-#'   sum((t - r)^2)
+#'   sum((t - r)^2).
 #' }
 #'
 #' @templateVar mid sse

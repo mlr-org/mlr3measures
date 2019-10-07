@@ -1,11 +1,10 @@
 #' @title Mean Squared Error
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \frac{1}{n} \sum_{i=1}^n \left( t_i - r_i \right)^2.
 #' }{
-#'   mean((t - r)^2)
+#'   mean((t - r)^2).
 #' }
 #'
 #' @templateVar mid mse

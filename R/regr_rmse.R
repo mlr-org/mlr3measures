@@ -1,11 +1,10 @@
 #' @title Root Mean Squared Error
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \sqrt{\frac{1}{n} \sum_{i=1}^n \left( t_i - r_i \right)^2}.
 #' }{
-#'   sqrt(mean((t - r)^2))
+#'   sqrt(mean((t - r)^2)).
 #' }
 #'
 #' @templateVar mid rmse

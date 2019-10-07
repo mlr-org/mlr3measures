@@ -19,14 +19,21 @@ Depends:
     R (>= 3.1.0)
 Suggests:
     bibtex,
+    checkmate,
     testthat
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Collate: 
+Collate:
     'metainfo.R'
     'classif_acc.R'
     'classif_ce.R'
+    'classif_fn.R'
+    'classif_fnr.R'
+    'classif_fp.R'
+    'classif_fpr.R'
+    'classif_tn.R'
+    'classif_tp.R'
     'classif_tpr.R'
     'helper.R'
     'regr_kendalls_tau.R'

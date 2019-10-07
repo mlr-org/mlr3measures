@@ -1,11 +1,10 @@
 #' @title Max Squared Error
 #'
 #' @description
-#' Definition:
-#' \deqn{
-#'   \max \left( t_i - r_i \right)^2
+#' Regression measure defined as \deqn{
+#'   \max \left( t_i - r_i \right)^2.
 #'  }{
-#'    max((t - r)^2)
+#'    max((t - r)^2).
 #'  }
 #'
 #' @templateVar mid maxse

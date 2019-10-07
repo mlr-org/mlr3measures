@@ -19,7 +19,7 @@ Must have the same length as \code{truth}.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Defined as Kendall rank correlation coefficent between truth and response.
+Regression measure defined as Kendall's rank correlation coefficient between truth and response.
 Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"kendall"}.
 }
 \section{Meta Information}{

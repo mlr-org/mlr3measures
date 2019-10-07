@@ -19,11 +19,10 @@ Must have the same length as \code{truth}.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Definition:
-\deqn{
+Regression measure defined as \deqn{
   \mathop{\mathrm{median}}_i \left[ \left( t_i - r_i \right)^2 \right].
 }{
-  median((t - r)^2)
+  median((t - r)^2).
 }
 }
 \section{Meta Information}{

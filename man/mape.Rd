@@ -23,11 +23,10 @@ Value that should be returned if the measure is not defined for the input
 Performance value as \code{numeric(1)}.
 }
 \description{
-Definition:
-\deqn{
+Regression measure defined as \deqn{
   \frac{1}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{t_i}.
  }{
-   mean(abs(t - r) / t)
+   mean(abs(t - r) / t).
  }
 }
 \note{

@@ -19,11 +19,10 @@ Must have the same length as \code{truth}.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Definition:
-\deqn{
+Regression measure defined as \deqn{
   \sqrt{\frac{1}{n} \sum_{i=1}^n \left( t_i - r_i \right)^2}.
 }{
-  sqrt(mean((t - r)^2))
+  sqrt(mean((t - r)^2)).
 }
 }
 \section{Meta Information}{

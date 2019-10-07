@@ -19,11 +19,10 @@ Must have the same length as \code{truth}.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Definition:
-\deqn{
+Regression measure defined as \deqn{
   \frac{1}{n} \sum_{i=1}^n \left| t_i - r_i \right|.
 }{
-  mean(abs(t - r))
+  mean(abs(t - r)).
 }
 }
 \section{Meta Information}{

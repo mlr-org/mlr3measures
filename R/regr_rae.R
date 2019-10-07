@@ -1,11 +1,10 @@
 #' @title Relative Absolute Error
 #'
 #' @description
-#' Definition:
-#' \deqn{
+#' Regression measure defined as \deqn{
 #'   \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|}.
 #' }{
-#'   sum((t - r)^2) / sum((t - mean(t))^2)
+#'   sum((t - r)^2) / sum((t - mean(t))^2).
 #' }
 #'
 #' @templateVar mid rae
