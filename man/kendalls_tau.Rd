@@ -34,3 +34,15 @@ Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"ken
 \references{
 \cite{rosset_2006}
 }
+\seealso{
+Other Regression Measures: \code{\link{mae}},
+  \code{\link{mape}}, \code{\link{maxae}},
+  \code{\link{maxse}}, \code{\link{medae}},
+  \code{\link{medse}}, \code{\link{mse}},
+  \code{\link{msle}}, \code{\link{rae}},
+  \code{\link{rmse}}, \code{\link{rmsle}},
+  \code{\link{rrse}}, \code{\link{rse}}, \code{\link{rsq}},
+  \code{\link{sae}}, \code{\link{smape}},
+  \code{\link{spearmans_rho}}, \code{\link{sse}}
+}
+\concept{Regression Measures}

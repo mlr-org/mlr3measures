@@ -12,6 +12,7 @@
 #' @template classif_params_binary
 #' @template classif_positive
 #' @template classif_return
+#' @family Binary Classification Measures
 #' @export
 tp = function(truth, response, positive) {
   m = confusion(truth, response, positive)

@@ -12,6 +12,7 @@
 #'
 #' @template regr_params
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 mse = function(truth, response) {
   mean(se(truth, response))

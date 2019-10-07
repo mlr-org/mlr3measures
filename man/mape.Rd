@@ -44,3 +44,15 @@ This measure is undefined if any element of \eqn{t} is \eqn{0}.
 \references{
 \cite{de_myttenaere_2016}
 }
+\seealso{
+Other Regression Measures: \code{\link{kendalls_tau}},
+  \code{\link{mae}}, \code{\link{maxae}},
+  \code{\link{maxse}}, \code{\link{medae}},
+  \code{\link{medse}}, \code{\link{mse}},
+  \code{\link{msle}}, \code{\link{rae}},
+  \code{\link{rmse}}, \code{\link{rmsle}},
+  \code{\link{rrse}}, \code{\link{rse}}, \code{\link{rsq}},
+  \code{\link{sae}}, \code{\link{smape}},
+  \code{\link{spearmans_rho}}, \code{\link{sse}}
+}
+\concept{Regression Measures}

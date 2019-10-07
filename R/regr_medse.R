@@ -12,6 +12,7 @@
 #'
 #' @template regr_params
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 medse = function(truth, response) {
   median(se(truth, response))

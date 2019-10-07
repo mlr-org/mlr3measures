@@ -12,6 +12,7 @@
 #'
 #' @template regr_params
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 sae = function(truth, response) {
   sum(ae(truth, response))

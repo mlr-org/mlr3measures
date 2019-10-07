@@ -29,10 +29,20 @@ Classification measure counting the false negatives.
 \itemize{
 \item Minimum value: 0
 \item Maximum value: Inf
-\item Minimize: FALSE
+\item Minimize: TRUE
 }
 }
 
 \references{
 \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 }
+\seealso{
+Other Binary Classification Measures: \code{\link{acc}},
+  \code{\link{ce}}, \code{\link{dor}},
+  \code{\link{fbeta_score}}, \code{\link{fdr}},
+  \code{\link{fnr}}, \code{\link{fomr}}, \code{\link{fpr}},
+  \code{\link{fp}}, \code{\link{npv}}, \code{\link{ppv}},
+  \code{\link{tnr}}, \code{\link{tn}}, \code{\link{tpr}},
+  \code{\link{tp}}
+}
+\concept{Binary Classification Measures}

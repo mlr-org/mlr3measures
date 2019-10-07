@@ -16,6 +16,7 @@
 #' @template regr_params
 #' @template na_value
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 rse = function(truth, response, na_value = NaN) {
   if (var(truth) < TOL)

@@ -12,6 +12,7 @@
 #'
 #' @template regr_params
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 rmse = function(truth, response) {
   sqrt(mse(truth, response))

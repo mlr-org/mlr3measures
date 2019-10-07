@@ -12,6 +12,7 @@
 #' @template classif_params_binary
 #' @template classif_positive
 #' @template classif_return
+#' @family Binary Classification Measures
 #' @export
 fp = function(truth, response, positive) {
   m = confusion(truth, response, positive)
@@ -19,4 +20,4 @@ fp = function(truth, response, positive) {
 }
 
 #' @include metainfo.R
-add_info(fp, "classif", 0, Inf, FALSE)
+add_info(fp, "classif", 0, Inf, TRUE)

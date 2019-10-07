@@ -41,3 +41,15 @@ This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 }
 }
 
+\seealso{
+Other Regression Measures: \code{\link{kendalls_tau}},
+  \code{\link{mae}}, \code{\link{mape}},
+  \code{\link{maxae}}, \code{\link{maxse}},
+  \code{\link{medae}}, \code{\link{medse}},
+  \code{\link{mse}}, \code{\link{msle}}, \code{\link{rae}},
+  \code{\link{rmse}}, \code{\link{rmsle}},
+  \code{\link{rrse}}, \code{\link{rse}}, \code{\link{rsq}},
+  \code{\link{sae}}, \code{\link{spearmans_rho}},
+  \code{\link{sse}}
+}
+\concept{Regression Measures}

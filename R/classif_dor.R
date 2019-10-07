@@ -1,21 +1,20 @@
-#' @title False Negative Rate
+#' @title Diagnostic Odds Ratio
 #'
 #' @description
 #' Binary classification measure defined as \deqn{
-#'    \frac{\mathrm{FN}}{\mathrm{TP} + \mathrm{FN}}.
+#'    \frac{\mathrm{TP}/\mathrm{FP}}{\mathrm{FN}/\mathrm{TN}}.
 #' }{
-#'    FN / (TP + FN).
+#'    (TP/FP) / (FN/TN).
 #' }
-#' Also know as "miss rate".
 #'
-#' @templateVar mid fnr
+#' @templateVar mid dor
 #' @template classif_metainfo
-#'
-#' @note
-#' This measure is undefined if TP + FN = 0.
 #'
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
+#'
+#' @note
+#' This measure is undefined if FP = 0 or FN = 0.
 #'
 #' @template classif_params_binary
 #' @template classif_positive
@@ -23,10 +22,10 @@
 #' @template classif_return
 #' @family Binary Classification Measures
 #' @export
-fnr = function(truth, response, positive, na_value = NaN) {
+dor = function(truth, response, positive, na_value = NaN) {
   m = confusion(truth, response, positive)
-  div(m[2L, 1L], sum(m[, 1L]), na_value)
+  div(m[1L, 1L] * m[2L, 2L], m[1L, 2L] * m[2L, 1L], na_value)
 }
 
 #' @include metainfo.R
-add_info(fnr, "classif", 0, 1, TRUE)
+add_info(dor, "classif", 0, Inf, FALSE)

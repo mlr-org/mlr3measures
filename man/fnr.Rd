@@ -2,7 +2,6 @@
 % Please edit documentation in R/classif_fnr.R
 \name{fnr}
 \alias{fnr}
-\alias{miss_rate}
 \title{False Negative Rate}
 \usage{
 fnr(truth, response, positive, na_value = NaN)
@@ -28,21 +27,34 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Binary classification measure defined as \deqn{
-   \frac{FN}{TP + FN}.
+   \frac{\mathrm{FN}}{\mathrm{TP} + \mathrm{FN}}.
 }{
    FN / (TP + FN).
 }
 Also know as "miss rate".
+}
+\note{
+This measure is undefined if TP + FN = 0.
 }
 \section{Meta Information}{
 
 \itemize{
 \item Minimum value: 0
 \item Maximum value: 1
-\item Minimize: FALSE
+\item Minimize: TRUE
 }
 }
 
 \references{
 \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 }
+\seealso{
+Other Binary Classification Measures: \code{\link{acc}},
+  \code{\link{ce}}, \code{\link{dor}},
+  \code{\link{fbeta_score}}, \code{\link{fdr}},
+  \code{\link{fn}}, \code{\link{fomr}}, \code{\link{fpr}},
+  \code{\link{fp}}, \code{\link{npv}}, \code{\link{ppv}},
+  \code{\link{tnr}}, \code{\link{tn}}, \code{\link{tpr}},
+  \code{\link{tp}}
+}
+\concept{Binary Classification Measures}

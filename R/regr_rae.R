@@ -16,6 +16,7 @@
 #' @template regr_params
 #' @template na_value
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 rae = function(truth, response, na_value = NaN) {
   div(sum(ae(truth, mean(truth))), sae(truth, response), na_value)

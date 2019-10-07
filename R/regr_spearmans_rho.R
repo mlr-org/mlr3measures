@@ -12,6 +12,7 @@
 #'
 #' @template regr_params
 #' @template regr_return
+#' @family Regression Measures
 #' @export
 spearmans_rho = function(truth, response) {
   cor(truth, response, use = "everything", method = "kendall")

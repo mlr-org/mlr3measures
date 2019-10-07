@@ -12,6 +12,8 @@
 #'
 #' @template classif_params
 #' @template classif_return
+#' @family Binary Classification Measures
+#' @family Classification Measures
 #' @export
 ce = function(truth, response) {
   mean(truth != response)

@@ -3,11 +3,14 @@
 #' @aliases recall sensitivity
 #' @description
 #' Binary classification measure defined as \deqn{
-#'   \frac{TP}{TP + FN}.
+#'   \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}}.
 #' }{
 #'   TP / (TP + FN).
 #' }
 #' Also know as "recall" or "sensitivity".
+#'
+#' @note
+#' This measure is undefined if FP + TN = 0.
 #'
 #' @templateVar mid tpr
 #' @template classif_metainfo
@@ -19,6 +22,7 @@
 #' @template classif_positive
 #' @template na_value
 #' @template classif_return
+#' @family Binary Classification Measures
 #' @export
 tpr = function(truth, response, positive, na_value = NaN) {
   m = confusion(truth, response, positive)
