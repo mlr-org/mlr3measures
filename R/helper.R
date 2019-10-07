@@ -13,6 +13,8 @@ sle = function(truth, response) {
   (log1p(truth) - log1p(response))^2
 }
 
+# simple division, but ensures that `na_value` is returned
+# if the denominator is < TOL
 div = function(nominator, denominator, na_value) {
   if (abs(denominator) < TOL)
     na_value
@@ -28,6 +30,7 @@ confusion = function(truth, response, positive = NULL) {
   table(response, truth, useNA = "ifany")
 }
 
+# copied from mlr3misc to avoid the dependency
 cite_bib = function(key) {
   stopifnot(length(key) == 1L, is.character(key))
   package = "mlr3measures"

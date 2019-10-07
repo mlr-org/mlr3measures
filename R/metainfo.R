@@ -1,5 +1,7 @@
+# registry
 metainfo = new.env(parent = emptyenv())
 
+# adds items to registry
 add_info = function(obj, type, min, max, minimize, ...) {
   id = deparse(substitute(obj))
   stopifnot(length(type) == 1L, is.character(type))
@@ -10,6 +12,7 @@ add_info = function(obj, type, min, max, minimize, ...) {
   assign(id, list(type = type, min = min, max = max, minimize = minimize, ...), envir = metainfo)
 }
 
+# constructs a data.frame from the environment
 list_measures = function() {
   do.call(rbind, eapply(metainfo, as.data.frame))
 }

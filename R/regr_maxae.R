@@ -12,7 +12,6 @@
 #' @template regr_metainfo
 #'
 #' @template regr_params
-#'
 #' @template regr_return
 #' @export
 maxae = function(truth, response) {

@@ -14,12 +14,11 @@
 #' @templateVar mid mape
 #' @template regr_metainfo
 #'
-#' @template regr_params
-#' @template na_value
-#'
 #' @references
 #' \cite{de_myttenaere_2016}
 #'
+#' @template regr_params
+#' @template na_value
 #' @template regr_return
 #' @export
 mape = function(truth, response, na_value = NaN) {
