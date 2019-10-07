@@ -52,8 +52,8 @@ Other Binary Classification Measures: \code{\link{acc}},
   \code{\link{ce}}, \code{\link{dor}},
   \code{\link{fbeta_score}}, \code{\link{fdr}},
   \code{\link{fnr}}, \code{\link{fn}}, \code{\link{fomr}},
-  \code{\link{fpr}}, \code{\link{fp}}, \code{\link{ppv}},
-  \code{\link{tnr}}, \code{\link{tn}}, \code{\link{tpr}},
-  \code{\link{tp}}
+  \code{\link{fpr}}, \code{\link{fp}}, \code{\link{mcc}},
+  \code{\link{ppv}}, \code{\link{tnr}}, \code{\link{tn}},
+  \code{\link{tpr}}, \code{\link{tp}}
 }
 \concept{Binary Classification Measures}

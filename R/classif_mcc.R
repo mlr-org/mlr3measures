@@ -1,0 +1,38 @@
+#' @title Matthews Correlation Coefficient
+#'
+#' @description
+#' Binary classification measure defined as \deqn{
+#'    \frac{\mathrm{TP} \mathrm{TN} - \mathrm{FP} \mathrm{FN}}{\sqrt{(\mathrm{TP} + \mathrm{FP}) (\mathrm{TP} + \mathrm{FN}) (\mathrm{TN} + \mathrm{FP}) (\mathrm{TN} + \mathrm{FN})}}.
+#' }{
+#'    (TP * TN - FP * FN) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)).
+#' }
+#'
+#' @templateVar mid mcc
+#' @template classif_metainfo
+#'
+#' @note
+#' This measure is undefined if any of the four sums in the denominator is 0.
+#' The denominator is then set to 1.
+#'
+#' @references
+#' \cite{matthews_1975}
+#'
+#' @template classif_params_binary
+#' @template classif_positive
+#' @template classif_return
+#' @family Binary Classification Measures
+#' @export
+mcc = function(truth, response, positive) {
+  m = confusion(truth, response, positive)
+  tp = m[1L, 1L]
+  tn = m[2L, 2L]
+  fp = m[1L, 2L]
+  fn = m[2L, 1L]
+
+  nomin = (tp * tn - fp * fn)
+  denom = (tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)
+  if (denom == 0L) nomin else nomin / sqrt(denom)
+}
+
+#' @include metainfo.R
+add_info(mcc, "classif", -1, 1, FALSE)

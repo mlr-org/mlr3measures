@@ -36,6 +36,7 @@ Collate:
     'classif_fomr.R'
     'classif_fp.R'
     'classif_fpr.R'
+    'classif_mcc.R'
     'classif_npv.R'
     'classif_ppv.R'
     'classif_tn.R'
