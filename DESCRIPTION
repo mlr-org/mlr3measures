@@ -1,0 +1,51 @@
+Package: mlr3measures
+Title: Performance Measures for 'mlr3'
+Version: 0.1.2
+Authors@R:
+    person(given = "Michel",
+           family = "Lang",
+           role = c("cre", "aut"),
+           email = "michellang@gmail.com",
+           comment = c(ORCID = "0000-0001-9754-0393"))
+Description: Implements multiple performance measures for supervised learning.
+    Includes the most common measures for regression and classification.
+    Additionally stores meta information about the performance measures, e.g.
+    what the best and worst possible performances scores are.
+License: LGPL-3
+URL: https:///mlr3measures.mlr-org.com,
+    https://github.com/mlr-org/mlr3measures
+BugReports: https://github.com/mlr-org/mlr3measures/issues
+Depends:
+    R (>= 3.1.0)
+Suggests:
+    bibtex,
+    testthat
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Collate: 
+    'metainfo.R'
+    'acc.R'
+    'classif_ce.R'
+    'classif_tpr.R'
+    'helper.R'
+    'regr_kendalls_tau.R'
+    'regr_mae.R'
+    'regr_mape.R'
+    'regr_maxae.R'
+    'regr_maxse.R'
+    'regr_medae.R'
+    'regr_medse.R'
+    'regr_mse.R'
+    'regr_msle.R'
+    'regr_rae.R'
+    'regr_rmse.R'
+    'regr_rmsle.R'
+    'regr_rrse.R'
+    'regr_rse.R'
+    'regr_rsq.R'
+    'regr_sae.R'
+    'regr_smape.R'
+    'regr_spearmans_rho.R'
+    'regr_sse.R'
+    'zzz.R'

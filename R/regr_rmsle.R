@@ -1,0 +1,28 @@
+#' @title Root Mean Squared Log Error
+#'
+#' @description
+#' Definition:
+#' \deqn{
+#'   \sqrt{\frac{1}{n} \sum_{i=1}^n \left( \ln (1 + t_i) - \ln (1 + r_i) \right)^2}.
+#' }{
+#'   sqrt(mean(log(1 + t) - log(1 + r))^2)
+#' }
+#'
+#' @templateVar mid rmsle
+#' @template regr_metainfo
+#'
+#' @note
+#' This measure is undefined if any element of \eqn{t} or \eqn{r} is lower than \eqn{-1}.
+#'
+#' @template regr_params
+#' @template na_value
+#' @template regr_return
+#' @export
+rmsle = function(truth, response, na_value = NaN) {
+  if (min(truth, response) < -1)
+    return(na_value)
+  sqrt(msle(truth, response))
+}
+
+#' @include metainfo.R
+add_info(rmsle, "regr", 0, Inf, TRUE)
