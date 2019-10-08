@@ -35,12 +35,6 @@ Classification measure defined as \deqn{
 }
 
 \seealso{
-Other Classification Measures: \code{\link{acc}},
-  \code{\link{auc}}, \code{\link{dor}},
-  \code{\link{fbeta_score}}, \code{\link{fdr}},
-  \code{\link{fnr}}, \code{\link{fn}}, \code{\link{fomr}},
-  \code{\link{fpr}}, \code{\link{fp}}, \code{\link{mcc}},
-  \code{\link{npv}}, \code{\link{ppv}}, \code{\link{tnr}},
-  \code{\link{tn}}, \code{\link{tpr}}, \code{\link{tp}}
+Other Classification Measures: \code{\link{acc}}
 }
 \concept{Classification Measures}
