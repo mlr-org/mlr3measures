@@ -16,5 +16,5 @@ medae = function(truth, response) {
   median(ae(truth, response))
 }
 
-#' @include metainfo.R
-add_info(medae, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(medae, "regr", 0, Inf, TRUE)

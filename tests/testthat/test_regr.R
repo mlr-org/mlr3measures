@@ -1,15 +1,19 @@
 context("regression measures")
 
 test_that("trigger all", {
-  measures = list_measures()
-  measures = measures[measures$type == "regr", ]
+  tab = list_measures()
+  tab = tab[tab$type == "regr", ]
 
-  truth = runif(10)
-  response = runif(10)
-  for (id in rownames(measures)) {
-    f = match.fun(id)
+  N = 10L
+  truth = runif(N)
+  response = runif(N)
+
+  for (i in seq_len(nrow(tab))) {
+    info = as.list(tab[i, ])
+    f = match.fun(info$id)
+
     perf = f(truth, response)
-    expect_number(perf, na.ok = FALSE, label = id)
+    expect_number(perf, na.ok = FALSE, lower = info$min, upper = info$max, label = info$id)
   }
 })
 

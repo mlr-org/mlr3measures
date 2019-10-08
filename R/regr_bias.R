@@ -17,5 +17,5 @@ bias = function(truth, response) {
   mean(truth - response)
 }
 
-#' @include metainfo.R
-add_info(bias, "regr", -Inf, Inf, NA)
+#' @include measures.R
+add_measure(bias, "regr", -Inf, Inf, NA)

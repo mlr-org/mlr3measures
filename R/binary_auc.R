@@ -19,5 +19,5 @@ auc = function(truth, prob, positive) {
   (sum(r[i]) - n_pos * (n_pos + 1L) / 2L) / (n_pos * n_neg)
 }
 
-#' @include metainfo.R
-add_info(auc, "classif", 0, 1, FALSE)
+#' @include measures.R
+add_measure(auc, "binary", 0, 1, FALSE)

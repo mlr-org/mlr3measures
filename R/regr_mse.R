@@ -16,5 +16,5 @@ mse = function(truth, response) {
   mean(se(truth, response))
 }
 
-#' @include metainfo.R
-add_info(mse, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(mse, "regr", 0, Inf, TRUE)

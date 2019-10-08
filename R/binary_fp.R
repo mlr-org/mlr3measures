@@ -16,5 +16,5 @@ fp = function(truth, response, positive) {
   m[1L, 2L]
 }
 
-#' @include metainfo.R
-add_info(fp, "classif", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(fp, "binary", 0, Inf, TRUE)

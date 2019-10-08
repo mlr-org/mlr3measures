@@ -21,5 +21,5 @@ rae = function(truth, response, na_value = NaN) {
 }
 
 
-#' @include metainfo.R
-add_info(rae, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(rae, "regr", 0, Inf, TRUE)

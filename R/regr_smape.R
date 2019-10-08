@@ -22,5 +22,5 @@ smape = function(truth, response, na_value = NaN) {
   2 * mean(ae(truth, response) / denom)
 }
 
-#' @include metainfo.R
-add_info(smape, "regr", 0, 2, TRUE)
+#' @include measures.R
+add_measure(smape, "regr", 0, 2, TRUE)

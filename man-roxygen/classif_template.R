@@ -1,5 +1,5 @@
 #' @section Meta Information:
-#' <% item = metainfo[[mid]] %>
+#' <% item = measures[[mid]] %>
 #' * Minimum value: <%= item$min %>
 #' * Maximum value: <%= item$max %>
 #' * Minimize: <%= item$minimize %>

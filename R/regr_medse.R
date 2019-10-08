@@ -16,5 +16,5 @@ medse = function(truth, response) {
   median(se(truth, response))
 }
 
-#' @include metainfo.R
-add_info(medse, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(medse, "regr", 0, Inf, TRUE)

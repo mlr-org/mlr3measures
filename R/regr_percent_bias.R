@@ -19,5 +19,5 @@ percent_bias = function(truth, response, na_value = NaN) {
   mean((truth - response) / abs(truth))
 }
 
-#' @include metainfo.R
-add_info(percent_bias, "regr", -Inf, Inf, NA)
+#' @include measures.R
+add_measure(percent_bias, "regr", -Inf, Inf, NA)

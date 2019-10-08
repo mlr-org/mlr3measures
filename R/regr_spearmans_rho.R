@@ -16,5 +16,5 @@ spearmans_rho = function(truth, response) {
   cor(truth, response, use = "everything", method = "kendall")
 }
 
-#' @include metainfo.R
-add_info(spearmans_rho, "regr", -1, 1, FALSE)
+#' @include measures.R
+add_measure(spearmans_rho, "regr", -1, 1, FALSE)

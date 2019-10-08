@@ -16,5 +16,5 @@ maxse = function(truth, response) {
   max(se(truth, response))
 }
 
-#' @include metainfo.R
-add_info(maxse, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(maxse, "regr", 0, Inf, TRUE)

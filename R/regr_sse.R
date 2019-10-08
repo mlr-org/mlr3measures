@@ -16,5 +16,5 @@ sse = function(truth, response) {
   sum(se(truth, response))
 }
 
-#' @include metainfo.R
-add_info(sse, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(sse, "regr", 0, Inf, TRUE)

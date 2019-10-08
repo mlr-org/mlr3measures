@@ -16,5 +16,5 @@ kendalls_tau = function(truth, response) {
   cor(truth, response, use = "everything", method = "kendall")
 }
 
-#' @include metainfo.R
-add_info(kendalls_tau, "regr", -Inf, 1, FALSE)
+#' @include measures.R
+add_measure(kendalls_tau, "regr", -Inf, 1, FALSE)

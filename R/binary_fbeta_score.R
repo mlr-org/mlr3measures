@@ -37,5 +37,5 @@ fbeta_score = function(truth, response, positive, beta = 1, na_value = NaN) {
   ((1 + beta^2) * P * R) / ((beta^2 * P) + R)
 }
 
-#' @include metainfo.R
-add_info(fbeta_score, "classif", 0, 1, FALSE)
+#' @include measures.R
+add_measure(fbeta_score, "binary", 0, 1, FALSE)

@@ -24,5 +24,5 @@ mape = function(truth, response, na_value = NaN) {
   mean(ape(truth, response))
 }
 
-#' @include metainfo.R
-add_info(mape, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(mape, "regr", 0, Inf, TRUE)

@@ -21,5 +21,5 @@ msle = function(truth, response, na_value = NaN) {
   mean(sle(truth, response))
 }
 
-#' @include metainfo.R
-add_info(msle, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(msle, "regr", 0, Inf, TRUE)

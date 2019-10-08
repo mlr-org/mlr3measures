@@ -22,5 +22,5 @@ rse = function(truth, response, na_value = NaN) {
   sse(truth, response) / sse(truth, mean(truth))
 }
 
-#' @include metainfo.R
-add_info(rse, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(rse, "regr", 0, Inf, TRUE)

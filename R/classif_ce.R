@@ -16,5 +16,5 @@ ce = function(truth, response) {
   mean(truth != response)
 }
 
-#' @include metainfo.R
-add_info(ce, "classif", 0, 1, TRUE)
+#' @include measures.R
+add_measure(ce, "classif", 0, 1, TRUE)

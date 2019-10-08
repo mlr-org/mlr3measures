@@ -31,5 +31,5 @@ mcc = function(truth, response, positive) {
   if (denom == 0L) nomin else nomin / sqrt(denom)
 }
 
-#' @include metainfo.R
-add_info(mcc, "classif", -1, 1, FALSE)
+#' @include measures.R
+add_measure(mcc, "binary", -1, 1, FALSE)

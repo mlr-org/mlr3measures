@@ -16,5 +16,5 @@ sae = function(truth, response) {
   sum(ae(truth, response))
 }
 
-#' @include metainfo.R
-add_info(sae, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(sae, "regr", 0, Inf, TRUE)

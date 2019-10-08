@@ -25,5 +25,5 @@ tpr = function(truth, response, positive, na_value = NaN) {
   div(m[1L, 1L], sum(m[, 1L]), na_value)
 }
 
-#' @include metainfo.R
-add_info(tpr, "classif", 0, 1, FALSE)
+#' @include measures.R
+add_measure(tpr, "binary", 0, 1, FALSE)

@@ -1,19 +1,27 @@
 context("binary classification measures")
 
 test_that("trigger all", {
-  measures = list_measures()
-  measures = measures[measures$type == "classif", ]
+  tab = list_measures()
+  tab = tab[tab$type == "binary", ]
 
-  truth = factor(sample(letters[1:2], 10, replace = TRUE), levels = letters[1:2])
-  response = factor(sample(letters[1:2], 10, replace = TRUE), levels = letters[1:2])
-  for (id in rownames(measures)) {
-    f = match.fun(id)
+  N = 20L
+  truth = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
+  response = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
+  prob = runif(N)
+
+  for (i in seq_len(nrow(tab))) {
+    info = as.list(tab[i, ])
+    f = match.fun(info$id)
+
     if (all(c("truth", "response", "positive") %in% names(formals(f)))) {
       perf = f(truth, response, positive = "a")
     } else if (all(c("truth", "response") %in% names(formals(f)))) {
       perf = f(truth, response)
+    } else if (all(c("truth", "prob", "positive") %in% names(formals(f)))) {
+      perf = f(truth, prob, "a")
     }
-    expect_number(perf, na.ok = FALSE, label = id)
+
+    expect_number(perf, na.ok = FALSE, lower = info$min, upper = info$max, label = info$id)
   }
 })
 

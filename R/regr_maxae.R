@@ -16,5 +16,5 @@ maxae = function(truth, response) {
   max(ae(truth, response))
 }
 
-#' @include metainfo.R
-add_info(maxae, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(maxae, "regr", 0, Inf, TRUE)

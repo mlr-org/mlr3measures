@@ -21,5 +21,5 @@ rmsle = function(truth, response, na_value = NaN) {
   sqrt(msle(truth, response))
 }
 
-#' @include metainfo.R
-add_info(rmsle, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(rmsle, "regr", 0, Inf, TRUE)

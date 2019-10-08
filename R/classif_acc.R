@@ -16,5 +16,5 @@ acc = function(truth, response) {
   mean(truth == response)
 }
 
-#' @include metainfo.R
-add_info(acc, "classif", 0, 1, FALSE)
+#' @include measures.R
+add_measure(acc, "classif", 0, 1, FALSE)

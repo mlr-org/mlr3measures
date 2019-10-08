@@ -1,5 +1,19 @@
 context("classification measures")
 
+test_that("trigger all", {
+  tab = list_measures()
+  tab = tab[tab$type == "classif", ]
+
+  truth = factor(sample(letters[1:2], 10, replace = TRUE), levels = letters[1:2])
+  response = factor(sample(letters[1:2], 10, replace = TRUE), levels = letters[1:2])
+
+  for (i in seq_len(nrow(tab))) {
+    info = as.list(tab[i, ])
+    f = match.fun(info$id)
+    perf = f(truth, response)
+    expect_number(perf, na.ok = FALSE, lower = info$min, upper = info$max, label = info$id)
+  }
+})
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))

@@ -25,7 +25,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Collate:
-    'metainfo.R'
+    'measures.R'
     'binary_auc.R'
     'binary_dor.R'
     'binary_fbeta_score.R'

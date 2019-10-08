@@ -23,5 +23,5 @@ npv = function(truth, response, positive, na_value = NaN) {
   div(m[2L, 2L], sum(m[2L, ]), na_value)
 }
 
-#' @include metainfo.R
-add_info(npv, "classif", 0, 1, FALSE)
+#' @include measures.R
+add_measure(npv, "binary", 0, 1, FALSE)

@@ -24,5 +24,5 @@ rsq = function(truth, response, na_value = NaN) {
   1 - sse(truth, response) / sse(truth, mean(truth))
 }
 
-#' @include metainfo.R
-add_info(rsq, "regr", -Inf, 1, FALSE)
+#' @include measures.R
+add_measure(rsq, "regr", -Inf, 1, FALSE)

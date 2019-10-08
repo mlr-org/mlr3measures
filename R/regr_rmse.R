@@ -16,5 +16,5 @@ rmse = function(truth, response) {
   sqrt(mse(truth, response))
 }
 
-#' @include metainfo.R
-add_info(rmse, "regr", 0, Inf, TRUE)
+#' @include measures.R
+add_measure(rmse, "regr", 0, Inf, TRUE)

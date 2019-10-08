@@ -23,5 +23,5 @@ dor = function(truth, response, positive, na_value = NaN) {
   div(m[1L, 1L] * m[2L, 2L], m[1L, 2L] * m[2L, 1L], na_value)
 }
 
-#' @include metainfo.R
-add_info(dor, "classif", 0, Inf, FALSE)
+#' @include measures.R
+add_measure(dor, "binary", 0, Inf, FALSE)
