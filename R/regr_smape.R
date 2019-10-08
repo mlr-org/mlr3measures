@@ -8,15 +8,12 @@
 #' }
 #'
 #' @templateVar mid smape
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @note
 #' This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 #'
-#' @template regr_params
-#' @template na_value
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 smape = function(truth, response, na_value = NaN) {
   denom = abs(truth) + abs(response)
@@ -26,4 +23,4 @@ smape = function(truth, response, na_value = NaN) {
 }
 
 #' @include metainfo.R
-add_info(smape, "regr", 0, Inf, TRUE)
+add_info(smape, "regr", 0, 2, TRUE)

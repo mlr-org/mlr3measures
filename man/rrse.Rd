@@ -28,6 +28,7 @@ Regression measure defined as \deqn{
 }{
   sqrt(sum((t - r)^2) / sum((t - mean(t))^2)).
 }
+Can be interpreted as root of the squared error of the predictions relative to a naive model predicting the mean.
 }
 \note{
 This measure is undefined for constant \eqn{t}.
@@ -42,13 +43,15 @@ This measure is undefined for constant \eqn{t}.
 }
 
 \seealso{
-Other Regression Measures: \code{\link{kendalls_tau}},
-  \code{\link{mae}}, \code{\link{mape}},
-  \code{\link{maxae}}, \code{\link{maxse}},
-  \code{\link{medae}}, \code{\link{medse}},
-  \code{\link{mse}}, \code{\link{msle}}, \code{\link{rae}},
-  \code{\link{rmse}}, \code{\link{rmsle}},
-  \code{\link{rse}}, \code{\link{rsq}}, \code{\link{sae}},
+Other Regression Measures: \code{\link{bias}},
+  \code{\link{kendalls_tau}}, \code{\link{mae}},
+  \code{\link{mape}}, \code{\link{maxae}},
+  \code{\link{maxse}}, \code{\link{medae}},
+  \code{\link{medse}}, \code{\link{mse}},
+  \code{\link{msle}}, \code{\link{percent_bias}},
+  \code{\link{rae}}, \code{\link{rmse}},
+  \code{\link{rmsle}}, \code{\link{rse}},
+  \code{\link{rsq}}, \code{\link{sae}},
   \code{\link{smape}}, \code{\link{spearmans_rho}},
   \code{\link{sse}}
 }

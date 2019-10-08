@@ -8,11 +8,9 @@
 #'  }
 #'
 #' @templateVar mid maxse
-#' @template regr_metainfo
+#' @template regr_template
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 maxse = function(truth, response) {
   max(se(truth, response))

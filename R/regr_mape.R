@@ -2,29 +2,26 @@
 #'
 #' @description
 #' Regression measure defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{t_i}.
+#'   \frac{1}{n} \sum_{i=1}^n \left| \frac{ t_i - r_i}{t_i} \right|.
 #'  }{
-#'    mean(abs(t - r) / t).
+#'    mean(abs((t - r) / t)).
 #'  }
 #'
 #' @note
 #' This measure is undefined if any element of \eqn{t} is \eqn{0}.
 #'
 #' @templateVar mid mape
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @references
 #' \cite{de_myttenaere_2016}
 #'
-#' @template regr_params
-#' @template na_value
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 mape = function(truth, response, na_value = NaN) {
   if (any(abs(truth) < TOL))
     return(na_value)
-  mean(ae(truth, response) / truth)
+  mean(ape(truth, response))
 }
 
 #' @include metainfo.R

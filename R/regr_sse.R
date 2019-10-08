@@ -8,11 +8,9 @@
 #' }
 #'
 #' @templateVar mid sse
-#' @template regr_metainfo
+#' @template regr_template
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 sse = function(truth, response) {
   sum(se(truth, response))

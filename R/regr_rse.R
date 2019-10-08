@@ -6,17 +6,15 @@
 #' }{
 #'   sum((t - r)^2) / sum((t - mean(t))^2).
 #' }
+#' Can be interpreted as squared error of the predictions relative to a naive model predicting the mean.
 #'
 #' @templateVar mid rse
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @note
 #' This measure is undefined for constant \eqn{t}.
 #'
-#' @template regr_params
-#' @template na_value
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 rse = function(truth, response, na_value = NaN) {
   if (var(truth) < TOL)

@@ -5,14 +5,12 @@
 #' Calls [stats::cor()] with `method` set to `"kendall"`.
 #'
 #' @templateVar mid kendalls_tau
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @references
 #' \cite{rosset_2006}
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 kendalls_tau = function(truth, response) {
   cor(truth, response, use = "everything", method = "kendall")

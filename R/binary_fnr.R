@@ -9,7 +9,7 @@
 #' Also know as "miss rate".
 #'
 #' @templateVar mid fnr
-#' @template classif_metainfo
+#' @template binary_template
 #'
 #' @note
 #' This measure is undefined if TP + FN = 0.
@@ -17,11 +17,7 @@
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
-#' @template classif_params_binary
-#' @template classif_positive
-#' @template na_value
-#' @template classif_return
-#' @family Binary Classification Measures
+#' @inheritParams binary_params
 #' @export
 fnr = function(truth, response, positive, na_value = NaN) {
   m = confusion(truth, response, positive)

@@ -5,14 +5,12 @@
 #' Calls [stats::cor()] with `method` set to `"spearman"`.
 #'
 #' @templateVar mid spearmans_rho
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @references
 #' \cite{rosset_2006}
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 spearmans_rho = function(truth, response) {
   cor(truth, response, use = "everything", method = "kendall")

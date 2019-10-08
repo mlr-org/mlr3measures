@@ -8,12 +8,9 @@
 #' }
 #'
 #' @templateVar mid acc
-#' @template classif_metainfo
+#' @template classif_template
 #'
-#' @template classif_params
-#' @template classif_return
-#' @family Binary Classification Measures
-#' @family Classification Measures
+#' @inheritParams classif_params
 #' @export
 acc = function(truth, response) {
   mean(truth == response)

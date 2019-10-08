@@ -9,11 +9,11 @@ acc(truth, response)
 \arguments{
 \item{truth}{:: \code{factor()}\cr
 True (observed) labels.
-Must have the same length as \code{response}.}
+Must have the same levels and length as \code{response}.}
 
 \item{response}{:: \code{factor()}\cr
 Predicted response labels.
-Must have the same length as \code{truth}.}
+Must have the same levels and length as \code{truth}.}
 }
 \value{
 Performance value as \code{numeric(1)}.
@@ -35,15 +35,12 @@ Classification measure defined as \deqn{
 }
 
 \seealso{
-Other Binary Classification Measures: \code{\link{ce}},
-  \code{\link{dor}}, \code{\link{fbeta_score}},
-  \code{\link{fdr}}, \code{\link{fnr}}, \code{\link{fn}},
-  \code{\link{fomr}}, \code{\link{fpr}}, \code{\link{fp}},
-  \code{\link{mcc}}, \code{\link{npv}}, \code{\link{ppv}},
-  \code{\link{tnr}}, \code{\link{tn}}, \code{\link{tpr}},
-  \code{\link{tp}}
-
-Other Classification Measures: \code{\link{ce}}
+Other Classification Measures: \code{\link{auc}},
+  \code{\link{ce}}, \code{\link{dor}},
+  \code{\link{fbeta_score}}, \code{\link{fdr}},
+  \code{\link{fnr}}, \code{\link{fn}}, \code{\link{fomr}},
+  \code{\link{fpr}}, \code{\link{fp}}, \code{\link{mcc}},
+  \code{\link{npv}}, \code{\link{ppv}}, \code{\link{tnr}},
+  \code{\link{tn}}, \code{\link{tpr}}, \code{\link{tp}}
 }
-\concept{Binary Classification Measures}
 \concept{Classification Measures}

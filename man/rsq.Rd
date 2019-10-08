@@ -24,10 +24,12 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Regression measure defined as \deqn{
-  \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|}.
+  1 - \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2}.
 }{
-  sum((t - r)^2) / sum((t - mean(t))^2).
+  1 - sum((t - r)^2) / sum((t - mean(t))^2).
 }
+Also known as coefficient of determination or explained variation.
+Substracts the \code{\link[=rse]{rse()}} from 1, hence it compares the squared error of the predictions relative to a naive model predicting  the mean.
 }
 \note{
 This measure is undefined for constant \eqn{t}.
@@ -35,20 +37,22 @@ This measure is undefined for constant \eqn{t}.
 \section{Meta Information}{
 
 \itemize{
-\item Minimum value: 0
-\item Maximum value: Inf
-\item Minimize: TRUE
+\item Minimum value: -Inf
+\item Maximum value: 1
+\item Minimize: FALSE
 }
 }
 
 \seealso{
-Other Regression Measures: \code{\link{kendalls_tau}},
-  \code{\link{mae}}, \code{\link{mape}},
-  \code{\link{maxae}}, \code{\link{maxse}},
-  \code{\link{medae}}, \code{\link{medse}},
-  \code{\link{mse}}, \code{\link{msle}}, \code{\link{rae}},
-  \code{\link{rmse}}, \code{\link{rmsle}},
-  \code{\link{rrse}}, \code{\link{rse}}, \code{\link{sae}},
+Other Regression Measures: \code{\link{bias}},
+  \code{\link{kendalls_tau}}, \code{\link{mae}},
+  \code{\link{mape}}, \code{\link{maxae}},
+  \code{\link{maxse}}, \code{\link{medae}},
+  \code{\link{medse}}, \code{\link{mse}},
+  \code{\link{msle}}, \code{\link{percent_bias}},
+  \code{\link{rae}}, \code{\link{rmse}},
+  \code{\link{rmsle}}, \code{\link{rrse}},
+  \code{\link{rse}}, \code{\link{sae}},
   \code{\link{smape}}, \code{\link{spearmans_rho}},
   \code{\link{sse}}
 }

@@ -8,11 +8,9 @@
 #' }
 #'
 #' @templateVar mid medse
-#' @template regr_metainfo
+#' @template regr_template
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 medse = function(truth, response) {
   median(se(truth, response))

@@ -8,11 +8,9 @@
 #' }
 #'
 #' @templateVar mid sae
-#' @template regr_metainfo
+#' @template regr_template
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 sae = function(truth, response) {
   sum(ae(truth, response))

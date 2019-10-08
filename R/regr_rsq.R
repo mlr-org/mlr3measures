@@ -2,21 +2,21 @@
 #'
 #' @description
 #' Regression measure defined as \deqn{
-#'   \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|}.
+#'   1 - \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2}.
 #' }{
-#'   sum((t - r)^2) / sum((t - mean(t))^2).
+#'   1 - sum((t - r)^2) / sum((t - mean(t))^2).
 #' }
+#' Also known as coefficient of determination or explained variation.
+#' Substracts the [rse()] from 1, hence it compares the squared error of the predictions relative to a naive model predicting  the mean.
+#'
 #'
 #' @templateVar mid rsq
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @note
 #' This measure is undefined for constant \eqn{t}.
 #'
-#' @template regr_params
-#' @template na_value
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 rsq = function(truth, response, na_value = NaN) {
   if (var(truth) < TOL)
@@ -25,4 +25,4 @@ rsq = function(truth, response, na_value = NaN) {
 }
 
 #' @include metainfo.R
-add_info(rsq, "regr", 0, Inf, TRUE)
+add_info(rsq, "regr", -Inf, 1, FALSE)

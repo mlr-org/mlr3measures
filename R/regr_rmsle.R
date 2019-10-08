@@ -8,15 +8,12 @@
 #' }
 #'
 #' @templateVar mid rmsle
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @note
 #' This measure is undefined if any element of \eqn{t} or \eqn{r} is lower than \eqn{-1}.
 #'
-#' @template regr_params
-#' @template na_value
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 rmsle = function(truth, response, na_value = NaN) {
   if (min(truth, response) < -1)

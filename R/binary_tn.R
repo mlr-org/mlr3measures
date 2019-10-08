@@ -4,15 +4,12 @@
 #' Classification measure counting the true negatives.
 #'
 #' @templateVar mid tn
-#' @template classif_metainfo
+#' @template binary_template
 #'
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
-#' @template classif_params_binary
-#' @template classif_positive
-#' @template classif_return
-#' @family Binary Classification Measures
+#' @inheritParams binary_params
 #' @export
 tn = function(truth, response, positive) {
   m = confusion(truth, response, positive)

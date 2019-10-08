@@ -8,11 +8,9 @@
 #' }
 #'
 #' @templateVar mid mse
-#' @template regr_metainfo
+#' @template regr_template
 #'
-#' @template regr_params
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 mse = function(truth, response) {
   mean(se(truth, response))

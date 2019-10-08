@@ -8,7 +8,7 @@
 #' }
 #'
 #' @templateVar mid mcc
-#' @template classif_metainfo
+#' @template binary_template
 #'
 #' @note
 #' This measure is undefined if any of the four sums in the denominator is 0.
@@ -17,10 +17,7 @@
 #' @references
 #' \cite{matthews_1975}
 #'
-#' @template classif_params_binary
-#' @template classif_positive
-#' @template classif_return
-#' @family Binary Classification Measures
+#' @inheritParams binary_params
 #' @export
 mcc = function(truth, response, positive) {
   m = confusion(truth, response, positive)

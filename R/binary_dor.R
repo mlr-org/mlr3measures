@@ -8,7 +8,7 @@
 #' }
 #'
 #' @templateVar mid dor
-#' @template classif_metainfo
+#' @template binary_template
 #'
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
@@ -16,11 +16,7 @@
 #' @note
 #' This measure is undefined if FP = 0 or FN = 0.
 #'
-#' @template classif_params_binary
-#' @template classif_positive
-#' @template na_value
-#' @template classif_return
-#' @family Binary Classification Measures
+#' @inheritParams binary_params
 #' @export
 dor = function(truth, response, positive, na_value = NaN) {
   m = confusion(truth, response, positive)

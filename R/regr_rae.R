@@ -6,20 +6,18 @@
 #' }{
 #'   sum((t - r)^2) / sum((t - mean(t))^2).
 #' }
+#' Can be interpreted as absolute error of the predictions relative to a naive model predicting the mean.
 #'
 #' @templateVar mid rae
-#' @template regr_metainfo
+#' @template regr_template
 #'
 #' @note
 #' This measure is undefined for constant \eqn{t}.
 #'
-#' @template regr_params
-#' @template na_value
-#' @template regr_return
-#' @family Regression Measures
+#' @inheritParams regr_params
 #' @export
 rae = function(truth, response, na_value = NaN) {
-  div(sum(ae(truth, mean(truth))), sae(truth, response), na_value)
+  div(sum(ae(truth, response)), sae(truth, mean(truth)), na_value)
 }
 
 

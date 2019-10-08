@@ -8,6 +8,11 @@ ae = function(truth, response) {
   abs(truth - response)
 }
 
+# absolute percent error
+ape = function(truth, response) {
+  abs((truth - response) / truth)
+}
+
 # squared log error
 sle = function(truth, response) {
   (log1p(truth) - log1p(response))^2
