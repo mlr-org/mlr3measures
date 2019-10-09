@@ -4,7 +4,7 @@
 \alias{auc}
 \title{Area Under the ROC Curve}
 \usage{
-auc(truth, prob, positive, ...)
+auc(truth, prob, positive, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -18,6 +18,10 @@ Must have exactly same length as \code{truth}.}
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
 
+\item{na_value}{:: \code{numeric(1)}\cr
+Value that should be returned if the measure is not defined for the input
+(as described in the note). Default is \code{NaN}.}
+
 \item{...}{:: any\cr
 Additional arguments. Currently ignored.}
 }
@@ -28,6 +32,10 @@ Performance value as \code{numeric(1)}.
 Computes the area under the Receiver Operator Characteristic (ROC) curve.
 The AUC can be interpreted as the probability that a randomly chosen positive observation
 has a higher predicted probability than a randomly chosen negative observation.
+}
+\note{
+This measure is undefined if the true values are either all positive or
+all negative.
 }
 \section{Meta Information}{
 

@@ -8,18 +8,25 @@
 #' @templateVar mid auc
 #' @template binary_template
 #'
+#' @note
+#' This measure is undefined if the true values are either all positive or
+#' all negative.
+#'
 #' @inheritParams binary_params
 #' @export
 #' @examples
 #' truth = c("a", "a", "a", "b")
 #' prob = c(.6, .7, .1, .4)
 #' auc(truth, prob, "a")
-auc = function(truth, prob, positive, ...) {
-  i = (truth == positive)
-  r = rank(prob, ties.method = "average")
+auc = function(truth, prob, positive, na_value = NaN, ...) {
+  i = which(truth == positive)
+  n_pos = length(i)
+  n_neg = length(truth) - n_pos
 
-  n_pos = sum(i)
-  n_neg = length(i) - n_pos
+  if (n_pos == 0L || n_neg == 0L)
+    return(na_value)
+
+  r = rank(prob, ties.method = "average")
   (sum(r[i]) - n_pos * (n_pos + 1L) / 2L) / (n_pos * n_neg)
 }
 
