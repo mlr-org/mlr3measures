@@ -17,9 +17,10 @@
 #' @inheritParams regr_params
 #' @export
 rrse = function(truth, response, na_value = NaN, ...) {
-  if (var(truth) < TOL)
+  v = var(truth)
+  if (v < TOL)
     return(na_value)
-  sqrt(sse(truth, response) / sse(truth, mean(truth)))
+  sqrt(sse(truth, response) / (v * (length(truth) - 1L)))
 }
 
 #' @include measures.R
