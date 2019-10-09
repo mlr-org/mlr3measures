@@ -43,6 +43,7 @@ Collate:
     'binary_tp.R'
     'binary_tpr.R'
     'classif_acc.R'
+    'classif_ber.R'
     'classif_ce.R'
     'helper.R'
     'regr_bias.R'

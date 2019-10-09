@@ -33,13 +33,15 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Binary classification measure defined with \eqn{P} as \link{precision} and \eqn{R} as
-\link{recall} as \deqn{
+Binary classification measure defined with \eqn{P} as \code{\link[=precision]{precision()}} and \eqn{R} as
+\code{\link[=recall]{recall()}} as \deqn{
    (1 + \beta^2) \frac{PR}{(\beta^2 P) + R}.
 }{
    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
 }
-For \eqn{\beta = 1}{beta = 1}, this is called "F1" score.
+It measures the effectiveness of retrieval with respect to a user who attaches \eqn{\beta}{beta} times
+as much importance to recall as precision.
+For \eqn{\beta = 1}{beta = 1}, this measure is called "F1" score.
 }
 \note{
 This measure is undefined if either \link{precision} or \link{recall} is undefined, i.e.
@@ -55,7 +57,9 @@ TP + FP = 0 or TP + FN = 0.
 }
 
 \references{
-\url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
+\cite{sasaki_2007}
+
+\cite{rijsbergen_1979}
 }
 \seealso{
 Other Binary Classification Measures: \code{\link{auc}},

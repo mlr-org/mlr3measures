@@ -25,7 +25,8 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Classification measure counting the true negatives.
+Classification measure counting the true negatives, i.e. the number of
+predictions correctly indicating a negative class label.
 }
 \section{Meta Information}{
 

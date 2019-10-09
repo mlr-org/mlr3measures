@@ -38,7 +38,8 @@ Classification measure defined as \deqn{
 }
 
 \seealso{
-Other Classification Measures: \code{\link{acc}}
+Other Classification Measures: \code{\link{acc}},
+  \code{\link{ber}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

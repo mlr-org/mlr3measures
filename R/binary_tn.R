@@ -1,7 +1,8 @@
 #' @title True Negatives
 #'
 #' @description
-#' Classification measure counting the true negatives.
+#' Classification measure counting the true negatives, i.e. the number of
+#' predictions correctly indicating a negative class label.
 #'
 #' @templateVar mid tn
 #' @template binary_template

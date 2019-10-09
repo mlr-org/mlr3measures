@@ -1,7 +1,8 @@
 #' @title True Positives
 #'
 #' @description
-#' Binary classification measure counting the true positives.
+#' Binary classification measure counting the true positives, i.e. the number of
+#' predictions correctly indicating a positive class label.
 #'
 #' @templateVar mid tp
 #' @template binary_template

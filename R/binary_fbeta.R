@@ -1,13 +1,15 @@
 #' @title F-beta Score
 #'
 #' @description
-#' Binary classification measure defined with \eqn{P} as [precision] and \eqn{R} as
-#' [recall] as \deqn{
+#' Binary classification measure defined with \eqn{P} as [precision()] and \eqn{R} as
+#' [recall()] as \deqn{
 #'    (1 + \beta^2) \frac{PR}{(\beta^2 P) + R}.
 #' }{
 #'    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
 #' }
-#' For \eqn{\beta = 1}{beta = 1}, this is called "F1" score.
+#' It measures the effectiveness of retrieval with respect to a user who attaches \eqn{\beta}{beta} times
+#' as much importance to recall as precision.
+#' For \eqn{\beta = 1}{beta = 1}, this measure is called "F1" score.
 #'
 #' @templateVar mid fbeta
 #' @template binary_template
@@ -17,7 +19,9 @@
 #' TP + FP = 0 or TP + FN = 0.
 #'
 #' @references
-#' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
+#' \cite{sasaki_2007}
+#'
+#' \cite{rijsbergen_1979}
 #'
 #' @inheritParams binary_params
 #' @param beta :: `numeric(1)`\cr

@@ -2,6 +2,7 @@
 
 export(acc)
 export(auc)
+export(ber)
 export(bias)
 export(ce)
 export(dor)

@@ -25,7 +25,8 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Binary classification measure counting the true positives.
+Binary classification measure counting the true positives, i.e. the number of
+predictions correctly indicating a positive class label.
 }
 \section{Meta Information}{
 

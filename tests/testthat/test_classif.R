@@ -58,3 +58,15 @@ test_that("tests from Metrics", {
   # kappa <- MeanQuadraticWeightedKappa( c(.5, .8), c(1.0, .5) )
   # expect_equal(kappa, 0.624536446425734)
 })
+
+test_that("ber", {
+  truth = factor(c("a", "a", "b", "b", "c", "c"), levels = c("a", "b", "c"))
+  response = factor(c("a", "a", "b", "b", "c", "c"), levels = c("a", "b", "c"))
+  expect_equal(ber(truth, response), 0)
+
+  response = factor(c("a", "b", "b", "c", "c", "a"), levels = c("a", "b", "c"))
+  expect_equal(ber(truth, response), 0.5)
+
+  response = factor(rep("a", 6), levels = c("a", "b", "c"))
+  expect_equal(round(ber(truth, response), 2), 0.67)
+})

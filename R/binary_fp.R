@@ -1,7 +1,8 @@
 #' @title False Positives
 #'
 #' @description
-#' Classification measure counting the false positives.
+#' Classification measure counting the false positives (type 1 error), i.e. the number of
+#' predictions indicating a positive class label while in fact it is negative.
 #'
 #' @templateVar mid fp
 #' @template binary_template
