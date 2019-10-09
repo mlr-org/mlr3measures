@@ -13,4 +13,8 @@ The \code{\link[=environment]{environment()}} \code{measures} keeps track of all
 Stores meta information about measures, such as minimum, maximum of if the
 measure must be minimized or maximized.
 }
+\examples{
+names(measures)
+measures$tpr
+}
 \keyword{datasets}

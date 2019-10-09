@@ -10,9 +10,13 @@
 #'
 #' @inheritParams binary_params
 #' @export
+#' @examples
+#' truth = c("a", "a", "a", "b")
+#' prob = c(.6, .7, .1, .4)
+#' auc(truth, prob, "a")
 auc = function(truth, prob, positive, ...) {
   i = (truth == positive)
-  r = rank(prob)
+  r = rank(prob, ties.method = "average")
 
   n_pos = sum(i)
   n_neg = length(i) - n_pos

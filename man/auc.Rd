@@ -38,6 +38,11 @@ has a higher predicted probability than a randomly chosen negative observation.
 }
 }
 
+\examples{
+truth = c("a", "a", "a", "b")
+prob = c(.6, .7, .1, .4)
+auc(truth, prob, "a")
+}
 \seealso{
 Other Binary Classification Measures: \code{\link{dor}},
   \code{\link{fbeta}}, \code{\link{fdr}},

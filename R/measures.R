@@ -6,6 +6,9 @@
 #' measure must be minimized or maximized.
 #'
 #' @export
+#' @examples
+#' names(measures)
+#' measures$tpr
 measures = new.env(parent = emptyenv())
 
 # adds items to registry
