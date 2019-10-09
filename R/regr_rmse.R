@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rmse = function(truth, response) {
+rmse = function(truth, response, ...) {
   sqrt(mse(truth, response))
 }
 

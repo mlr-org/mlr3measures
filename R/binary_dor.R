@@ -18,7 +18,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-dor = function(truth, response, positive, na_value = NaN) {
+dor = function(truth, response, positive, na_value = NaN, ...) {
   m = confusion(truth, response, positive)
   div(m[1L, 1L] * m[2L, 2L], m[1L, 2L] * m[2L, 1L], na_value)
 }

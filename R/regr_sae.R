@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-sae = function(truth, response) {
+sae = function(truth, response, ...) {
   sum(ae(truth, response))
 }
 

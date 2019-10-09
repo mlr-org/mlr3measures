@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-mae = function(truth, response) {
+mae = function(truth, response, ...) {
   mean(ae(truth, response))
 }
 

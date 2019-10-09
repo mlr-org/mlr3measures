@@ -18,7 +18,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-mape = function(truth, response, na_value = NaN) {
+mape = function(truth, response, na_value = NaN, ...) {
   if (any(abs(truth) < TOL))
     return(na_value)
   mean(ape(truth, response))

@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-maxse = function(truth, response) {
+maxse = function(truth, response, ...) {
   max(se(truth, response))
 }
 

@@ -4,7 +4,7 @@
 \alias{spearmans_rho}
 \title{Spearman's rho}
 \usage{
-spearmans_rho(truth, response)
+spearmans_rho(truth, response, ...)
 }
 \arguments{
 \item{truth}{:: \code{numeric()}\cr
@@ -14,6 +14,9 @@ Must have the same length as \code{response}.}
 \item{response}{:: \code{numeric()}\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
+
+\item{...}{:: any\cr
+Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

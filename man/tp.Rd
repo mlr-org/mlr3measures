@@ -4,7 +4,7 @@
 \alias{tp}
 \title{True Positives}
 \usage{
-tp(truth, response, positive)
+tp(truth, response, positive, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -17,6 +17,9 @@ Must have exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
+
+\item{...}{:: any\cr
+Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

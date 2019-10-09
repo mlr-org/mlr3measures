@@ -11,7 +11,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-tp = function(truth, response, positive) {
+tp = function(truth, response, positive, ...) {
   m = confusion(truth, response, positive)
   m[1L, 1L]
 }

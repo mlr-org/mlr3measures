@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-medse = function(truth, response) {
+medse = function(truth, response, ...) {
   median(se(truth, response))
 }
 

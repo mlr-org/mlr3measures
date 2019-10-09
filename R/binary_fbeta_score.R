@@ -24,7 +24,7 @@
 #'   Parameter to give either precision or recall more weight.
 #'   Default is 1, resulting in balanced weights.
 #' @export
-fbeta_score = function(truth, response, positive, beta = 1, na_value = NaN) {
+fbeta_score = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
   m = confusion(truth, response, positive)
 
   pred_pos = sum(m[1L, ])

@@ -16,7 +16,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rse = function(truth, response, na_value = NaN) {
+rse = function(truth, response, na_value = NaN, ...) {
   if (var(truth) < TOL)
     return(na_value)
   sse(truth, response) / sse(truth, mean(truth))

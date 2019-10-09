@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-mse = function(truth, response) {
+mse = function(truth, response, ...) {
   mean(se(truth, response))
 }
 

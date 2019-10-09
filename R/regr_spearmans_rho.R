@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-spearmans_rho = function(truth, response) {
+spearmans_rho = function(truth, response, ...) {
   cor(truth, response, use = "everything", method = "kendall")
 }
 

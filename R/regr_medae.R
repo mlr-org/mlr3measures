@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-medae = function(truth, response) {
+medae = function(truth, response, ...) {
   median(ae(truth, response))
 }
 

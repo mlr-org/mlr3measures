@@ -12,7 +12,7 @@
 #'
 #' @inheritParams classif_params
 #' @export
-acc = function(truth, response) {
+acc = function(truth, response, ...) {
   mean(truth == response)
 }
 

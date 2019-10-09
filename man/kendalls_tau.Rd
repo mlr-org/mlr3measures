@@ -4,7 +4,7 @@
 \alias{kendalls_tau}
 \title{Kendall's tau}
 \usage{
-kendalls_tau(truth, response)
+kendalls_tau(truth, response, ...)
 }
 \arguments{
 \item{truth}{:: \code{numeric()}\cr
@@ -14,6 +14,9 @@ Must have the same length as \code{response}.}
 \item{response}{:: \code{numeric()}\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
+
+\item{...}{:: any\cr
+Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

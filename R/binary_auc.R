@@ -10,7 +10,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-auc = function(truth, prob, positive) {
+auc = function(truth, prob, positive, ...) {
   i = (truth == positive)
   r = rank(prob)
 

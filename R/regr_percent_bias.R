@@ -13,7 +13,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-percent_bias = function(truth, response, na_value = NaN) {
+percent_bias = function(truth, response, na_value = NaN, ...) {
   if (any(abs(truth) < TOL))
     return(na_value)
   mean((truth - response) / abs(truth))

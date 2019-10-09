@@ -15,7 +15,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rmsle = function(truth, response, na_value = NaN) {
+rmsle = function(truth, response, na_value = NaN, ...) {
   if (min(truth, response) < -1)
     return(na_value)
   sqrt(msle(truth, response))

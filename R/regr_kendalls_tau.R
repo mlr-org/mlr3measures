@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-kendalls_tau = function(truth, response) {
+kendalls_tau = function(truth, response, ...) {
   cor(truth, response, use = "everything", method = "kendall")
 }
 

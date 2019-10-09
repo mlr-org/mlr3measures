@@ -1,20 +1,17 @@
 context("regression measures")
 
 test_that("trigger all", {
-  tab = list_measures()
-  tab = tab[tab$type == "regr", ]
-
   N = 10L
   truth = runif(N)
   response = runif(N)
 
-  for (i in seq_len(nrow(tab))) {
-    info = as.list(tab[i, ])
-    f = match.fun(info$id)
-
-    perf = f(truth, response)
-    expect_number(perf, na.ok = FALSE, lower = info$min, upper = info$max, label = info$id)
-  }
+  Filter(Negate(is.null), eapply(measures, function(m) {
+    if (m$type == "regr") {
+      f = match.fun(m$id)
+      perf = f(truth, response = response)
+      expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
+    }
+  }))
 })
 
 test_that("tests from Metrics", {

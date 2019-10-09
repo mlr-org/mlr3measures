@@ -20,7 +20,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-tpr = function(truth, response, positive, na_value = NaN) {
+tpr = function(truth, response, positive, na_value = NaN, ...) {
   m = confusion(truth, response, positive)
   div(m[1L, 1L], sum(m[, 1L]), na_value)
 }

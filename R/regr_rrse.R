@@ -16,7 +16,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rrse = function(truth, response, na_value = NaN) {
+rrse = function(truth, response, na_value = NaN, ...) {
   if (var(truth) < TOL)
     return(na_value)
   sqrt(sse(truth, response) / sse(truth, mean(truth)))

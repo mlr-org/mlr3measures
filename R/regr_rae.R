@@ -16,7 +16,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rae = function(truth, response, na_value = NaN) {
+rae = function(truth, response, na_value = NaN, ...) {
   div(sum(ae(truth, response)), sae(truth, mean(truth)), na_value)
 }
 

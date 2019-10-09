@@ -18,7 +18,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-npv = function(truth, response, positive, na_value = NaN) {
+npv = function(truth, response, positive, na_value = NaN, ...) {
   m = confusion(truth, response, positive)
   div(m[2L, 2L], sum(m[2L, ]), na_value)
 }
