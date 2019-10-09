@@ -4,7 +4,7 @@
 #' Regression measures defined as Spearman's rank correlation coefficient between truth and response.
 #' Calls [stats::cor()] with `method` set to `"spearman"`.
 #'
-#' @templateVar mid spearmans_rho
+#' @templateVar mid srho
 #' @template regr_template
 #'
 #' @references
@@ -12,9 +12,9 @@
 #'
 #' @inheritParams regr_params
 #' @export
-spearmans_rho = function(truth, response, ...) {
+srho = function(truth, response, ...) {
   cor(truth, response, use = "everything", method = "kendall")
 }
 
 #' @include measures.R
-add_measure(spearmans_rho, "regr", -1, 1, FALSE)
+add_measure(srho, "regr", -1, 1, FALSE)

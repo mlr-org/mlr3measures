@@ -41,10 +41,11 @@ Classification measure counting the false positives.
 }
 \seealso{
 Other Binary Classification Measures: \code{\link{auc}},
-  \code{\link{dor}}, \code{\link{fbeta_score}},
+  \code{\link{dor}}, \code{\link{fbeta}},
   \code{\link{fdr}}, \code{\link{fnr}}, \code{\link{fn}},
   \code{\link{fomr}}, \code{\link{fpr}}, \code{\link{mcc}},
   \code{\link{npv}}, \code{\link{ppv}}, \code{\link{tnr}},
   \code{\link{tn}}, \code{\link{tpr}}, \code{\link{tp}}
 }
 \concept{Binary Classification Measures}
+\concept{binary_classification_measure}

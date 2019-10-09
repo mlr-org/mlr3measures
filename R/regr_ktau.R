@@ -4,7 +4,7 @@
 #' Regression measure defined as Kendall's rank correlation coefficient between truth and response.
 #' Calls [stats::cor()] with `method` set to `"kendall"`.
 #'
-#' @templateVar mid kendalls_tau
+#' @templateVar mid ktau
 #' @template regr_template
 #'
 #' @references
@@ -12,9 +12,9 @@
 #'
 #' @inheritParams regr_params
 #' @export
-kendalls_tau = function(truth, response, ...) {
+ktau = function(truth, response, ...) {
   cor(truth, response, use = "everything", method = "kendall")
 }
 
 #' @include measures.R
-add_measure(kendalls_tau, "regr", -Inf, 1, FALSE)
+add_measure(ktau, "regr", -Inf, 1, FALSE)

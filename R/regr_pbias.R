@@ -8,16 +8,16 @@
 #' }
 #' Good predictions score close to 0.
 #'
-#' @templateVar mid percent_bias
+#' @templateVar mid pbias
 #' @template regr_template
 #'
 #' @inheritParams regr_params
 #' @export
-percent_bias = function(truth, response, na_value = NaN, ...) {
+pbias = function(truth, response, na_value = NaN, ...) {
   if (any(abs(truth) < TOL))
     return(na_value)
   mean((truth - response) / abs(truth))
 }
 
 #' @include measures.R
-add_measure(percent_bias, "regr", -Inf, Inf, NA)
+add_measure(pbias, "regr", -Inf, Inf, NA)

@@ -41,8 +41,8 @@ test_that("tests from Metrics", {
   expect_equal(tpr(as_fac(0,0,1,1),as_fac(1,1,0,0), "a"), 0)
   expect_equal(tpr(as_fac(1,1,1,1),as_fac(1,0,0,1), "a"), 1/2)
 
-  expect_equal(fbeta_score(as_fac(1,1,0,0), as_fac(1,1,0,0), "a"), 1)
-  expect_equal(fbeta_score(as_fac(0,0,1,1), as_fac(1,1,1,0), "a"), 2/5)
-  expect_equal(fbeta_score(as_fac(1,1,1,1), as_fac(1,0,0,1), "a"), 2/3)
-  expect_equal(fbeta_score(as_fac(1,1,0,0), as_fac(1,1,1,1), "a", beta=0), 1/2)
+  expect_equal(fbeta(as_fac(1,1,0,0), as_fac(1,1,0,0), "a"), 1)
+  expect_equal(fbeta(as_fac(0,0,1,1), as_fac(1,1,1,0), "a"), 2/5)
+  expect_equal(fbeta(as_fac(1,1,1,1), as_fac(1,0,0,1), "a"), 2/3)
+  expect_equal(fbeta(as_fac(1,1,0,0), as_fac(1,1,1,1), "a", beta=0), 1/2)
 })

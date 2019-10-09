@@ -9,7 +9,7 @@
 #' }
 #' For \eqn{\beta = 1}{beta = 1}, this is called "F1" score.
 #'
-#' @templateVar mid fbeta_score
+#' @templateVar mid fbeta
 #' @template binary_template
 #'
 #' @note
@@ -24,7 +24,7 @@
 #'   Parameter to give either precision or recall more weight.
 #'   Default is 1, resulting in balanced weights.
 #' @export
-fbeta_score = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
+fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
   m = confusion(truth, response, positive)
 
   pred_pos = sum(m[1L, ])
@@ -38,4 +38,4 @@ fbeta_score = function(truth, response, positive, beta = 1, na_value = NaN, ...)
 }
 
 #' @include measures.R
-add_measure(fbeta_score, "binary", 0, 1, FALSE)
+add_measure(fbeta, "binary", 0, 1, FALSE)

@@ -39,14 +39,15 @@ Regression measure defined as \deqn{
 
 \seealso{
 Other Regression Measures: \code{\link{bias}},
-  \code{\link{kendalls_tau}}, \code{\link{mae}},
+  \code{\link{ktau}}, \code{\link{mae}},
   \code{\link{mape}}, \code{\link{maxae}},
   \code{\link{maxse}}, \code{\link{medae}},
   \code{\link{medse}}, \code{\link{mse}},
-  \code{\link{msle}}, \code{\link{percent_bias}},
+  \code{\link{msle}}, \code{\link{pbias}},
   \code{\link{rae}}, \code{\link{rmse}},
   \code{\link{rmsle}}, \code{\link{rrse}},
   \code{\link{rse}}, \code{\link{rsq}}, \code{\link{sae}},
-  \code{\link{smape}}, \code{\link{spearmans_rho}}
+  \code{\link{smape}}, \code{\link{srho}}
 }
 \concept{Regression Measures}
+\concept{regression_measure}

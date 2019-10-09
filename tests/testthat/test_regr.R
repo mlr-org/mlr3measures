@@ -18,10 +18,10 @@ test_that("tests from Metrics", {
   expect_equal(bias(1, 1), 0)
   expect_equal(bias(c(-1, -100, 17.5), c(0, 0, 0)), mean(c(-1, -100, 17.5)))
 
-  expect_equal(percent_bias(c(1, 2, 3), c(1, 3, 2)), mean(c(0, -1/2, 1/3)))
-  expect_equal(percent_bias(c(1, 2, 0), c(1, 2, 1)), NaN)
-  expect_equal(percent_bias(0, 0), NaN)
-  expect_equal(percent_bias(c(-1.1, 1.1), c(-1, 1)), 0)
+  expect_equal(pbias(c(1, 2, 3), c(1, 3, 2)), mean(c(0, -1/2, 1/3)))
+  expect_equal(pbias(c(1, 2, 0), c(1, 2, 1)), NaN)
+  expect_equal(pbias(0, 0), NaN)
+  expect_equal(pbias(c(-1.1, 1.1), c(-1, 1)), 0)
 
   expect_equal(se(3.4, 4.4), 1)
   expect_equal(se(9:11, 11:9), c(4, 0, 4))

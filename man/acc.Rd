@@ -41,3 +41,4 @@ Classification measure defined as \deqn{
 Other Classification Measures: \code{\link{ce}}
 }
 \concept{Classification Measures}
+\concept{classification_measure}

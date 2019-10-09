@@ -5,4 +5,5 @@
 #' * Minimize: <%= item$minimize %>
 #'
 #' @family Regression Measures
+#' @concept regression_measure
 #' @return Performance value as `numeric(1)`.
