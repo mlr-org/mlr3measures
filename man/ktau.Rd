@@ -28,7 +28,7 @@ Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"ken
 \section{Meta Information}{
 
 \itemize{
-\item Minimum value: -Inf
+\item Minimum value: -1
 \item Maximum value: 1
 \item Minimize: FALSE
 }

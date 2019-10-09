@@ -17,4 +17,4 @@ ktau = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(ktau, "regr", -Inf, 1, FALSE)
+add_measure(ktau, "regr", -1, 1, FALSE)
