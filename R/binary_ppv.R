@@ -1,6 +1,5 @@
 #' @title Positive Predictive Value
 #'
-#' @aliases precision
 #' @description
 #' Binary classification measure defined as \deqn{
 #'    \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FP}}.
@@ -25,5 +24,10 @@ ppv = function(truth, response, positive, na_value = NaN, ...) {
   div(m[1L, 1L], sum(m[1L, ]), na_value)
 }
 
+#' @export
+#' @rdname ppv
+precision = ppv
+
 #' @include measures.R
 add_measure(ppv, "binary", 0, 1, FALSE)
+add_measure(precision, "binary", 0, 1, FALSE)

@@ -1,6 +1,5 @@
 #' @title True Negative Rate
 #'
-#' @aliases specificity
 #' @description
 #' Binary classification measure defined as \deqn{
 #'    \frac{\mathrm{TN}}{\mathrm{FP} + \mathrm{TN}}.
@@ -25,5 +24,10 @@ tnr = function(truth, response, positive, na_value = NaN, ...) {
   div(m[2L, 2L], sum(m[, 2L]), na_value)
 }
 
+#' @export
+#' @rdname tnr
+specificity = tnr
+
 #' @include measures.R
 add_measure(tnr, "binary", 0, 1, FALSE)
+add_measure(specificity, "binary", 0, 1, FALSE)

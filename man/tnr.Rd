@@ -6,6 +6,8 @@
 \title{True Negative Rate}
 \usage{
 tnr(truth, response, positive, na_value = NaN, ...)
+
+specificity(truth, response, positive, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr

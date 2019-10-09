@@ -1,6 +1,5 @@
 #' @title True Positive Rate
 #'
-#' @aliases recall sensitivity
 #' @description
 #' Binary classification measure defined as \deqn{
 #'   \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}}.
@@ -25,5 +24,15 @@ tpr = function(truth, response, positive, na_value = NaN, ...) {
   div(m[1L, 1L], sum(m[, 1L]), na_value)
 }
 
+#' @export
+#' @rdname tpr
+recall = tpr
+
+#' @export
+#' @rdname tpr
+sensitivity = tpr
+
 #' @include measures.R
 add_measure(tpr, "binary", 0, 1, FALSE)
+add_measure(recall, "binary", 0, 1, FALSE)
+add_measure(sensitivity, "binary", 0, 1, FALSE)

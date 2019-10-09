@@ -6,6 +6,8 @@
 \title{Positive Predictive Value}
 \usage{
 ppv(truth, response, positive, na_value = NaN, ...)
+
+precision(truth, response, positive, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr

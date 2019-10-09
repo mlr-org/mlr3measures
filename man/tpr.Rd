@@ -7,6 +7,10 @@
 \title{True Positive Rate}
 \usage{
 tpr(truth, response, positive, na_value = NaN, ...)
+
+recall(truth, response, positive, na_value = NaN, ...)
+
+sensitivity(truth, response, positive, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
