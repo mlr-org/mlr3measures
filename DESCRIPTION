@@ -25,6 +25,8 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Collate:
+    'ae.R'
+    'ape.R'
     'measures.R'
     'binary_auc.R'
     'binary_dor.R'
@@ -68,4 +70,6 @@ Collate:
     'regr_srho.R'
     'regr_sse.R'
     'roxygen.R'
+    'se.R'
+    'sle.R'
     'zzz.R'
