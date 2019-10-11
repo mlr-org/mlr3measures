@@ -11,7 +11,7 @@
 #' @template regr_template
 #'
 #' @note
-#' This measure is undefined if any element of \eqn{t} or \eqn{r} is lower than \eqn{-1}.
+#' This measure is undefined if any element of \eqn{t} or \eqn{r} is less than or equal to \eqn{-1}.
 #'
 #' @inheritParams regr_params
 #' @export
