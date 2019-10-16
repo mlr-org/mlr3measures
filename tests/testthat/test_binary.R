@@ -18,6 +18,7 @@ test_that("trigger all", {
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))
+  as_prob = function(...) { p = c(...);  p = cbind(p, 1-p); colnames(p) = c("a", "b"); p}
 
   expect_equal(auc(as_fac(1,0,1,1), c(.32,.52,.26,.86), "a"), 1/3)
   expect_equal(auc(as_fac(1,0,1,0,1),c(.9,.1,.8,.1,.7), "a"), 1)
@@ -28,10 +29,10 @@ test_that("tests from Metrics", {
   # expect_equal(ll(1,0), Inf)
   # expect_equal(ll(0,1), Inf)
   # expect_equal(ll(1,0.5), -log(0.5))
-  #
-  # expect_equal(logLoss(c(1,1,0,0),c(1,1,0,0)), 0)
-  # expect_equal(logLoss(c(1,1,0,0),c(1,1,1,0)), Inf)
-  # expect_equal(logLoss(c(1,1,1,0,0,0),c(.5,.1,.01,.9,.75,.001)), 1.881797068998267)
+
+  expect_equal(logloss(as_fac(1,1,0,0),as_prob(1,1,0,0)), 0)
+  expect_number(logloss(as_fac(1,1,0,0),as_prob(0,0,1,1)), lower = 10, upper = 50)
+  expect_equal(logloss(as_fac(1,1,1,0,0,0),as_prob(.5,.1,.01,.9,.75,.001)), 1.881797068998267)
 
   expect_equal(ppv(as_fac(1,1,0,0),as_fac(1,1,0,0), "a"), 1)
   expect_equal(ppv(as_fac(0,0,1,1),as_fac(1,1,0,0), "a"), 0)
