@@ -47,6 +47,7 @@ Collate:
     'classif_acc.R'
     'classif_ber.R'
     'classif_ce.R'
+    'classif_logloss.R'
     'helper.R'
     'regr_bias.R'
     'regr_ktau.R'

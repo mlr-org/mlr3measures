@@ -1,4 +1,4 @@
-#' @title Balanced error rate
+#' @title Balanced Error Rate
 #'
 #' @description
 #' Mean of misclassification error rates on all individual classes.

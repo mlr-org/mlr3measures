@@ -1,13 +1,17 @@
 context("classification measures")
 
 test_that("trigger all", {
-  truth = factor(sample(letters[1:2], 10, replace = TRUE), levels = letters[1:2])
-  response = factor(sample(letters[1:2], 10, replace = TRUE), levels = letters[1:2])
+  k = 3
+  n = 10
+  truth = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
+  response = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
+  prob = matrix(runif(n*k), nrow = n)
+  colnames(prob) = letters[1:k]
 
   Filter(Negate(is.null), eapply(measures, function(m) {
     if (m$type == "classif") {
       f = match.fun(m$id)
-      perf = f(truth, response, prob = prob)
+      perf = f(truth, response = response, prob = prob)
       expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
     }
   }))

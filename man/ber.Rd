@@ -2,7 +2,7 @@
 % Please edit documentation in R/classif_ber.R
 \name{ber}
 \alias{ber}
-\title{Balanced error rate}
+\title{Balanced Error Rate}
 \usage{
 ber(truth, response, ...)
 }
@@ -41,7 +41,7 @@ Classification measure defined as \deqn{
 
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{ce}}
+  \code{\link{ce}}, \code{\link{logloss}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

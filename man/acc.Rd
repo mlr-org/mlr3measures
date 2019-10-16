@@ -39,7 +39,7 @@ Classification measure defined as \deqn{
 
 \seealso{
 Other Classification Measures: \code{\link{ber}},
-  \code{\link{ce}}
+  \code{\link{ce}}, \code{\link{logloss}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}
