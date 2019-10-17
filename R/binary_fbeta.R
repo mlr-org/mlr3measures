@@ -28,7 +28,10 @@
 #'   Parameter to give either precision or recall more weight.
 #'   Default is 1, resulting in balanced weights.
 #' @export
-fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
+fbeta = function(truth, response, positive, beta = 1, na_value = NaN) {
+  assert_binary(truth, response = response, positive = positive, na_value = na_value)
+  assert_number(beta, lower = 0)
+
   m = confusion(truth, response, positive)
 
   pred_pos = sum(m[1L, ])

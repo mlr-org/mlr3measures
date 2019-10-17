@@ -8,24 +8,29 @@ test_that("trigger all", {
   prob = matrix(runif(n*k), nrow = n)
   colnames(prob) = letters[1:k]
 
-  Filter(Negate(is.null), eapply(measures, function(m) {
-    if (m$type == "classif") {
-      f = match.fun(m$id)
-      perf = f(truth, response = response, prob = prob)
-      expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
-    }
-  }))
+  for (m in as.list(measures)) {
+    if (m$type != "classif")
+      next
+    f = match.fun(m$id)
+    perf = wrapper(f, truth = truth, response = response, prob = prob)
+    expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
+  }
 })
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))
+  as_prob = function(...) { p = c(...);  p = cbind(p, 1-p); colnames(p) = c("a", "b"); p}
 
   expect_equal(ce(as_fac(1,1,1,0,0,0),as_fac(1,1,1,0,0,0)), 0.0)
   expect_equal(ce(as_fac(1,1,1,0,0,0),as_fac(1,1,1,1,0,0)), 1/6)
 
   expect_equal(ce(factor(c(1,2,3,4), levels = 1:4), factor(c(1,2,3,3), levels = 1:4)), 1/4)
-  expect_equal(ce(c("cat","dog","bird"),c("cat","dog","fish")), 1/3)
-  expect_equal(ce(c("cat","dog","bird"),c("caat","doog","biird")), 1.0)
+  lvls = c("cat", "dog", "bird", "fish")
+  expect_equal(ce(factor(c("cat","dog","bird"), levels = lvls),factor(c("cat","dog","fish"), levels = lvls)), 1/3)
+
+  expect_equal(logloss(as_fac(1,1,0,0),as_prob(1,1,0,0)), 0)
+  expect_number(logloss(as_fac(1,1,0,0),as_prob(0,0,1,1)), lower = 10, upper = 50)
+  expect_equal(logloss(as_fac(1,1,1,0,0,0),as_prob(.5,.1,.01,.9,.75,.001)), 1.881797068998267)
 
   # rater.a <- c(1, 2, 1)
   # rater.b <- c(1, 2, 2)

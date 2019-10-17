@@ -12,8 +12,10 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rmse = function(truth, response, ...) {
-  sqrt(mse(truth, response))
+rmse = function(truth, response) {
+  assert_regr(truth, response = response)
+
+  sqrt(mean(se(truth, response)))
 }
 
 #' @include measures.R

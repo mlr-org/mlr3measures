@@ -5,13 +5,13 @@ test_that("trigger all", {
   truth = runif(N)
   response = runif(N)
 
-  Filter(Negate(is.null), eapply(measures, function(m) {
-    if (m$type == "regr") {
-      f = match.fun(m$id)
-      perf = f(truth, response = response)
-      expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
-    }
-  }))
+  for (m in as.list(measures)) {
+    if (m$type != "regr")
+      next
+    f = match.fun(m$id)
+    perf = wrapper(f, truth = truth, response = response)
+    expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
+  }
 })
 
 test_that("tests from Metrics", {

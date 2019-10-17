@@ -12,7 +12,9 @@
 #'
 #' @inheritParams regr_params
 #' @export
-maxae = function(truth, response, ...) {
+maxae = function(truth, response) {
+  assert_regr(truth, response = response)
+
   max(ae(truth, response))
 }
 

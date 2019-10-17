@@ -12,7 +12,9 @@
 #'
 #' @inheritParams regr_params
 #' @export
-ktau = function(truth, response, ...) {
+ktau = function(truth, response) {
+  assert_regr(truth, response = response)
+
   cor(truth, response, use = "everything", method = "kendall")
 }
 

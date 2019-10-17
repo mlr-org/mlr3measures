@@ -4,7 +4,7 @@
 \alias{fbeta}
 \title{F-beta Score}
 \usage{
-fbeta(truth, response, positive, beta = 1, na_value = NaN, ...)
+fbeta(truth, response, positive, beta = 1, na_value = NaN)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -25,9 +25,6 @@ Default is 1, resulting in balanced weights.}
 \item{na_value}{:: \code{numeric(1)}\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
-
-\item{...}{:: any\cr
-Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

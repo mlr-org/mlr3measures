@@ -16,11 +16,13 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rrse = function(truth, response, na_value = NaN, ...) {
+rrse = function(truth, response, na_value = NaN) {
+  assert_regr(truth, response = response, na_value = na_value)
+
   v = var(truth)
   if (v < TOL)
     return(na_value)
-  sqrt(sse(truth, response) / (v * (length(truth) - 1L)))
+  sqrt(sum(se(truth, response)) / (v * (length(truth) - 1L)))
 }
 
 #' @include measures.R

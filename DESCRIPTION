@@ -17,16 +17,16 @@ URL: https:///mlr3measures.mlr-org.com,
 BugReports: https://github.com/mlr-org/mlr3measures/issues
 Depends:
     R (>= 3.1.0)
+Imports:
+    checkmate
 Suggests:
     bibtex,
-    checkmate,
     testthat
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Collate:
-    'ae.R'
-    'ape.R'
+    'assertions.R'
     'measures.R'
     'binary_auc.R'
     'binary_dor.R'
@@ -71,6 +71,4 @@ Collate:
     'regr_srho.R'
     'regr_sse.R'
     'roxygen.R'
-    'se.R'
-    'sle.R'
     'zzz.R'

@@ -4,7 +4,7 @@
 \alias{acc}
 \title{Classification Accuracy}
 \usage{
-acc(truth, response, ...)
+acc(truth, response)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -14,9 +14,6 @@ Must have the same levels and length as \code{response}.}
 \item{response}{:: \code{factor()}\cr
 Predicted response labels.
 Must have the same levels and length as \code{truth}.}
-
-\item{...}{:: any\cr
-Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

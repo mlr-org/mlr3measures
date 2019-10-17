@@ -14,7 +14,9 @@
 #'
 #' @inheritParams classif_params
 #' @export
-ber = function(truth, response, ...) {
+ber = function(truth, response) {
+  assert_classif(truth, response = response)
+
   conf = confusion(truth, response)
   cs = colSums(conf)
   mean((cs - diag(conf)) / cs)

@@ -15,7 +15,9 @@
 #'
 #' @inheritParams regr_params
 #' @export
-smape = function(truth, response, na_value = NaN, ...) {
+smape = function(truth, response, na_value = NaN) {
+  assert_regr(truth, response = response, na_value = na_value)
+
   denom = abs(truth) + abs(response)
   if (any(denom < TOL))
     return(na_value)

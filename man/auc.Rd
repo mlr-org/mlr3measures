@@ -4,7 +4,7 @@
 \alias{auc}
 \title{Area Under the ROC Curve}
 \usage{
-auc(truth, prob, positive, na_value = NaN, ...)
+auc(truth, prob, positive, na_value = NaN)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -21,9 +21,6 @@ Name of the positive class.}
 \item{na_value}{:: \code{numeric(1)}\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
-
-\item{...}{:: any\cr
-Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.
@@ -47,7 +44,7 @@ all negative.
 }
 
 \examples{
-truth = c("a", "a", "a", "b")
+truth = factor(c("a", "a", "a", "b"))
 prob = c(.6, .7, .1, .4)
 auc(truth, prob, "a")
 }

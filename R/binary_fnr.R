@@ -19,7 +19,9 @@
 #'
 #' @inheritParams binary_params
 #' @export
-fnr = function(truth, response, positive, na_value = NaN, ...) {
+fnr = function(truth, response, positive, na_value = NaN) {
+  assert_binary(truth, response = response, positive = positive, na_value = na_value)
+
   m = confusion(truth, response, positive)
   div(m[2L, 1L], sum(m[, 1L]), na_value)
 }

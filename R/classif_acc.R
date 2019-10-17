@@ -12,7 +12,9 @@
 #'
 #' @inheritParams classif_params
 #' @export
-acc = function(truth, response, ...) {
+acc = function(truth, response) {
+  assert_classif(truth, response = response)
+
   mean(truth == response)
 }
 

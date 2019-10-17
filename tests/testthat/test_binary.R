@@ -5,14 +5,15 @@ test_that("trigger all", {
   truth = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
   response = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
   prob = runif(N)
+  positive = "a"
 
-  Filter(Negate(is.null), eapply(measures, function(m) {
-    if (m$type == "binary") {
-      f = match.fun(m$id)
-      perf = f(truth, response = response, prob = prob, positive = "a")
-      expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
-    }
-  }))
+  for (m in as.list(measures)) {
+    if (m$type != "binary")
+      next
+    f = match.fun(m$id)
+    perf = wrapper(f, truth = truth, response = response, prob = prob, positive = positive)
+    expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
+  }
 })
 
 
@@ -29,10 +30,6 @@ test_that("tests from Metrics", {
   # expect_equal(ll(1,0), Inf)
   # expect_equal(ll(0,1), Inf)
   # expect_equal(ll(1,0.5), -log(0.5))
-
-  expect_equal(logloss(as_fac(1,1,0,0),as_prob(1,1,0,0)), 0)
-  expect_number(logloss(as_fac(1,1,0,0),as_prob(0,0,1,1)), lower = 10, upper = 50)
-  expect_equal(logloss(as_fac(1,1,1,0,0,0),as_prob(.5,.1,.01,.9,.75,.001)), 1.881797068998267)
 
   expect_equal(ppv(as_fac(1,1,0,0),as_fac(1,1,0,0), "a"), 1)
   expect_equal(ppv(as_fac(0,0,1,1),as_fac(1,1,0,0), "a"), 0)

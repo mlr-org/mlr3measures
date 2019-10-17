@@ -1,3 +1,23 @@
+# absolute error
+ae = function(truth, response) {
+  abs(truth - response)
+}
+
+# absolute percent error
+ape = function(truth, response) {
+  abs((truth - response) / truth)
+}
+
+# squared error
+se = function(truth, response) {
+  (truth - response)^2
+}
+
+# squared log error
+sle = function(truth, response) {
+  (log1p(truth) - log1p(response))^2
+}
+
 # simple division, but ensures that `na_value` is returned
 # if the denominator is < TOL
 div = function(nominator, denominator, na_value) {

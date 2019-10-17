@@ -15,7 +15,9 @@
 #'
 #' @inheritParams regr_params
 #' @export
-msle = function(truth, response, na_value = NaN, ...) {
+msle = function(truth, response, na_value = NaN) {
+  assert_regr(truth, response = response, na_value = na_value)
+
   if (min(truth, response) < -1)
     return(na_value)
   mean(sle(truth, response))
