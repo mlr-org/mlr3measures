@@ -8,7 +8,7 @@
 #' }
 #' where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 #'
-#' @templateVar mid ber
+#' @templateVar mid logloss
 #' @template classif_template
 #'
 #' @inheritParams classif_params

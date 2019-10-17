@@ -35,7 +35,7 @@ where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 
 \itemize{
 \item Minimum value: 0
-\item Maximum value: 1
+\item Maximum value: Inf
 \item Minimize: TRUE
 }
 }
