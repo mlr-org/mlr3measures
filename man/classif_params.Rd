@@ -13,7 +13,8 @@ Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
 \item{prob}{:: \code{matrix()}\cr
-Matrix of predicted probabilities, each column holds the predictions for a class label.
+Matrix of predicted probabilities, each column is a vector of probabilities for a
+specific class label.
 Columns must be named with levels of \code{truth}.}
 
 \item{na_value}{:: \code{numeric(1)}\cr

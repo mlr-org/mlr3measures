@@ -12,12 +12,13 @@ True (observed) labels.
 Must have the same levels and length as \code{response}.}
 
 \item{prob}{:: \code{matrix()}\cr
-Matrix of predicted probabilities, each column holds the predictions for a class label.
+Matrix of predicted probabilities, each column is a vector of probabilities for a
+specific class label.
 Columns must be named with levels of \code{truth}.}
 
 \item{eps}{:: \code{numeric(1)}\cr
-Probabilities are clipped to \code{max(eps, min(1 - eps, p))} to avoid
-errors for probabilities \code{p = 0} and \code{p = 1}.}
+Probabilities are clipped to \code{max(eps, min(1 - eps, p))}, otherwise the measure would
+be undefined for probabilities \code{p = 0} and \code{p = 1}.}
 }
 \value{
 Performance value as \code{numeric(1)}.

@@ -43,7 +43,8 @@ NULL
 #'   Predicted response labels.
 #'   Must have the same levels and length as `truth`.
 #' @param prob :: `matrix()`\cr
-#'   Matrix of predicted probabilities, each column holds the predictions for a class label.
+#'   Matrix of predicted probabilities, each column is a vector of probabilities for a
+#'   specific class label.
 #'   Columns must be named with levels of `truth`.
 #' @param na_value :: `numeric(1)`\cr
 #'   Value that should be returned if the measure is not defined for the input
