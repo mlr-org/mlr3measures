@@ -42,7 +42,7 @@ where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{ber}}, \code{\link{ce}}
+  \code{\link{ce}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

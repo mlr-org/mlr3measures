@@ -36,7 +36,7 @@ Classification measure defined as \deqn{
 
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{ber}}, \code{\link{logloss}}
+  \code{\link{logloss}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}
