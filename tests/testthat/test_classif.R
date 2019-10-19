@@ -68,14 +68,14 @@ test_that("tests from Metrics", {
   # expect_equal(kappa, 0.624536446425734)
 })
 
-test_that("ber", {
-  truth = factor(c("a", "a", "b", "b", "c", "c"), levels = c("a", "b", "c"))
-  response = factor(c("a", "a", "b", "b", "c", "c"), levels = c("a", "b", "c"))
-  expect_equal(ber(truth, response), 0)
+# test_that("ber", {
+#   truth = factor(c("a", "a", "b", "b", "c", "c"), levels = c("a", "b", "c"))
+#   response = factor(c("a", "a", "b", "b", "c", "c"), levels = c("a", "b", "c"))
+#   expect_equal(ber(truth, response), 0)
 
-  response = factor(c("a", "b", "b", "c", "c", "a"), levels = c("a", "b", "c"))
-  expect_equal(ber(truth, response), 0.5)
+#   response = factor(c("a", "b", "b", "c", "c", "a"), levels = c("a", "b", "c"))
+#   expect_equal(ber(truth, response), 0.5)
 
-  response = factor(rep("a", 6), levels = c("a", "b", "c"))
-  expect_equal(round(ber(truth, response), 2), 0.67)
-})
+#   response = factor(rep("a", 6), levels = c("a", "b", "c"))
+#   expect_equal(round(ber(truth, response), 2), 0.67)
+# })
