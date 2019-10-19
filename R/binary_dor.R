@@ -20,8 +20,10 @@
 #' @export
 dor = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
+  dor_cm(cm(truth, response, positive), na_value)
+}
 
-  m = confusion(truth, response, positive)
+dor_cm = function(m, na_value = NaN) {
   div(m[1L, 1L] * m[2L, 2L], m[1L, 2L] * m[2L, 1L], na_value)
 }
 

@@ -14,8 +14,11 @@
 #' @export
 acc = function(truth, response, ...) {
   assert_classif(truth, response = response)
-
   mean(truth == response)
+}
+
+acc_cm = function(m, na_value = NaN) {
+  sum(diag(m)) / sum(m)
 }
 
 #' @include measures.R

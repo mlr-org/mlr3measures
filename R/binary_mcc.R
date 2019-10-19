@@ -21,8 +21,10 @@
 #' @export
 mcc = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)
+  mcc_cm(cm(truth, response, positive))
+}
 
-  m = confusion(truth, response, positive)
+mcc_cm = function(m, na_value = NaN) {
   tp = m[1L, 1L]
   tn = m[2L, 2L]
   fp = m[1L, 2L]

@@ -31,9 +31,10 @@
 fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
   assert_number(beta, lower = 0)
+  fbeta_cm(cm(truth, response, positive), beta, na_value)
+}
 
-  m = confusion(truth, response, positive)
-
+fbeta_cm = function(m, beta = 1, na_value = NaN) {
   pred_pos = sum(m[1L, ])
   cond_pos = sum(m[, 1L])
   if (pred_pos == 0L || cond_pos == 0L)

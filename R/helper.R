@@ -27,7 +27,7 @@ div = function(nominator, denominator, na_value) {
     nominator / denominator
 }
 
-confusion = function(truth, response, positive = NULL) {
+cm = function(truth, response, positive = NULL) {
   if (!is.null(positive)) {
     truth = relevel(truth, positive)
     response = relevel(response, positive)

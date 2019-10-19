@@ -14,8 +14,10 @@
 #' @export
 tn = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)
+  tn_cm(cm(truth, response, positive))
+}
 
-  m = confusion(truth, response, positive)
+tn_cm = function(m, na_value = NaN) {
   m[2L, 2L]
 }
 

@@ -14,8 +14,13 @@
 #' @export
 ce = function(truth, response, ...) {
   assert_classif(truth, response = response)
-
   mean(truth != response)
+}
+
+ce_cm = function(m, na_value = NaN) {
+  s = sum(m)
+  diag(m) = 0
+  sum(m) / s
 }
 
 #' @include measures.R

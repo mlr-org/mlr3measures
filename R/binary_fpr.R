@@ -21,8 +21,10 @@
 #' @export
 fpr = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
+  fpr_cm(cm(truth, response, positive), na_value)
+}
 
-  m = confusion(truth, response, positive)
+fpr_cm = function(m, na_value = NaN) {
   div(m[1L, 2L], sum(m[, 2L]), na_value)
 }
 

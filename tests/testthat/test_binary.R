@@ -5,7 +5,8 @@ test_that("trigger all", {
   truth = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
   response = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
   prob = runif(N)
-  positive = "a"
+  positive = sample(letters[1:2], 1)
+  conf = cm(truth, response, positive = positive)
 
   for (m in as.list(measures)) {
     if (m$type != "binary")
@@ -13,6 +14,10 @@ test_that("trigger all", {
     f = match.fun(m$id)
     perf = wrapper(f, truth = truth, response = response, prob = prob, positive = positive)
     expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
+    f_cm = get0(sprintf("%s_cm", m$id))
+    if (!is.null(f_cm)) {
+      expect_equal(perf, f_cm(conf))
+    }
   }
 })
 
