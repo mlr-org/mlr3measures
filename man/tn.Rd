@@ -28,9 +28,11 @@ predictions correctly indicating a negative class label.
 \section{Meta Information}{
 
 \itemize{
+\item Type: binary
 \item Minimum value: 0
 \item Maximum value: Inf
 \item Minimize: FALSE
+\item Required prediction: response
 }
 }
 

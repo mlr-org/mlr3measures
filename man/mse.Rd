@@ -28,9 +28,11 @@ Regression measure defined as \deqn{
 \section{Meta Information}{
 
 \itemize{
+\item Type: regr
 \item Minimum value: 0
 \item Maximum value: Inf
 \item Minimize: TRUE
+\item Required prediction: response
 }
 }
 

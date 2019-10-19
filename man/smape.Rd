@@ -35,9 +35,11 @@ This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 \section{Meta Information}{
 
 \itemize{
+\item Type: regr
 \item Minimum value: 0
 \item Maximum value: 2
 \item Minimize: TRUE
+\item Required prediction: response
 }
 }
 

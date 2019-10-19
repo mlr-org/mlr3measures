@@ -35,9 +35,11 @@ This measure is undefined if any element of \eqn{t} or \eqn{r} is less than or e
 \section{Meta Information}{
 
 \itemize{
+\item Type: regr
 \item Minimum value: 0
 \item Maximum value: Inf
 \item Minimize: TRUE
+\item Required prediction: response
 }
 }
 

@@ -12,12 +12,15 @@
 measures = new.env(parent = emptyenv())
 
 # adds items to registry
-add_measure = function(obj, type, min, max, minimize) {
+add_measure = function(obj, type, lower, upper, minimize) {
   id = deparse(substitute(obj))
-  stopifnot(length(type) == 1L, is.character(type))
-  stopifnot(length(min) == 1L, is.numeric(min))
-  stopifnot(length(max) == 1L, is.numeric(max))
-  stopifnot(length(minimize) == 1L, is.logical(minimize))
 
-  assign(id, list(id = id, type = type, min = min, max = max, minimize = minimize), envir = measures)
+  assign(id, list(
+      id = id,
+      type = assert_choice(type, c("binary", "classif", "regr")),
+      lower = assert_number(lower),
+      upper = assert_number(upper),
+      predict_type = intersect(names(formals(obj)), c("response", "prob")),
+      minimize = assert_flag(minimize, na.ok = TRUE)
+  ), envir = measures)
 }

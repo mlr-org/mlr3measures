@@ -33,9 +33,11 @@ Good predictions score close to 0.
 \section{Meta Information}{
 
 \itemize{
+\item Type: regr
 \item Minimum value: -Inf
 \item Maximum value: Inf
 \item Minimize: NA
+\item Required prediction: response
 }
 }
 

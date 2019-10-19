@@ -12,7 +12,7 @@ test_that("trigger all", {
       next
     f = match.fun(m$id)
     perf = wrapper(f, truth = truth, response = response, prob = prob, positive = positive)
-    expect_number(perf, na.ok = FALSE, lower = m$min, upper = m$max, label = m$id)
+    expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
   }
 })
 

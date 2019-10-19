@@ -37,9 +37,11 @@ all negative.
 \section{Meta Information}{
 
 \itemize{
+\item Type: binary
 \item Minimum value: 0
 \item Maximum value: 1
 \item Minimize: FALSE
+\item Required prediction: prob
 }
 }
 

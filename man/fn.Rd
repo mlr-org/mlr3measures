@@ -29,9 +29,11 @@ This is sometimes also called a "false alarm".
 \section{Meta Information}{
 
 \itemize{
+\item Type: binary
 \item Minimum value: 0
 \item Maximum value: Inf
 \item Minimize: TRUE
+\item Required prediction: response
 }
 }
 

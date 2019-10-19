@@ -35,9 +35,11 @@ The denominator is then set to 1.
 \section{Meta Information}{
 
 \itemize{
+\item Type: binary
 \item Minimum value: -1
 \item Maximum value: 1
 \item Minimize: FALSE
+\item Required prediction: response
 }
 }
 
