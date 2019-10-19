@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-medse = function(truth, response) {
+medse = function(truth, response, ...) {
   assert_regr(truth, response = response)
 
   median(se(truth, response))

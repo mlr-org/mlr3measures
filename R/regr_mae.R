@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-mae = function(truth, response) {
+mae = function(truth, response, ...) {
   assert_regr(truth, response = response)
 
   mean(ae(truth, response))

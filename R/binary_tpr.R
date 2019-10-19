@@ -19,7 +19,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-tpr = function(truth, response, positive, na_value = NaN) {
+tpr = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
 
   m = confusion(truth, response, positive)

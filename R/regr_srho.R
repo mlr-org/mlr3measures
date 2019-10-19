@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-srho = function(truth, response) {
+srho = function(truth, response, ...) {
   assert_regr(truth, response = response)
 
   cor(truth, response, use = "everything", method = "kendall")

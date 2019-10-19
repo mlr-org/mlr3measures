@@ -16,7 +16,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-rse = function(truth, response, na_value = NaN) {
+rse = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
 
   v = var(truth)

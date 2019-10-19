@@ -4,7 +4,7 @@
 \alias{smape}
 \title{Symmetric Mean Absolute Percent Error}
 \usage{
-smape(truth, response, na_value = NaN)
+smape(truth, response, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{:: \code{numeric()}\cr
@@ -18,6 +18,9 @@ Must have the same length as \code{truth}.}
 \item{na_value}{:: \code{numeric(1)}\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
+
+\item{...}{:: any\cr
+Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

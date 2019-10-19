@@ -19,7 +19,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-mcc = function(truth, response, positive) {
+mcc = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)
 
   m = confusion(truth, response, positive)

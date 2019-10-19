@@ -4,7 +4,7 @@
 \alias{logloss}
 \title{Log Loss}
 \usage{
-logloss(truth, prob, eps = 1e-15)
+logloss(truth, prob, eps = 1e-15, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -19,6 +19,9 @@ Columns must be named with levels of \code{truth}.}
 \item{eps}{:: \code{numeric(1)}\cr
 Probabilities are clipped to \code{max(eps, min(1 - eps, p))}, otherwise the measure would
 be undefined for probabilities \code{p = 0} and \code{p = 1}.}
+
+\item{...}{:: any\cr
+Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

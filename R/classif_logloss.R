@@ -16,7 +16,7 @@
 #'   Probabilities are clipped to `max(eps, min(1 - eps, p))`, otherwise the measure would
 #'   be undefined for probabilities `p = 0` and `p = 1`.
 #' @export
-logloss = function(truth, prob, eps = 1e-15){
+logloss = function(truth, prob, eps = 1e-15, ...){
   assert_classif(truth, prob = prob)
   assert_number(eps, lower = 0, upper = 1)
 

@@ -13,7 +13,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-pbias = function(truth, response, na_value = NaN) {
+pbias = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
 
   if (any(abs(truth) < TOL))

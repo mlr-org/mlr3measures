@@ -19,7 +19,7 @@
 #'
 #' @inheritParams binary_params
 #' @export
-ppv = function(truth, response, positive, na_value = NaN) {
+ppv = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
 
   m = confusion(truth, response, positive)

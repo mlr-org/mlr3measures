@@ -18,7 +18,7 @@
 #' truth = factor(c("a", "a", "a", "b"))
 #' prob = c(.6, .7, .1, .4)
 #' auc(truth, prob, "a")
-auc = function(truth, prob, positive, na_value = NaN) {
+auc = function(truth, prob, positive, na_value = NaN, ...) {
   assert_binary(truth, prob = prob, positive = positive, na_value = na_value)
 
   i = which(truth == positive)

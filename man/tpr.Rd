@@ -6,11 +6,11 @@
 \alias{sensitivity}
 \title{True Positive Rate}
 \usage{
-tpr(truth, response, positive, na_value = NaN)
+tpr(truth, response, positive, na_value = NaN, ...)
 
-recall(truth, response, positive, na_value = NaN)
+recall(truth, response, positive, na_value = NaN, ...)
 
-sensitivity(truth, response, positive, na_value = NaN)
+sensitivity(truth, response, positive, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -27,6 +27,9 @@ Name of the positive class.}
 \item{na_value}{:: \code{numeric(1)}\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
+
+\item{...}{:: any\cr
+Additional arguments. Currently ignored.}
 }
 \value{
 Performance value as \code{numeric(1)}.

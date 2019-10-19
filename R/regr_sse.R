@@ -12,7 +12,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-sse = function(truth, response) {
+sse = function(truth, response, ...) {
   assert_regr(truth, response = response)
 
   sum(se(truth, response))

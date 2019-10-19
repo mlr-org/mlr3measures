@@ -13,7 +13,7 @@
 #'
 #' @inheritParams regr_params
 #' @export
-bias = function(truth, response) {
+bias = function(truth, response, ...) {
   assert_regr(truth, response = response)
 
   mean(truth - response)

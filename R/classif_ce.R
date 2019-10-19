@@ -12,7 +12,7 @@
 #'
 #' @inheritParams classif_params
 #' @export
-ce = function(truth, response) {
+ce = function(truth, response, ...) {
   assert_classif(truth, response = response)
 
   mean(truth != response)
