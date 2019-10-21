@@ -53,6 +53,9 @@ truth = factor(c("a", "a", "a", "b"))
 prob = c(.6, .7, .1, .4)
 auc(truth, prob, "a")
 }
+\references{
+\cite{youden_1950}
+}
 \seealso{
 Other Binary Classification Measures: \code{\link{dor}},
   \code{\link{fbeta}}, \code{\link{fdr}},

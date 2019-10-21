@@ -13,6 +13,10 @@
 #' all negative.
 #'
 #' @inheritParams binary_params
+#'
+#' @references
+#' \cite{youden_1950}
+#'
 #' @export
 #' @examples
 #' truth = factor(c("a", "a", "a", "b"))

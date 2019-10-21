@@ -43,4 +43,5 @@ reference:
       - has_concept("regression_measure")
   - title: Misc
     contents:
-      measures
+      - measures
+      - confusion_matrix

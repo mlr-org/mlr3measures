@@ -12,6 +12,7 @@
 #'   List with two elements:
 #'   * `matrix` stores the calculated confusion matrix.
 #'   * `measures` stores the metrics as named numeric vector.
+#'
 #' @export
 #' @examples
 #' set.seed(123)
@@ -19,7 +20,8 @@
 #' truth = factor(sample(lvls, 20, replace = TRUE), levels = lvls)
 #' response = factor(sample(lvls, 20, replace = TRUE), levels = lvls)
 #'
-#' confusion_matrix(truth, response, positive = "a")
+#' confusion_matrix(truth, response)
+#' confusion_matrix(truth, response, positive = "a", relative = TRUE)
 #' confusion_matrix(truth, response, positive = "b")
 confusion_matrix = function(truth, response, positive, na_value = NaN, relative = FALSE) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
