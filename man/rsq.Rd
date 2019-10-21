@@ -40,11 +40,10 @@ This measure is undefined for constant \eqn{t}.
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: -Inf
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{(-\infty, 1]}{(-Inf, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 

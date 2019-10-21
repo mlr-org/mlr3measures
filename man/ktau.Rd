@@ -28,11 +28,10 @@ Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"ken
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: -1
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{[-1, 1]}{[-1, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 

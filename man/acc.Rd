@@ -31,11 +31,10 @@ Classification measure defined as \deqn{
 \section{Meta Information}{
 
 \itemize{
-\item Type: classif
-\item Minimum value: 0
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"classif"}
+\item Range: \eqn{[0, 1]}{[0, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 

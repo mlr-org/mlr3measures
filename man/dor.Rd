@@ -41,11 +41,10 @@ This measure is undefined if FP = 0 or FN = 0.
 \section{Meta Information}{
 
 \itemize{
-\item Type: binary
-\item Minimum value: 0
-\item Maximum value: Inf
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"binary"}
+\item Range: \eqn{[0, \infty)}{[0, Inf)}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 

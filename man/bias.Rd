@@ -32,11 +32,10 @@ Good predictions score close to 0.
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: -Inf
-\item Maximum value: Inf
-\item Minimize: NA
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{(-\infty, \infty)}{(-Inf, Inf)}
+\item Minimize: \code{NA}
+\item Required prediction: \code{response}
 }
 }
 

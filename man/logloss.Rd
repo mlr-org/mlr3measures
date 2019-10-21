@@ -37,11 +37,10 @@ where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 \section{Meta Information}{
 
 \itemize{
-\item Type: classif
-\item Minimum value: 0
-\item Maximum value: Inf
-\item Minimize: TRUE
-\item Required prediction: prob
+\item Type: \code{"classif"}
+\item Range: \eqn{[0, \infty)}{[0, Inf)}
+\item Minimize: \code{TRUE}
+\item Required prediction: \code{prob}
 }
 }
 
