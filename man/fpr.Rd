@@ -34,7 +34,7 @@ Binary classification measure defined as \deqn{
 }{
    FP / (FP + TN).
 }
-Also know as "miss rate" or "false alarm rate".
+Also know as fall out or probability of false alarm.
 }
 \note{
 This measure is undefined if FP + TN = 0.

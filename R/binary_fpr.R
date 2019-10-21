@@ -6,7 +6,7 @@
 #' }{
 #'    FP / (FP + TN).
 #' }
-#' Also know as "miss rate" or "false alarm rate".
+#' Also know as fall out or probability of false alarm.
 #'
 #' @templateVar mid fpr
 #' @template binary_template
