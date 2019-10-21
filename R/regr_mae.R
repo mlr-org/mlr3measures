@@ -14,7 +14,6 @@
 #' @export
 mae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   mean(ae(truth, response))
 }
 

@@ -27,6 +27,7 @@ div = function(nominator, denominator, na_value) {
     nominator / denominator
 }
 
+# confusion matrix
 cm = function(truth, response, positive = NULL) {
   if (!is.null(positive)) {
     truth = relevel(truth, positive)

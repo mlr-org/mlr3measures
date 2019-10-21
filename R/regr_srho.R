@@ -14,8 +14,7 @@
 #' @export
 srho = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
-  cor(truth, response, use = "everything", method = "kendall")
+  cor(truth, response, method = "spearman")
 }
 
 #' @include measures.R

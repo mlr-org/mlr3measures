@@ -14,7 +14,6 @@
 #' @export
 medae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   median(ae(truth, response))
 }
 

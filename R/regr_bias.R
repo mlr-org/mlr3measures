@@ -15,7 +15,6 @@
 #' @export
 bias = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   mean(truth - response)
 }
 

@@ -14,7 +14,6 @@
 #' @export
 maxse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   max(se(truth, response))
 }
 

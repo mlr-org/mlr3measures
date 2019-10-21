@@ -14,8 +14,7 @@
 #' @export
 ktau = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
-  cor(truth, response, use = "everything", method = "kendall")
+  cor(truth, response, method = "kendall")
 }
 
 #' @include measures.R

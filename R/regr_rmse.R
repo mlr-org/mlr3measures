@@ -14,7 +14,6 @@
 #' @export
 rmse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   sqrt(mean(se(truth, response)))
 }
 
