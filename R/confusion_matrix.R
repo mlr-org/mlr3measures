@@ -20,7 +20,7 @@
 #' truth = factor(sample(lvls, 20, replace = TRUE), levels = lvls)
 #' response = factor(sample(lvls, 20, replace = TRUE), levels = lvls)
 #'
-#' confusion_matrix(truth, response)
+#' confusion_matrix(truth, response, positive = "a")
 #' confusion_matrix(truth, response, positive = "a", relative = TRUE)
 #' confusion_matrix(truth, response, positive = "b")
 confusion_matrix = function(truth, response, positive, na_value = NaN, relative = FALSE) {
