@@ -20,7 +20,7 @@ Columns must be named with levels of \code{truth}.}
 Probabilities are clipped to \code{max(eps, min(1 - eps, p))}, otherwise the measure would
 be undefined for probabilities \code{p = 0} and \code{p = 1}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{

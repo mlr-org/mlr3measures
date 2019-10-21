@@ -15,7 +15,7 @@ Must have the same length as \code{response}.}
 Predicted response values.
 Must have the same length as \code{truth}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{

@@ -15,7 +15,7 @@ Must have the same levels and length as \code{response}.}
 Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{

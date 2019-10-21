@@ -18,7 +18,7 @@ Must have exactly same two levels and the same length as \code{truth}.}
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{

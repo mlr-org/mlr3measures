@@ -18,7 +18,7 @@ Must have exactly same two levels and the same length as \code{truth}.}
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -26,7 +26,7 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Binary classification measure defined as \deqn{
-   \frac{\mathrm{TP} \mathrm{TN} - \mathrm{FP} \mathrm{FN}}{\sqrt{(\mathrm{TP} + \mathrm{FP}) (\mathrm{TP} + \mathrm{FN}) (\mathrm{TN} + \mathrm{FP}) (\mathrm{TN} + \mathrm{FN})}}.
+   \frac{\mathrm{TP} \cdot \mathrm{TN} - \mathrm{FP} \cdot \mathrm{FN}}{\sqrt{(\mathrm{TP} + \mathrm{FP}) (\mathrm{TP} + \mathrm{FN}) (\mathrm{TN} + \mathrm{FP}) (\mathrm{TN} + \mathrm{FN})}}.
 }{
    (TP * TN - FP * FN) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)).
 }
