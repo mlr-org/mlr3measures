@@ -45,6 +45,12 @@ This measure is undefined if any element of \eqn{t} is \eqn{0}.
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+mape(truth, response)
+}
 \references{
 \cite{de_myttenaere_2016}
 }

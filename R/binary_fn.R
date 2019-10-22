@@ -12,6 +12,7 @@
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 fn = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)

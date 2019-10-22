@@ -17,6 +17,7 @@
 #' \cite{de_myttenaere_2016}
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 mape = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response)

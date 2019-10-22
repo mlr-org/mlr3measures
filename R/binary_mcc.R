@@ -18,6 +18,7 @@
 #' \cite{matthews_1975}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 mcc = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)

@@ -17,6 +17,7 @@
 #' This measure is undefined if FP = 0 or FN = 0.
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 dor = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)

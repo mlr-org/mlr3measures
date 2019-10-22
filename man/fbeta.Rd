@@ -57,6 +57,13 @@ TP + FP = 0 or TP + FN = 0.
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+fbeta(truth, response, positive = "a")
+}
 \references{
 \cite{sasaki_2007}
 

@@ -11,6 +11,7 @@
 #' @template classif_template
 #'
 #' @inheritParams classif_params
+#' @template classif_example
 #' @export
 acc = function(truth, response, ...) {
   assert_classif(truth, response = response)

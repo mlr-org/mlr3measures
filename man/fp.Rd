@@ -38,6 +38,13 @@ predictions indicating a positive class label while in fact it is negative.
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+fp(truth, response, positive = "a")
+}
 \references{
 \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 }

@@ -27,6 +27,7 @@
 #' @param beta :: `numeric(1)`\cr
 #'   Parameter to give either precision or recall more weight.
 #'   Default is 1, resulting in balanced weights.
+#' @template binary_example
 #' @export
 fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)

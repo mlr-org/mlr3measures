@@ -15,6 +15,7 @@
 #' This measure is undefined for constant \eqn{t}.
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 rrse = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)

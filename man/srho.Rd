@@ -35,6 +35,12 @@ Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"spe
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+srho(truth, response)
+}
 \references{
 \cite{rosset_2006}
 }

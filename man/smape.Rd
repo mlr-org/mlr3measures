@@ -45,6 +45,12 @@ This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+smape(truth, response)
+}
 \seealso{
 Other Regression Measures: \code{\link{bias}},
   \code{\link{ktau}}, \code{\link{mae}},

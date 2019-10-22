@@ -11,6 +11,7 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 maxae = function(truth, response, ...) {
   assert_regr(truth, response = response)

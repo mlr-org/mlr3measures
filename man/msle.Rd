@@ -45,6 +45,12 @@ This measure is undefined if any element of \eqn{t} or \eqn{r} is less than or e
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+msle(truth, response)
+}
 \seealso{
 Other Regression Measures: \code{\link{bias}},
   \code{\link{ktau}}, \code{\link{mae}},

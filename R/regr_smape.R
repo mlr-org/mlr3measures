@@ -14,6 +14,7 @@
 #' This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 smape = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)

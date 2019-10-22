@@ -44,6 +44,14 @@ where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b", "c")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+prob = matrix(runif(3 * 10), ncol = 3, dimnames = list(NULL, lvls))
+prob = t(apply(prob, 1, function(x) x / sum(x)))
+logloss(truth, prob)
+}
 \seealso{
 Other Classification Measures: \code{\link{acc}},
   \code{\link{ce}}

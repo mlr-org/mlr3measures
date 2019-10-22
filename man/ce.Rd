@@ -38,6 +38,13 @@ Classification measure defined as \deqn{
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b", "c")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+ce(truth, response)
+}
 \seealso{
 Other Classification Measures: \code{\link{acc}},
   \code{\link{logloss}}

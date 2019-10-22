@@ -11,6 +11,7 @@
 #' \cite{rosset_2006}
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 ktau = function(truth, response, ...) {
   assert_regr(truth, response = response)

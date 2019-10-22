@@ -39,6 +39,12 @@ Good predictions score close to 0.
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+bias(truth, response)
+}
 \seealso{
 Other Regression Measures: \code{\link{ktau}},
   \code{\link{mae}}, \code{\link{mape}},

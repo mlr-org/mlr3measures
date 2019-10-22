@@ -12,6 +12,7 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 pbias = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
