@@ -26,4 +26,4 @@ rse = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(rse, "regr", 0, Inf, TRUE)
+add_measure(rse, "Relative Squared Error", "regr", 0, Inf, TRUE)

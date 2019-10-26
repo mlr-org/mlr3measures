@@ -1,4 +1,4 @@
-#' @title Max Absolue Error
+#' @title Max Absolute Error
 #'
 #' @description
 #' Regression measure defined as \deqn{
@@ -19,4 +19,4 @@ maxae = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(maxae, "regr", 0, Inf, TRUE)
+add_measure(maxae, "Max Absolute Error", "regr", 0, Inf, TRUE)

@@ -47,4 +47,4 @@ fbeta_cm = function(m, beta = 1, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fbeta, "binary", 0, 1, FALSE)
+add_measure(fbeta, "F-beta score", "binary", 0, 1, FALSE)

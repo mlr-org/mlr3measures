@@ -29,4 +29,4 @@ dor_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(dor, "binary", 0, Inf, FALSE)
+add_measure(dor, "Diagnostic Odds Ratio", "binary", 0, Inf, FALSE)

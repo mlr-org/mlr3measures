@@ -19,4 +19,4 @@ medse = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(medse, "regr", 0, Inf, TRUE)
+add_measure(medse, "Median Squared Error", "regr", 0, Inf, TRUE)

@@ -29,4 +29,4 @@ fdr_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fdr, "binary", 0, 1, TRUE)
+add_measure(fdr, "False Discovery Rate", "binary", 0, 1, TRUE)

@@ -29,4 +29,4 @@ fomr_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fomr, "binary", 0, 1, TRUE)
+add_measure(fomr, "False Omission Rate", "binary", 0, 1, TRUE)

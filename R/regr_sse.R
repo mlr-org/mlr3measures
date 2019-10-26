@@ -19,4 +19,4 @@ sse = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(sse, "regr", 0, Inf, TRUE)
+add_measure(sse, "Sum of Squared Errors", "regr", 0, Inf, TRUE)

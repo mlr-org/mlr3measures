@@ -38,6 +38,6 @@ recall = tpr
 sensitivity = tpr
 
 #' @include measures.R
-add_measure(tpr, "binary", 0, 1, FALSE)
-add_measure(recall, "binary", 0, 1, FALSE)
-add_measure(sensitivity, "binary", 0, 1, FALSE)
+add_measure(tpr, "True Positive Rate", "binary", 0, 1, FALSE)
+add_measure(recall, "Recall", "binary", 0, 1, FALSE)
+add_measure(sensitivity, "Sensitivity", "binary", 0, 1, FALSE)

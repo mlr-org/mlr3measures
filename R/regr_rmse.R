@@ -19,4 +19,4 @@ rmse = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(rmse, "regr", 0, Inf, TRUE)
+add_measure(rmse, "Root Mean Squared Error", "regr", 0, Inf, TRUE)

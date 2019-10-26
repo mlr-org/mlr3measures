@@ -27,4 +27,4 @@ mape = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(mape, "regr", 0, Inf, TRUE)
+add_measure(mape, "Mean Absolute Percent Error", "regr", 0, Inf, TRUE)

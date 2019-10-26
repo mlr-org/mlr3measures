@@ -23,4 +23,4 @@ tn_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(tn, "binary", 0, Inf, FALSE)
+add_measure(tn, "True Negatives", "binary", 0, Inf, FALSE)

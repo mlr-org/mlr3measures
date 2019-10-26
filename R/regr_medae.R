@@ -19,4 +19,4 @@ medae = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(medae, "regr", 0, Inf, TRUE)
+add_measure(medae, "Median Absolute Errors", "regr", 0, Inf, TRUE)

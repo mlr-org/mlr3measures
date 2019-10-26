@@ -30,4 +30,4 @@ fnr_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fnr, "binary", 0, 1, TRUE)
+add_measure(fnr, "False Negative Rate", "binary", 0, 1, TRUE)

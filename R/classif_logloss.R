@@ -34,4 +34,4 @@ logloss = function(truth, prob, eps = 1e-15, ...){
 }
 
 #' @include measures.R
-add_measure(logloss, "classif", 0, Inf, TRUE)
+add_measure(logloss, "Log Loss", "classif", 0, Inf, TRUE)

@@ -24,4 +24,4 @@ fn_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fn, "binary", 0, Inf, TRUE)
+add_measure(fn, "False Negatives", "binary", 0, Inf, TRUE)

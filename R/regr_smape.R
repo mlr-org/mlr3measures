@@ -25,4 +25,4 @@ smape = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(smape, "regr", 0, 2, TRUE)
+add_measure(smape, "Symmetric Mean Absolute Percent Error", "regr", 0, 2, TRUE)

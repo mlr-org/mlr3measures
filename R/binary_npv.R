@@ -29,4 +29,4 @@ npv_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(npv, "binary", 0, 1, FALSE)
+add_measure(npv, "Negative Predictive Value", "binary", 0, 1, FALSE)

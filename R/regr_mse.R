@@ -19,4 +19,4 @@ mse = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(mse, "regr", 0, Inf, TRUE)
+add_measure(mse, "Mean Squared Error", "regr", 0, Inf, TRUE)

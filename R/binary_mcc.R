@@ -37,4 +37,4 @@ mcc_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(mcc, "binary", -1, 1, FALSE)
+add_measure(mcc, "Matthews Correlation Coefficient", "binary", -1, 1, FALSE)

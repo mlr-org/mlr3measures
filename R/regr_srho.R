@@ -19,4 +19,4 @@ srho = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(srho, "regr", -1, 1, FALSE)
+add_measure(srho, "Spearman's rho", "regr", -1, 1, FALSE)

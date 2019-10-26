@@ -2,7 +2,7 @@
 % Please edit documentation in R/regr_maxae.R
 \name{maxae}
 \alias{maxae}
-\title{Max Absolue Error}
+\title{Max Absolute Error}
 \usage{
 maxae(truth, response, ...)
 }

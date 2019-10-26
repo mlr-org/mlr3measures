@@ -19,4 +19,4 @@ mae = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(mae, "regr", 0, Inf, TRUE)
+add_measure(mae, "Mean Absolute Errors", "regr", 0, Inf, TRUE)

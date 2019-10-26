@@ -1,3 +1,5 @@
+TOL = sqrt(.Machine$double.eps)
+
 # absolute error
 ae = function(truth, response) {
   abs(truth - response)

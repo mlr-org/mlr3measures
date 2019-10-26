@@ -24,4 +24,4 @@ rmsle = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(rmsle, "regr", 0, Inf, TRUE)
+add_measure(rmsle, "Root Mean Squared Log Error", "regr", 0, Inf, TRUE)

@@ -24,4 +24,4 @@ rae = function(truth, response, na_value = NaN, ...) {
 
 
 #' @include measures.R
-add_measure(rae, "regr", 0, Inf, TRUE)
+add_measure(rae, "Relative Absolute Error", "regr", 0, Inf, TRUE)

@@ -28,4 +28,4 @@ rsq = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(rsq, "regr", -Inf, 1, FALSE)
+add_measure(rsq, "R Squared", "regr", -Inf, 1, FALSE)

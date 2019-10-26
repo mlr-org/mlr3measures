@@ -23,4 +23,4 @@ tp_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(tp, "binary", 0, Inf, FALSE)
+add_measure(tp, "True Positives", "binary", 0, Inf, FALSE)

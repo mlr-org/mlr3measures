@@ -22,4 +22,4 @@ pbias = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(pbias, "regr", -Inf, Inf, NA)
+add_measure(pbias, "Percent Bias", "regr", -Inf, Inf, NA)

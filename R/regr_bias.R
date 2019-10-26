@@ -20,4 +20,4 @@ bias = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(bias, "regr", -Inf, Inf, NA)
+add_measure(bias, "Bias", "regr", -Inf, Inf, NA)
