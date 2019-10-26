@@ -9,7 +9,7 @@ auc(truth, prob, positive, na_value = NaN, ...)
 \arguments{
 \item{truth}{:: \code{factor()}\cr
 True (observed) labels.
-Must have exactly same two levels and the same length as \code{response}.}
+Must have the exactly same two levels and the same length as \code{response}.}
 
 \item{prob}{:: \code{numeric()}\cr
 Predicted probability for positive class.

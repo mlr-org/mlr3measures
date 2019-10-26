@@ -20,10 +20,10 @@ NULL
 #'
 #' @param truth :: `factor()`\cr
 #'   True (observed) labels.
-#'   Must have exactly same two levels and the same length as `response`.
+#'   Must have the exactly same two levels and the same length as `response`.
 #' @param response :: `factor()`\cr
 #'   Predicted response labels.
-#'   Must have exactly same two levels and the same length as `truth`.
+#'   Must have the exactly same two levels and the same length as `truth`.
 #' @param prob :: `numeric()`\cr
 #'   Predicted probability for positive class.
 #'   Must have exactly same length as `truth`.
