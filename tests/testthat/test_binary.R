@@ -1,12 +1,16 @@
 context("binary classification measures")
 
 test_that("trigger all", {
-  N = 20L
-  truth = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
-  response = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
-  prob = runif(N)
-  positive = sample(letters[1:2], 1)
-  conf = cm(truth, response, positive = positive)
+  N = 30L
+  repeat {
+    truth = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
+    response = factor(sample(letters[1:2], N, replace = TRUE), levels = letters[1:2])
+    prob = runif(N)
+    positive = sample(letters[1:2], 1)
+    conf = cm(truth, response, positive = positive)
+    if (min(conf) > 0)
+      break
+  }
 
   for (m in as.list(measures)) {
     if (m$type != "binary")

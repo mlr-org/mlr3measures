@@ -2,8 +2,8 @@ context("regression measures")
 
 test_that("trigger all", {
   N = 10L
-  truth = runif(N)
-  response = runif(N)
+  truth = 1 + runif(N)
+  response = 1 + runif(N)
 
   for (m in as.list(measures)) {
     if (m$type != "regr")

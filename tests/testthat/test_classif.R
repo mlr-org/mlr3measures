@@ -3,9 +3,15 @@ context("classification measures")
 test_that("trigger all", {
   k = 3
   n = 10
-  truth = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
-  response = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
-  prob = matrix(runif(n*k), nrow = n)
+  repeat {
+    truth = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
+    response = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
+    prob = matrix(runif(n*k), nrow = n)
+    if (min(table(truth)) > 0 && min(table(response)) > 0)
+      break
+  }
+
+  prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = letters[1:k]
 
   for (m in as.list(measures)) {
