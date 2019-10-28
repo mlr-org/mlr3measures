@@ -1,6 +1,7 @@
 # mlr3measures
 
 [![Travis build status](https://travis-ci.org/mlr-org/mlr3measures.svg?branch=master)](https://travis-ci.org/mlr-org/mlr3measures)
+[![CRAN Status Badge](https://www.r-pkg.org/badges/version-ago/mlr3measures)](https://cran.r-project.org/package=mlr3measures)
 
 Implements multiple performance measures for supervised learning.
 Includes over 40 measures for regression and classification.
