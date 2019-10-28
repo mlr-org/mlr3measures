@@ -35,7 +35,7 @@ Performance value as \code{numeric(1)}.
 \description{
 Binary classification measure defined with \eqn{P} as \code{\link[=precision]{precision()}} and \eqn{R} as
 \code{\link[=recall]{recall()}} as \deqn{
-   (1 + \beta^2) \frac{PR}{(\beta^2 P) + R}.
+   (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
 }{
    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
 }

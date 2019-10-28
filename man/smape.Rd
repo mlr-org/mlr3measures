@@ -27,7 +27,7 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Regression measure defined as \deqn{
-  \frac{2}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{\left| t_i \right| + \left| t_i \right|}.
+  \frac{2}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{\left| t_i \right| + \left| r_i \right|}.
 }{
   2 * mean(abs(t - r) / (abs(t) + abs(r))).
 }
