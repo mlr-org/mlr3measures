@@ -49,3 +49,35 @@ test_that("tests from Metrics", {
   expect_equal(fbeta(as_fac(1,1,1,1), as_fac(1,0,0,1), "a"), 2/3)
   expect_equal(fbeta(as_fac(1,1,0,0), as_fac(1,1,1,1), "a", beta=0), 1/2)
 })
+
+
+test_that("confusion measures", {
+  truth = factor(rep(c("a", "b"), each = 5), levels = c("a", "b"))
+  response = factor(c("a", "a", "a", "b", "b", "b", "b", "b", "b", "a"), levels = c("a", "b"))
+  # table(response, truth)
+
+  TP = tp(response, truth, positive = "a")
+  TN = tn(response, truth, positive = "a")
+  FP = fp(response, truth, positive = "a")
+  FN = fn(response, truth, positive = "a")
+
+  expect_identical(TP, 3L)
+  expect_identical(TN, 4L)
+  expect_identical(FP, 2L)
+  expect_identical(FN, 1L)
+
+  expect_identical(dor(response, truth, positive = "a"), (TP / FP) / (FN / TN))
+  expect_identical(fdr(response, truth, positive = "a"), FP / (TP + FP))
+  expect_identical(fnr(response, truth, positive = "a"), FN / (TP + FN))
+  expect_identical(fomr(response, truth, positive = "a"), FN / (FN + TN))
+  expect_identical(fpr(response, truth, positive = "a"), FP / (FP + TN))
+  expect_identical(mcc(response, truth, positive = "a"), (TP * TN - FP * FN) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)))
+  expect_identical(npv(response, truth, positive = "a"), TN / (FN + TN))
+  expect_identical(ppv(response, truth, positive = "a"), TP / (TP + FP))
+  expect_identical(precision(response, truth, positive = "a"), TP / (TP + FP))
+  expect_identical(recall(response, truth, positive = "a"), TP / (TP + FN))
+  expect_identical(sensitivity(response, truth, positive = "a"), TP / (TP + FN))
+  expect_identical(specificity(response, truth, positive = "a"), TN / (FP + TN))
+  expect_identical(tnr(response, truth, positive = "a"), TN / (FP + TN))
+  expect_identical(tpr(response, truth, positive = "a"), TP / (TP + FN))
+})
