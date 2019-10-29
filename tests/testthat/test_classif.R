@@ -3,13 +3,9 @@ context("classification measures")
 test_that("trigger all", {
   k = 3
   n = 10
-  repeat {
-    truth = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
-    response = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
-    prob = matrix(runif(n*k), nrow = n)
-    if (min(table(truth)) > 0 && min(table(response)) > 0)
-      break
-  }
+  truth = ssample(letters[1:k], n)
+  response = ssample(letters[1:k], n)
+  prob = matrix(runif(n*k, min = 1e-8, max = 1 - 1e-8), nrow = n)
 
   prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = letters[1:k]
@@ -18,7 +14,7 @@ test_that("trigger all", {
     if (m$type != "classif")
       next
     f = match.fun(m$id)
-    perf = wrapper(f, truth = truth, response = response, prob = prob)
+    perf = f(truth = truth, response = response, prob = prob)
     expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
   }
 })

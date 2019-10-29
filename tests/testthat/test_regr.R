@@ -9,7 +9,7 @@ test_that("trigger all", {
     if (m$type != "regr")
       next
     f = match.fun(m$id)
-    perf = wrapper(f, truth = truth, response = response)
+    perf = f(truth = truth, response = response)
     expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
   }
 })
