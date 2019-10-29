@@ -2,6 +2,7 @@
 
 export(acc)
 export(auc)
+export(bacc)
 export(bias)
 export(ce)
 export(confusion_matrix)

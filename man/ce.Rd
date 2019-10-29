@@ -47,7 +47,7 @@ ce(truth, response)
 }
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{logloss}}
+  \code{\link{bacc}}, \code{\link{logloss}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

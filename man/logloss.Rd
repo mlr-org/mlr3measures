@@ -54,7 +54,7 @@ logloss(truth, prob)
 }
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{ce}}
+  \code{\link{bacc}}, \code{\link{ce}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

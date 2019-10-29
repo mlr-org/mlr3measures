@@ -17,6 +17,11 @@ Matrix of predicted probabilities, each column is a vector of probabilities for 
 specific class label.
 Columns must be named with levels of \code{truth}.}
 
+\item{sample_weights}{:: \code{numeric()}\cr
+Non-negative sample weights.
+Must have the same levels and length as \code{truth}.
+Defaults to equal sample weights.}
+
 \item{na_value}{:: \code{numeric(1)}\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
