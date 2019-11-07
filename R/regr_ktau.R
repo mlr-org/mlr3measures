@@ -11,12 +11,12 @@
 #' \cite{rosset_2006}
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 ktau = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
-  cor(truth, response, use = "everything", method = "kendall")
+  cor(truth, response, method = "kendall")
 }
 
 #' @include measures.R
-add_measure(ktau, "regr", -1, 1, FALSE)
+add_measure(ktau, "Kendall's tau", "regr", -1, 1, FALSE)

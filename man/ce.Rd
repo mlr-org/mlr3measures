@@ -15,7 +15,7 @@ Must have the same levels and length as \code{response}.}
 Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -31,17 +31,23 @@ Classification measure defined as \deqn{
 \section{Meta Information}{
 
 \itemize{
-\item Type: classif
-\item Minimum value: 0
-\item Maximum value: 1
-\item Minimize: TRUE
-\item Required prediction: response
+\item Type: \code{"classif"}
+\item Range: \eqn{[0, 1]}{[0, 1]}
+\item Minimize: \code{TRUE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b", "c")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+ce(truth, response)
+}
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{logloss}}
+  \code{\link{bacc}}, \code{\link{logloss}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

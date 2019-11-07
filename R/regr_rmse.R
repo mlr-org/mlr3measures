@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 rmse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   sqrt(mean(se(truth, response)))
 }
 
 #' @include measures.R
-add_measure(rmse, "regr", 0, Inf, TRUE)
+add_measure(rmse, "Root Mean Squared Error", "regr", 0, Inf, TRUE)

@@ -12,14 +12,14 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 pbias = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-
   if (any(abs(truth) < TOL))
     return(na_value)
   mean((truth - response) / abs(truth))
 }
 
 #' @include measures.R
-add_measure(pbias, "regr", -Inf, Inf, NA)
+add_measure(pbias, "Percent Bias", "regr", -Inf, Inf, NA)

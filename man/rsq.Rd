@@ -19,7 +19,7 @@ Must have the same length as \code{truth}.}
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -40,14 +40,19 @@ This measure is undefined for constant \eqn{t}.
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: -Inf
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{(-\infty, 1]}{(-Inf, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+rsq(truth, response)
+}
 \seealso{
 Other Regression Measures: \code{\link{bias}},
   \code{\link{ktau}}, \code{\link{mae}},

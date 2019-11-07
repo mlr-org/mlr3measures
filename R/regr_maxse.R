@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 maxse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   max(se(truth, response))
 }
 
 #' @include measures.R
-add_measure(maxse, "regr", 0, Inf, TRUE)
+add_measure(maxse, "Max Squared Error", "regr", 0, Inf, TRUE)

@@ -6,7 +6,7 @@
 #' }{
 #'    FP / (FP + TN).
 #' }
-#' Also know as "miss rate" or "false alarm rate".
+#' Also know as fall out or probability of false alarm.
 #'
 #' @templateVar mid fpr
 #' @template binary_template
@@ -18,6 +18,7 @@
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 fpr = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
@@ -29,4 +30,4 @@ fpr_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fpr, "binary", 0, 1, TRUE)
+add_measure(fpr, "False Positive Rate", "binary", 0, 1, TRUE)

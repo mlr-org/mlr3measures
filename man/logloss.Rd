@@ -17,10 +17,10 @@ specific class label.
 Columns must be named with levels of \code{truth}.}
 
 \item{eps}{:: \code{numeric(1)}\cr
-Probabilities are clipped to \code{max(eps, min(1 - eps, p))}, otherwise the measure would
-be undefined for probabilities \code{p = 0} and \code{p = 1}.}
+Probabilities are clipped to \code{max(eps, min(1 - eps, p))}.
+Otherwise the measure would be undefined for probabilities \code{p = 0} and \code{p = 1}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -37,17 +37,24 @@ where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 \section{Meta Information}{
 
 \itemize{
-\item Type: classif
-\item Minimum value: 0
-\item Maximum value: Inf
-\item Minimize: TRUE
-\item Required prediction: prob
+\item Type: \code{"classif"}
+\item Range: \eqn{[0, \infty)}{[0, Inf)}
+\item Minimize: \code{TRUE}
+\item Required prediction: \code{prob}
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b", "c")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+prob = matrix(runif(3 * 10), ncol = 3, dimnames = list(NULL, lvls))
+prob = t(apply(prob, 1, function(x) x / sum(x)))
+logloss(truth, prob)
+}
 \seealso{
 Other Classification Measures: \code{\link{acc}},
-  \code{\link{ce}}
+  \code{\link{bacc}}, \code{\link{ce}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

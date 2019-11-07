@@ -18,6 +18,7 @@
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 ppv = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
@@ -33,5 +34,5 @@ ppv_cm = function(m, na_value = NaN) {
 precision = ppv
 
 #' @include measures.R
-add_measure(ppv, "binary", 0, 1, FALSE)
-add_measure(precision, "binary", 0, 1, FALSE)
+add_measure(ppv, "Positive Predictive Value", "binary", 0, 1, FALSE)
+add_measure(precision, "Precision", "binary", 0, 1, FALSE)

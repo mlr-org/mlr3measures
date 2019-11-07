@@ -15,7 +15,7 @@ Must have the same length as \code{response}.}
 Predicted response values.
 Must have the same length as \code{truth}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -28,14 +28,19 @@ Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"spe
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: -1
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{[-1, 1]}{[-1, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+srho(truth, response)
+}
 \references{
 \cite{rosset_2006}
 }

@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 mae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   mean(ae(truth, response))
 }
 
 #' @include measures.R
-add_measure(mae, "regr", 0, Inf, TRUE)
+add_measure(mae, "Mean Absolute Errors", "regr", 0, Inf, TRUE)

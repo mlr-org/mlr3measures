@@ -44,4 +44,7 @@ reference:
     contents:
       - measures
       - confusion_matrix
+<<<<<<< HEAD
       - mlr3measures-package
+=======
+>>>>>>> f84d3d360057412c6d07f04f6146f139481ed55d

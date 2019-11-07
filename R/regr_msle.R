@@ -14,14 +14,14 @@
 #' This measure is undefined if any element of \eqn{t} or \eqn{r} is less than or equal to \eqn{-1}.
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 msle = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-
   if (min(truth, response) < -1)
     return(na_value)
   mean(sle(truth, response))
 }
 
 #' @include measures.R
-add_measure(msle, "regr", 0, Inf, TRUE)
+add_measure(msle, "Mean Squared Log Error", "regr", 0, Inf, TRUE)

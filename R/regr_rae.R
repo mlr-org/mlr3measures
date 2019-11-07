@@ -15,13 +15,13 @@
 #' This measure is undefined for constant \eqn{t}.
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 rae = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-
   div(sum(ae(truth, response)), sum(ae(truth, mean(truth))), na_value)
 }
 
 
 #' @include measures.R
-add_measure(rae, "regr", 0, Inf, TRUE)
+add_measure(rae, "Relative Absolute Error", "regr", 0, Inf, TRUE)

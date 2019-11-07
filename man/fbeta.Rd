@@ -9,11 +9,11 @@ fbeta(truth, response, positive, beta = 1, na_value = NaN, ...)
 \arguments{
 \item{truth}{:: \code{factor()}\cr
 True (observed) labels.
-Must have exactly same two levels and the same length as \code{response}.}
+Must have the exactly same two levels and the same length as \code{response}.}
 
 \item{response}{:: \code{factor()}\cr
 Predicted response labels.
-Must have exactly same two levels and the same length as \code{truth}.}
+Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
@@ -26,7 +26,7 @@ Default is 1, resulting in balanced weights.}
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -35,7 +35,7 @@ Performance value as \code{numeric(1)}.
 \description{
 Binary classification measure defined with \eqn{P} as \code{\link[=precision]{precision()}} and \eqn{R} as
 \code{\link[=recall]{recall()}} as \deqn{
-   (1 + \beta^2) \frac{PR}{(\beta^2 P) + R}.
+   (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
 }{
    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
 }
@@ -50,14 +50,20 @@ TP + FP = 0 or TP + FN = 0.
 \section{Meta Information}{
 
 \itemize{
-\item Type: binary
-\item Minimum value: 0
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"binary"}
+\item Range: \eqn{[0, 1]}{[0, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+fbeta(truth, response, positive = "a")
+}
 \references{
 \cite{sasaki_2007}
 

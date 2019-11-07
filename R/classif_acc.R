@@ -11,6 +11,7 @@
 #' @template classif_template
 #'
 #' @inheritParams classif_params
+#' @template classif_example
 #' @export
 acc = function(truth, response, ...) {
   assert_classif(truth, response = response)
@@ -22,4 +23,4 @@ acc_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(acc, "classif", 0, 1, FALSE)
+add_measure(acc, "Classification Accuracy", "classif", 0, 1, FALSE)

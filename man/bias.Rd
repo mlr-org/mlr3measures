@@ -15,7 +15,7 @@ Must have the same length as \code{response}.}
 Predicted response values.
 Must have the same length as \code{truth}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -32,14 +32,19 @@ Good predictions score close to 0.
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: -Inf
-\item Maximum value: Inf
-\item Minimize: NA
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{(-\infty, \infty)}{(-Inf, Inf)}
+\item Minimize: \code{NA}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+bias(truth, response)
+}
 \seealso{
 Other Regression Measures: \code{\link{ktau}},
   \code{\link{mae}}, \code{\link{mape}},

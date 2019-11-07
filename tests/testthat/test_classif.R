@@ -3,16 +3,18 @@ context("classification measures")
 test_that("trigger all", {
   k = 3
   n = 10
-  truth = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
-  response = factor(sample(letters[1:k], n, replace = TRUE), levels = letters[1:k])
-  prob = matrix(runif(n*k), nrow = n)
+  truth = ssample(letters[1:k], n)
+  response = ssample(letters[1:k], n)
+  prob = matrix(runif(n*k, min = 1e-8, max = 1 - 1e-8), nrow = n)
+
+  prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = letters[1:k]
 
   for (m in as.list(measures)) {
     if (m$type != "classif")
       next
     f = match.fun(m$id)
-    perf = wrapper(f, truth = truth, response = response, prob = prob)
+    perf = f(truth = truth, response = response, prob = prob)
     expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
   }
 })
@@ -66,6 +68,24 @@ test_that("tests from Metrics", {
 
   # kappa <- MeanQuadraticWeightedKappa( c(.5, .8), c(1.0, .5) )
   # expect_equal(kappa, 0.624536446425734)
+})
+
+test_that("bacc", {
+  truth = factor(c("a", "a", "b", "b"), levels = c("a", "b"))
+  response = factor(c("a", "a", "b", "a"), levels = c("a", "b"))
+  expect_equal(bacc(truth, response), 0.75)
+  expect_equal(bacc(truth, response, sample_weights = c(0.25, 0.25, 0.25, 0.25)), 0.75)
+  expect_equal(bacc(truth, response, sample_weights = c(0.25, 0.25, 0.25, 1)), 0.6)
+
+  truth = factor(c("a", "a", "a", "a", "a", "b"), levels = c("a", "b"))
+  response = factor(c("a", "a", "a", "a", "b", "b"), levels = c("a", "b"))
+  expect_equal(bacc(truth, response), 0.9)
+  expect_equal(bacc(truth, response, sample_weights = c(0, 0, 0, 0, 0, 1)), 1)
+  expect_equal(bacc(truth, response, sample_weights = c(0, 0, 0, 0, 0.5, 0.5)), 0.5)
+
+  truth = factor(c("c", "a", "a", "a", "a", "b"), levels = c("a", "b", "c"))
+  response = factor(c("c", "a", "a", "a", "b", "b"), levels = c("a", "b", "c"))
+  expect_equal(round(bacc(truth, response), 3), 0.917)
 })
 
 # test_that("ber", {

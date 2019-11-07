@@ -9,16 +9,16 @@ mcc(truth, response, positive, ...)
 \arguments{
 \item{truth}{:: \code{factor()}\cr
 True (observed) labels.
-Must have exactly same two levels and the same length as \code{response}.}
+Must have the exactly same two levels and the same length as \code{response}.}
 
 \item{response}{:: \code{factor()}\cr
 Predicted response labels.
-Must have exactly same two levels and the same length as \code{truth}.}
+Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -26,7 +26,7 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Binary classification measure defined as \deqn{
-   \frac{\mathrm{TP} \mathrm{TN} - \mathrm{FP} \mathrm{FN}}{\sqrt{(\mathrm{TP} + \mathrm{FP}) (\mathrm{TP} + \mathrm{FN}) (\mathrm{TN} + \mathrm{FP}) (\mathrm{TN} + \mathrm{FN})}}.
+   \frac{\mathrm{TP} \cdot \mathrm{TN} - \mathrm{FP} \cdot \mathrm{FN}}{\sqrt{(\mathrm{TP} + \mathrm{FP}) (\mathrm{TP} + \mathrm{FN}) (\mathrm{TN} + \mathrm{FP}) (\mathrm{TN} + \mathrm{FN})}}.
 }{
    (TP * TN - FP * FN) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)).
 }
@@ -38,14 +38,20 @@ The denominator is then set to 1.
 \section{Meta Information}{
 
 \itemize{
-\item Type: binary
-\item Minimum value: -1
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"binary"}
+\item Range: \eqn{[-1, 1]}{[-1, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+mcc(truth, response, positive = "a")
+}
 \references{
 \cite{matthews_1975}
 }

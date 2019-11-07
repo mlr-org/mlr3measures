@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 sae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   sum(ae(truth, response))
 }
 
 #' @include measures.R
-add_measure(sae, "regr", 0, Inf, TRUE)
+add_measure(sae, "Sum of Absolute Errors", "regr", 0, Inf, TRUE)

@@ -17,6 +17,7 @@
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 npv = function(truth, response, positive, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
@@ -28,4 +29,4 @@ npv_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(npv, "binary", 0, 1, FALSE)
+add_measure(npv, "Negative Predictive Value", "binary", 0, 1, FALSE)

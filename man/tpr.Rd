@@ -15,11 +15,11 @@ sensitivity(truth, response, positive, na_value = NaN, ...)
 \arguments{
 \item{truth}{:: \code{factor()}\cr
 True (observed) labels.
-Must have exactly same two levels and the same length as \code{response}.}
+Must have the exactly same two levels and the same length as \code{response}.}
 
 \item{response}{:: \code{factor()}\cr
 Predicted response labels.
-Must have exactly same two levels and the same length as \code{truth}.}
+Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
@@ -28,7 +28,7 @@ Name of the positive class.}
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -48,14 +48,20 @@ This measure is undefined if FP + TN = 0.
 \section{Meta Information}{
 
 \itemize{
-\item Type: binary
-\item Minimum value: 0
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: response
+\item Type: \code{"binary"}
+\item Range: \eqn{[0, 1]}{[0, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+lvls = c("a", "b")
+truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
+tpr(truth, response, positive = "a")
+}
 \references{
 \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 }

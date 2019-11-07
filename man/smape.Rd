@@ -19,7 +19,7 @@ Must have the same length as \code{truth}.}
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -27,7 +27,7 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Regression measure defined as \deqn{
-  \frac{2}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{\left| t_i \right| + \left| t_i \right|}.
+  \frac{2}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{\left| t_i \right| + \left| r_i \right|}.
 }{
   2 * mean(abs(t - r) / (abs(t) + abs(r))).
 }
@@ -38,14 +38,19 @@ This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 \section{Meta Information}{
 
 \itemize{
-\item Type: regr
-\item Minimum value: 0
-\item Maximum value: 2
-\item Minimize: TRUE
-\item Required prediction: response
+\item Type: \code{"regr"}
+\item Range: \eqn{[0, 2]}{[0, 2]}
+\item Minimize: \code{TRUE}
+\item Required prediction: \code{response}
 }
 }
 
+\examples{
+set.seed(1)
+truth = 1:10
+response = truth + rnorm(10)
+smape(truth, response)
+}
 \seealso{
 Other Regression Measures: \code{\link{bias}},
   \code{\link{ktau}}, \code{\link{mae}},

@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 medse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   median(se(truth, response))
 }
 
 #' @include measures.R
-add_measure(medse, "regr", 0, Inf, TRUE)
+add_measure(medse, "Median Squared Error", "regr", 0, Inf, TRUE)

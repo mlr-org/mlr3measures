@@ -13,6 +13,10 @@
 #' all negative.
 #'
 #' @inheritParams binary_params
+#'
+#' @references
+#' \cite{youden_1950}
+#'
 #' @export
 #' @examples
 #' truth = factor(c("a", "a", "a", "b"))
@@ -33,4 +37,4 @@ auc = function(truth, prob, positive, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(auc, "binary", 0, 1, FALSE)
+add_measure(auc, "Area Under the ROC Curve", "binary", 0, 1, FALSE)

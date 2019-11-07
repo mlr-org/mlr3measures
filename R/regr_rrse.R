@@ -15,10 +15,10 @@
 #' This measure is undefined for constant \eqn{t}.
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 rrse = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-
   v = var(truth)
   if (v < TOL)
     return(na_value)
@@ -26,4 +26,4 @@ rrse = function(truth, response, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(rrse, "regr", 0, Inf, TRUE)
+add_measure(rrse, "Root Relative Squared Error", "regr", 0, Inf, TRUE)

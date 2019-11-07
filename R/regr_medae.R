@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 medae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   median(ae(truth, response))
 }
 
 #' @include measures.R
-add_measure(medae, "regr", 0, Inf, TRUE)
+add_measure(medae, "Median Absolute Errors", "regr", 0, Inf, TRUE)

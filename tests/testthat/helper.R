@@ -1,7 +1,6 @@
 library(checkmate)
 
-wrapper = function(f, ...) {
-  ddd = list(...)
-  nn = intersect(names(ddd), formalArgs(f))
-  do.call(f, list(...)[nn])
+ssample = function(lvls, N) {
+  x = c(lvls, sample(lvls, N - length(lvls), replace = TRUE))
+  factor(sample(x), levels = lvls)
 }

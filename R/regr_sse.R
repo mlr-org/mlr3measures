@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 sse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   sum(se(truth, response))
 }
 
 #' @include measures.R
-add_measure(sse, "regr", 0, Inf, TRUE)
+add_measure(sse, "Sum of Squared Errors", "regr", 0, Inf, TRUE)

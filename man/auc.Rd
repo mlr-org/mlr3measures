@@ -9,7 +9,7 @@ auc(truth, prob, positive, na_value = NaN, ...)
 \arguments{
 \item{truth}{:: \code{factor()}\cr
 True (observed) labels.
-Must have exactly same two levels and the same length as \code{response}.}
+Must have the exactly same two levels and the same length as \code{response}.}
 
 \item{prob}{:: \code{numeric()}\cr
 Predicted probability for positive class.
@@ -22,7 +22,7 @@ Name of the positive class.}
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: any\cr
+\item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -40,11 +40,10 @@ all negative.
 \section{Meta Information}{
 
 \itemize{
-\item Type: binary
-\item Minimum value: 0
-\item Maximum value: 1
-\item Minimize: FALSE
-\item Required prediction: prob
+\item Type: \code{"binary"}
+\item Range: \eqn{[0, 1]}{[0, 1]}
+\item Minimize: \code{FALSE}
+\item Required prediction: \code{prob}
 }
 }
 
@@ -52,6 +51,9 @@ all negative.
 truth = factor(c("a", "a", "a", "b"))
 prob = c(.6, .7, .1, .4)
 auc(truth, prob, "a")
+}
+\references{
+\cite{youden_1950}
 }
 \seealso{
 Other Binary Classification Measures: \code{\link{dor}},

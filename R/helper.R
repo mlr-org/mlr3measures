@@ -1,3 +1,5 @@
+TOL = sqrt(.Machine$double.eps)
+
 # absolute error
 ae = function(truth, response) {
   abs(truth - response)
@@ -27,6 +29,7 @@ div = function(nominator, denominator, na_value) {
     nominator / denominator
 }
 
+# confusion matrix
 cm = function(truth, response, positive = NULL) {
   if (!is.null(positive)) {
     truth = relevel(truth, positive)
@@ -59,4 +62,17 @@ cite_bib = function(key) {
   }
 
   paste0(tools::toRd(bib[[key]]), "\n")
+}
+
+# used in roxygen templates
+format_range = function(item) {
+  l = item$lower
+  u = item$upper
+
+  str = sprintf("%s%s, %s%s",
+    if (is.finite(l)) "[" else "(",
+    if (is.finite(l)) c(l, l) else c("-\\infty", "-Inf"),
+    if (is.finite(u)) c(u, u) else c("\\infty", "Inf"),
+    if (is.finite(u)) "]" else ")")
+  paste0("\\eqn{", str[1L], "}{", str[2L], "}")
 }

@@ -11,12 +11,12 @@
 #' @template regr_template
 #'
 #' @inheritParams regr_params
+#' @template regr_example
 #' @export
 mse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-
   mean(se(truth, response))
 }
 
 #' @include measures.R
-add_measure(mse, "regr", 0, Inf, TRUE)
+add_measure(mse, "Mean Squared Error", "regr", 0, Inf, TRUE)

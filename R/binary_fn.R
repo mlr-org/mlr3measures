@@ -12,6 +12,7 @@
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
 #' @export
 fn = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)
@@ -23,4 +24,4 @@ fn_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(fn, "binary", 0, Inf, TRUE)
+add_measure(fn, "False Negatives", "binary", 0, Inf, TRUE)
