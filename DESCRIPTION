@@ -22,10 +22,10 @@ Imports:
     checkmate
 Suggests:
     bibtex,
-    testthat
+    tinytest
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0
 Collate:
     'assertions.R'
     'measures.R'
