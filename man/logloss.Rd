@@ -53,8 +53,10 @@ prob = t(apply(prob, 1, function(x) x / sum(x)))
 logloss(truth, prob)
 }
 \seealso{
-Other Classification Measures: \code{\link{acc}},
-  \code{\link{bacc}}, \code{\link{ce}}
+Other Classification Measures: 
+\code{\link{acc}()},
+\code{\link{bacc}()},
+\code{\link{ce}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

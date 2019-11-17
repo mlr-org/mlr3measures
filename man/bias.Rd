@@ -46,16 +46,27 @@ response = truth + rnorm(10)
 bias(truth, response)
 }
 \seealso{
-Other Regression Measures: \code{\link{ktau}},
-  \code{\link{mae}}, \code{\link{mape}},
-  \code{\link{maxae}}, \code{\link{maxse}},
-  \code{\link{medae}}, \code{\link{medse}},
-  \code{\link{mse}}, \code{\link{msle}},
-  \code{\link{pbias}}, \code{\link{rae}},
-  \code{\link{rmse}}, \code{\link{rmsle}},
-  \code{\link{rrse}}, \code{\link{rse}}, \code{\link{rsq}},
-  \code{\link{sae}}, \code{\link{smape}},
-  \code{\link{srho}}, \code{\link{sse}}
+Other Regression Measures: 
+\code{\link{ktau}()},
+\code{\link{mae}()},
+\code{\link{mape}()},
+\code{\link{maxae}()},
+\code{\link{maxse}()},
+\code{\link{medae}()},
+\code{\link{medse}()},
+\code{\link{mse}()},
+\code{\link{msle}()},
+\code{\link{pbias}()},
+\code{\link{rae}()},
+\code{\link{rmse}()},
+\code{\link{rmsle}()},
+\code{\link{rrse}()},
+\code{\link{rse}()},
+\code{\link{rsq}()},
+\code{\link{sae}()},
+\code{\link{smape}()},
+\code{\link{srho}()},
+\code{\link{sse}()}
 }
 \concept{Regression Measures}
 \concept{regression_measure}

@@ -4,8 +4,7 @@
 \alias{confusion_matrix}
 \title{Calculate Binary Confusion Matrix}
 \usage{
-confusion_matrix(truth, response, positive, na_value = NaN,
-  relative = FALSE)
+confusion_matrix(truth, response, positive, na_value = NaN, relative = FALSE)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
