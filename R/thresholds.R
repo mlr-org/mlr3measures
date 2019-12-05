@@ -7,17 +7,17 @@
 #' @inheritParams auc
 #'
 #' @return (`matrix()`). First column are the distinct probability values, additional
-#'   columns store the calculated performance values, one column for each measure.
+#'   columns store the corresponding calculated performance values, one column for each measure.
 #'
 #' @useDynLib mlr3measures c_thresh_path
 #' @export
 #' @examples
-#' N = 200
+#' N = 50
 #' truth = factor(sample(c("a", "b"), N, replace = TRUE), levels = c("a", "b"))
 #' prob = runif(N)
 #' th = thresholds(truth, prob, "a")
 #'
-#' # poor mans roc curve
+#' # poor man's roc curve
 #' plot(th[, 2], 1 - th[, 3], type = "l")
 #' abline(0, 1)
 thresholds = function(truth, prob, positive, measures = c("tpr", "tnr")) {
@@ -41,6 +41,6 @@ if (FALSE) {
   positive = "a"
   bench::mark(thresholds(truth, prob, positive))
 
-  # order() + t() takes more time as calculating the measures :/
+  # order() + t() takes more time than calculating the measures? :/
   profvis::profvis(thresholds(truth, prob, positive))
 }

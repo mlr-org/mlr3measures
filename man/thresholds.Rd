@@ -20,19 +20,19 @@ Name of the positive class.}
 }
 \value{
 (\code{matrix()}). First column are the distinct probability values, additional
-columns store the calculated performance values, one column for each measure.
+columns store the corresponding calculated performance values, one column for each measure.
 }
 \description{
 For each value in probability \code{prob}, a confusion matrix is build and the
 all requested measures are calculated.
 }
 \examples{
-N = 200
+N = 50
 truth = factor(sample(c("a", "b"), N, replace = TRUE), levels = c("a", "b"))
 prob = runif(N)
 th = thresholds(truth, prob, "a")
 
-# poor mans roc curve
+# poor man's roc curve
 plot(th[, 2], 1 - th[, 3], type = "l")
 abline(0, 1)
 }
