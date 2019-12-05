@@ -63,7 +63,6 @@ SEXP c_thresh_path(SEXP label_, SEXP prob_, SEXP measures_) {
 
     const int n_positive = count(label, n);
     const int nrow = n_measures + 1;
-    const int ncol = n + 2;
     int offset = 0;
 
     // initialize array of function pointers to measure functions
