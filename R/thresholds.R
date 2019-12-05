@@ -22,7 +22,8 @@
 #' abline(0, 1)
 thresholds = function(truth, prob, positive, measures = c("tpr", "tnr")) {
   assert_binary(truth, prob = prob, positive = positive)
-  assert_subset(measures, c("acc", "ce", "dor", "fbeta", "fdr", "fnr", "fomr", "fpr", "mcc", "npv", "ppv", "tnr", "tpr"))
+  assert_subset(measures, c("acc", "ce", "dor", "fbeta", "fdr", "fnr", "fomr", "fpr",
+      "mcc", "npv", "ppv", "tnr", "tpr", "tp", "tn", "fp", "fn"))
 
   ii = order(prob)
   performance = .Call(c_thresh_path, (truth == positive)[ii], prob[ii], measures)
