@@ -73,5 +73,5 @@ Collate:
     'regr_srho.R'
     'regr_sse.R'
     'roxygen.R'
-    'threshold.R'
+    'thresholds.R'
     'zzz.R'

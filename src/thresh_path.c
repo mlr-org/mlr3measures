@@ -1,7 +1,6 @@
 #include <R.h>
 #include <Rinternals.h>
 
-
 #define TP(m) (m[0])
 #define FN(m) (m[1])
 #define FP(m) (m[2])
@@ -16,11 +15,13 @@ static double fdr(int * m, int n) { return ddiv(FP(m), TP(m) + FP(m)); }
 static double fnr(int * m, int n) { return ddiv(FN(m), TP(m) + FN(m)); }
 static double tpr(int * m, int n) { return ddiv(TP(m), TP(m) + FN(m)); }
 static double tnr(int * m, int n) { return ddiv(TN(m), FP(m) + TN(m)); }
-static double tp(int * m, int n) { return (double) TP(m); }
-static double tn(int * m, int n) { return (double) TN(m); }
-static double fp(int * m, int n) { return (double) FP(m); }
-static double fn(int * m, int n) { return (double) FN(m); }
+static double tp (int * m, int n) { return (double) TP(m); }
+static double tn (int * m, int n) { return (double) TN(m); }
+static double fp (int * m, int n) { return (double) FP(m); }
+static double fn (int * m, int n) { return (double) FN(m); }
 
+// return pointer to measure function
+// (not all implemented yet)
 static msr get_measure(const char * id) {
     if (strcmp(id, "acc") == 0)
         return &acc;
@@ -42,6 +43,7 @@ static msr get_measure(const char * id) {
         return &fp;
     if (strcmp(id, "fn") == 0)
         return &fn;
+
     return NULL;
 }
 
@@ -64,9 +66,6 @@ SEXP c_thresh_path(SEXP label_, SEXP prob_, SEXP measures_) {
     const int ncol = n + 2;
     int offset = 0;
 
-    SEXP dup_ = PROTECT(duplicated(prob_, TRUE));
-    const int * dup = LOGICAL(dup_);
-
     // initialize array of function pointers to measure functions
     msr * measures = malloc(sizeof(msr) * n_measures);
     for (R_len_t i = 0; i < n_measures; i++) {
@@ -76,6 +75,10 @@ SEXP c_thresh_path(SEXP label_, SEXP prob_, SEXP measures_) {
             error("Unknown measure");
         }
     }
+
+    // Determine duplicated probabilities (fromLast == TRUE)
+    SEXP dup_ = PROTECT(duplicated(prob_, TRUE));
+    const int * dup = LOGICAL(dup_);
 
     // Result matrix: (n_measures + 1) x (length(prob) - sum(duplicated(prob)) + 2)
     // we always add a 0 and a 1
