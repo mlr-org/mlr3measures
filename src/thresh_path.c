@@ -104,7 +104,7 @@ SEXP c_thresh_path(SEXP label_, SEXP prob_, SEXP measures_) {
         if (label[i]) { // was TP, now FN
             TP(cm)--;
             FN(cm)++;
-        } else { // was TN, now FP
+        } else { // was FP, now TN
             FP(cm)--;
             TN(cm)++;
         }
