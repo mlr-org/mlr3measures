@@ -17,6 +17,8 @@
 #' prob = runif(N)
 #' th = thresholds(truth, prob, "a")
 #'
+#' th = thresholds(truth, prob, "a", measures = c("mcc", "fbeta"))
+#'
 #' # poor man's roc curve
 #' plot(th[, 2], 1 - th[, 3], type = "l")
 #' abline(0, 1)
@@ -39,8 +41,8 @@ if (FALSE) {
   truth = factor(sample(c("a", "b"), N, replace = TRUE), levels = c("a", "b"))
   prob = runif(N)
   positive = "a"
-  bench::mark(thresholds(truth, prob, positive))
+  bench::mark(thresholds(truth, prob, positive, measures = "mcc"))
 
   # order() + t() takes more time than calculating the measures? :/
-  profvis::profvis(thresholds(truth, prob, positive))
+  profvis::profvis(thresholds(truth, prob, positive, measures = "mcc"))
 }
