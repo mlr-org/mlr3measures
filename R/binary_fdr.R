@@ -18,15 +18,13 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_fdr
 #' @export
-fdr = function(truth, response, positive, na_value = NaN, ...) {
-  assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  fdr_cm(cm(truth, response, positive), na_value)
+fdr = function(truth, response, positive, ...) {
+  assert_binary(truth, response = response, positive = positive)
+  .Call(c_fdr, cm(truth, response, positive), length(truth))
 }
 
-fdr_cm = function(m, na_value = NaN) {
-  div(m[1L, 2L], sum(m[1L, ]), na_value)
-}
 
 #' @include measures.R
 add_measure(fdr, "False Discovery Rate", "binary", 0, 1, TRUE)

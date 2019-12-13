@@ -17,9 +17,9 @@
 #' @inheritParams regr_params
 #' @template regr_example
 #' @export
-rae = function(truth, response, na_value = NaN, ...) {
-  assert_regr(truth, response = response, na_value = na_value)
-  div(sum(ae(truth, response)), sum(ae(truth, mean(truth))), na_value)
+rae = function(truth, response, ...) {
+  assert_regr(truth, response = response)
+  div(sum(ae(truth, response)), sum(ae(truth, mean(truth))))
 }
 
 

@@ -4,7 +4,7 @@
 \alias{dor}
 \title{Diagnostic Odds Ratio}
 \usage{
-dor(truth, response, positive, na_value = NaN, ...)
+dor(truth, response, positive, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -17,10 +17,6 @@ Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
-
-\item{na_value}{:: \code{numeric(1)}\cr
-Value that should be returned if the measure is not defined for the input
-(as described in the note). Default is \code{NaN}.}
 
 \item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
@@ -61,7 +57,7 @@ dor(truth, response, positive = "a")
 \seealso{
 Other Binary Classification Measures: 
 \code{\link{auc}()},
-\code{\link{fbeta}()},
+\code{\link{f1}()},
 \code{\link{fdr}()},
 \code{\link{fnr}()},
 \code{\link{fn}()},

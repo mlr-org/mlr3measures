@@ -4,7 +4,7 @@
 \alias{confusion_matrix}
 \title{Calculate Binary Confusion Matrix}
 \usage{
-confusion_matrix(truth, response, positive, na_value = NaN, relative = FALSE)
+confusion_matrix(truth, response, positive, relative = FALSE)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -18,10 +18,6 @@ Must have the exactly same two levels and the same length as \code{truth}.}
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
 
-\item{na_value}{:: \code{numeric(1)}\cr
-Value that should be returned if the measure is not defined for the input
-(as described in the note). Default is \code{NaN}.}
-
 \item{relative}{:: \code{logical(1)}\cr
 If \code{TRUE}, the returned confusion matrix contains relative frequencies
 instead of absolute frequencies.}
@@ -30,7 +26,7 @@ instead of absolute frequencies.}
 List with two elements:
 \itemize{
 \item \code{matrix} stores the calculated confusion matrix.
-\item \code{measures} stores the metrics as named numeric vector.
+\item \code{performance} stores the metrics as named numeric vector.
 }
 }
 \description{

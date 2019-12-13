@@ -18,14 +18,11 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_dor
 #' @export
-dor = function(truth, response, positive, na_value = NaN, ...) {
-  assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  dor_cm(cm(truth, response, positive), na_value)
-}
-
-dor_cm = function(m, na_value = NaN) {
-  div(m[1L, 1L] * m[2L, 2L], m[1L, 2L] * m[2L, 1L], na_value)
+dor = function(truth, response, positive, ...) {
+  assert_binary(truth, response = response, positive = positive)
+  .Call(c_dor, cm(truth, response, positive), length(truth))
 }
 
 #' @include measures.R

@@ -17,6 +17,9 @@ Must have exactly same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
+
+\item{measures}{:: \code{character()}\cr
+Names of measures to calculate.}
 }
 \value{
 (\code{matrix()}). First column are the distinct probability values, additional
@@ -32,7 +35,9 @@ truth = factor(sample(c("a", "b"), N, replace = TRUE), levels = c("a", "b"))
 prob = runif(N)
 th = thresholds(truth, prob, "a")
 
+th = thresholds(truth, prob, "a", measures = c("tnr", "tpr"))
+
 # poor man's roc curve
-plot(th[, 2], 1 - th[, 3], type = "l")
-abline(0, 1)
+plot(1 - th[, 2], th[, 3], type = "l", xlab = "1 - Specificity", ylab = "Sensitivity")
+abline(0, 1, lty = "dotted")
 }

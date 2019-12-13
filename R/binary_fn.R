@@ -13,14 +13,11 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_fn
 #' @export
 fn = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)
-  fn_cm(cm(truth, response, positive))
-}
-
-fn_cm = function(m, na_value = NaN) {
-  m[2L, 1L]
+  .Call(c_fn, cm(truth, response, positive), length(truth))
 }
 
 #' @include measures.R

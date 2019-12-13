@@ -18,14 +18,11 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_npv
 #' @export
-npv = function(truth, response, positive, na_value = NaN, ...) {
-  assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  npv_cm(cm(truth, response, positive), na_value)
-}
-
-npv_cm = function(m, na_value = NaN) {
-  div(m[2L, 2L], sum(m[2L, ]), na_value)
+npv = function(truth, response, positive, ...) {
+  assert_binary(truth, response = response, positive = positive)
+  .Call(c_npv, cm(truth, response, positive), length(truth))
 }
 
 #' @include measures.R

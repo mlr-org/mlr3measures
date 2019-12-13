@@ -16,11 +16,11 @@
 #' @inheritParams regr_params
 #' @template regr_example
 #' @export
-smape = function(truth, response, na_value = NaN, ...) {
-  assert_regr(truth, response = response, na_value = na_value)
+smape = function(truth, response, ...) {
+  assert_regr(truth, response = response)
   denom = abs(truth) + abs(response)
   if (any(denom < TOL))
-    return(na_value)
+    return(NaN)
   2 * mean(ae(truth, response) / denom)
 }
 

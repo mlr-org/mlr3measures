@@ -19,10 +19,10 @@
 #' @inheritParams regr_params
 #' @template regr_example
 #' @export
-mape = function(truth, response, na_value = NaN, ...) {
+mape = function(truth, response, ...) {
   assert_regr(truth, response = response)
   if (any(abs(truth) < TOL))
-    return(na_value)
+    return(NaN)
   mean(ape(truth, response))
 }
 

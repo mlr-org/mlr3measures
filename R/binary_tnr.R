@@ -19,14 +19,11 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_tnr
 #' @export
-tnr = function(truth, response, positive, na_value = NaN, ...) {
-  assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  tnr_cm(cm(truth, response, positive), na_value)
-}
-
-tnr_cm = function(m, na_value = NaN) {
-  div(m[2L, 2L], sum(m[, 2L]), na_value)
+tnr = function(truth, response, positive, ...) {
+  assert_binary(truth, response = response, positive = positive)
+  .Call(c_tnr, cm(truth, response, positive), length(truth))
 }
 
 #' @export

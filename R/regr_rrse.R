@@ -17,11 +17,11 @@
 #' @inheritParams regr_params
 #' @template regr_example
 #' @export
-rrse = function(truth, response, na_value = NaN, ...) {
-  assert_regr(truth, response = response, na_value = na_value)
+rrse = function(truth, response, ...) {
+  assert_regr(truth, response = response)
   v = var(truth)
   if (v < TOL)
-    return(na_value)
+    return(NaN)
   sqrt(sum(se(truth, response)) / (v * (length(truth) - 1L)))
 }
 

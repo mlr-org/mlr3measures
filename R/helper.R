@@ -20,11 +20,11 @@ sle = function(truth, response) {
   (log1p(truth) - log1p(response))^2
 }
 
-# simple division, but ensures that `na_value` is returned
+# simple division, but ensures that `NaN` is returned
 # if the denominator is < TOL
-div = function(nominator, denominator, na_value) {
+div = function(nominator, denominator) {
   if (abs(denominator) < TOL)
-    na_value
+    NaN
   else
     nominator / denominator
 }

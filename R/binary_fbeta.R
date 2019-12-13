@@ -24,22 +24,28 @@
 #' \cite{rijsbergen_1979}
 #'
 #' @inheritParams binary_params
+#' @template binary_example
+#' @useDynLib mlr3measures c_f1
+#' @export
+f1 = function(truth, response, positive, ...) {
+  assert_binary(truth, response = response, positive = positive)
+  .Call(c_f1, cm(truth, response, positive), length(truth))
+}
+
+#' @export
+#' @rdname f1
 #' @param beta :: `numeric(1)`\cr
 #'   Parameter to give either precision or recall more weight.
 #'   Default is 1, resulting in balanced weights.
-#' @template binary_example
-#' @export
-fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
-  assert_binary(truth, response = response, positive = positive, na_value = na_value)
+fbeta = function(truth, response, positive, beta = 1, ...) {
+  assert_binary(truth, response = response, positive = positive)
   assert_number(beta, lower = 0)
-  fbeta_cm(cm(truth, response, positive), beta, na_value)
-}
+  m = cm(truth, response, positive)
 
-fbeta_cm = function(m, beta = 1, na_value = NaN) {
   pred_pos = sum(m[1L, ])
   cond_pos = sum(m[, 1L])
   if (pred_pos == 0L || cond_pos == 0L)
-    return(na_value)
+    return(NaN)
 
   P = m[1L, 1L] / pred_pos
   R = m[1L, 1L] / cond_pos
@@ -47,4 +53,5 @@ fbeta_cm = function(m, beta = 1, na_value = NaN) {
 }
 
 #' @include measures.R
+add_measure(f1, "F1 score", "binary", 0, 1, FALSE)
 add_measure(fbeta, "F-beta score", "binary", 0, 1, FALSE)

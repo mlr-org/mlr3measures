@@ -18,9 +18,5 @@ acc = function(truth, response, ...) {
   mean(truth == response)
 }
 
-acc_cm = function(m, na_value = NaN) {
-  sum(diag(m)) / sum(m)
-}
-
 #' @include measures.R
 add_measure(acc, "Classification Accuracy", "classif", 0, 1, FALSE)

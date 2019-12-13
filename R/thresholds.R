@@ -5,11 +5,13 @@
 #' all requested measures are calculated.
 #'
 #' @inheritParams auc
+#' @param measures :: `character()`\cr
+#'   Names of measures to calculate.
 #'
 #' @return (`matrix()`). First column are the distinct probability values, additional
 #'   columns store the corresponding calculated performance values, one column for each measure.
 #'
-#' @useDynLib mlr3measures c_thresh_path
+#' @useDynLib mlr3measures c_thresholds
 #' @export
 #' @examples
 #' N = 50
@@ -17,18 +19,18 @@
 #' prob = runif(N)
 #' th = thresholds(truth, prob, "a")
 #'
-#' th = thresholds(truth, prob, "a", measures = c("mcc", "fbeta"))
+#' th = thresholds(truth, prob, "a", measures = c("tnr", "tpr"))
 #'
 #' # poor man's roc curve
-#' plot(th[, 2], 1 - th[, 3], type = "l")
-#' abline(0, 1)
+#' plot(1 - th[, 2], th[, 3], type = "l", xlab = "1 - Specificity", ylab = "Sensitivity")
+#' abline(0, 1, lty = "dotted")
 thresholds = function(truth, prob, positive, measures = c("tpr", "tnr")) {
   assert_binary(truth, prob = prob, positive = positive)
-  assert_subset(measures, c("acc", "ce", "dor", "fbeta", "fdr", "fnr", "fomr", "fpr",
+  assert_subset(measures, c("acc", "ce", "dor", "f1", "fdr", "fnr", "fomr", "fpr",
       "mcc", "npv", "ppv", "tnr", "tpr", "tp", "tn", "fp", "fn"))
 
   ii = order(prob)
-  performance = .Call(c_thresh_path, (truth == positive)[ii], prob[ii], measures)
+  performance = .Call(c_thresholds, (truth == positive)[ii], prob[ii], measures)
   performance = t(performance)
   colnames(performance) = c("prob", measures)
   return(performance)

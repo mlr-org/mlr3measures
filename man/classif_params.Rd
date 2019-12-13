@@ -22,10 +22,6 @@ Non-negative sample weights.
 Must have the same levels and length as \code{truth}.
 Defaults to equal sample weights.}
 
-\item{na_value}{:: \code{numeric(1)}\cr
-Value that should be returned if the measure is not defined for the input
-(as described in the note). Default is \code{NaN}.}
-
 \item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
 }

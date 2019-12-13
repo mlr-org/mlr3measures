@@ -6,11 +6,11 @@
 \alias{sensitivity}
 \title{True Positive Rate}
 \usage{
-tpr(truth, response, positive, na_value = NaN, ...)
+tpr(truth, response, positive, ...)
 
-recall(truth, response, positive, na_value = NaN, ...)
+recall(truth, response, positive, ...)
 
-sensitivity(truth, response, positive, na_value = NaN, ...)
+sensitivity(truth, response, positive, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -23,10 +23,6 @@ Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
-
-\item{na_value}{:: \code{numeric(1)}\cr
-Value that should be returned if the measure is not defined for the input
-(as described in the note). Default is \code{NaN}.}
 
 \item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
@@ -69,7 +65,7 @@ tpr(truth, response, positive = "a")
 Other Binary Classification Measures: 
 \code{\link{auc}()},
 \code{\link{dor}()},
-\code{\link{fbeta}()},
+\code{\link{f1}()},
 \code{\link{fdr}()},
 \code{\link{fnr}()},
 \code{\link{fn}()},

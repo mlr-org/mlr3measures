@@ -53,7 +53,7 @@ fn(truth, response, positive = "a")
 Other Binary Classification Measures: 
 \code{\link{auc}()},
 \code{\link{dor}()},
-\code{\link{fbeta}()},
+\code{\link{f1}()},
 \code{\link{fdr}()},
 \code{\link{fnr}()},
 \code{\link{fomr}()},

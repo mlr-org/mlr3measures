@@ -1,32 +1,10 @@
-#include <R.h>
-#include <Rinternals.h>
+#include "thresholds.h"
+#include "confusion_measures.h"
+#include "defines.h"
 #include <stdbool.h>
 
-#define TP(m) (m[0])
-#define FN(m) (m[1])
-#define FP(m) (m[2])
-#define TN(m) (m[3])
-
-static inline double ddiv(int a, int b) { return ((double) a) / b; }
 
 typedef double(*msr)(int *, int);
-static double acc(int * m, int n) { return ddiv(TP(m) + TN(m), n); }
-static double ce(int * m, int n) { return ddiv(FP(m) + FN(m), n); }
-static double dor(int * m, int n) { return ddiv(TP(m) * TN(m), FP(m) * FN(m)); }
-static double f1(int * m, int n) { return ddiv(2 * TP(m), 2 * TP(m) + FP(m) + FN(m)); }
-static double fdr(int * m, int n) { return ddiv(FP(m), TP(m) + FP(m)); }
-static double fn (int * m, int n) { return (double) FN(m); }
-static double fnr(int * m, int n) { return ddiv(FN(m), TP(m) + FN(m)); }
-static double fomr(int * m, int n) { return ddiv(FN(m), FN(m) + TN(m)); }
-static double fp (int * m, int n) { return (double) FP(m); }
-static double fpr (int * m, int n) { return ddiv(FP(m), FP(m) + TN(m)); }
-static double mcc (int * m, int n) { return ddiv(TP(m) * TN(m) - FP(m) * FN(m), sqrt((TP(m) + FP(m)) * (TP(m) + FN(m)) * (TN(m) + FP(m)) * (TN(m) + FN(m)))); }
-static double npv(int * m, int n) { return ddiv(TN(m), FN(m) + TN(m)); }
-static double ppv(int * m, int n) { return ddiv(TP(m), TP(m) + FP(m)); }
-static double tn (int * m, int n) { return (double) TN(m); }
-static double tnr(int * m, int n) { return ddiv(TN(m), FP(m) + TN(m)); }
-static double tp (int * m, int n) { return (double) TP(m); }
-static double tpr(int * m, int n) { return ddiv(TP(m), TP(m) + FN(m)); }
 
 // return pointer to measure function
 static msr get_measure(const char * id) {
@@ -76,7 +54,7 @@ static int count(const int * x, const R_len_t n) {
     return sum;
 }
 
-SEXP c_thresh_path(SEXP label_, SEXP prob_, SEXP measures_) {
+SEXP c_thresholds(SEXP label_, SEXP prob_, SEXP measures_) {
     const int * label = LOGICAL(label_);
     const double * prob = REAL(prob_);
     const int n = length(label_);

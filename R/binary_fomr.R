@@ -18,14 +18,11 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_fomr
 #' @export
-fomr = function(truth, response, positive, na_value = NaN, ...) {
-  assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  fomr_cm(cm(truth, response, positive))
-}
-
-fomr_cm = function(m, na_value = NaN) {
-  div(m[2L, 1L], sum(m[2L, ]), na_value)
+fomr = function(truth, response, positive, ...) {
+  assert_binary(truth, response = response, positive = positive)
+  .Call(c_fomr, cm(truth, response, positive), length(truth))
 }
 
 #' @include measures.R

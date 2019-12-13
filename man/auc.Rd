@@ -4,7 +4,7 @@
 \alias{auc}
 \title{Area Under the ROC Curve}
 \usage{
-auc(truth, prob, positive, na_value = NaN, ...)
+auc(truth, prob, positive, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -17,10 +17,6 @@ Must have exactly same length as \code{truth}.}
 
 \item{positive}{:: \code{character(1)}\cr
 Name of the positive class.}
-
-\item{na_value}{:: \code{numeric(1)}\cr
-Value that should be returned if the measure is not defined for the input
-(as described in the note). Default is \code{NaN}.}
 
 \item{...}{:: \code{any}\cr
 Additional arguments. Currently ignored.}
@@ -58,7 +54,7 @@ auc(truth, prob, "a")
 \seealso{
 Other Binary Classification Measures: 
 \code{\link{dor}()},
-\code{\link{fbeta}()},
+\code{\link{f1}()},
 \code{\link{fdr}()},
 \code{\link{fnr}()},
 \code{\link{fn}()},

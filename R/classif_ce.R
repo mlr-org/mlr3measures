@@ -18,11 +18,5 @@ ce = function(truth, response, ...) {
   mean(truth != response)
 }
 
-ce_cm = function(m, na_value = NaN) {
-  s = sum(m)
-  diag(m) = 0
-  sum(m) / s
-}
-
 #' @include measures.R
 add_measure(ce, "Classification Error", "classif", 0, 1, TRUE)

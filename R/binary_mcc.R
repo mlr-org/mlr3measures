@@ -19,21 +19,11 @@
 #'
 #' @inheritParams binary_params
 #' @template binary_example
+#' @useDynLib mlr3measures c_mcc
 #' @export
 mcc = function(truth, response, positive, ...) {
   assert_binary(truth, response = response, positive = positive)
-  mcc_cm(cm(truth, response, positive))
-}
-
-mcc_cm = function(m, na_value = NaN) {
-  tp = m[1L, 1L]
-  tn = m[2L, 2L]
-  fp = m[1L, 2L]
-  fn = m[2L, 1L]
-
-  nomin = (tp * tn - fp * fn)
-  denom = (tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)
-  if (denom == 0L) nomin else nomin / sqrt(denom)
+  .Call(c_mcc, cm(truth, response, positive), length(truth))
 }
 
 #' @include measures.R

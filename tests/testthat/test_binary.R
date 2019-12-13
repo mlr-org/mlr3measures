@@ -61,10 +61,10 @@ test_that("confusion measures", {
   FP = fp(response, truth, positive = "a")
   FN = fn(response, truth, positive = "a")
 
-  expect_identical(TP, 3L)
-  expect_identical(TN, 4L)
-  expect_identical(FP, 2L)
-  expect_identical(FN, 1L)
+  expect_equal(TP, 3)
+  expect_equal(TN, 4)
+  expect_equal(FP, 2)
+  expect_equal(FN, 1)
 
   expect_identical(dor(response, truth, positive = "a"), (TP / FP) / (FN / TN))
   expect_identical(fdr(response, truth, positive = "a"), FP / (TP + FP))
