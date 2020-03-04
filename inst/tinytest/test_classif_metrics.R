@@ -1,3 +1,4 @@
+source("setup.R")
 using("checkmate")
 
 as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))

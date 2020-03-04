@@ -1,3 +1,4 @@
+source("setup.R")
 using("checkmate")
 
 truth = factor(c("a", "a", "b", "b"), levels = c("a", "b"))

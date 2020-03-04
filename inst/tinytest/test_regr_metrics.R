@@ -1,3 +1,4 @@
+source("setup.R")
 using("checkmate")
 
 expect_equal(bias(1, 1), 0)

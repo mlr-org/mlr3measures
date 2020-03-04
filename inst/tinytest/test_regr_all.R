@@ -1,3 +1,4 @@
+source("setup.R")
 using("checkmate")
 
 N = 10L
