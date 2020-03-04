@@ -49,12 +49,22 @@ tp(truth, response, positive = "a")
 \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 }
 \seealso{
-Other Binary Classification Measures: \code{\link{auc}},
-  \code{\link{dor}}, \code{\link{fbeta}},
-  \code{\link{fdr}}, \code{\link{fnr}}, \code{\link{fn}},
-  \code{\link{fomr}}, \code{\link{fpr}}, \code{\link{fp}},
-  \code{\link{mcc}}, \code{\link{npv}}, \code{\link{ppv}},
-  \code{\link{tnr}}, \code{\link{tn}}, \code{\link{tpr}}
+Other Binary Classification Measures: 
+\code{\link{auc}()},
+\code{\link{dor}()},
+\code{\link{fbeta}()},
+\code{\link{fdr}()},
+\code{\link{fnr}()},
+\code{\link{fn}()},
+\code{\link{fomr}()},
+\code{\link{fpr}()},
+\code{\link{fp}()},
+\code{\link{mcc}()},
+\code{\link{npv}()},
+\code{\link{ppv}()},
+\code{\link{tnr}()},
+\code{\link{tn}()},
+\code{\link{tpr}()}
 }
 \concept{Binary Classification Measures}
 \concept{binary_classification_measure}

@@ -21,7 +21,7 @@ add_measure = function(obj, title, type, lower, upper, minimize) {
       title = assert_string(title),
       lower = assert_number(lower),
       upper = assert_number(upper),
-      predict_type = intersect(names(formals(obj)), c("response", "prob")),
+      predict_type = intersect(names(formals(obj)), c("response", "prob", "se")),
       minimize = assert_flag(minimize, na.ok = TRUE)
   ), envir = measures)
 }

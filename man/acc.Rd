@@ -46,8 +46,10 @@ response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
 acc(truth, response)
 }
 \seealso{
-Other Classification Measures: \code{\link{bacc}},
-  \code{\link{ce}}, \code{\link{logloss}}
+Other Classification Measures: 
+\code{\link{bacc}()},
+\code{\link{ce}()},
+\code{\link{logloss}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}
