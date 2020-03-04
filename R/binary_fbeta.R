@@ -15,8 +15,9 @@
 #' @template binary_template
 #'
 #' @note
-#' This measure is undefined if either [precision] or [recall] is undefined, i.e.
-#' TP + FP = 0 or TP + FN = 0.
+#' This measure is undefined if
+#' * TP = 0
+#' * [precision] or [recall] is undefined, i.e. TP + FP = 0 or TP + FN = 0.
 #'
 #' @references
 #' \cite{sasaki_2007}
@@ -38,7 +39,7 @@ fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
 fbeta_cm = function(m, beta = 1, na_value = NaN) {
   pred_pos = sum(m[1L, ])
   cond_pos = sum(m[, 1L])
-  if (pred_pos == 0L || cond_pos == 0L)
+  if (m[1L, 1L] == 0L || pred_pos == 0L || cond_pos == 0L)
     return(na_value)
 
   P = m[1L, 1L] / pred_pos

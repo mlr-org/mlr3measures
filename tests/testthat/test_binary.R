@@ -1,26 +1,49 @@
 context("binary classification measures")
 
+run_all_measures = function(truth, response, prob, positive, na_allowed = FALSE) {
+  conf = cm(truth, response, positive = positive)
+  na_value = if (na_allowed) 123456789 else NaN
+
+  for (m in as.list(measures)) {
+    if (m$type != "binary")
+      next
+    f = match.fun(m$id)
+    perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value)
+
+    if (!(na_allowed && identical(perf, na_value)))
+      expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
+
+    f_cm = get0(sprintf("%s_cm", m$id))
+    if (!is.null(f_cm)) {
+      expect_equal(perf, f_cm(conf, na_value = na_value), label = m$id)
+    }
+  }
+}
+
 test_that("trigger all", {
   N = 30L
   truth = ssample(letters[1:2], N)
   response = ssample(letters[1:2], N)
   prob = runif(N)
   positive = sample(letters[1:2], 1)
-  conf = cm(truth, response, positive = positive)
 
-  for (m in as.list(measures)) {
-    if (m$type != "binary")
-      next
-    f = match.fun(m$id)
-    perf = f(truth = truth, response = response, prob = prob, positive = positive)
-    expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
-    f_cm = get0(sprintf("%s_cm", m$id))
-    if (!is.null(f_cm)) {
-      expect_equal(perf, f_cm(conf))
-    }
-  }
+  run_all_measures(truth, response, prob, positive)
 })
 
+test_that("integer overflow", {
+  N = 500000
+  truth = ssample(c("a", "b"), N)
+  response = truth
+  prob = runif(N)
+  positive = sample(letters[1:2], 1)
+  run_all_measures(truth, response, prob, positive, na_allowed = TRUE)
+
+  response = ssample(c("a", "b"), N)
+  run_all_measures(truth, response, prob, positive)
+
+  response = factor(ifelse(truth == "a", "b", "a"), levels = levels(truth))
+  run_all_measures(truth, response, prob, positive, na_allowed = TRUE)
+})
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))

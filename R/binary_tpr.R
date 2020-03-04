@@ -9,7 +9,7 @@
 #' Also know as "recall" or "sensitivity".
 #'
 #' @note
-#' This measure is undefined if FP + TN = 0.
+#' This measure is undefined if TP + FN = 0.
 #'
 #' @templateVar mid tpr
 #' @template binary_template

@@ -44,8 +44,11 @@ as much importance to recall as precision.
 For \eqn{\beta = 1}{beta = 1}, this measure is called "F1" score.
 }
 \note{
-This measure is undefined if either \link{precision} or \link{recall} is undefined, i.e.
-TP + FP = 0 or TP + FN = 0.
+This measure is undefined if
+\itemize{
+\item TP = 0
+\item \link{precision} or \link{recall} is undefined, i.e. TP + FP = 0 or TP + FN = 0.
+}
 }
 \section{Meta Information}{
 

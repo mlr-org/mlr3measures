@@ -43,7 +43,7 @@ Binary classification measure defined as \deqn{
 Also know as "recall" or "sensitivity".
 }
 \note{
-This measure is undefined if FP + TN = 0.
+This measure is undefined if TP + FN = 0.
 }
 \section{Meta Information}{
 

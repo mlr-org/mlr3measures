@@ -1,15 +1,6 @@
 context("classification measures")
 
-test_that("trigger all", {
-  k = 3
-  n = 10
-  truth = ssample(letters[1:k], n)
-  response = ssample(letters[1:k], n)
-  prob = matrix(runif(n*k, min = 1e-8, max = 1 - 1e-8), nrow = n)
-
-  prob = t(apply(prob, 1, function(x) x / sum(x)))
-  colnames(prob) = letters[1:k]
-
+run_all_measures = function(truth, response, prob) {
   for (m in as.list(measures)) {
     if (m$type != "classif")
       next
@@ -17,6 +8,34 @@ test_that("trigger all", {
     perf = f(truth = truth, response = response, prob = prob)
     expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
   }
+}
+
+test_that("trigger all", {
+  k = 3
+  n = 10
+  truth = ssample(letters[1:k], n)
+  response = ssample(letters[1:k], n)
+  prob = matrix(runif(n*k, min = 1e-8, max = 1 - 1e-8), nrow = n)
+  prob = t(apply(prob, 1, function(x) x / sum(x)))
+  colnames(prob) = letters[1:k]
+
+  run_all_measures(truth, response, prob)
+})
+
+test_that("integer overflow", {
+  N = 500000
+  truth = ssample(c("a", "b"), N)
+  response = truth
+  prob = matrix(runif(N*2), ncol = 2)
+  prob = t(apply(prob, 1, function(x) x / sum(x)))
+  colnames(prob) = levels(truth)
+  run_all_measures(truth, response, prob)
+
+  response = ssample(c("a", "b"), N)
+  run_all_measures(truth, response, prob)
+
+  response = factor(ifelse(truth == "a", "b", "a"), levels = levels(truth))
+  run_all_measures(truth, response, prob)
 })
 
 test_that("tests from Metrics", {

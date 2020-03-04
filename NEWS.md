@@ -1,3 +1,7 @@
+# mlr3measures 0.1.2
+
+* Fixed integer overflows in `auc`, `dor` and `mcc`.
+
 # mlr3measures 0.1.1
 
 * Added new measure `bacc` (Balanced Accuracy).

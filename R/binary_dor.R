@@ -25,6 +25,7 @@ dor = function(truth, response, positive, na_value = NaN, ...) {
 }
 
 dor_cm = function(m, na_value = NaN) {
+  storage.mode(m) = "double"
   div(m[1L, 1L] * m[2L, 2L], m[1L, 2L] * m[2L, 1L], na_value)
 }
 

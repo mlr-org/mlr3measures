@@ -11,7 +11,7 @@
 #' @template binary_template
 #'
 #' @note
-#' This measure is undefined if any of the four sums in the denominator is 0.
+#' This above formula is undefined if any of the four sums in the denominator is 0.
 #' The denominator is then set to 1.
 #'
 #' @references
@@ -26,6 +26,7 @@ mcc = function(truth, response, positive, ...) {
 }
 
 mcc_cm = function(m, na_value = NaN) {
+  storage.mode(m) = "double"
   tp = m[1L, 1L]
   tn = m[2L, 2L]
   fp = m[1L, 2L]
