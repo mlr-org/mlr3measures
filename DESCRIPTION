@@ -1,6 +1,6 @@
 Package: mlr3measures
 Title: Performance Measures for 'mlr3'
-Version: 0.1.2
+Version: 0.1.2-9000
 Authors@R:
     person(given = "Michel",
            family = "Lang",
