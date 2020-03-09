@@ -2,8 +2,9 @@
 
 Package website: [release](https://mlr3measures.mlr-org.com/) | [dev](https://mlr3measures.mlr-org.com/dev)
 
-[![Build Status](https://img.shields.io/travis/mlr-org/mlr3measures/master?label=Linux&logo=travis&style=flat-square)](https://travis-ci.org/mlr-org/mlr3measures)
+[![R build status](https://github.com/mlr-org/mlr3measures/workflows/R-CMD-check/badge.svg)](https://github.com/mlr-org/mlr3measures/actions)
 [![CRAN Status Badge](https://www.r-pkg.org/badges/version-ago/mlr3measures)](https://cran.r-project.org/package=mlr3measures)
+[![Cran Checks](https://cranchecks.info/badges/worst/mlr3measures)](https://cran.r-project.org/web/checks/check_results_mlr3measures.html)
 [![codecov](https://codecov.io/gh/mlr-org/mlr3measures/branch/master/graph/badge.svg)](https://codecov.io/gh/mlr-org/mlr3measures)
 [![StackOverflow](https://img.shields.io/badge/stackoverflow-mlr3-orange.svg)](https://stackoverflow.com/questions/tagged/mlr3)
 
