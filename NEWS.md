@@ -1,3 +1,7 @@
+# mlr3measures 0.1.3
+
+* Improved numerical stability for measure `mcc`.
+
 # mlr3measures 0.1.2
 
 * Fixed integer overflows in `auc`, `dor` and `mcc`.

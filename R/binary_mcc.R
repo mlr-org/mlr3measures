@@ -33,8 +33,8 @@ mcc_cm = function(m, na_value = NaN) {
   fn = m[2L, 1L]
 
   nomin = (tp * tn - fp * fn)
-  denom = (tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)
-  if (denom == 0L) nomin else nomin / sqrt(denom)
+  denom = prod(sqrt(c(tp + fp, tp + fn, tn + fp, tn + fn)))
+  if (denom == 0L) nomin else nomin / denom
 }
 
 #' @include measures.R

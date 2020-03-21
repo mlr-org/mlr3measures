@@ -45,6 +45,16 @@ test_that("integer overflow", {
   run_all_measures(truth, response, prob, positive, na_allowed = TRUE)
 })
 
+test_that("numerical stability mcc", {
+  set.seed(26)
+  N = 500000
+  truth = ssample(c("a", "b"), N)
+  response = factor(ifelse(truth == "a", "b", "a"), levels = levels(truth))
+  positive = "b"
+  expect_gte(mcc(truth, response, positive), -1)
+})
+
+
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))
   as_prob = function(...) { p = c(...);  p = cbind(p, 1-p); colnames(p) = c("a", "b"); p}
