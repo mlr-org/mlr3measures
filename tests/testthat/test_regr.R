@@ -4,13 +4,14 @@ test_that("trigger all", {
   N = 10L
   truth = 1 + runif(N)
   response = 1 + runif(N)
+  tol = sqrt(.Machine$double.eps)
 
   for (m in as.list(measures)) {
     if (m$type != "regr")
       next
     f = match.fun(m$id)
     perf = f(truth = truth, response = response)
-    expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
+    expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
   }
 })
 

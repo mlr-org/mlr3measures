@@ -1,12 +1,14 @@
 context("classification measures")
 
 run_all_measures = function(truth, response, prob) {
+  tol = sqrt(.Machine$double.eps)
+
   for (m in as.list(measures)) {
     if (m$type != "classif")
       next
     f = match.fun(m$id)
     perf = f(truth = truth, response = response, prob = prob)
-    expect_number(perf, na.ok = FALSE, lower = m$lower, upper = m$upper, label = m$id)
+    expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
   }
 }
 
