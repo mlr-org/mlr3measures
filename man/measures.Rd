@@ -5,7 +5,7 @@
 \alias{measures}
 \title{Measure Registry}
 \format{
-An object of class \code{environment} of length 45.
+An object of class \code{environment} of length 47.
 }
 \usage{
 measures

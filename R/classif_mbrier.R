@@ -1,0 +1,32 @@
+#' @title Multiclass Brier Score
+#'
+#' @description
+#' Brier score for multi-class classification problems with \eqn{r} labels defined as \deqn{
+#'    \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^r (I_{ij} - p_{ij})^2.
+#' }{
+#     1/n * sum_i sum_j (I_ij - p_ij)^2.
+#' }
+#' \eqn{I_{ij}}{I_ij} is 1 if observation \eqn{i} has true label \eqn{j}, and 0 otherwise.
+#'
+#' Note that there also is the more common definition of the Brier score for binary
+#' classification problems in [bbrier()].
+#'
+#' @templateVar mid mbrier
+#' @template classif_template
+#'
+#' @references
+#' \cite{brier_1950}
+#'
+#' @inheritParams classif_params
+#' @template classif_example
+#' @export
+mbrier = function(truth, prob, positive, ...) {
+  assert_classif(truth, prob = prob)
+
+  mat01 = contr.treatment(colnames(prob), contrasts = FALSE)
+  mat01 = mat01[match(truth, rownames(mat01)), ]
+  mean(rowSums(se(mat01, prob)))
+}
+
+#' @include measures.R
+add_measure(mbrier, "Multiclass Brier Score", "classif", 0, 2, TRUE)

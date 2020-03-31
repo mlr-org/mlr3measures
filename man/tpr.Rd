@@ -68,6 +68,7 @@ tpr(truth, response, positive = "a")
 \seealso{
 Other Binary Classification Measures: 
 \code{\link{auc}()},
+\code{\link{bbrier}()},
 \code{\link{dor}()},
 \code{\link{fbeta}()},
 \code{\link{fdr}()},

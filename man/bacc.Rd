@@ -69,7 +69,8 @@ bacc(truth, response)
 Other Classification Measures: 
 \code{\link{acc}()},
 \code{\link{ce}()},
-\code{\link{logloss}()}
+\code{\link{logloss}()},
+\code{\link{mbrier}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

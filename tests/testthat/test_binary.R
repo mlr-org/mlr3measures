@@ -107,3 +107,20 @@ test_that("confusion measures", {
   expect_identical(tnr(response, truth, positive = "a"), TN / (FP + TN))
   expect_identical(tpr(response, truth, positive = "a"), TP / (TP + FN))
 })
+
+test_that("bbrier", {
+  N = 30L
+  truth = ssample(letters[1:2], N)
+  prob = as.numeric(truth == "a")
+
+  expect_equal(bbrier(truth, prob, positive = "a"), 0)
+  expect_equal(bbrier(truth, prob, positive = "b"), 1)
+
+  prob = runif(N)
+  pm = cbind(prob, 1 - prob)
+  colnames(pm) = c("a", "b")
+  expect_equal(2 * bbrier(truth, prob, "a"), mbrier(truth, pm))
+
+  colnames(pm) = c("b", "a")
+  expect_equal(2 * bbrier(truth, prob, "b"), mbrier(truth, pm))
+})

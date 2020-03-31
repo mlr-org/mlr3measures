@@ -1,5 +1,7 @@
 # mlr3measures 0.1.3
 
+* Added new measure `bbrier` (binary Brier Score).
+* Added new measure `mbrier` (multi-class Brier Score).
 * Improved numerical stability for measure `mcc`.
 
 # mlr3measures 0.1.2

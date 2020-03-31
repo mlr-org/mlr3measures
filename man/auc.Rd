@@ -57,6 +57,7 @@ auc(truth, prob, "a")
 }
 \seealso{
 Other Binary Classification Measures: 
+\code{\link{bbrier}()},
 \code{\link{dor}()},
 \code{\link{fbeta}()},
 \code{\link{fdr}()},
