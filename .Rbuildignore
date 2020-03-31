@@ -6,5 +6,5 @@
 ^\.Rproj\.user$
 ^man-roxygen$
 ^pkgdown$
-^.github$
+^\.github$
 ^\.pre-commit-config\.yaml$
