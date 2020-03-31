@@ -49,8 +49,8 @@ original definition of the multi-class Brier score (see \code{\link[=mbrier]{mbr
 set.seed(1)
 lvls = c("a", "b")
 truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
-response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
-bbrier(truth, response, positive = "a")
+prob = runif(10)
+bbrier(truth, prob, positive = "a")
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Brier_score}

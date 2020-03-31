@@ -20,7 +20,7 @@
 #' @inheritParams classif_params
 #' @template classif_example
 #' @export
-mbrier = function(truth, prob, positive, ...) {
+mbrier = function(truth, prob, ...) {
   assert_classif(truth, prob = prob)
 
   mat01 = contr.treatment(colnames(prob), contrasts = FALSE)

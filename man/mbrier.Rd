@@ -4,7 +4,7 @@
 \alias{mbrier}
 \title{Multiclass Brier Score}
 \usage{
-mbrier(truth, prob, positive, ...)
+mbrier(truth, prob, ...)
 }
 \arguments{
 \item{truth}{:: \code{factor()}\cr
@@ -46,8 +46,9 @@ classification problems in \code{\link[=bbrier]{bbrier()}}.
 set.seed(1)
 lvls = c("a", "b", "c")
 truth = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
-response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
-mbrier(truth, response)
+prob = matrix(runif(3 * 10), ncol = 3)
+colnames(prob) = levels(truth)
+mbrier(truth, prob)
 }
 \references{
 \cite{brier_1950}
