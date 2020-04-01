@@ -13,6 +13,9 @@
     <loc>https://mlr3measures.mlr-org.com/reference/bacc.html</loc>
   </url>
   <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/bbrier.html</loc>
+  </url>
+  <url>
     <loc>https://mlr3measures.mlr-org.com/reference/bias.html</loc>
   </url>
   <url>
@@ -68,6 +71,9 @@
   </url>
   <url>
     <loc>https://mlr3measures.mlr-org.com/reference/maxse.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/mbrier.html</loc>
   </url>
   <url>
     <loc>https://mlr3measures.mlr-org.com/reference/mcc.html</loc>

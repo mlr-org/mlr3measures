@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Classification Error — ce • mlr3measures</title>
+<title>Binary Brier Score — bbrier • mlr3measures</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -47,10 +47,13 @@
 
 
 
-<meta property="og:title" content="Classification Error — ce" />
-<meta property="og:description" content="Classification measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n \left( t_i \neq r_i \right).
-$$" />
+<meta property="og:title" content="Binary Brier Score — bbrier" />
+<meta property="og:description" content="Brier score for binary classification problems defined as $$
+   \frac{1}{n} \sum_{i=1}^n (I_i - p_i)^2.
+$$
+\(I_{i}\) is 1 if observation \(i\) belongs to the positive class, and 0 otherwise.
+Note that this (more common) definition of the Brier score is equivalent to the
+original definition of the multi-class Brier score (see mbrier()) divided by 2." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -143,18 +146,21 @@ $$" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Classification Error</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/classif_ce.R'><code>R/classif_ce.R</code></a></small>
-    <div class="hidden name"><code>ce.Rd</code></div>
+    <h1>Binary Brier Score</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/binary_bbrier.R'><code>R/binary_bbrier.R</code></a></small>
+    <div class="hidden name"><code>bbrier.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Classification measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n \left( t_i \neq r_i \right).
-$$</p>
+    <p>Brier score for binary classification problems defined as $$
+   \frac{1}{n} \sum_{i=1}^n (I_i - p_i)^2.
+$$
+\(I_{i}\) is 1 if observation \(i\) belongs to the positive class, and 0 otherwise.</p>
+<p>Note that this (more common) definition of the Brier score is equivalent to the
+original definition of the multi-class Brier score (see <code><a href='mbrier.html'>mbrier()</a></code>) divided by 2.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ce</span>(<span class='no'>truth</span>, <span class='no'>response</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>bbrier</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='no'>positive</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,13 +169,18 @@ $$</p>
       <th>truth</th>
       <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
 True (observed) labels.
-Must have the same levels and length as <code>response</code>.</p></td>
+Must have the exactly same two levels and the same length as <code>response</code>.</p></td>
     </tr>
     <tr>
-      <th>response</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
-Predicted response labels.
-Must have the same levels and length as <code>truth</code>.</p></td>
+      <th>prob</th>
+      <td><p>:: <code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code><br />
+Predicted probability for positive class.
+Must have exactly same length as <code>truth</code>.</p></td>
+    </tr>
+    <tr>
+      <th>positive</th>
+      <td><p>:: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+Name of the positive class.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -186,26 +197,46 @@ Additional arguments. Currently ignored.</p></td>
     
 
 <ul>
-<li><p>Type: <code>"classif"</code></p></li>
+<li><p>Type: <code>"binary"</code></p></li>
 <li><p>Range: \([0, 1]\)</p></li>
 <li><p>Minimize: <code>TRUE</code></p></li>
-<li><p>Required prediction: <code>response</code></p></li>
+<li><p>Required prediction: <code>prob</code></p></li>
 </ul>
 
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://en.wikipedia.org/wiki/Brier_score'>https://en.wikipedia.org/wiki/Brier_score</a></p>
+<p>Brier GW (1950).
+&#8220;Verification of forecasts expressed in terms of probability.&#8221;
+<em>Monthly Weather Review</em>, <b>78</b>(1), 1--3.
+doi: <a href='https://doi.org/10.1175/1520-0493(1950)078&lt;0001:vofeit&gt;2.0.co;2'>10.1175/1520-0493(1950)078&lt;0001:vofeit&gt;2.0.co;2</a>
+.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other Classification Measures: 
-<code><a href='acc.html'>acc</a>()</code>,
-<code><a href='bacc.html'>bacc</a>()</code>,
-<code><a href='logloss.html'>logloss</a>()</code>,
-<code><a href='mbrier.html'>mbrier</a>()</code></p></div>
+    <div class='dont-index'><p>Other Binary Classification Measures: 
+<code><a href='auc.html'>auc</a>()</code>,
+<code><a href='dor.html'>dor</a>()</code>,
+<code><a href='fbeta.html'>fbeta</a>()</code>,
+<code><a href='fdr.html'>fdr</a>()</code>,
+<code><a href='fnr.html'>fnr</a>()</code>,
+<code><a href='fn.html'>fn</a>()</code>,
+<code><a href='fomr.html'>fomr</a>()</code>,
+<code><a href='fpr.html'>fpr</a>()</code>,
+<code><a href='fp.html'>fp</a>()</code>,
+<code><a href='mcc.html'>mcc</a>()</code>,
+<code><a href='npv.html'>npv</a>()</code>,
+<code><a href='ppv.html'>ppv</a>()</code>,
+<code><a href='tnr.html'>tnr</a>()</code>,
+<code><a href='tn.html'>tn</a>()</code>,
+<code><a href='tpr.html'>tpr</a>()</code>,
+<code><a href='tp.html'>tp</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1</span>)
-<span class='no'>lvls</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>, <span class='st'>"c"</span>)
+<span class='no'>lvls</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>)
 <span class='no'>truth</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='no'>lvls</span>, <span class='fl'>10</span>, <span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>levels</span> <span class='kw'>=</span> <span class='no'>lvls</span>)
-<span class='no'>response</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='no'>lvls</span>, <span class='fl'>10</span>, <span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>levels</span> <span class='kw'>=</span> <span class='no'>lvls</span>)
-<span class='fu'>ce</span>(<span class='no'>truth</span>, <span class='no'>response</span>)</div><div class='output co'>#&gt; [1] 0.8</div></pre>
+<span class='no'>prob</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>10</span>)
+<span class='fu'>bbrier</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='kw'>positive</span> <span class='kw'>=</span> <span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] 0.2812546</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
