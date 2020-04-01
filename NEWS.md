@@ -1,5 +1,6 @@
 # mlr3measures 0.1.3
 
+* Added a `packageStartupMessage()` advising against attaching this package.
 * Added new measure `bbrier` (binary Brier Score).
 * Added new measure `mbrier` (multi-class Brier Score).
 * Improved numerical stability for measure `mcc`.
