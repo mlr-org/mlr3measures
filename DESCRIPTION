@@ -6,7 +6,11 @@ Authors@R:
            family = "Lang",
            role = c("cre", "aut"),
            email = "michellang@gmail.com",
-           comment = c(ORCID = "0000-0001-9754-0393"))
+           comment = c(ORCID = "0000-0001-9754-0393"),
+    person(given = "Martin",
+           family = "Binder",
+           role = "ctb",
+           email = "mlr.developer@mb706.com"))
 Description: Implements multiple performance measures for
     supervised learning.  Includes over 40 measures for regression and
     classification. Additionally, meta information about the performance
