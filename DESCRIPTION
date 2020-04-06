@@ -47,6 +47,7 @@ Collate:
     'binary_tp.R'
     'binary_tpr.R'
     'classif_acc.R'
+    'classif_auc.R'
     'classif_bacc.R'
     'classif_ce.R'
     'classif_logloss.R'

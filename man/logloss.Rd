@@ -57,6 +57,7 @@ Other Classification Measures:
 \code{\link{acc}()},
 \code{\link{bacc}()},
 \code{\link{ce}()},
+\code{\link{mauc_aunu}()},
 \code{\link{mbrier}()}
 }
 \concept{Classification Measures}
