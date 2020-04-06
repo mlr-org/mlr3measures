@@ -68,7 +68,7 @@ mauc_au1u = function(truth, prob, na_value = NaN, ...) {
     warning("Measure is undefined if there isn't at least one sample per class.")
     return(NA_real_)
   }
-  sum(colAUC(prob, truth)) / (2 * nlevels(truth) * (nlevels(truth) - 1))
+  sum(colAUC(prob, truth)) / (nlevels(truth) * (nlevels(truth) - 1))
 }
 
 #' @rdname mauc_aunu
@@ -103,10 +103,10 @@ onevrestauc <- function(prob, truth) {
       # therefore we don't want to return Inf here, but a final value that does not matter in the end
       return(0)
     }
-    r = rank(c(prob[truth != cls, cls], prob[truth == cls, cls]), ties.method = "average")
+    r = rank(c(prob[truth == cls, cls], prob[truth != cls, cls]), ties.method = "average")
     # simplify the following:
     # (sum(r[seq_len(nrest)]) - nrest * (nrest + 1) / 2) / (nrest * (ntotal - nrest))
-    (mean(r[seq_len(nrest)]) - (nrest + 1) / 2) / (ntotal - nrest)
+    (mean(r[seq_len(ntotal - nrest)]) - (ntotal - nrest + 1) / 2) / nrest
   })
 }
 
@@ -127,10 +127,10 @@ colAUC = function(prob, truth) {
     for (j in levels(truth)) {
       if (i == j) next
       nj = sum(truth == j)  # avoid integer overflow
-      r = rank(c(prob[truth == j, i], prob[truth == i, i]), ties.method = "average")
+      r = rank(c(prob[truth == i, i], prob[truth == j, i]), ties.method = "average")
       # simplify the following:
       # conditional_auc[i, j] = (sum(r[seq_len(nj)]) - nj * (nj + 1) / 2) / (ni * nj)
-      conditional_auc[i, j] = (mean(r[seq_len(nj)]) - (nj + 1) / 2) / ni
+      conditional_auc[i, j] = (mean(r[seq_len(ni)]) - (ni + 1) / 2) / nj
     }
   }
   conditional_auc
