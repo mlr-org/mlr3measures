@@ -8,3 +8,4 @@
 ^pkgdown$
 ^\.github$
 ^\.pre-commit-config\.yaml$
+^\.ccache$
