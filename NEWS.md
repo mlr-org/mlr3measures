@@ -1,3 +1,7 @@
+# mlr3measures 0.2.0
+
+* Fixed noLD check warnings.
+
 # mlr3measures 0.1.3
 
 * Added a `packageStartupMessage()` advising against attaching this package.
