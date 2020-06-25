@@ -38,24 +38,23 @@ Performance value as \code{numeric(1)}.
 \description{
 Multiclass AUC measures.
 \itemize{
-\item \strong{AUNU: AUC of each class against the rest, using the uniform class
-distribution.} Computes the AUC treating a \code{c}-dimensional classifier
+\item \emph{AUNU}: AUC of each class against the rest, using the uniform class
+distribution. Computes the AUC treating a \code{c}-dimensional classifier
 as \code{c} two-dimensional 1-vs-rest classifiers, where classes are assumed to have
 uniform distribution, in order to have a measure which is independent
-of class distribution change. (Fawcett 2001)
-\item \strong{AUNP: AUC of each class against the rest, using the a priori class
-distribution.} Computes the AUC treating a \code{c}-dimensional classifier as \code{c}
+of class distribution change (Fawcett 2001).
+\item \emph{AUNP}: AUC of each class against the rest, using the a priori class
+distribution. Computes the AUC treating a \code{c}-dimensional classifier as \code{c}
 two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
-each class. (Fawcett 2001)
-\item \strong{AU1U: AUC of each class against each other, using the uniform class
-distribution.} Computes something like (see Hand (2001) for details)
-the AUC of \code{c(c - 1)} binary classifiers (all possible pairwise
-combinations).
-\item \strong{AU1P: AUC of each class against each other, using the a priori class
-distribution.} Computes something like AUC of \code{c(c - 1)} binary classifiers
+each class (Fawcett 2001).
+\item \emph{AU1U}: AUC of each class against each other, using the uniform class
+distribution. Computes something like the AUC of \code{c(c - 1)} binary classifiers
+(all possible pairwise combinations). See Hand (2001) for details.
+\item \emph{AU1P}: AUC of each class against each other, using the a priori class
+distribution. Computes something like AUC of \code{c(c - 1)} binary classifiers
 while considering the a priori distribution of the classes as suggested
-in Ferri (2009). Note we deviate from the the definition in
-Ferri (2009) by a factor of \code{c}
+in Ferri (2009). Note we deviate from the definition in
+Ferri (2009) by a factor of \code{c}.
 The person implementing this function and writing this very
 documentation right now cautions against using this measure because it is
 an imperfect generalization of AU1U.
