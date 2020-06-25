@@ -2,11 +2,15 @@ Package: mlr3measures
 Title: Performance Measures for 'mlr3'
 Version: 0.2.0
 Authors@R:
-    person(given = "Michel",
-           family = "Lang",
-           role = c("cre", "aut"),
-           email = "michellang@gmail.com",
-           comment = c(ORCID = "0000-0001-9754-0393"))
+    c(person(given = "Michel",
+             family = "Lang",
+             role = c("cre", "aut"),
+             email = "michellang@gmail.com",
+             comment = c(ORCID = "0000-0001-9754-0393")),
+      person(given = "Martin",
+             family = "Binder",
+             role = "ctb",
+             email = "mlr.developer@mb706.com"))
 Description: Implements multiple performance measures for
     supervised learning.  Includes over 40 measures for regression and
     classification. Additionally, meta information about the performance
@@ -47,6 +51,7 @@ Collate:
     'binary_tp.R'
     'binary_tpr.R'
     'classif_acc.R'
+    'classif_auc.R'
     'classif_bacc.R'
     'classif_ce.R'
     'classif_logloss.R'

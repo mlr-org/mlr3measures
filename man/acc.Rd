@@ -50,6 +50,7 @@ Other Classification Measures:
 \code{\link{bacc}()},
 \code{\link{ce}()},
 \code{\link{logloss}()},
+\code{\link{mauc_aunu}()},
 \code{\link{mbrier}()}
 }
 \concept{Classification Measures}

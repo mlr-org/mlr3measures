@@ -58,7 +58,8 @@ Other Classification Measures:
 \code{\link{acc}()},
 \code{\link{bacc}()},
 \code{\link{ce}()},
-\code{\link{logloss}()}
+\code{\link{logloss}()},
+\code{\link{mauc_aunu}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

@@ -120,3 +120,66 @@ test_that("bacc", {
 #   response = factor(rep("a", 6), levels = c("a", "b", "c"))
 #   expect_equal(round(ber(truth, response), 2), 0.67)
 # })
+
+test_that("multiclass auc", {
+  truth = factor(c("a", "b", "c"))
+  prob = diag(3)
+  colnames(prob) = levels(truth)
+  expect_equal(mauc_aunu(truth, prob), 1)
+  expect_equal(mauc_aunp(truth, prob), 1)
+  expect_equal(mauc_au1u(truth, prob), 1)
+  expect_equal(mauc_au1p(truth, prob), 1)
+
+  auc(truth = factor(c("a", "nota", "nota")), prob = c(1, 0, 0), positive = "a")
+
+
+  truth = ssample(c("a", "b", "c"), 100)
+  prob = matrix(runif(300), ncol = 3)
+  colnames(prob) = levels(truth)
+
+  # having the same number of 'a', 'b', and 'c' gives the same 'n' and 'u' measures
+  equalizer_prob = matrix(runif(900), ncol = 3)
+  colnames(equalizer_prob) = levels(truth)
+  equalizer_truth = unlist(list(
+    truth,
+    factor(truth, levels = c("b", "c", "a"), labels = c("a", "b", "c")),
+    factor(truth, levels = c("c", "a", "b"), labels = c("a", "b", "c"))))
+
+  expect_equal(mauc_aunu(equalizer_truth, equalizer_prob), mauc_aunp(equalizer_truth, equalizer_prob))
+  expect_equal(mauc_au1u(equalizer_truth, equalizer_prob), mauc_au1p(equalizer_truth, equalizer_prob))
+
+  # having no information in prob gives measure 0.5
+  maxent_prob = rbind(prob, prob, prob)
+  expect_equal(mauc_aunu(equalizer_truth, maxent_prob), 0.5)
+  expect_equal(mauc_aunp(equalizer_truth, maxent_prob), 0.5)
+  expect_equal(mauc_aunu(equalizer_truth, maxent_prob), 0.5)
+  expect_equal(mauc_au1u(equalizer_truth, maxent_prob), 0.5)
+
+  # reversing prob gives 1 - auc
+  expect_equal(mauc_aunu(truth, prob), 1 - mauc_aunu(truth, 1 - prob))
+  expect_equal(mauc_aunp(truth, prob), 1 - mauc_aunp(truth, 1 - prob))
+  expect_equal(mauc_au1u(truth, prob), 1 - mauc_au1u(truth, 1 - prob))
+  expect_equal(mauc_au1p(truth, prob), 1 - mauc_au1p(truth, 1 - prob))
+
+
+  # manually calculate au1u, au1p
+  compmat = sapply(levels(truth), function(t1) {
+    sapply(levels(truth), function(t2) {
+      if (t1 == t2) return(0)
+      auc(factor(truth == t1)[truth %in% c(t1, t2)], prob[truth %in% c(t1, t2), t1], "TRUE")
+    })
+  })
+
+  expect_equal(mauc_au1u(truth, prob), sum(compmat) / 6)
+  expect_equal(mauc_au1p(truth, prob), sum(c(compmat + t(compmat)) * c(table(truth))) / 4 / length(truth))
+
+  # manually calculate aunu, aunp
+  compvec = sapply(levels(truth), function(t1) {
+    auc(factor(truth == t1), prob[, t1], "TRUE")
+  })
+
+  expect_equal(mauc_aunu(truth, prob), mean(compvec))
+  expect_equal(mauc_aunp(truth, prob), sum(compvec * table(truth) / length(truth)))
+
+
+})
