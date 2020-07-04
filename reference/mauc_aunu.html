@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Classification Error — ce • mlr3measures</title>
+<title>Multiclass AUC Scores — mauc_aunu • mlr3measures</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -47,10 +47,30 @@
 
 
 
-<meta property="og:title" content="Classification Error — ce" />
-<meta property="og:description" content="Classification measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n \left( t_i \neq r_i \right).
-$$" />
+<meta property="og:title" content="Multiclass AUC Scores — mauc_aunu" />
+<meta property="og:description" content="Multiclass AUC measures.
+AUNU: AUC of each class against the rest, using the uniform class
+distribution. Computes the AUC treating a c-dimensional classifier
+as c two-dimensional 1-vs-rest classifiers, where classes are assumed to have
+uniform distribution, in order to have a measure which is independent
+of class distribution change (Fawcett 2001).
+AUNP: AUC of each class against the rest, using the a priori class
+distribution. Computes the AUC treating a c-dimensional classifier as c
+two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
+each class (Fawcett 2001).
+AU1U: AUC of each class against each other, using the uniform class
+distribution. Computes something like the AUC of c(c - 1) binary classifiers
+(all possible pairwise combinations). See Hand (2001) for details.
+AU1P: AUC of each class against each other, using the a priori class
+distribution. Computes something like AUC of c(c - 1) binary classifiers
+while considering the a priori distribution of the classes as suggested
+in Ferri (2009). Note we deviate from the definition in
+Ferri (2009) by a factor of c.
+The person implementing this function and writing this very
+documentation right now cautions against using this measure because it is
+an imperfect generalization of AU1U.
+
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -143,18 +163,44 @@ $$" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Classification Error</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/classif_ce.R'><code>R/classif_ce.R</code></a></small>
-    <div class="hidden name"><code>ce.Rd</code></div>
+    <h1>Multiclass AUC Scores</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/classif_auc.R'><code>R/classif_auc.R</code></a></small>
+    <div class="hidden name"><code>mauc_aunu.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Classification measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n \left( t_i \neq r_i \right).
-$$</p>
+    <p>Multiclass AUC measures.</p><ul>
+<li><p><em>AUNU</em>: AUC of each class against the rest, using the uniform class
+distribution. Computes the AUC treating a <code>c</code>-dimensional classifier
+as <code>c</code> two-dimensional 1-vs-rest classifiers, where classes are assumed to have
+uniform distribution, in order to have a measure which is independent
+of class distribution change (Fawcett 2001).</p></li>
+<li><p><em>AUNP</em>: AUC of each class against the rest, using the a priori class
+distribution. Computes the AUC treating a <code>c</code>-dimensional classifier as <code>c</code>
+two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
+each class (Fawcett 2001).</p></li>
+<li><p><em>AU1U</em>: AUC of each class against each other, using the uniform class
+distribution. Computes something like the AUC of <code><a href='https://rdrr.io/r/base/c.html'>c(c - 1)</a></code> binary classifiers
+(all possible pairwise combinations). See Hand (2001) for details.</p></li>
+<li><p><em>AU1P</em>: AUC of each class against each other, using the a priori class
+distribution. Computes something like AUC of <code><a href='https://rdrr.io/r/base/c.html'>c(c - 1)</a></code> binary classifiers
+while considering the a priori distribution of the classes as suggested
+in Ferri (2009). Note we deviate from the definition in
+Ferri (2009) by a factor of <code>c</code>.
+The person implementing this function and writing this very
+documentation right now cautions against using this measure because it is
+an imperfect generalization of AU1U.</p></li>
+</ul>
+
     </div>
 
-    <pre class="usage"><span class='fu'>ce</span>(<span class='no'>truth</span>, <span class='no'>response</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>mauc_aunu</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='kw'>na_value</span> <span class='kw'>=</span> <span class='fl'>NaN</span>, <span class='no'>...</span>)
+
+<span class='fu'>mauc_aunp</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='kw'>na_value</span> <span class='kw'>=</span> <span class='fl'>NaN</span>, <span class='no'>...</span>)
+
+<span class='fu'>mauc_au1u</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='kw'>na_value</span> <span class='kw'>=</span> <span class='fl'>NaN</span>, <span class='no'>...</span>)
+
+<span class='fu'>mauc_au1p</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='kw'>na_value</span> <span class='kw'>=</span> <span class='fl'>NaN</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,10 +212,17 @@ True (observed) labels.
 Must have the same levels and length as <code>response</code>.</p></td>
     </tr>
     <tr>
-      <th>response</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
-Predicted response labels.
-Must have the same levels and length as <code>truth</code>.</p></td>
+      <th>prob</th>
+      <td><p>:: <code><a href='https://rdrr.io/r/base/matrix.html'>matrix()</a></code><br />
+Matrix of predicted probabilities, each column is a vector of probabilities for a
+specific class label.
+Columns must be named with levels of <code>truth</code>.</p></td>
+    </tr>
+    <tr>
+      <th>na_value</th>
+      <td><p>:: <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code><br />
+Value that should be returned if the measure is not defined for the input
+(as described in the note). Default is <code>NaN</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -188,25 +241,40 @@ Additional arguments. Currently ignored.</p></td>
 <ul>
 <li><p>Type: <code>"classif"</code></p></li>
 <li><p>Range: \([0, 1]\)</p></li>
-<li><p>Minimize: <code>TRUE</code></p></li>
-<li><p>Required prediction: <code>response</code></p></li>
+<li><p>Minimize: <code>FALSE</code></p></li>
+<li><p>Required prediction: <code>prob</code></p></li>
 </ul>
 
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Fawcett T (2001).
+&#8220;Using rule sets to maximize ROC performance.&#8221;
+In <em>Proceedings 2001 IEEE international conference on data mining</em>, 131--138.
+IEEE.</p>
+<p>Ferri C, Hernández-Orallo J, Modroiu R (2009).
+&#8220;An experimental comparison of performance measures for classification.&#8221;
+<em>Pattern Recognition Letters</em>, <b>30</b>(1), 27--38.
+doi: <a href='https://doi.org/10.1016/j.patrec.2008.08.010'>10.1016/j.patrec.2008.08.010</a>
+.</p>
+<p>Hand DJ, Till RJ (2001).
+&#8220;A simple generalisation of the area under the ROC curve for multiple class classification problems.&#8221;
+<em>Machine learning</em>, <b>45</b>(2), 171--186.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Classification Measures: 
 <code><a href='acc.html'>acc</a>()</code>,
 <code><a href='bacc.html'>bacc</a>()</code>,
+<code><a href='ce.html'>ce</a>()</code>,
 <code><a href='logloss.html'>logloss</a>()</code>,
-<code><a href='mauc_aunu.html'>mauc_aunu</a>()</code>,
 <code><a href='mbrier.html'>mbrier</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1</span>)
 <span class='no'>lvls</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>, <span class='st'>"c"</span>)
 <span class='no'>truth</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='no'>lvls</span>, <span class='fl'>10</span>, <span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>levels</span> <span class='kw'>=</span> <span class='no'>lvls</span>)
-<span class='no'>response</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='no'>lvls</span>, <span class='fl'>10</span>, <span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>levels</span> <span class='kw'>=</span> <span class='no'>lvls</span>)
-<span class='fu'>ce</span>(<span class='no'>truth</span>, <span class='no'>response</span>)</div><div class='output co'>#&gt; [1] 0.8</div></pre>
+<span class='no'>prob</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>3</span> * <span class='fl'>10</span>), <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>prob</span>) <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/levels.html'>levels</a></span>(<span class='no'>truth</span>)
+<span class='fu'>mauc_aunu</span>(<span class='no'>truth</span>, <span class='no'>prob</span>)</div><div class='output co'>#&gt; [1] 0.4047619</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
