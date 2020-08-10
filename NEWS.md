@@ -1,5 +1,8 @@
 # mlr3measures 0.2.0-9000
 
+* Compact in-memory representation of R6 objects to save space when
+  saving objects via saveRDS(), serialize() etc.
+
 # mlr3measures 0.2.0
 
 * Added new measures: `mauc_au1p`, `mauc_au1u`, `mauc_aunp`, and `mauc_aunu`.

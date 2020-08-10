@@ -10,3 +10,5 @@
     "and access the measures directly via `::`, e.g. `mlr3measures::auc()`."
   ))
 }
+
+leanify_package()
