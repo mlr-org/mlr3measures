@@ -154,7 +154,7 @@ The AUC can be interpreted as the probability that a randomly chosen positive ob
 has a higher predicted probability than a randomly chosen negative observation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>auc</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='no'>positive</span>, <span class='kw'>na_value</span> <span class='kw'>=</span> <span class='fl'>NaN</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>auc</span>(<span class='kw'>truth</span>, <span class='kw'>prob</span>, <span class='kw'>positive</span>, na_value = <span class='fl'>NaN</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -235,9 +235,10 @@ doi: <a href='https://doi.org/10.1002/1097-0142(1950)3:1&lt;32::aid-cncr28200301
 <code><a href='tp.html'>tp</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>truth</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"a"</span>, <span class='st'>"a"</span>, <span class='st'>"b"</span>))
-<span class='no'>prob</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>.6</span>, <span class='fl'>.7</span>, <span class='fl'>.1</span>, <span class='fl'>.4</span>)
-<span class='fu'>auc</span>(<span class='no'>truth</span>, <span class='no'>prob</span>, <span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] 0.6666667</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>truth</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"a"</span>, <span class='st'>"a"</span>, <span class='st'>"b"</span>))
+<span class='kw'>prob</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>.6</span>, <span class='fl'>.7</span>, <span class='fl'>.1</span>, <span class='fl'>.4</span>)
+<span class='fu'>auc</span>(<span class='kw'>truth</span>, <span class='kw'>prob</span>, <span class='st'>"a"</span>)
+</div><div class='output co'>#&gt; [1] 0.6666667</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -253,7 +254,7 @@ doi: <a href='https://doi.org/10.1002/1097-0142(1950)3:1&lt;32::aid-cncr28200301
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.</p>
 </div>
 
       </footer>
