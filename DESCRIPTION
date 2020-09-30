@@ -46,6 +46,7 @@ Collate:
     'binary_mcc.R'
     'binary_npv.R'
     'binary_ppv.R'
+    'binary_prauc.R'
     'binary_tn.R'
     'binary_tnr.R'
     'binary_tp.R'
