@@ -3,7 +3,7 @@
 #' @description
 #' Computes the area under the Precision-Recall curve (PRC).
 #' The PRC can be interpreted as the relationship between precision and recall (sensitivity),
-#' and is found to be a more appropriate measure for unbalanced datasets than the ROC curve.
+#' and is considered to be a more appropriate measure for unbalanced datasets than the ROC curve.
 #' The PRC is computed by integration of the piecewise function.
 #'
 #' @templateVar mid prauc
