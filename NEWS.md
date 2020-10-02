@@ -1,8 +1,10 @@
 # mlr3measures 0.2.0-9000
 
+* New measure `prauc` (area under precision-recall curve) (#22).
+
 # mlr3measures 0.2.0
 
-* Added new measures: `mauc_au1p`, `mauc_au1u`, `mauc_aunp`, and `mauc_aunu`.
+* New measures: `mauc_au1p`, `mauc_au1u`, `mauc_aunp`, and `mauc_aunu`.
 * Fixed noLD check warnings.
 
 # mlr3measures 0.1.3
