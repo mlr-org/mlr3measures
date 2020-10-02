@@ -77,6 +77,7 @@ Other Binary Classification Measures:
 \code{\link{mcc}()},
 \code{\link{npv}()},
 \code{\link{ppv}()},
+\code{\link{prauc}()},
 \code{\link{tn}()},
 \code{\link{tpr}()},
 \code{\link{tp}()}
