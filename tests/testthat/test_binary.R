@@ -57,6 +57,11 @@ test_that("tests from Metrics", {
   expect_equal(auc(as_fac(0,1,1,0),c(.2,.1,.3,.4), "a"), 1/4)
   expect_equal(auc(as_fac(1,1,1,1,0,0,0,0,0,0),0*(1:10), "a"), 0.5)
 
+  expect_equal(prauc(as_fac(1,0,1,1), c(.32,.52,.26,.86), "a"), 1/3)
+  expect_equal(prauc(as_fac(1,0,1,0,1),c(.9,.1,.8,.1,.7), "a"), 1)
+  expect_equal(prauc(as_fac(0,1,1,0),c(.2,.1,.3,.4), "a"), 1/4)
+  expect_equal(prauc(as_fac(1,1,1,1,0,0,0,0,0,0),0*(1:10), "a"), 0.5)
+
   # expect_equal(ll(1,1), 0)
   # expect_equal(ll(1,0), Inf)
   # expect_equal(ll(0,1), Inf)
