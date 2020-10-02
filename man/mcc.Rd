@@ -53,7 +53,10 @@ response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
 mcc(truth, response, positive = "a")
 }
 \references{
-\cite{matthews_1975}
+Matthews BW (1975).
+\dQuote{Comparison of the predicted and observed secondary structure of T4 phage lysozyme.}
+\emph{Biochimica et Biophysica Acta (BBA) - Protein Structure}, \bold{405}(2), 442--451.
+\doi{10.1016/0005-2795(75)90109-9}.
 }
 \seealso{
 Other Binary Classification Measures: 

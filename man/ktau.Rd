@@ -42,7 +42,10 @@ response = truth + rnorm(10)
 ktau(truth, response)
 }
 \references{
-\cite{rosset_2006}
+Rosset S, Perlich C, Zadrozny B (2006).
+\dQuote{Ranking-based evaluation of regression models.}
+\emph{Knowledge and Information Systems}, \bold{12}(3), 331--353.
+\doi{10.1007/s10115-006-0037-3}.
 }
 \seealso{
 Other Regression Measures: 

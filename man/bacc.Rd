@@ -61,9 +61,14 @@ response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
 bacc(truth, response)
 }
 \references{
-\cite{brodersen_2010}
-
-\cite{guyon_2015}
+Brodersen KH, Ong CS, Stephan KE, Buhmann JM (2010).
+\dQuote{The Balanced Accuracy and Its Posterior Distribution.}
+In \emph{2010 20th International Conference on Pattern Recognition}.
+\doi{10.1109/icpr.2010.764}.
+Guyon I, Bennett K, Cawley G, Escalante HJ, Escalera S, Ho TK, Macia N, Ray B, Saeed M, Statnikov A, Viegas E (2015).
+\dQuote{Design of the 2015 ChaLearn AutoML challenge.}
+In \emph{2015 International Joint Conference on Neural Networks (IJCNN)}.
+\doi{10.1109/ijcnn.2015.7280767}.
 }
 \seealso{
 Other Classification Measures: 

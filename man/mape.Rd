@@ -52,7 +52,10 @@ response = truth + rnorm(10)
 mape(truth, response)
 }
 \references{
-\cite{de_myttenaere_2016}
+de Myttenaere, Arnaud, Golden, Boris, Le Grand, Bénédicte, Rossi, Fabrice (2016).
+\dQuote{Mean Absolute Percentage Error for regression models.}
+\emph{Neurocomputing}, \bold{192}, 38-48.
+ISSN 0925-2312, \doi{10.1016/j.neucom.2015.12.114}.
 }
 \seealso{
 Other Regression Measures: 

@@ -20,9 +20,7 @@
 #' * [precision] or [recall] is undefined, i.e. TP + FP = 0 or TP + FN = 0.
 #'
 #' @references
-#' \cite{sasaki_2007}
-#'
-#' \cite{rijsbergen_1979}
+#' `r tools::toRd(bibentries[c("sasaki_2007", "rijsbergen_1979")])`
 #'
 #' @inheritParams binary_params
 #' @param beta :: `numeric(1)`\cr

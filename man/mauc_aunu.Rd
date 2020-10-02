@@ -79,11 +79,17 @@ colnames(prob) = levels(truth)
 mauc_aunu(truth, prob)
 }
 \references{
-\cite{fawcett_2001}
-
-\cite{ferri_2009}
-
-\cite{hand_2001}
+Fawcett, Tom (2001).
+\dQuote{Using rule sets to maximize ROC performance.}
+In \emph{Proceedings 2001 IEEE international conference on data mining}, 131--138.
+IEEE.
+Ferri, César, Hernández-Orallo, José, Modroiu, R (2009).
+\dQuote{An experimental comparison of performance measures for classification.}
+\emph{Pattern Recognition Letters}, \bold{30}(1), 27--38.
+\doi{10.1016/j.patrec.2008.08.010}.
+Hand, J D, Till, J R (2001).
+\dQuote{A simple generalisation of the area under the ROC curve for multiple class classification problems.}
+\emph{Machine learning}, \bold{45}(2), 171--186.
 }
 \seealso{
 Other Classification Measures: 

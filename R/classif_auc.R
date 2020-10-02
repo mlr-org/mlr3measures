@@ -28,11 +28,7 @@
 #' @template classif_template
 #'
 #' @references
-#' \cite{fawcett_2001}
-#'
-#' \cite{ferri_2009}
-#'
-#' \cite{hand_2001}
+#' `r tools::toRd(bibentries[c("fawcett_2001", "ferri_2009", "hand_2001")])`
 #'
 #' @inheritParams classif_params
 #' @template classif_example

@@ -16,7 +16,7 @@
 #' @inheritParams binary_params
 #'
 #' @references
-#' \cite{davis_2006}
+#' `r tools::toRd(bibentries["davis_2006"])`
 #'
 #' @export
 #' @examples

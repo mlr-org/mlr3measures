@@ -18,9 +18,7 @@
 #' }
 #'
 #' @references
-#' \cite{brodersen_2010}
-#'
-#' \cite{guyon_2015}
+#' `r tools::toRd(bibentries[c("brodersen_2010", "guyon_2015")])`
 #'
 #' @templateVar mid bacc
 #' @template classif_template

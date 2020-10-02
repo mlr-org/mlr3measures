@@ -54,7 +54,10 @@ prob = c(.6, .7, .1, .4)
 prauc(truth, prob, "a")
 }
 \references{
-\cite{davis_2006}
+Davis J, Goadrich M (2006).
+\dQuote{The relationship between precision-recall and ROC curves.}
+In \emph{Proceedings of the 23rd International Conference on Machine Learning}.
+ISBN 9781595933836.
 }
 \seealso{
 Other Binary Classification Measures: 

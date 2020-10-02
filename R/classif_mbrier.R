@@ -15,7 +15,7 @@
 #' @template classif_template
 #'
 #' @references
-#' \cite{brier_1950}
+#' `r tools::toRd(bibentries["brier_1950"])`
 #'
 #' @inheritParams classif_params
 #' @template classif_example

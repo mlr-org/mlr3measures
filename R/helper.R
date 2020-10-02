@@ -38,32 +38,6 @@ cm = function(truth, response, positive = NULL) {
   table(response, truth, useNA = "ifany")
 }
 
-# copied from mlr3misc to avoid the dependency
-cite_bib = function(key) {
-  stopifnot(length(key) == 1L, is.character(key))
-  package = "mlr3measures"
-
-  if (!requireNamespace("bibtex", quietly = TRUE)) {
-    warning(sprintf("Could not load package 'bibtex' to parse citation '%s'", key))
-    return(sprintf("bibtex:%s", key))
-  }
-
-  path = system.file("references.bib", package = package)
-  if (!file.exists(path)) {
-    warning(sprintf("Bibtex file '%s' for package '%s' does not exist", path, package))
-    return(sprintf("bibtex:%s", key))
-  }
-
-  bib = bibtex::read.bib(path)
-
-  if (!(key %in% names(bib))) {
-    warning(sprintf("Key '%s' not found in references.bib of package '%s'", key, package))
-    return(sprintf("bibtex:%s", key))
-  }
-
-  paste0(tools::toRd(bib[[key]]), "\n")
-}
-
 # used in roxygen templates
 format_range = function(item) {
   l = item$lower

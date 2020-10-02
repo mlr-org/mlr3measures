@@ -51,7 +51,10 @@ colnames(prob) = levels(truth)
 mbrier(truth, prob)
 }
 \references{
-\cite{brier_1950}
+Brier GW (1950).
+\dQuote{Verification of forecasts expressed in terms of probability.}
+\emph{Monthly Weather Review}, \bold{78}(1), 1--3.
+\doi{10.1175/1520-0493(1950)078<0001:vofeit>2.0.co;2}.
 }
 \seealso{
 Other Classification Measures: 
