@@ -1,5 +1,5 @@
 #' @importFrom utils bibentry
-bibentries = c(
+bibentries = c( # nolint start
 
   brodersen_2010     = bibentry("inproceedings",
     title            = "The Balanced Accuracy and Its Posterior Distribution",
@@ -130,4 +130,4 @@ bibentries = c(
     year             = "2001",
     organization     = "IEEE"
   )
-)
+) # nolint end
