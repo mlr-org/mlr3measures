@@ -84,7 +84,7 @@
 
       <div class="navbar-brand-container">
         <a href="https://mlr-org.com"><img src="https://raw.githubusercontent.com/mlr-org/mlr3/master/man/figures/logo.png" id="hexlogo" alt="mlr-org" /></a>
-        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.2.0</small></a>
+        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.3.0</small></a>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -154,7 +154,7 @@
  $$</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mape</span>(<span class='no'>truth</span>, <span class='no'>response</span>, <span class='kw'>na_value</span> <span class='kw'>=</span> <span class='fl'>NaN</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>mape</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, na_value <span class='op'>=</span> <span class='cn'>NaN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -203,10 +203,9 @@ Additional arguments. Currently ignored.</p></td>
 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>de
-Myttenaere A, Golden B, Le Grand B, Rossi F (2016).
+    <p>de Myttenaere, Arnaud, Golden, Boris, Le Grand, Bénédicte, Rossi, Fabrice (2016).
 &#8220;Mean Absolute Percentage Error for regression models.&#8221;
-<em>Neurocomputing</em>, <b>192</b>, 38–48.
+<em>Neurocomputing</em>, <b>192</b>, 38-48.
 ISSN 0925-2312, doi: <a href='https://doi.org/10.1016/j.neucom.2015.12.114'>10.1016/j.neucom.2015.12.114</a>
 .</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -234,10 +233,11 @@ ISSN 0925-2312, doi: <a href='https://doi.org/10.1016/j.neucom.2015.12.114'>10.1
 <code><a href='sse.html'>sse</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1</span>)
-<span class='no'>truth</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>10</span>
-<span class='no'>response</span> <span class='kw'>=</span> <span class='no'>truth</span> + <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>10</span>)
-<span class='fu'>mape</span>(<span class='no'>truth</span>, <span class='no'>response</span>)</div><div class='output co'>#&gt; [1] 0.1854723</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>truth</span> <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>
+<span class='va'>response</span> <span class='op'>=</span> <span class='va'>truth</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>10</span><span class='op'>)</span>
+<span class='fu'>mape</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1854723</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -253,7 +253,7 @@ ISSN 0925-2312, doi: <a href='https://doi.org/10.1016/j.neucom.2015.12.114'>10.1
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

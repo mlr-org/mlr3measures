@@ -84,7 +84,7 @@ measure must be minimized or maximized." />
 
       <div class="navbar-brand-container">
         <a href="https://mlr-org.com"><img src="https://raw.githubusercontent.com/mlr-org/mlr3/master/man/figures/logo.png" id="hexlogo" alt="mlr-org" /></a>
-        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.2.0</small></a>
+        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.3.0</small></a>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -154,25 +154,27 @@ Stores meta information about measures, such as minimum, maximum of if the
 measure must be minimized or maximized.</p>
     </div>
 
-    <pre class="usage"><span class='no'>measures</span></pre>
+    <pre class="usage"><span class='va'>measures</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>environment</code> of length 51.</p>
+    <p>An object of class <code>environment</code> of length 52.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>measures</span>)</div><div class='output co'>#&gt;  [1] "tpr"         "bacc"        "auc"         "rse"         "mse"        
-#&gt;  [6] "ce"          "tn"          "precision"   "tp"          "specificity"
-#&gt; [11] "sensitivity" "fbeta"       "tnr"         "dor"         "bbrier"     
-#&gt; [16] "recall"      "sae"         "msle"        "medae"       "mauc_au1p"  
-#&gt; [21] "rsq"         "fpr"         "sse"         "mauc_au1u"   "medse"      
-#&gt; [26] "ppv"         "fn"          "fp"          "fdr"         "fomr"       
-#&gt; [31] "mbrier"      "fnr"         "mcc"         "logloss"     "pbias"      
-#&gt; [36] "smape"       "rrse"        "maxae"       "rmse"        "mape"       
-#&gt; [41] "npv"         "mauc_aunp"   "acc"         "bias"        "rmsle"      
-#&gt; [46] "maxse"       "rae"         "ktau"        "mauc_aunu"   "mae"        
-#&gt; [51] "srho"       </div><div class='input'><span class='no'>measures</span>$<span class='no'>tpr</span></div><div class='output co'>#&gt; $id
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>measures</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "mauc_au1p"   "tp"          "fbeta"       "fnr"         "mbrier"     
+#&gt;  [6] "bacc"        "ktau"        "maxse"       "mape"        "maxae"      
+#&gt; [11] "mauc_au1u"   "ce"          "ppv"         "sensitivity" "specificity"
+#&gt; [16] "recall"      "fn"          "precision"   "srho"        "fp"         
+#&gt; [21] "bbrier"      "tpr"         "bias"        "acc"         "mcc"        
+#&gt; [26] "auc"         "rae"         "rrse"        "smape"       "rse"        
+#&gt; [31] "npv"         "mauc_aunp"   "rsq"         "fomr"        "fdr"        
+#&gt; [36] "fpr"         "dor"         "tnr"         "pbias"       "logloss"    
+#&gt; [41] "prauc"       "mae"         "mauc_aunu"   "rmsle"       "rmse"       
+#&gt; [46] "medse"       "sse"         "medae"       "msle"        "sae"        
+#&gt; [51] "mse"         "tn"         </div><div class='input'><span class='va'>measures</span><span class='op'>$</span><span class='va'>tpr</span>
+</div><div class='output co'>#&gt; $id
 #&gt; [1] "tpr"
 #&gt; 
 #&gt; $type
@@ -208,7 +210,7 @@ measure must be minimized or maximized.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
