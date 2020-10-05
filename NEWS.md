@@ -1,6 +1,8 @@
-# mlr3measures 0.2.0-9000
+# mlr3measures 0.3.0
 
-* New measure `prauc` (area under precision-recall curve) (#22).
+* New measure `prauc` (area under precision-recall curve) (#22) implemented in
+  package `PRROC`.
+* Removed dependency on orphaned package `bibtex`.
 
 # mlr3measures 0.2.0
 
