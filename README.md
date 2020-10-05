@@ -1,6 +1,6 @@
 # mlr3measures
 
-Package website: [release](https://mlr3measures.mlr-org.com/) | [dev](https://mlr3measures.mlr-org.com/dev)
+Package website: [release](https://mlr3measures.mlr-org.com/) | [dev](https://mlr3measures.mlr-org.com/dev/)
 
 <!-- badges: start -->
 [![tic](https://github.com/mlr-org/mlr3measures/workflows/tic/badge.svg?branch=master)](https://github.com/mlr-org/mlr3measures/actions)
