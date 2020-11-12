@@ -14,7 +14,7 @@
 #' @template regr_template
 #'
 #' @references
-#' `r tools::toRd(bibentries["de_myttenaere_2016"])`
+#' `r format_bib("de_myttenaere_2016")`
 #'
 #' @inheritParams regr_params
 #' @template regr_example

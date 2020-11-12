@@ -18,7 +18,7 @@
 #' }
 #'
 #' @references
-#' `r tools::toRd(bibentries[c("brodersen_2010", "guyon_2015")])`
+#' `r format_bib("brodersen_2010", "guyon_2015")`
 #'
 #' @templateVar mid bacc
 #' @template classif_template

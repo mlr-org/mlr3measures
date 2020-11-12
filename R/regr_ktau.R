@@ -8,7 +8,7 @@
 #' @template regr_template
 #'
 #' @references
-#' `r tools::toRd(bibentries["rosset_2006"])`
+#' `r format_bib("rosset_2006")`
 #'
 #' @inheritParams regr_params
 #' @template regr_example

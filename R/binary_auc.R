@@ -15,7 +15,7 @@
 #' @inheritParams binary_params
 #'
 #' @references
-#' `r tools::toRd(bibentries["youden_1950"])`
+#' `r format_bib("youden_1950")`
 #'
 #' @export
 #' @examples

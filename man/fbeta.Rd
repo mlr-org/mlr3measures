@@ -68,14 +68,15 @@ response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
 fbeta(truth, response, positive = "a")
 }
 \references{
-Rijsbergen, Van CJ (1979).
-\emph{Information Retrieval}, 2nd edition.
-Butterworth-Heinemann, Newton, MA, USA.
-ISBN 408709294.
 Sasaki, Yutaka, others (2007).
 \dQuote{The truth of the F-measure.}
 \emph{Teach Tutor mater}, \bold{1}(5), 1--5.
 \url{https://www.cs.odu.edu/~mukka/cs795sum10dm/Lecturenotes/Day3/F-measure-YS-26Oct07.pdf}.
+
+Rijsbergen, Van CJ (1979).
+\emph{Information Retrieval}, 2nd edition.
+Butterworth-Heinemann, Newton, MA, USA.
+ISBN 408709294.
 }
 \seealso{
 Other Binary Classification Measures: 

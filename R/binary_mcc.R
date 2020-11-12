@@ -15,7 +15,7 @@
 #' The denominator is then set to 1.
 #'
 #' @references
-#' `r tools::toRd(bibentries["matthews_1975"])`
+#' `r format_bib("matthews_1975")`
 #'
 #' @inheritParams binary_params
 #' @template binary_example

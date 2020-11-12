@@ -17,7 +17,7 @@
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Brier_score}
 #'
-#' `r tools::toRd(bibentries["brier_1950"])`
+#' `r format_bib("brier_1950")`
 #'
 #' @inheritParams binary_params
 #' @template binary_example
