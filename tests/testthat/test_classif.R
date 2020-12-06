@@ -1,5 +1,3 @@
-context("classification measures")
-
 run_all_measures = function(truth, response, prob) {
   tol = sqrt(.Machine$double.eps)
 

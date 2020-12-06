@@ -1,5 +1,3 @@
-context("regression measures")
-
 test_that("trigger all", {
   N = 10L
   truth = 1 + runif(N)

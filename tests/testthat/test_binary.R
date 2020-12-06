@@ -1,5 +1,3 @@
-context("binary classification measures")
-
 run_all_measures = function(truth, response, prob, positive, na_allowed = FALSE) {
   conf = cm(truth, response, positive = positive)
   na_value = if (na_allowed) 123456789 else NaN
