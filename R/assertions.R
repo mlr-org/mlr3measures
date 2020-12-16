@@ -15,9 +15,7 @@ assert_binary = function(truth, response = NULL, prob = NULL, positive = NULL, n
     assert_choice(positive, levels(truth))
   }
 
-  if (!is.null(na_value)) {
-    assert_number(na_value, na.ok = TRUE)
-  }
+  assert_number(na_value, na.ok = TRUE, null.ok = TRUE)
 }
 
 assert_classif = function(truth, response = NULL, prob = NULL, na_value = NULL) {
@@ -34,17 +32,12 @@ assert_classif = function(truth, response = NULL, prob = NULL, na_value = NULL) 
     assert_set_equal(colnames(prob), levels(truth))
   }
 
-  if (!is.null(na_value)) {
-    assert_number(na_value, na.ok = TRUE)
-  }
+  assert_number(na_value, na.ok = TRUE, null.ok = TRUE)
 }
 
 
 assert_regr = function(truth, response, na_value = NULL) {
   assert_numeric(truth, min.len = 1L, any.missing = FALSE, finite = TRUE)
   assert_numeric(response, len = length(truth), any.missing = FALSE, finite = TRUE)
-
-  if (!is.null(na_value)) {
-    assert_number(na_value, na.ok = TRUE)
-  }
+  assert_number(na_value, na.ok = TRUE, null.ok = TRUE)
 }
