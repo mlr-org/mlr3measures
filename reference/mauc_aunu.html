@@ -54,16 +54,16 @@ distribution. Computes the AUC treating a c-dimensional classifier
 as c two-dimensional 1-vs-rest classifiers, where classes are assumed to have
 uniform distribution, in order to have a measure which is independent
 of class distribution change (Fawcett 2001).
-AUNP: AUC of each class against the rest, using the a priori class
+AUNP: AUC of each class against the rest, using the a-priori class
 distribution. Computes the AUC treating a c-dimensional classifier as c
 two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
 each class (Fawcett 2001).
 AU1U: AUC of each class against each other, using the uniform class
 distribution. Computes something like the AUC of c(c - 1) binary classifiers
 (all possible pairwise combinations). See Hand (2001) for details.
-AU1P: AUC of each class against each other, using the a priori class
+AU1P: AUC of each class against each other, using the a-priori class
 distribution. Computes something like AUC of c(c - 1) binary classifiers
-while considering the a priori distribution of the classes as suggested
+while considering the a-priori distribution of the classes as suggested
 in Ferri (2009). Note we deviate from the definition in
 Ferri (2009) by a factor of c.
 The person implementing this function and writing this very
@@ -104,7 +104,7 @@ an imperfect generalization of AU1U.
 
       <div class="navbar-brand-container">
         <a href="https://mlr-org.com"><img src="https://raw.githubusercontent.com/mlr-org/mlr3/master/man/figures/logo.png" id="hexlogo" alt="mlr-org" /></a>
-        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.3.0</small></a>
+        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.3.1</small></a>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -175,16 +175,16 @@ distribution. Computes the AUC treating a <code>c</code>-dimensional classifier
 as <code>c</code> two-dimensional 1-vs-rest classifiers, where classes are assumed to have
 uniform distribution, in order to have a measure which is independent
 of class distribution change (Fawcett 2001).</p></li>
-<li><p><em>AUNP</em>: AUC of each class against the rest, using the a priori class
+<li><p><em>AUNP</em>: AUC of each class against the rest, using the a-priori class
 distribution. Computes the AUC treating a <code>c</code>-dimensional classifier as <code>c</code>
 two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
 each class (Fawcett 2001).</p></li>
 <li><p><em>AU1U</em>: AUC of each class against each other, using the uniform class
 distribution. Computes something like the AUC of <code><a href='https://rdrr.io/r/base/c.html'>c(c - 1)</a></code> binary classifiers
 (all possible pairwise combinations). See Hand (2001) for details.</p></li>
-<li><p><em>AU1P</em>: AUC of each class against each other, using the a priori class
+<li><p><em>AU1P</em>: AUC of each class against each other, using the a-priori class
 distribution. Computes something like AUC of <code><a href='https://rdrr.io/r/base/c.html'>c(c - 1)</a></code> binary classifiers
-while considering the a priori distribution of the classes as suggested
+while considering the a-priori distribution of the classes as suggested
 in Ferri (2009). Note we deviate from the definition in
 Ferri (2009) by a factor of <code>c</code>.
 The person implementing this function and writing this very
@@ -207,26 +207,26 @@ an imperfect generalization of AU1U.</p></li>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>truth</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code>)<br />
 True (observed) labels.
 Must have the same levels and length as <code>response</code>.</p></td>
     </tr>
     <tr>
       <th>prob</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/matrix.html'>matrix()</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/matrix.html'>matrix()</a></code>)<br />
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of <code>truth</code>.</p></td>
     </tr>
     <tr>
       <th>na_value</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>)<br />
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is <code>NaN</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>:: <code>any</code><br />
+      <td><p>(<code>any</code>)<br />
 Additional arguments. Currently ignored.</p></td>
     </tr>
     </table>
