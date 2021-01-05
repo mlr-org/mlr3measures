@@ -7,18 +7,18 @@
 tp(truth, response, positive, ...)
 }
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the exactly same two levels and the same length as \code{response}.}
 
-\item{response}{:: \code{factor()}\cr
+\item{response}{(\code{factor()})\cr
 Predicted response labels.
 Must have the exactly same two levels and the same length as \code{truth}.}
 
-\item{positive}{:: \code{character(1)}\cr
+\item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{

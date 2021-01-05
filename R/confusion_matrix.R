@@ -5,7 +5,7 @@
 #' once and then calculates all confusion measures of this package.
 #'
 #' @inheritParams binary_params
-#' @param relative :: `logical(1)`\cr
+#' @param relative (`logical(1)`)\cr
 #'   If `TRUE`, the returned confusion matrix contains relative frequencies
 #'   instead of absolute frequencies.
 #' @return
@@ -43,6 +43,7 @@ confusion_matrix = function(truth, response, positive, na_value = NaN, relative 
   res
 }
 
+#' @export
 print.confusion_matrix = function(x, ...) {
   print(x$matrix)
   str = sprintf("%-4s: % 1.4f", names(x$measures), x$measures)

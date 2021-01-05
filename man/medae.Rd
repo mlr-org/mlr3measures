@@ -7,15 +7,15 @@
 medae(truth, response, ...)
 }
 \arguments{
-\item{truth}{:: \code{numeric()}\cr
+\item{truth}{(\code{numeric()})\cr
 True (observed) values.
 Must have the same length as \code{response}.}
 
-\item{response}{:: \code{numeric()}\cr
+\item{response}{(\code{numeric()})\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{

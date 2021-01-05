@@ -7,7 +7,8 @@
 #'   1 - sum((t - r)^2) / sum((t - mean(t))^2).
 #' }
 #' Also known as coefficient of determination or explained variation.
-#' Substracts the [rse()] from 1, hence it compares the squared error of the predictions relative to a naive model predicting  the mean.
+#' Subtracts the [rse()] from 1, hence it compares the squared error of
+#' the predictions relative to a naive model predicting the mean.
 #'
 #'
 #' @templateVar mid rsq

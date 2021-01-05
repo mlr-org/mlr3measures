@@ -4,29 +4,29 @@
 \alias{classif_params}
 \title{Classification Parameters}
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the same levels and length as \code{response}.}
 
-\item{response}{:: \code{factor()}\cr
+\item{response}{(\code{factor()})\cr
 Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
-\item{prob}{:: \code{matrix()}\cr
+\item{prob}{(\code{matrix()})\cr
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of \code{truth}.}
 
-\item{sample_weights}{:: \code{numeric()}\cr
+\item{sample_weights}{(\code{numeric()})\cr
 Non-negative sample weights.
 Must have the same levels and length as \code{truth}.
 Defaults to equal sample weights.}
 
-\item{na_value}{:: \code{numeric(1)}\cr
+\item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \description{

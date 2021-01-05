@@ -7,19 +7,19 @@
 rsq(truth, response, na_value = NaN, ...)
 }
 \arguments{
-\item{truth}{:: \code{numeric()}\cr
+\item{truth}{(\code{numeric()})\cr
 True (observed) values.
 Must have the same length as \code{response}.}
 
-\item{response}{:: \code{numeric()}\cr
+\item{response}{(\code{numeric()})\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
 
-\item{na_value}{:: \code{numeric(1)}\cr
+\item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -32,7 +32,8 @@ Regression measure defined as \deqn{
   1 - sum((t - r)^2) / sum((t - mean(t))^2).
 }
 Also known as coefficient of determination or explained variation.
-Substracts the \code{\link[=rse]{rse()}} from 1, hence it compares the squared error of the predictions relative to a naive model predicting  the mean.
+Subtracts the \code{\link[=rse]{rse()}} from 1, hence it compares the squared error of
+the predictions relative to a naive model predicting the mean.
 }
 \note{
 This measure is undefined for constant \eqn{t}.

@@ -16,20 +16,20 @@ mauc_au1u(truth, prob, na_value = NaN, ...)
 mauc_au1p(truth, prob, na_value = NaN, ...)
 }
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the same levels and length as \code{response}.}
 
-\item{prob}{:: \code{matrix()}\cr
+\item{prob}{(\code{matrix()})\cr
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of \code{truth}.}
 
-\item{na_value}{:: \code{numeric(1)}\cr
+\item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{
@@ -43,16 +43,16 @@ distribution. Computes the AUC treating a \code{c}-dimensional classifier
 as \code{c} two-dimensional 1-vs-rest classifiers, where classes are assumed to have
 uniform distribution, in order to have a measure which is independent
 of class distribution change (Fawcett 2001).
-\item \emph{AUNP}: AUC of each class against the rest, using the a priori class
+\item \emph{AUNP}: AUC of each class against the rest, using the a-priori class
 distribution. Computes the AUC treating a \code{c}-dimensional classifier as \code{c}
 two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
 each class (Fawcett 2001).
 \item \emph{AU1U}: AUC of each class against each other, using the uniform class
 distribution. Computes something like the AUC of \code{c(c - 1)} binary classifiers
 (all possible pairwise combinations). See Hand (2001) for details.
-\item \emph{AU1P}: AUC of each class against each other, using the a priori class
+\item \emph{AU1P}: AUC of each class against each other, using the a-priori class
 distribution. Computes something like AUC of \code{c(c - 1)} binary classifiers
-while considering the a priori distribution of the classes as suggested
+while considering the a-priori distribution of the classes as suggested
 in Ferri (2009). Note we deviate from the definition in
 Ferri (2009) by a factor of \code{c}.
 The person implementing this function and writing this very

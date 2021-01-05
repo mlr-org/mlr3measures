@@ -7,20 +7,20 @@
 bacc(truth, response, sample_weights = NULL, ...)
 }
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the same levels and length as \code{response}.}
 
-\item{response}{:: \code{factor()}\cr
+\item{response}{(\code{factor()})\cr
 Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
-\item{sample_weights}{:: \code{numeric()}\cr
+\item{sample_weights}{(\code{numeric()})\cr
 Non-negative sample weights.
 Must have the same levels and length as \code{truth}.
 Defaults to equal sample weights.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{

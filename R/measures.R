@@ -2,7 +2,7 @@
 #'
 #' @description
 #' The [environment()] `measures` keeps track of all measures in this package.
-#' Stores meta information about measures, such as minimum, maximum of if the
+#' It stores meta information such as minimum, maximum or if the
 #' measure must be minimized or maximized.
 #'
 #' @export

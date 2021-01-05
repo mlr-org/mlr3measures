@@ -12,7 +12,7 @@
 #' @template classif_template
 #'
 #' @inheritParams classif_params
-#' @param eps :: `numeric(1)`\cr
+#' @param eps (`numeric(1)`)\cr
 #'   Probabilities are clipped to `max(eps, min(1 - eps, p))`.
 #'   Otherwise the measure would be undefined for probabilities `p = 0` and `p = 1`.
 #' @export
@@ -23,7 +23,7 @@
 #' prob = matrix(runif(3 * 10), ncol = 3, dimnames = list(NULL, lvls))
 #' prob = t(apply(prob, 1, function(x) x / sum(x)))
 #' logloss(truth, prob)
-logloss = function(truth, prob, eps = 1e-15, ...){
+logloss = function(truth, prob, eps = 1e-15, ...) {
   assert_classif(truth, prob = prob)
   assert_number(eps, lower = 0, upper = 1)
 

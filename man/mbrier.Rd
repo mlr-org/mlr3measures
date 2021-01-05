@@ -7,16 +7,16 @@
 mbrier(truth, prob, ...)
 }
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the same levels and length as \code{response}.}
 
-\item{prob}{:: \code{matrix()}\cr
+\item{prob}{(\code{matrix()})\cr
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of \code{truth}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{

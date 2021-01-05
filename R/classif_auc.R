@@ -8,16 +8,16 @@
 #'   as `c` two-dimensional 1-vs-rest classifiers, where classes are assumed to have
 #'   uniform distribution, in order to have a measure which is independent
 #'   of class distribution change (Fawcett 2001).
-#' * *AUNP*: AUC of each class against the rest, using the a priori class
+#' * *AUNP*: AUC of each class against the rest, using the a-priori class
 #'   distribution. Computes the AUC treating a `c`-dimensional classifier as `c`
 #'   two-dimensional 1-vs-rest classifiers, taking into account the prior probability of
 #'   each class (Fawcett 2001).
 #' * *AU1U*: AUC of each class against each other, using the uniform class
 #'   distribution. Computes something like the AUC of `c(c - 1)` binary classifiers
 #'   (all possible pairwise combinations). See Hand (2001) for details.
-#' * *AU1P*: AUC of each class against each other, using the a priori class
+#' * *AU1P*: AUC of each class against each other, using the a-priori class
 #'   distribution. Computes something like AUC of `c(c - 1)` binary classifiers
-#'   while considering the a priori distribution of the classes as suggested
+#'   while considering the a-priori distribution of the classes as suggested
 #'   in Ferri (2009). Note we deviate from the definition in
 #'   Ferri (2009) by a factor of `c`.
 #'   The person implementing this function and writing this very

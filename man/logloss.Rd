@@ -7,20 +7,20 @@
 logloss(truth, prob, eps = 1e-15, ...)
 }
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the same levels and length as \code{response}.}
 
-\item{prob}{:: \code{matrix()}\cr
+\item{prob}{(\code{matrix()})\cr
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of \code{truth}.}
 
-\item{eps}{:: \code{numeric(1)}\cr
+\item{eps}{(\code{numeric(1)})\cr
 Probabilities are clipped to \code{max(eps, min(1 - eps, p))}.
 Otherwise the measure would be undefined for probabilities \code{p = 0} and \code{p = 1}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{

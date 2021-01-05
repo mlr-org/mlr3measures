@@ -10,22 +10,22 @@ ppv(truth, response, positive, na_value = NaN, ...)
 precision(truth, response, positive, na_value = NaN, ...)
 }
 \arguments{
-\item{truth}{:: \code{factor()}\cr
+\item{truth}{(\code{factor()})\cr
 True (observed) labels.
 Must have the exactly same two levels and the same length as \code{response}.}
 
-\item{response}{:: \code{factor()}\cr
+\item{response}{(\code{factor()})\cr
 Predicted response labels.
 Must have the exactly same two levels and the same length as \code{truth}.}
 
-\item{positive}{:: \code{character(1)}\cr
+\item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
 
-\item{na_value}{:: \code{numeric(1)}\cr
+\item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is \code{NaN}.}
 
-\item{...}{:: \code{any}\cr
+\item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
 \value{

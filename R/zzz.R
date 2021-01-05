@@ -3,7 +3,7 @@
 #' @import checkmate
 "_PACKAGE"
 
-.onAttach = function(libname, pkgname) {
+.onAttach = function(libname, pkgname) { # nolint
   packageStartupMessage(paste(
     "In order to avoid name clashes, do not attach 'mlr3measures'.",
     "Instead, only load the namespace with `requireNamespace(\"mlrmeasures\")`",

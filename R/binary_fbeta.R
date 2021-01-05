@@ -23,7 +23,7 @@
 #' `r format_bib("sasaki_2007", "rijsbergen_1979")`
 #'
 #' @inheritParams binary_params
-#' @param beta :: `numeric(1)`\cr
+#' @param beta (`numeric(1)`)\cr
 #'   Parameter to give either precision or recall more weight.
 #'   Default is 1, resulting in balanced weights.
 #' @template binary_example
