@@ -1,4 +1,4 @@
-# mlr3measures 0.4.0
+# mlr3measures 0.3.1
 
 * Fix edge case for `msle` and `rmsle`.
 
