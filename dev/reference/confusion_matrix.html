@@ -159,30 +159,30 @@ once and then calculates all confusion measures of this package.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>truth</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code>)<br />
 True (observed) labels.
 Must have the exactly same two levels and the same length as <code>response</code>.</p></td>
     </tr>
     <tr>
       <th>response</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code>)<br />
 Predicted response labels.
 Must have the exactly same two levels and the same length as <code>truth</code>.</p></td>
     </tr>
     <tr>
       <th>positive</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+      <td><p>(<code>character(1))</code><br />
 Name of the positive class.</p></td>
     </tr>
     <tr>
       <th>na_value</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>)<br />
 Value that should be returned if the measure is not defined for the input
 (as described in the note). Default is <code>NaN</code>.</p></td>
     </tr>
     <tr>
       <th>relative</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>)<br />
 If <code>TRUE</code>, the returned confusion matrix contains relative frequencies
 instead of absolute frequencies.</p></td>
     </tr>
@@ -203,48 +203,30 @@ instead of absolute frequencies.</p></td>
 <span class='va'>response</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>lvls</span>, <span class='fl'>20</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>, levels <span class='op'>=</span> <span class='va'>lvls</span><span class='op'>)</span>
 
 <span class='fu'>confusion_matrix</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, positive <span class='op'>=</span> <span class='st'>"a"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $matrix
-#&gt;         truth
+</div><div class='output co'>#&gt;         truth
 #&gt; response a b
 #&gt;        a 7 5
 #&gt;        b 4 4
-#&gt; 
-#&gt; $measures
-#&gt;        acc         ce        dor         f1        fdr        fnr       fomr 
-#&gt; 0.55000000 0.45000000 1.40000000 0.60869565 0.41666667 0.36363636 0.50000000 
-#&gt;        fpr        mcc        npv        ppv        tnr        tpr 
-#&gt; 0.55555556 0.08206099 0.50000000 0.58333333 0.44444444 0.63636364 
-#&gt; 
-#&gt; attr(,"class")
-#&gt; [1] "confusion_matrix"</div><div class='input'><span class='fu'>confusion_matrix</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, positive <span class='op'>=</span> <span class='st'>"a"</span>, relative <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $matrix
-#&gt;         truth
+#&gt; acc :  0.5500; ce  :  0.4500; dor :  1.4000; f1  :  0.6087 
+#&gt; fdr :  0.4167; fnr :  0.3636; fomr:  0.5000; fpr :  0.5556 
+#&gt; mcc :  0.0821; npv :  0.5000; ppv :  0.5833; tnr :  0.4444 
+#&gt; tpr :  0.6364 </div><div class='input'><span class='fu'>confusion_matrix</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, positive <span class='op'>=</span> <span class='st'>"a"</span>, relative <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;         truth
 #&gt; response    a    b
 #&gt;        a 0.35 0.25
 #&gt;        b 0.20 0.20
-#&gt; 
-#&gt; $measures
-#&gt;        acc         ce        dor         f1        fdr        fnr       fomr 
-#&gt; 0.55000000 0.45000000 1.40000000 0.60869565 0.41666667 0.36363636 0.50000000 
-#&gt;        fpr        mcc        npv        ppv        tnr        tpr 
-#&gt; 0.55555556 0.08206099 0.50000000 0.58333333 0.44444444 0.63636364 
-#&gt; 
-#&gt; attr(,"class")
-#&gt; [1] "confusion_matrix"</div><div class='input'><span class='fu'>confusion_matrix</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, positive <span class='op'>=</span> <span class='st'>"b"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $matrix
-#&gt;         truth
+#&gt; acc :  0.5500; ce  :  0.4500; dor :  1.4000; f1  :  0.6087 
+#&gt; fdr :  0.4167; fnr :  0.3636; fomr:  0.5000; fpr :  0.5556 
+#&gt; mcc :  0.0821; npv :  0.5000; ppv :  0.5833; tnr :  0.4444 
+#&gt; tpr :  0.6364 </div><div class='input'><span class='fu'>confusion_matrix</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, positive <span class='op'>=</span> <span class='st'>"b"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;         truth
 #&gt; response b a
 #&gt;        b 4 4
 #&gt;        a 5 7
-#&gt; 
-#&gt; $measures
-#&gt;        acc         ce        dor         f1        fdr        fnr       fomr 
-#&gt; 0.55000000 0.45000000 1.40000000 0.47058824 0.50000000 0.55555556 0.41666667 
-#&gt;        fpr        mcc        npv        ppv        tnr        tpr 
-#&gt; 0.36363636 0.08206099 0.58333333 0.50000000 0.63636364 0.44444444 
-#&gt; 
-#&gt; attr(,"class")
-#&gt; [1] "confusion_matrix"</div></pre>
+#&gt; acc :  0.5500; ce  :  0.4500; dor :  1.4000; f1  :  0.4706 
+#&gt; fdr :  0.5000; fnr :  0.5556; fomr:  0.4167; fpr :  0.3636 
+#&gt; mcc :  0.0821; npv :  0.5833; ppv :  0.5000; tnr :  0.6364 
+#&gt; tpr :  0.4444 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -163,26 +163,26 @@ where \(p_i\) is the probability for the true class of observation \(i\).</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>truth</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/factor.html'>factor()</a></code>)<br />
 True (observed) labels.
 Must have the same levels and length as <code>response</code>.</p></td>
     </tr>
     <tr>
       <th>prob</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/matrix.html'>matrix()</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/matrix.html'>matrix()</a></code>)<br />
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of <code>truth</code>.</p></td>
     </tr>
     <tr>
       <th>eps</th>
-      <td><p>:: <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code><br />
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>)<br />
 Probabilities are clipped to <code><a href='https://rdrr.io/r/base/Extremes.html'>max(eps, min(1 - eps, p))</a></code>.
 Otherwise the measure would be undefined for probabilities <code>p = 0</code> and <code>p = 1</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>:: <code>any</code><br />
+      <td><p>(<code>any</code>)<br />
 Additional arguments. Currently ignored.</p></td>
     </tr>
     </table>
