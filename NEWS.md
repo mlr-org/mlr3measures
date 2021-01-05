@@ -1,3 +1,7 @@
+# mlr3measures 0.4.0
+
+* Fix edge case for `msle` and `rmsle`.
+
 # mlr3measures 0.3.0
 
 * New measure `prauc` (area under precision-recall curve) (#22) implemented in

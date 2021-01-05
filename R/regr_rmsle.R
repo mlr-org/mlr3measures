@@ -18,7 +18,7 @@
 #' @export
 rmsle = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-  if (min(truth, response) < -1)
+  if (min(truth, response) <= -1)
     return(na_value)
   sqrt(mean(sle(truth, response)))
 }
