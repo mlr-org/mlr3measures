@@ -17,6 +17,12 @@ run_all_measures = function(truth, response, prob, positive, na_allowed = FALSE)
     if (!is.null(f_cm)) {
       expect_equal(perf, f_cm(conf, na_value = na_value), label = m$id)
     }
+
+    if ("sample_weights" %in% names(formals(f))) {
+      sample_weights = runif(length(truth))
+      perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value)
+      expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+    }
   }
 }
 

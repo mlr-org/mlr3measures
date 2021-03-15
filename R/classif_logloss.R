@@ -2,9 +2,9 @@
 #'
 #' @description
 #' Classification measure defined as \deqn{
-#'   -\frac{1}{n} \sum_{i=1}^n \log \left(  p_i \right )
+#'   -\frac{1}{n} \sum_{i=1}^n w_i \log \left(  p_i \right )
 #' }{
-#'   -mean(log(p))
+#'   -weighted.mean(log(p), w)
 #' }
 #' where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 #'
@@ -23,14 +23,14 @@
 #' prob = matrix(runif(3 * 10), ncol = 3, dimnames = list(NULL, lvls))
 #' prob = t(apply(prob, 1, function(x) x / sum(x)))
 #' logloss(truth, prob)
-logloss = function(truth, prob, eps = 1e-15, ...) {
+logloss = function(truth, prob, sample_weights = NULL, eps = 1e-15, ...) {
   assert_classif(truth, prob = prob)
   assert_number(eps, lower = 0, upper = 1)
 
   ii = match(as.character(truth), colnames(prob))
   p = prob[cbind(seq_len(nrow(prob)), ii)]
   p = pmax(eps, pmin(1 - eps, p))
-  -mean(log(p))
+  -wmean(log(p), sample_weights)
 }
 
 #' @include measures.R

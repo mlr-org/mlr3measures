@@ -4,7 +4,7 @@
 \alias{mape}
 \title{Mean Absolute Percent Error}
 \usage{
-mape(truth, response, na_value = NaN, ...)
+mape(truth, response, sample_weights = NULL, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{(\code{numeric()})\cr
@@ -14,6 +14,12 @@ Must have the same length as \code{response}.}
 \item{response}{(\code{numeric()})\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+Will get automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
@@ -27,9 +33,9 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Regression measure defined as \deqn{
-  \frac{1}{n} \sum_{i=1}^n \left| \frac{ t_i - r_i}{t_i} \right|.
+  \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|.
  }{
-   mean(abs((t - r) / t)).
+   weighted.mean(abs((t - r) / t), w).
  }
 }
 \note{
