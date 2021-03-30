@@ -4,7 +4,7 @@
 \alias{mae}
 \title{Mean Absolute Errors}
 \usage{
-mae(truth, response, ...)
+mae(truth, response, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{numeric()})\cr
@@ -15,6 +15,12 @@ Must have the same length as \code{response}.}
 Predicted response values.
 Must have the same length as \code{truth}.}
 
+\item{sample_weights}{(\code{numeric()})\cr
+Non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+Will get automatically normalized to sum to one.
+Defaults to equal sample weights.}
+
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
@@ -23,9 +29,9 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Regression measure defined as \deqn{
-  \frac{1}{n} \sum_{i=1}^n \left| t_i - r_i \right|.
+  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
 }{
-  mean(abs(t - r)).
+  weighted.mean(abs(t - r), w).
 }
 }
 \section{Meta Information}{

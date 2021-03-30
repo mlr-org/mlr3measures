@@ -10,6 +10,12 @@ test_that("trigger all", {
     f = match.fun(m$id)
     perf = f(truth = truth, response = response)
     expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+
+    if ("sample_weights" %in% names(formals(f))) {
+      sample_weights = runif(length(truth))
+      perf = f(truth = truth, response = response, sample_weights = sample_weights)
+      expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+    }
   }
 })
 

@@ -7,6 +7,12 @@ run_all_measures = function(truth, response, prob) {
     f = match.fun(m$id)
     perf = f(truth = truth, response = response, prob = prob)
     expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+
+    if ("sample_weights" %in% names(formals(f))) {
+      sample_weights = runif(length(truth))
+      perf = f(truth = truth, response = response, prob = prob)
+      expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+    }
   }
 }
 
@@ -15,7 +21,7 @@ test_that("trigger all", {
   n = 10
   truth = ssample(letters[1:k], n)
   response = ssample(letters[1:k], n)
-  prob = matrix(runif(n*k, min = 1e-8, max = 1 - 1e-8), nrow = n)
+  prob = matrix(runif(n * k, min = 1e-8, max = 1 - 1e-8), nrow = n)
   prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = letters[1:k]
 
@@ -26,7 +32,7 @@ test_that("integer overflow", {
   N = 500000
   truth = ssample(c("a", "b"), N)
   response = truth
-  prob = matrix(runif(N*2), ncol = 2)
+  prob = matrix(runif(N * 2), ncol = 2)
   prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = levels(truth)
   run_all_measures(truth, response, prob)
@@ -40,7 +46,7 @@ test_that("integer overflow", {
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))
-  as_prob = function(...) { p = c(...);  p = cbind(p, 1-p); colnames(p) = c("a", "b"); p}
+  as_prob = function(...) { p = c(...);  p = cbind(p, 1 - p); colnames(p) = c("a", "b"); p}
 
   expect_equal(ce(as_fac(1,1,1,0,0,0),as_fac(1,1,1,0,0,0)), 0.0)
   expect_equal(ce(as_fac(1,1,1,0,0,0),as_fac(1,1,1,1,0,0)), 1/6)

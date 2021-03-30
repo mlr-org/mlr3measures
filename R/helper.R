@@ -29,6 +29,18 @@ div = function(nominator, denominator, na_value) {
     nominator / denominator
 }
 
+wmean = function(x, w) { # a better stats::weighted.mean
+  if (is.null(w)) {
+    return(mean(x))
+  }
+  assert_numeric(w, lower = 0, finite = TRUE, any.missing = FALSE, len = length(x))
+  sum_w = sum(w)
+  if (abs(sum_w) < TOL)
+    stop("Cannot normalize weights, all weights are 0")
+  w = w / sum_w
+  sum(x * w)
+}
+
 # confusion matrix
 cm = function(truth, response, positive = NULL) {
   if (!is.null(positive)) {

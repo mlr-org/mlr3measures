@@ -2,9 +2,9 @@
 #'
 #' @description
 #' Regression measure defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n \left( t_i - r_i \right).
+#'   \frac{1}{n} \sum_{i=1}^n w_i \left( t_i - r_i \right).
 #' }{
-#'   mean(t - r).
+#'   weighted.mean(t - r, w).
 #' }
 #' Good predictions score close to 0.
 #'
@@ -14,9 +14,9 @@
 #' @inheritParams regr_params
 #' @template regr_example
 #' @export
-bias = function(truth, response, ...) {
+bias = function(truth, response, sample_weights = NULL, ...) {
   assert_regr(truth, response = response)
-  mean(truth - response)
+  wmean(truth - response, sample_weights)
 }
 
 #' @include measures.R
