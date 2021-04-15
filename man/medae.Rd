@@ -2,7 +2,7 @@
 % Please edit documentation in R/regr_medae.R
 \name{medae}
 \alias{medae}
-\title{Median Absolute Errors}
+\title{Median Absolute Error}
 \usage{
 medae(truth, response, ...)
 }
