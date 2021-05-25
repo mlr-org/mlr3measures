@@ -2,8 +2,9 @@ run_all_measures = function(truth, response, prob) {
   tol = sqrt(.Machine$double.eps)
 
   for (m in as.list(measures)) {
-    if (m$type != "classif")
+    if (m$type != "classif") {
       next
+    }
     f = match.fun(m$id)
     perf = f(truth = truth, response = response, prob = prob)
     expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
@@ -15,7 +16,7 @@ test_that("trigger all", {
   n = 10
   truth = ssample(letters[1:k], n)
   response = ssample(letters[1:k], n)
-  prob = matrix(runif(n*k, min = 1e-8, max = 1 - 1e-8), nrow = n)
+  prob = matrix(runif(n * k, min = 1e-8, max = 1 - 1e-8), nrow = n)
   prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = letters[1:k]
 
@@ -26,7 +27,7 @@ test_that("integer overflow", {
   N = 500000
   truth = ssample(c("a", "b"), N)
   response = truth
-  prob = matrix(runif(N*2), ncol = 2)
+  prob = matrix(runif(N * 2), ncol = 2)
   prob = t(apply(prob, 1, function(x) x / sum(x)))
   colnames(prob) = levels(truth)
   run_all_measures(truth, response, prob)
@@ -40,18 +41,23 @@ test_that("integer overflow", {
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))
-  as_prob = function(...) { p = c(...);  p = cbind(p, 1-p); colnames(p) = c("a", "b"); p}
+  as_prob = function(...) {
+    p = c(...)
+    p = cbind(p, 1 - p)
+    colnames(p) = c("a", "b")
+    p
+  }
 
-  expect_equal(ce(as_fac(1,1,1,0,0,0),as_fac(1,1,1,0,0,0)), 0.0)
-  expect_equal(ce(as_fac(1,1,1,0,0,0),as_fac(1,1,1,1,0,0)), 1/6)
+  expect_equal(ce(as_fac(1, 1, 1, 0, 0, 0), as_fac(1, 1, 1, 0, 0, 0)), 0.0)
+  expect_equal(ce(as_fac(1, 1, 1, 0, 0, 0), as_fac(1, 1, 1, 1, 0, 0)), 1 / 6)
 
-  expect_equal(ce(factor(c(1,2,3,4), levels = 1:4), factor(c(1,2,3,3), levels = 1:4)), 1/4)
+  expect_equal(ce(factor(c(1, 2, 3, 4), levels = 1:4), factor(c(1, 2, 3, 3), levels = 1:4)), 1 / 4)
   lvls = c("cat", "dog", "bird", "fish")
-  expect_equal(ce(factor(c("cat","dog","bird"), levels = lvls),factor(c("cat","dog","fish"), levels = lvls)), 1/3)
+  expect_equal(ce(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)), 1 / 3)
 
-  expect_equal(logloss(as_fac(1,1,0,0),as_prob(1,1,0,0)), 0)
-  expect_number(logloss(as_fac(1,1,0,0),as_prob(0,0,1,1)), lower = 10, upper = 50)
-  expect_equal(logloss(as_fac(1,1,1,0,0,0),as_prob(.5,.1,.01,.9,.75,.001)), 1.881797068998267)
+  expect_equal(logloss(as_fac(1, 1, 0, 0), as_prob(1, 1, 0, 0)), 0)
+  expect_number(logloss(as_fac(1, 1, 0, 0), as_prob(0, 0, 1, 1)), lower = 10, upper = 50)
+  expect_equal(logloss(as_fac(1, 1, 1, 0, 0, 0), as_prob(.5, .1, .01, .9, .75, .001)), 1.881797068998267)
 
   # rater.a <- c(1, 2, 1)
   # rater.b <- c(1, 2, 2)
@@ -163,7 +169,9 @@ test_that("multiclass auc", {
   # manually calculate au1u, au1p
   compmat = sapply(levels(truth), function(t1) {
     sapply(levels(truth), function(t2) {
-      if (t1 == t2) return(0)
+      if (t1 == t2) {
+        return(0)
+      }
       auc(factor(truth == t1)[truth %in% c(t1, t2)], prob[truth %in% c(t1, t2), t1], "TRUE")
     })
   })
@@ -178,6 +186,5 @@ test_that("multiclass auc", {
 
   expect_equal(mauc_aunu(truth, prob), mean(compvec))
   expect_equal(mauc_aunp(truth, prob), sum(compvec * table(truth) / length(truth)))
-
 
 })

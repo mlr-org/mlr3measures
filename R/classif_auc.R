@@ -90,7 +90,7 @@ add_measure(mauc_au1u, "Average 1 vs. 1 multiclass AUC", "classif", 0, 1, FALSE)
 add_measure(mauc_au1p, "Weighted average 1 vs. 1 multiclass AUC", "classif", 0, 1, FALSE)
 
 # returns a numeric length nlevel(truth), with one-vs-rest AUC
-onevrestauc <- function(prob, truth) {
+onevrestauc = function(prob, truth) {
   ntotal = nrow(prob)
   vapply(levels(truth), function(cls) {
     nrest = sum(truth != cls)
@@ -111,8 +111,8 @@ onevrestauc <- function(prob, truth) {
 
 # calculates \cite{hand_2001} pairwise asymmetric(!) AUC matrix
 colAUC = function(prob, truth) {
-  prob <- as.matrix(prob)  # turn numeric vector to column if necessary
-  truth <- as.factor(truth)  # turn logical to factor
+  prob = as.matrix(prob) # turn numeric vector to column if necessary
+  truth = as.factor(truth) # turn logical to factor
 
   # conditional_auc[i, j] is A(i | j) as defined in \cite{hand_2001}:
   # "the probability that a randomly drawn member of class j will have a
@@ -122,10 +122,10 @@ colAUC = function(prob, truth) {
   rownames(conditional_auc) = levels(truth)
   colnames(conditional_auc) = levels(truth)
   for (i in levels(truth)) {
-    ni = sum(truth == i)  # avoid integer overflow
+    ni = sum(truth == i) # avoid integer overflow
     for (j in levels(truth)) {
       if (i == j) next
-      nj = sum(truth == j)  # avoid integer overflow
+      nj = sum(truth == j) # avoid integer overflow
       r = rank(c(prob[truth == i, i], prob[truth == j, i]), ties.method = "average")
       # simplify the following:
       # conditional_auc[i, j] = (sum(r[seq_len(nj)]) - nj * (nj + 1) / 2) / (ni * nj)

@@ -4,8 +4,9 @@ run_all_measures = function(truth, response, prob, positive, na_allowed = FALSE)
   tol = sqrt(.Machine$double.eps)
 
   for (m in as.list(measures)) {
-    if (m$type != "binary")
+    if (m$type != "binary") {
       next
+    }
     f = match.fun(m$id)
     perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value)
 
@@ -48,30 +49,35 @@ test_that("integer overflow", {
 
 test_that("tests from Metrics", {
   as_fac = function(...) factor(ifelse(c(...) == 0, "b", "a"), levels = c("a", "b"))
-  as_prob = function(...) { p = c(...);  p = cbind(p, 1-p); colnames(p) = c("a", "b"); p}
+  as_prob = function(...) {
+    p = c(...)
+    p = cbind(p, 1 - p)
+    colnames(p) = c("a", "b")
+    p
+  }
 
-  expect_equal(auc(as_fac(1,0,1,1), c(.32,.52,.26,.86), "a"), 1/3)
-  expect_equal(auc(as_fac(1,0,1,0,1),c(.9,.1,.8,.1,.7), "a"), 1)
-  expect_equal(auc(as_fac(0,1,1,0),c(.2,.1,.3,.4), "a"), 1/4)
-  expect_equal(auc(as_fac(1,1,1,1,0,0,0,0,0,0),0*(1:10), "a"), 0.5)
+  expect_equal(auc(as_fac(1, 0, 1, 1), c(.32, .52, .26, .86), "a"), 1 / 3)
+  expect_equal(auc(as_fac(1, 0, 1, 0, 1), c(.9, .1, .8, .1, .7), "a"), 1)
+  expect_equal(auc(as_fac(0, 1, 1, 0), c(.2, .1, .3, .4), "a"), 1 / 4)
+  expect_equal(auc(as_fac(1, 1, 1, 1, 0, 0, 0, 0, 0, 0), 0 * (1:10), "a"), 0.5)
 
   # expect_equal(ll(1,1), 0)
   # expect_equal(ll(1,0), Inf)
   # expect_equal(ll(0,1), Inf)
   # expect_equal(ll(1,0.5), -log(0.5))
 
-  expect_equal(ppv(as_fac(1,1,0,0),as_fac(1,1,0,0), "a"), 1)
-  expect_equal(ppv(as_fac(0,0,1,1),as_fac(1,1,0,0), "a"), 0)
-  expect_equal(ppv(as_fac(1,1,0,0),as_fac(1,1,1,1), "a"), 1/2)
+  expect_equal(ppv(as_fac(1, 1, 0, 0), as_fac(1, 1, 0, 0), "a"), 1)
+  expect_equal(ppv(as_fac(0, 0, 1, 1), as_fac(1, 1, 0, 0), "a"), 0)
+  expect_equal(ppv(as_fac(1, 1, 0, 0), as_fac(1, 1, 1, 1), "a"), 1 / 2)
 
-  expect_equal(tpr(as_fac(1,1,0,0),as_fac(1,1,0,0), "a"), 1)
-  expect_equal(tpr(as_fac(0,0,1,1),as_fac(1,1,0,0), "a"), 0)
-  expect_equal(tpr(as_fac(1,1,1,1),as_fac(1,0,0,1), "a"), 1/2)
+  expect_equal(tpr(as_fac(1, 1, 0, 0), as_fac(1, 1, 0, 0), "a"), 1)
+  expect_equal(tpr(as_fac(0, 0, 1, 1), as_fac(1, 1, 0, 0), "a"), 0)
+  expect_equal(tpr(as_fac(1, 1, 1, 1), as_fac(1, 0, 0, 1), "a"), 1 / 2)
 
-  expect_equal(fbeta(as_fac(1,1,0,0), as_fac(1,1,0,0), "a"), 1)
-  expect_equal(fbeta(as_fac(0,0,1,1), as_fac(1,1,1,0), "a"), 2/5)
-  expect_equal(fbeta(as_fac(1,1,1,1), as_fac(1,0,0,1), "a"), 2/3)
-  expect_equal(fbeta(as_fac(1,1,0,0), as_fac(1,1,1,1), "a", beta=0), 1/2)
+  expect_equal(fbeta(as_fac(1, 1, 0, 0), as_fac(1, 1, 0, 0), "a"), 1)
+  expect_equal(fbeta(as_fac(0, 0, 1, 1), as_fac(1, 1, 1, 0), "a"), 2 / 5)
+  expect_equal(fbeta(as_fac(1, 1, 1, 1), as_fac(1, 0, 0, 1), "a"), 2 / 3)
+  expect_equal(fbeta(as_fac(1, 1, 0, 0), as_fac(1, 1, 1, 1), "a", beta = 0), 1 / 2)
 })
 
 

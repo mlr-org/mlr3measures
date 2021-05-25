@@ -16,8 +16,9 @@
 #' @export
 pbias = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-  if (any(abs(truth) < TOL))
+  if (any(abs(truth) < TOL)) {
     return(na_value)
+  }
   mean((truth - response) / abs(truth))
 }
 
