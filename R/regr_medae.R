@@ -1,4 +1,4 @@
-#' @title Median Absolute Errors
+#' @title Median Absolute Error
 #'
 #' @description
 #' Regression measure defined as \deqn{
@@ -19,4 +19,4 @@ medae = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(medae, "Median Absolute Errors", "regr", 0, Inf, TRUE)
+add_measure(medae, "Median Absolute Error", "regr", 0, Inf, TRUE)

@@ -6,7 +6,7 @@ format_bib = function(...) {
 #' @importFrom utils bibentry
 bibentries = c( # nolint start
 
-  brodersen_2010     = bibentry("inproceedings",
+  brodersen_2010 = bibentry("inproceedings",
     title            = "The Balanced Accuracy and Its Posterior Distribution",
     author           = "Kay Henning Brodersen and Cheng Soon Ong and Klaas Enno Stephan and Joachim M. Buhmann",
     year             = "2010",
@@ -14,7 +14,7 @@ bibentries = c( # nolint start
     publisher        = "IEEE",
     doi              = "10.1109/icpr.2010.764"
   ),
-  davis_2006         = bibentry("inproceedings",
+  davis_2006 = bibentry("inproceedings",
     title            = "The relationship between precision-recall and ROC curves",
     author           = "Jesse Davis and Mark Goadrich",
     year             = "2006",
@@ -33,7 +33,7 @@ bibentries = c( # nolint start
     doi              = "10.1016/j.neucom.2015.12.114",
     issn             = "0925-2312"
   ),
-  guyon_2015         = bibentry("inproceedings",
+  guyon_2015 = bibentry("inproceedings",
     title            = "Design of the 2015 {ChaLearn} {AutoML} challenge",
     author           = "Isabelle Guyon and Kristin Bennett and Gavin Cawley and Hugo Jair Escalante and Sergio Escalera and  Tin Kam Ho and Nuria Macia and Bisakha Ray and Mehreen Saeed and Alexander Statnikov and Evelyne Viegas",
     year             = "2015",
@@ -41,7 +41,7 @@ bibentries = c( # nolint start
     publisher        = "IEEE",
     doi              = "10.1109/ijcnn.2015.7280767"
   ),
-  matthews_1975      = bibentry("article",
+  matthews_1975 = bibentry("article",
     title            = "Comparison of the predicted and observed secondary structure of T4 phage lysozyme",
     author           = "Brian W. Matthews",
     year             = "1975",
@@ -52,7 +52,7 @@ bibentries = c( # nolint start
     pages            = "442--451",
     doi              = "10.1016/0005-2795(75)90109-9"
   ),
-  rijsbergen_1979    = bibentry("book",
+  rijsbergen_1979 = bibentry("book",
     title            = "Information Retrieval",
     author           = "Rijsbergen, C. J. Van",
     year             = "1979",
@@ -61,7 +61,7 @@ bibentries = c( # nolint start
     isbn             = "408709294",
     edition          = "2nd"
   ),
-  rosset_2006        = bibentry("article",
+  rosset_2006 = bibentry("article",
     title            = "Ranking-based evaluation of regression models",
     author           = "Saharon Rosset and Claudia Perlich and Bianca Zadrozny",
     year             = "2006",
@@ -72,7 +72,7 @@ bibentries = c( # nolint start
     pages            = "331--353",
     doi              = "10.1007/s10115-006-0037-3"
   ),
-  sasaki_2007        = bibentry("article",
+  sasaki_2007 = bibentry("article",
     title            = "The truth of the F-measure",
     author           = "Sasaki, Yutaka and others",
     year             = "2007",
@@ -82,7 +82,7 @@ bibentries = c( # nolint start
     pages            = "1--5",
     url              = "https://www.cs.odu.edu/~mukka/cs795sum10dm/Lecturenotes/Day3/F-measure-YS-26Oct07.pdf"
   ),
-  youden_1950        = bibentry("article",
+  youden_1950 = bibentry("article",
     title            = "Index for rating diagnostic tests",
     author           = "W. J. Youden",
     year             = "1950",
@@ -93,7 +93,7 @@ bibentries = c( # nolint start
     pages            = "32--35",
     doi              = "10.1002/1097-0142(1950)3:1<32::aid-cncr2820030106>3.0.co;2-3"
   ),
-  brier_1950         = bibentry("article",
+  brier_1950 = bibentry("article",
     doi              = "10.1175/1520-0493(1950)078<0001:vofeit>2.0.co;2",
     year             = "1950",
     month            = "jan",
@@ -105,7 +105,7 @@ bibentries = c( # nolint start
     title            = "Verification of forecasts expressed in terms of probability",
     journal          = "Monthly Weather Review"
   ),
-  ferri_2009         = bibentry("article",
+  ferri_2009 = bibentry("article",
     doi              = "10.1016/j.patrec.2008.08.010",
     year             = "2009",
     month            = "jan",
@@ -117,7 +117,7 @@ bibentries = c( # nolint start
     title            = "An experimental comparison of performance measures for classification",
     journal          = "Pattern Recognition Letters"
   ),
-  hand_2001          = bibentry("article",
+  hand_2001 = bibentry("article",
     title            = "A simple generalisation of the area under the ROC curve for multiple class classification problems",
     author           = "Hand, David J and Till, Robert J",
     journal          = "Machine learning",
@@ -127,7 +127,7 @@ bibentries = c( # nolint start
     year             = "2001",
     publisher        = "Springer"
   ),
-  fawcett_2001       = bibentry("inproceedings",
+  fawcett_2001 = bibentry("inproceedings",
     title            = "Using rule sets to maximize ROC performance",
     author           = "Fawcett, Tom",
     booktitle        = "Proceedings 2001 IEEE international conference on data mining",

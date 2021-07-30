@@ -1,4 +1,4 @@
-#' @title Mean Absolute Errors
+#' @title Mean Absolute Error
 #'
 #' @description
 #' Regression measure defined as \deqn{
@@ -19,4 +19,4 @@ mae = function(truth, response, sample_weights = NULL, ...) {
 }
 
 #' @include measures.R
-add_measure(mae, "Mean Absolute Errors", "regr", 0, Inf, TRUE)
+add_measure(mae, "Mean Absolute Error", "regr", 0, Inf, TRUE)

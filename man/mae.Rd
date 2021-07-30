@@ -2,7 +2,7 @@
 % Please edit documentation in R/regr_mae.R
 \name{mae}
 \alias{mae}
-\title{Mean Absolute Errors}
+\title{Mean Absolute Error}
 \usage{
 mae(truth, response, sample_weights = NULL, ...)
 }

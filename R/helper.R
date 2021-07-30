@@ -23,10 +23,11 @@ sle = function(truth, response) {
 # simple division, but ensures that `na_value` is returned
 # if the denominator is < TOL
 div = function(nominator, denominator, na_value) {
-  if (abs(denominator) < TOL)
+  if (abs(denominator) < TOL) {
     na_value
-  else
+  } else {
     nominator / denominator
+  }
 }
 
 wmean = function(x, w) { # a better stats::weighted.mean

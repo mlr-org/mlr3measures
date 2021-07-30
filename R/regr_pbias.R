@@ -16,7 +16,7 @@
 #' @export
 pbias = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
-  if (any(abs(truth) < TOL))
+  if (any(abs(truth) < TOL)) {
     return(na_value)
   wmean((truth - response) / abs(truth), sample_weights)
 }

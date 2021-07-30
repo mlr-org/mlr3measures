@@ -21,7 +21,7 @@
 #' @export
 mape = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   assert_regr(truth, response = response)
-  if (any(abs(truth) < TOL))
+  if (any(abs(truth) < TOL)) {
     return(na_value)
   wmean(ape(truth, response), sample_weights)
 }

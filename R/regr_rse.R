@@ -20,8 +20,9 @@
 rse = function(truth, response, na_value = NaN, ...) {
   assert_regr(truth, response = response, na_value = na_value)
   v = var(truth)
-  if (v < TOL)
+  if (v < TOL) {
     return(na_value)
+  }
   sum(se(truth, response)) / (v * (length(truth) - 1L))
 }
 
