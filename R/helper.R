@@ -35,11 +35,11 @@ wmean = function(x, w) { # a better stats::weighted.mean
     return(mean(x))
   }
   assert_numeric(w, lower = 0, finite = TRUE, any.missing = FALSE, len = length(x))
-  sum_w = sum(w)
-  if (abs(sum_w) < TOL)
-    stop("Cannot normalize weights, all weights are 0")
-  w = w / sum_w
-  sum(x * w)
+  if (all(abs(w) < TOL)) {
+    stop("All weights are 0")
+  }
+
+  sum(x * (w / sum(w)))
 }
 
 # confusion matrix
