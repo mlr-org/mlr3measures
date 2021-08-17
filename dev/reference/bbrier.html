@@ -49,8 +49,9 @@
 
 <meta property="og:title" content="Binary Brier Score — bbrier" />
 <meta property="og:description" content="Brier score for binary classification problems defined as $$
-   \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
+   \frac{1}{n} \sum_{i=1}^n (I_i - p_i)^2.
 $$
+\(I_{i}\) is 1 if observation \(i\) belongs to the positive class, and 0 otherwise.
 Note that this (more common) definition of the Brier score is equivalent to the
 original definition of the multi-class Brier score (see mbrier()) divided by 2." />
 <meta name="twitter:card" content="summary" />
@@ -152,13 +153,14 @@ original definition of the multi-class Brier score (see mbrier()) divided by 2."
 
     <div class="ref-description">
     <p>Brier score for binary classification problems defined as $$
-   \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
-$$</p>
+   \frac{1}{n} \sum_{i=1}^n (I_i - p_i)^2.
+$$
+\(I_{i}\) is 1 if observation \(i\) belongs to the positive class, and 0 otherwise.</p>
 <p>Note that this (more common) definition of the Brier score is equivalent to the
 original definition of the multi-class Brier score (see <code><a href='mbrier.html'>mbrier()</a></code>) divided by 2.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bbrier</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, <span class='va'>positive</span>, sample_weights <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>bbrier</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, <span class='va'>positive</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,14 +181,6 @@ Must have exactly same length as <code>truth</code>.</p></td>
       <th>positive</th>
       <td><p>(<code>character(1))</code><br />
 Name of the positive class.</p></td>
-    </tr>
-    <tr>
-      <th>sample_weights</th>
-      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
-Non-negative and finite sample weights.
-Must have the same length as <code>truth</code>.
-Will get automatically normalized to sum to one.
-Defaults to equal sample weights.</p></td>
     </tr>
     <tr>
       <th>...</th>
