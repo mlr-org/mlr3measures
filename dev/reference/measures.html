@@ -50,7 +50,23 @@
 <meta property="og:title" content="Measure Registry — measures" />
 <meta property="og:description" content="The environment() measures keeps track of all measures in this package.
 It stores meta information such as minimum, maximum or if the
-measure must be minimized or maximized." />
+measure must be minimized or maximized.
+The following information is available for each measure:
+id: Name of the measure.
+title: Short descriptive title.
+type: &quot;binary&quot; for binary classification, &quot;classif&quot; for binary or multi-class classification or
+&quot;regr&quot; for regression.
+lower: lower bound.
+upper: upper bound.
+predict_type: prediction type the measure operates on.
+&quot;response&quot; corresponds to class labels for classification and the numeric response for regression.
+&quot;prob&quot; corresponds to class probabilities, provided as a matrix with class labels as column names.
+&quot;se&quot; corresponds to to the vector of predicted standard errors for regression.
+minimize: If TRUE or FALSE, the objective is to minimize or maximize the measure, respectively.
+Can also be NA.
+sample_weights: If TRUE, it is possible calculate a weighted measure.
+
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -151,7 +167,23 @@ measure must be minimized or maximized." />
     <div class="ref-description">
     <p>The <code><a href='https://rdrr.io/r/base/environment.html'>environment()</a></code> <code>measures</code> keeps track of all measures in this package.
 It stores meta information such as minimum, maximum or if the
-measure must be minimized or maximized.</p>
+measure must be minimized or maximized.
+The following information is available for each measure:</p><ul>
+<li><p><code>id</code>: Name of the measure.</p></li>
+<li><p><code>title</code>: Short descriptive title.</p></li>
+<li><p><code>type</code>: <code>"binary"</code> for binary classification, <code>"classif"</code> for binary or multi-class classification or
+<code>"regr"</code> for regression.</p></li>
+<li><p><code>lower</code>: lower bound.</p></li>
+<li><p><code>upper</code>: upper bound.</p></li>
+<li><p><code>predict_type</code>: prediction type the measure operates on.
+<code>"response"</code> corresponds to class labels for classification and the numeric response for regression.
+<code>"prob"</code> corresponds to class probabilities, provided as a matrix with class labels as column names.
+<code>"se"</code> corresponds to to the vector of predicted standard errors for regression.</p></li>
+<li><p><code>minimize</code>: If <code>TRUE</code> or <code>FALSE</code>, the objective is to minimize or maximize the measure, respectively.
+Can also be <code>NA</code>.</p></li>
+<li><p><code>sample_weights</code>: If <code>TRUE</code>, it is possible calculate a weighted measure.</p></li>
+</ul>
+
     </div>
 
     <pre class="usage"><span class='va'>measures</span></pre>
@@ -177,11 +209,11 @@ measure must be minimized or maximized.</p>
 </div><div class='output co'>#&gt; $id
 #&gt; [1] "tpr"
 #&gt; 
-#&gt; $type
-#&gt; [1] "binary"
-#&gt; 
 #&gt; $title
 #&gt; [1] "True Positive Rate"
+#&gt; 
+#&gt; $type
+#&gt; [1] "binary"
 #&gt; 
 #&gt; $lower
 #&gt; [1] 0
