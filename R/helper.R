@@ -63,3 +63,8 @@ format_range = function(item) {
     if (is.finite(u)) "]" else ")")
   paste0("\\eqn{", str[1L], "}{", str[2L], "}")
 }
+
+map_pairwise = function(x, .fun, ...) {
+  .fun = match.fun(.fun)
+  combn(x, m = 2L, function(.pair, ...) .fun(.pair[[1L]], .pair[[2L]], ...), simplify = TRUE, ...)
+}

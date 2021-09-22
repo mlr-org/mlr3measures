@@ -41,3 +41,9 @@ assert_regr = function(truth, response, na_value = NULL) {
   assert_numeric(response, len = length(truth), any.missing = FALSE, finite = TRUE)
   assert_number(na_value, na.ok = TRUE, null.ok = TRUE)
 }
+
+
+assert_sets = function(sets) {
+  assert_list(sets, types = c("character", "integer"), min.len = 2L, any.missing = FALSE)
+  lapply(sets, unique)
+}
