@@ -36,7 +36,7 @@ wmean = function(x, w) { # a better stats::weighted.mean
   }
   assert_numeric(w, lower = 0, finite = TRUE, any.missing = FALSE, len = length(x))
   if (all(abs(w) < TOL)) {
-    stop("All weights are 0")
+    stop("All sample weights are 0")
   }
 
   sum(x * (w / sum(w)))

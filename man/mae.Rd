@@ -16,9 +16,9 @@ Predicted response values.
 Must have the same length as \code{truth}.}
 
 \item{sample_weights}{(\code{numeric()})\cr
-Non-negative and finite sample weights.
+Vector of non-negative and finite sample weights.
 Must have the same length as \code{truth}.
-Will get automatically normalized to sum to one.
+The vector gets automatically normalized to sum to one.
 Defaults to equal sample weights.}
 
 \item{...}{(\code{any})\cr
