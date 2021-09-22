@@ -4,7 +4,7 @@
 \alias{bbrier}
 \title{Binary Brier Score}
 \usage{
-bbrier(truth, prob, positive, ...)
+bbrier(truth, prob, positive, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -18,6 +18,12 @@ Must have exactly same length as \code{truth}.}
 \item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
 
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
+
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
@@ -26,11 +32,14 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Brier score for binary classification problems defined as \deqn{
-   \frac{1}{n} \sum_{i=1}^n (I_i - p_i)^2.
+   \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
 }{
-   1/n * sum(((t == positive) - p)^2).
+   weighted.mean(((t == positive) - p)^2, w).
 }
+\if{latex}{
+\eqn{w_i} are the sample weights,
 \eqn{I_{i}}{I_i} is 1 if observation \eqn{i} belongs to the positive class, and 0 otherwise.
+}
 
 Note that this (more common) definition of the Brier score is equivalent to the
 original definition of the multi-class Brier score (see \code{\link[=mbrier]{mbrier()}}) divided by 2.

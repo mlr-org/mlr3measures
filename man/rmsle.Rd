@@ -4,7 +4,7 @@
 \alias{rmsle}
 \title{Root Mean Squared Log Error}
 \usage{
-rmsle(truth, response, na_value = NaN, ...)
+rmsle(truth, response, sample_weights = NULL, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{(\code{numeric()})\cr
@@ -14,6 +14,12 @@ Must have the same length as \code{response}.}
 \item{response}{(\code{numeric()})\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
@@ -27,9 +33,9 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Regression measure defined as \deqn{
-  \sqrt{\frac{1}{n} \sum_{i=1}^n \left( \ln (1 + t_i) - \ln (1 + r_i) \right)^2}.
+  \sqrt{\frac{1}{n} \sum_{i=1}^n w_i \left( \ln (1 + t_i) - \ln (1 + r_i) \right)^2}.
 }{
-  sqrt(mean(log(1 + t) - log(1 + r))^2).
+  sqrt(weighted.mean((log(1 + t) - log(1 + r))^2, w)).
 }
 }
 \note{

@@ -7,6 +7,11 @@
 #' @param response (`numeric()`)\cr
 #'   Predicted response values.
 #'   Must have the same length as `truth`.
+#' @param sample_weights (`numeric()`)\cr
+#'   Vector of non-negative and finite sample weights.
+#'   Must have the same length as `truth`.
+#'   The vector gets automatically normalized to sum to one.
+#'   Defaults to equal sample weights.
 #' @param na_value (`numeric(1)`)\cr
 #'   Value that should be returned if the measure is not defined for the input
 #'   (as described in the note). Default is `NaN`.
@@ -29,6 +34,11 @@ NULL
 #'   Must have exactly same length as `truth`.
 #' @param positive (`character(1))`\cr
 #'   Name of the positive class.
+#' @param sample_weights (`numeric()`)\cr
+#'   Vector of non-negative and finite sample weights.
+#'   Must have the same length as `truth`.
+#'   The vector gets automatically normalized to sum to one.
+#'   Defaults to equal sample weights.
 #' @param na_value (`numeric(1)`)\cr
 #'   Value that should be returned if the measure is not defined for the input
 #'   (as described in the note). Default is `NaN`.
@@ -51,8 +61,9 @@ NULL
 #'   specific class label.
 #'   Columns must be named with levels of `truth`.
 #' @param sample_weights (`numeric()`)\cr
-#'   Non-negative sample weights.
-#'   Must have the same levels and length as `truth`.
+#'   Vector of non-negative and finite sample weights.
+#'   Must have the same length as `truth`.
+#'   The vector gets automatically normalized to sum to one.
 #'   Defaults to equal sample weights.
 #' @param na_value (`numeric(1)`)\cr
 #'   Value that should be returned if the measure is not defined for the input

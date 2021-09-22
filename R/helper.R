@@ -30,6 +30,18 @@ div = function(nominator, denominator, na_value) {
   }
 }
 
+wmean = function(x, w) { # a better stats::weighted.mean
+  if (is.null(w)) {
+    return(mean(x))
+  }
+  assert_numeric(w, lower = 0, finite = TRUE, any.missing = FALSE, len = length(x))
+  if (all(abs(w) < TOL)) {
+    stop("All sample weights are 0")
+  }
+
+  sum(x * (w / sum(w)))
+}
+
 # confusion matrix
 cm = function(truth, response, positive = NULL) {
   if (!is.null(positive)) {

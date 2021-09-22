@@ -2,9 +2,9 @@
 #'
 #' @description
 #' Regression measure defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n \left| \frac{ t_i - r_i}{t_i} \right|.
+#'   \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|.
 #'  }{
-#'    mean(abs((t - r) / t)).
+#'    weighted.mean(abs((t - r) / t), w).
 #'  }
 #'
 #' @note
@@ -19,12 +19,12 @@
 #' @inheritParams regr_params
 #' @template regr_example
 #' @export
-mape = function(truth, response, na_value = NaN, ...) {
+mape = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   assert_regr(truth, response = response)
   if (any(abs(truth) < TOL)) {
     return(na_value)
   }
-  mean(ape(truth, response))
+  wmean(ape(truth, response), sample_weights)
 }
 
 #' @include measures.R

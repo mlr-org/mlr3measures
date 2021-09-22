@@ -2,9 +2,9 @@
 #'
 #' @description
 #' Classification measure defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n \left( t_i \neq r_i \right).
+#'   \frac{1}{n} \sum_{i=1}^n w_i \left( t_i \neq r_i \right).
 #' }{
-#'   mean(t != r).
+#'   weighted.mean(t != r, w).
 #' }
 #'
 #' @templateVar mid ce
@@ -13,9 +13,9 @@
 #' @inheritParams classif_params
 #' @template classif_example
 #' @export
-ce = function(truth, response, ...) {
+ce = function(truth, response, sample_weights = NULL, ...) {
   assert_classif(truth, response = response)
-  mean(truth != response)
+  wmean(truth != response, sample_weights)
 }
 
 ce_cm = function(m, na_value = NaN) {

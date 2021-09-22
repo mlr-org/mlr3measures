@@ -4,7 +4,7 @@
 \alias{acc}
 \title{Classification Accuracy}
 \usage{
-acc(truth, response, ...)
+acc(truth, response, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -15,6 +15,12 @@ Must have the same levels and length as \code{response}.}
 Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
+
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
@@ -23,9 +29,9 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Classification measure defined as \deqn{
-  \frac{1}{n} \sum_{i=1}^n \left( t_i = r_i \right).
+  \frac{1}{n} \sum_{i=1}^n w_i \left( t_i = r_i \right).
 }{
-  mean(t == r).
+  weighted.mean(t == r, w).
 }
 }
 \section{Meta Information}{

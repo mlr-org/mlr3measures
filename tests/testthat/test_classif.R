@@ -8,6 +8,12 @@ run_all_measures = function(truth, response, prob) {
     f = match.fun(m$id)
     perf = f(truth = truth, response = response, prob = prob)
     expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+
+    if ("sample_weights" %in% names(formals(f))) {
+      sample_weights = runif(length(truth))
+      perf = f(truth = truth, response = response, prob = prob)
+      expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+    }
   }
 }
 

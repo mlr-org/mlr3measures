@@ -4,7 +4,7 @@
 \alias{logloss}
 \title{Log Loss}
 \usage{
-logloss(truth, prob, eps = 1e-15, ...)
+logloss(truth, prob, sample_weights = NULL, eps = 1e-15, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -15,6 +15,12 @@ Must have the same levels and length as \code{response}.}
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of \code{truth}.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{eps}{(\code{numeric(1)})\cr
 Probabilities are clipped to \code{max(eps, min(1 - eps, p))}.
@@ -28,9 +34,9 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Classification measure defined as \deqn{
-  -\frac{1}{n} \sum_{i=1}^n \log \left(  p_i \right )
+  -\frac{1}{n} \sum_{i=1}^n w_i \log \left(  p_i \right )
 }{
-  -mean(log(p))
+  -weighted.mean(log(p), w)
 }
 where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
 }
