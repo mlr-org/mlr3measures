@@ -1,6 +1,8 @@
-# mlr3measures 0.3.1.9000
+# mlr3measures 0.4.0
 
-- Internal changes only.
+- Many measures now support sample weights.
+  Supported measures have `$sample_weights` set to `TRUE` in the `measures`
+  environmet.
 
 
 # mlr3measures 0.3.1

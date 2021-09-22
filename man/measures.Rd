@@ -14,6 +14,22 @@ measures
 The \code{\link[=environment]{environment()}} \code{measures} keeps track of all measures in this package.
 It stores meta information such as minimum, maximum or if the
 measure must be minimized or maximized.
+The following information is available for each measure:
+\itemize{
+\item \code{id}: Name of the measure.
+\item \code{title}: Short descriptive title.
+\item \code{type}: \code{"binary"} for binary classification, \code{"classif"} for binary or multi-class classification or
+\code{"regr"} for regression.
+\item \code{lower}: lower bound.
+\item \code{upper}: upper bound.
+\item \code{predict_type}: prediction type the measure operates on.
+\code{"response"} corresponds to class labels for classification and the numeric response for regression.
+\code{"prob"} corresponds to class probabilities, provided as a matrix with class labels as column names.
+\code{"se"} corresponds to to the vector of predicted standard errors for regression.
+\item \code{minimize}: If \code{TRUE} or \code{FALSE}, the objective is to minimize or maximize the measure, respectively.
+Can also be \code{NA}.
+\item \code{sample_weights}: If \code{TRUE}, it is possible calculate a weighted measure.
+}
 }
 \examples{
 names(measures)
