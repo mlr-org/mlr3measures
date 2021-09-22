@@ -49,7 +49,7 @@
 
 <meta property="og:title" content="Log Loss — logloss" />
 <meta property="og:description" content="Classification measure defined as $$
-  -\frac{1}{n} \sum_{i=1}^n \log \left(  p_i \right )
+  -\frac{1}{n} \sum_{i=1}^n w_i \log \left(  p_i \right )
 $$
 where \(p_i\) is the probability for the true class of observation \(i\)." />
 <meta name="twitter:card" content="summary" />
@@ -151,12 +151,12 @@ where \(p_i\) is the probability for the true class of observation \(i\)." />
 
     <div class="ref-description">
     <p>Classification measure defined as $$
-  -\frac{1}{n} \sum_{i=1}^n \log \left(  p_i \right )
+  -\frac{1}{n} \sum_{i=1}^n w_i \log \left(  p_i \right )
 $$
 where \(p_i\) is the probability for the true class of observation \(i\).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>logloss</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, eps <span class='op'>=</span> <span class='fl'>1e-15</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>logloss</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, sample_weights <span class='op'>=</span> <span class='cn'>NULL</span>, eps <span class='op'>=</span> <span class='fl'>1e-15</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -173,6 +173,14 @@ Must have the same levels and length as <code>response</code>.</p></td>
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of <code>truth</code>.</p></td>
+    </tr>
+    <tr>
+      <th>sample_weights</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
+Vector of non-negative and finite sample weights.
+Must have the same length as <code>truth</code>.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.</p></td>
     </tr>
     <tr>
       <th>eps</th>

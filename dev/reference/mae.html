@@ -49,7 +49,7 @@
 
 <meta property="og:title" content="Mean Absolute Error — mae" />
 <meta property="og:description" content="Regression measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n \left| t_i - r_i \right|.
+  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
 $$" />
 <meta name="twitter:card" content="summary" />
 
@@ -150,11 +150,11 @@ $$" />
 
     <div class="ref-description">
     <p>Regression measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n \left| t_i - r_i \right|.
+  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
 $$</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mae</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>mae</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, sample_weights <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -170,6 +170,14 @@ Must have the same length as <code>response</code>.</p></td>
       <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
 Predicted response values.
 Must have the same length as <code>truth</code>.</p></td>
+    </tr>
+    <tr>
+      <th>sample_weights</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
+Vector of non-negative and finite sample weights.
+Must have the same length as <code>truth</code>.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.</p></td>
     </tr>
     <tr>
       <th>...</th>
