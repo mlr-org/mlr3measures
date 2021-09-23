@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Measure Registry — measures • mlr3measures</title>
+<title>Similarity Parameters — similarity_params • mlr3measures</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -47,26 +47,8 @@
 
 
 
-<meta property="og:title" content="Measure Registry — measures" />
-<meta property="og:description" content="The environment() measures keeps track of all measures in this package.
-It stores meta information such as minimum, maximum or if the
-measure must be minimized or maximized.
-The following information is available for each measure:
-id: Name of the measure.
-title: Short descriptive title.
-type: &quot;binary&quot; for binary classification, &quot;classif&quot; for binary or multi-class classification,
-&quot;regr&quot; for regression and &quot;similarity&quot; for similarity measures.
-lower: lower bound.
-upper: upper bound.
-predict_type: prediction type the measure operates on.
-&quot;response&quot; corresponds to class labels for classification and the numeric response for regression.
-&quot;prob&quot; corresponds to class probabilities, provided as a matrix with class labels as column names.
-&quot;se&quot; corresponds to to the vector of predicted standard errors for regression.
-minimize: If TRUE or FALSE, the objective is to minimize or maximize the measure, respectively.
-Can also be NA.
-sample_weights: If TRUE, it is possible calculate a weighted measure.
-
-" />
+<meta property="og:title" content="Similarity Parameters — similarity_params" />
+<meta property="og:description" content="Similarity Parameters" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -159,77 +141,44 @@ sample_weights: If TRUE, it is possible calculate a weighted measure.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Measure Registry</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/measures.R'><code>R/measures.R</code></a></small>
-    <div class="hidden name"><code>measures.Rd</code></div>
+    <h1>Similarity Parameters</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/roxygen.R'><code>R/roxygen.R</code></a></small>
+    <div class="hidden name"><code>similarity_params.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The <code><a href='https://rdrr.io/r/base/environment.html'>environment()</a></code> <code>measures</code> keeps track of all measures in this package.
-It stores meta information such as minimum, maximum or if the
-measure must be minimized or maximized.
-The following information is available for each measure:</p><ul>
-<li><p><code>id</code>: Name of the measure.</p></li>
-<li><p><code>title</code>: Short descriptive title.</p></li>
-<li><p><code>type</code>: <code>"binary"</code> for binary classification, <code>"classif"</code> for binary or multi-class classification,
-<code>"regr"</code> for regression and <code>"similarity"</code> for similarity measures.</p></li>
-<li><p><code>lower</code>: lower bound.</p></li>
-<li><p><code>upper</code>: upper bound.</p></li>
-<li><p><code>predict_type</code>: prediction type the measure operates on.
-<code>"response"</code> corresponds to class labels for classification and the numeric response for regression.
-<code>"prob"</code> corresponds to class probabilities, provided as a matrix with class labels as column names.
-<code>"se"</code> corresponds to to the vector of predicted standard errors for regression.</p></li>
-<li><p><code>minimize</code>: If <code>TRUE</code> or <code>FALSE</code>, the objective is to minimize or maximize the measure, respectively.
-Can also be <code>NA</code>.</p></li>
-<li><p><code>sample_weights</code>: If <code>TRUE</code>, it is possible calculate a weighted measure.</p></li>
-</ul>
-
+    <p>Similarity Parameters</p>
     </div>
 
-    <pre class="usage"><span class='va'>measures</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>sets</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/list.html'>list()</a></code>)<br />
+List of character or integer vectors.
+<code>sets</code> must have at least 2 elements.</p></td>
+    </tr>
+    <tr>
+      <th>p</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>)<br />
+Total number of possible elements.</p></td>
+    </tr>
+    <tr>
+      <th>na_value</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>)<br />
+Value that should be returned if the measure is not defined for the input
+(as described in the note). Default is <code>NaN</code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>(<code>any</code>)<br />
+Additional arguments. Currently ignored.</p></td>
+    </tr>
+    </table>
 
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>An object of class <code>environment</code> of length 54.</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>measures</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;  [1] "tp"          "mauc_au1p"   "fbeta"       "fnr"         "mbrier"     
-#&gt;  [6] "bacc"        "jaccard"     "ktau"        "maxse"       "mape"       
-#&gt; [11] "maxae"       "mauc_au1u"   "ce"          "ppv"         "sensitivity"
-#&gt; [16] "specificity" "phi"         "recall"      "fn"          "precision"  
-#&gt; [21] "srho"        "fp"          "tpr"         "bbrier"      "bias"       
-#&gt; [26] "acc"         "mcc"         "auc"         "rae"         "rrse"       
-#&gt; [31] "smape"       "rse"         "npv"         "mauc_aunp"   "rsq"        
-#&gt; [36] "tnr"         "fomr"        "fdr"         "fpr"         "dor"        
-#&gt; [41] "pbias"       "logloss"     "prauc"       "mae"         "mauc_aunu"  
-#&gt; [46] "rmsle"       "rmse"        "medse"       "sse"         "medae"      
-#&gt; [51] "msle"        "sae"         "mse"         "tn"         </div><div class='input'><span class='va'>measures</span><span class='op'>$</span><span class='va'>tpr</span>
-</div><div class='output co'>#&gt; $id
-#&gt; [1] "tpr"
-#&gt; 
-#&gt; $title
-#&gt; [1] "True Positive Rate"
-#&gt; 
-#&gt; $type
-#&gt; [1] "binary"
-#&gt; 
-#&gt; $lower
-#&gt; [1] 0
-#&gt; 
-#&gt; $upper
-#&gt; [1] 1
-#&gt; 
-#&gt; $predict_type
-#&gt; [1] "response"
-#&gt; 
-#&gt; $minimize
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $sample_weights
-#&gt; [1] FALSE
-#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
