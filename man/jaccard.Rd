@@ -41,7 +41,6 @@ This measure is undefined if two or more sets are empty.
 \item Type: \code{"similarity"}
 \item Range: \eqn{[0, 1]}{[0, 1]}
 \item Minimize: \code{FALSE}
-\item Required prediction: \code{sets}
 }
 }
 
