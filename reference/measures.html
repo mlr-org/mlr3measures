@@ -50,7 +50,23 @@
 <meta property="og:title" content="Measure Registry — measures" />
 <meta property="og:description" content="The environment() measures keeps track of all measures in this package.
 It stores meta information such as minimum, maximum or if the
-measure must be minimized or maximized." />
+measure must be minimized or maximized.
+The following information is available for each measure:
+id: Name of the measure.
+title: Short descriptive title.
+type: &quot;binary&quot; for binary classification, &quot;classif&quot; for binary or multi-class classification,
+&quot;regr&quot; for regression and &quot;similarity&quot; for similarity measures.
+lower: lower bound.
+upper: upper bound.
+predict_type: prediction type the measure operates on.
+&quot;response&quot; corresponds to class labels for classification and the numeric response for regression.
+&quot;prob&quot; corresponds to class probabilities, provided as a matrix with class labels as column names.
+&quot;se&quot; corresponds to to the vector of predicted standard errors for regression.
+minimize: If TRUE or FALSE, the objective is to minimize or maximize the measure, respectively.
+Can also be NA.
+sample_weights: If TRUE, it is possible calculate a weighted measure.
+
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -84,14 +100,14 @@ measure must be minimized or maximized." />
 
       <div class="navbar-brand-container">
         <a href="https://mlr-org.com"><img src="https://raw.githubusercontent.com/mlr-org/mlr3/master/man/figures/logo.png" id="hexlogo" alt="mlr-org" /></a>
-        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.3.1</small></a>
+        <a class="navbar-brand" href="../index.html">mlr3measures <small>v0.4.0</small></a>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../reference/index.html">
-    <span class="fa fa fa fa-file-alt"></span>
+    <span class="fa fa-file-alt"></span>
      
     Reference
   </a>
@@ -101,7 +117,7 @@ measure must be minimized or maximized." />
 </li>
 <li>
   <a href="https://mlr3book.mlr-org.com">
-    <span class="fa fa fa fa-link"></span>
+    <span class="fa fa-link"></span>
      
     mlr3book
   </a>
@@ -114,7 +130,7 @@ measure must be minimized or maximized." />
 </li>
 <li>
   <a href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/">
-    <span class="fa fa fa fa-comments"></span>
+    <span class="fa fa-comments"></span>
      
   </a>
 </li>
@@ -126,7 +142,7 @@ measure must be minimized or maximized." />
 </li>
 <li>
   <a href="https://mlr-org.com/">
-    <span class="fas fa-rss"></span>
+    <span class="fa fa-rss"></span>
      
   </a>
 </li>
@@ -151,7 +167,23 @@ measure must be minimized or maximized." />
     <div class="ref-description">
     <p>The <code><a href='https://rdrr.io/r/base/environment.html'>environment()</a></code> <code>measures</code> keeps track of all measures in this package.
 It stores meta information such as minimum, maximum or if the
-measure must be minimized or maximized.</p>
+measure must be minimized or maximized.
+The following information is available for each measure:</p><ul>
+<li><p><code>id</code>: Name of the measure.</p></li>
+<li><p><code>title</code>: Short descriptive title.</p></li>
+<li><p><code>type</code>: <code>"binary"</code> for binary classification, <code>"classif"</code> for binary or multi-class classification,
+<code>"regr"</code> for regression and <code>"similarity"</code> for similarity measures.</p></li>
+<li><p><code>lower</code>: lower bound.</p></li>
+<li><p><code>upper</code>: upper bound.</p></li>
+<li><p><code>predict_type</code>: prediction type the measure operates on.
+<code>"response"</code> corresponds to class labels for classification and the numeric response for regression.
+<code>"prob"</code> corresponds to class probabilities, provided as a matrix with class labels as column names.
+<code>"se"</code> corresponds to to the vector of predicted standard errors for regression.</p></li>
+<li><p><code>minimize</code>: If <code>TRUE</code> or <code>FALSE</code>, the objective is to minimize or maximize the measure, respectively.
+Can also be <code>NA</code>.</p></li>
+<li><p><code>sample_weights</code>: If <code>TRUE</code>, it is possible calculate a weighted measure.</p></li>
+</ul>
+
     </div>
 
     <pre class="usage"><span class='va'>measures</span></pre>
@@ -159,29 +191,29 @@ measure must be minimized or maximized.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>environment</code> of length 52.</p>
+    <p>An object of class <code>environment</code> of length 54.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>measures</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;  [1] "mauc_au1p"   "tp"          "fbeta"       "fnr"         "mbrier"     
-#&gt;  [6] "bacc"        "ktau"        "maxse"       "mape"        "maxae"      
-#&gt; [11] "mauc_au1u"   "ce"          "ppv"         "sensitivity" "specificity"
-#&gt; [16] "recall"      "fn"          "precision"   "srho"        "fp"         
-#&gt; [21] "bbrier"      "tpr"         "bias"        "acc"         "mcc"        
-#&gt; [26] "auc"         "rae"         "rrse"        "smape"       "rse"        
-#&gt; [31] "npv"         "mauc_aunp"   "rsq"         "fomr"        "fdr"        
-#&gt; [36] "fpr"         "dor"         "tnr"         "pbias"       "logloss"    
-#&gt; [41] "prauc"       "mae"         "mauc_aunu"   "rmsle"       "rmse"       
-#&gt; [46] "medse"       "sse"         "medae"       "msle"        "sae"        
-#&gt; [51] "mse"         "tn"         </div><div class='input'><span class='va'>measures</span><span class='op'>$</span><span class='va'>tpr</span>
+</div><div class='output co'>#&gt;  [1] "tp"          "mauc_au1p"   "fbeta"       "fnr"         "mbrier"     
+#&gt;  [6] "bacc"        "jaccard"     "ktau"        "maxse"       "mape"       
+#&gt; [11] "maxae"       "mauc_au1u"   "ce"          "ppv"         "sensitivity"
+#&gt; [16] "specificity" "phi"         "recall"      "fn"          "precision"  
+#&gt; [21] "srho"        "fp"          "tpr"         "bbrier"      "bias"       
+#&gt; [26] "acc"         "mcc"         "auc"         "rae"         "rrse"       
+#&gt; [31] "smape"       "rse"         "npv"         "mauc_aunp"   "rsq"        
+#&gt; [36] "tnr"         "fomr"        "fdr"         "fpr"         "dor"        
+#&gt; [41] "pbias"       "logloss"     "prauc"       "mae"         "mauc_aunu"  
+#&gt; [46] "rmsle"       "rmse"        "medse"       "sse"         "medae"      
+#&gt; [51] "msle"        "sae"         "mse"         "tn"         </div><div class='input'><span class='va'>measures</span><span class='op'>$</span><span class='va'>tpr</span>
 </div><div class='output co'>#&gt; $id
 #&gt; [1] "tpr"
 #&gt; 
-#&gt; $type
-#&gt; [1] "binary"
-#&gt; 
 #&gt; $title
 #&gt; [1] "True Positive Rate"
+#&gt; 
+#&gt; $type
+#&gt; [1] "binary"
 #&gt; 
 #&gt; $lower
 #&gt; [1] 0
@@ -193,6 +225,9 @@ measure must be minimized or maximized.</p>
 #&gt; [1] "response"
 #&gt; 
 #&gt; $minimize
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $sample_weights
 #&gt; [1] FALSE
 #&gt; </div></pre>
   </div>

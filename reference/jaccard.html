@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mean Absolute Error — mae • mlr3measures</title>
+<title>Jaccard Similarity Index — jaccard • mlr3measures</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -47,10 +47,14 @@
 
 
 
-<meta property="og:title" content="Mean Absolute Error — mae" />
-<meta property="og:description" content="Regression measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
-$$" />
+<meta property="og:title" content="Jaccard Similarity Index — jaccard" />
+<meta property="og:description" content="Measure to compare two or more sets w.r.t. their similarity.
+For two sets \(A\) and \(B\), it is defined as
+$$
+  J(A, B) = \frac{|A \cap B|}{|A \cup B|}.
+$$
+If more than two sets are provided, the mean of all pairwise scores
+is calculated." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -143,41 +147,37 @@ $$" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Mean Absolute Error</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/regr_mae.R'><code>R/regr_mae.R</code></a></small>
-    <div class="hidden name"><code>mae.Rd</code></div>
+    <h1>Jaccard Similarity Index</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mlr-org/mlr3measures/blob/master/R/similarity_jaccard.R'><code>R/similarity_jaccard.R</code></a></small>
+    <div class="hidden name"><code>jaccard.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Regression measure defined as $$
-  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
-$$</p>
+    <p>Measure to compare two or more sets w.r.t. their similarity.
+For two sets \(A\) and \(B\), it is defined as
+$$
+  J(A, B) = \frac{|A \cap B|}{|A \cup B|}.
+$$
+If more than two sets are provided, the mean of all pairwise scores
+is calculated.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mae</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, sample_weights <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>jaccard</span><span class='op'>(</span><span class='va'>sets</span>, na_value <span class='op'>=</span> <span class='cn'>NaN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>truth</th>
-      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
-True (observed) values.
-Must have the same length as <code>response</code>.</p></td>
+      <th>sets</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/list.html'>list()</a></code>)<br />
+List of character or integer vectors.
+<code>sets</code> must have at least 2 elements.</p></td>
     </tr>
     <tr>
-      <th>response</th>
-      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
-Predicted response values.
-Must have the same length as <code>truth</code>.</p></td>
-    </tr>
-    <tr>
-      <th>sample_weights</th>
-      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric()</a></code>)<br />
-Vector of non-negative and finite sample weights.
-Must have the same length as <code>truth</code>.
-The vector gets automatically normalized to sum to one.
-Defaults to equal sample weights.</p></td>
+      <th>na_value</th>
+      <td><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>)<br />
+Value that should be returned if the measure is not defined for the input
+(as described in the note). Default is <code>NaN</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -189,47 +189,52 @@ Additional arguments. Currently ignored.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>This measure is undefined if two or more sets are empty.</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 
     
 
 <ul>
-<li><p>Type: <code>"regr"</code></p></li>
-<li><p>Range: \([0, \infty)\)</p></li>
-<li><p>Minimize: <code>TRUE</code></p></li>
-<li><p>Required prediction: <code>response</code></p></li>
+<li><p>Type: <code>"similarity"</code></p></li>
+<li><p>Range: \([0, 1]\)</p></li>
+<li><p>Minimize: <code>FALSE</code></p></li>
+<li><p>Required prediction: <code>sets</code></p></li>
 </ul>
 
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Jaccard, Paul (1901).
+&#8220;Étude comparative de la distribution florale dans une portion des Alpes et du Jura.&#8221;
+<em>Bulletin de la Société Vaudoise des Sciences Naturelles</em>, <b>37</b>, 547-579.
+doi: <a href='https://doi.org/10.5169/SEALS-266450'>10.5169/SEALS-266450</a>
+.</p>
+<p>Bommert A, Rahnenführer J, Lang M (2017).
+&#8220;A Multicriteria Approach to Find Predictive and Sparse Models with Stable Feature Selection for High-Dimensional Data.&#8221;
+<em>Computational and Mathematical Methods in Medicine</em>, <b>2017</b>, 1--18.
+doi: <a href='https://doi.org/10.1155/2017/7907163'>10.1155/2017/7907163</a>
+.</p>
+<p>Bommert A, Lang M (2021).
+&#8220;stabm: Stability Measures for Feature Selection.&#8221;
+<em>Journal of Open Source Software</em>, <b>6</b>(59), 3010.
+doi: <a href='https://doi.org/10.21105/joss.03010'>10.21105/joss.03010</a>
+.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other Regression Measures: 
-<code><a href='bias.html'>bias</a>()</code>,
-<code><a href='ktau.html'>ktau</a>()</code>,
-<code><a href='mape.html'>mape</a>()</code>,
-<code><a href='maxae.html'>maxae</a>()</code>,
-<code><a href='maxse.html'>maxse</a>()</code>,
-<code><a href='medae.html'>medae</a>()</code>,
-<code><a href='medse.html'>medse</a>()</code>,
-<code><a href='mse.html'>mse</a>()</code>,
-<code><a href='msle.html'>msle</a>()</code>,
-<code><a href='pbias.html'>pbias</a>()</code>,
-<code><a href='rae.html'>rae</a>()</code>,
-<code><a href='rmse.html'>rmse</a>()</code>,
-<code><a href='rmsle.html'>rmsle</a>()</code>,
-<code><a href='rrse.html'>rrse</a>()</code>,
-<code><a href='rse.html'>rse</a>()</code>,
-<code><a href='rsq.html'>rsq</a>()</code>,
-<code><a href='sae.html'>sae</a>()</code>,
-<code><a href='smape.html'>smape</a>()</code>,
-<code><a href='srho.html'>srho</a>()</code>,
-<code><a href='sse.html'>sse</a>()</code></p></div>
+    <div class='dont-index'><p>Package <a href='https://CRAN.R-project.org/package=stabm'><span class="pkg">stabm</span></a> which implements many more stability measures with included
+correction for chance.</p>
+<p>Other Similarity Measures: 
+<code><a href='phi.html'>phi</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
-<span class='va'>truth</span> <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>
-<span class='va'>response</span> <span class='op'>=</span> <span class='va'>truth</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>10</span><span class='op'>)</span>
-<span class='fu'>mae</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 0.6497906</div></pre>
+<span class='va'>sets</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>letters</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>, <span class='fl'>1</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>letters</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>, <span class='fl'>2</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='fu'>jaccard</span><span class='op'>(</span><span class='va'>sets</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

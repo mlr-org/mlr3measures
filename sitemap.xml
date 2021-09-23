@@ -55,6 +55,9 @@
     <loc>https://mlr3measures.mlr-org.com/reference/fpr.html</loc>
   </url>
   <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/jaccard.html</loc>
+  </url>
+  <url>
     <loc>https://mlr3measures.mlr-org.com/reference/ktau.html</loc>
   </url>
   <url>
@@ -106,6 +109,9 @@
     <loc>https://mlr3measures.mlr-org.com/reference/pbias.html</loc>
   </url>
   <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/phi.html</loc>
+  </url>
+  <url>
     <loc>https://mlr3measures.mlr-org.com/reference/ppv.html</loc>
   </url>
   <url>
@@ -134,6 +140,9 @@
   </url>
   <url>
     <loc>https://mlr3measures.mlr-org.com/reference/sae.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/similarity_params.html</loc>
   </url>
   <url>
     <loc>https://mlr3measures.mlr-org.com/reference/smape.html</loc>
