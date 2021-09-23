@@ -1,4 +1,4 @@
-#' @importFrom utils head
+#' @importFrom utils head combn
 #' @importFrom stats cor median var relevel contr.treatment
 #' @import checkmate
 "_PACKAGE"

@@ -83,4 +83,6 @@ Collate:
     'regr_srho.R'
     'regr_sse.R'
     'roxygen.R'
+    'similarity_jaccard.R'
+    'similarity_phi.R'
     'zzz.R'

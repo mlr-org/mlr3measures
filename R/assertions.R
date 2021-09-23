@@ -45,5 +45,11 @@ assert_regr = function(truth, response, na_value = NULL) {
 
 assert_sets = function(sets) {
   assert_list(sets, types = c("character", "integer"), min.len = 2L, any.missing = FALSE)
+  if (is.character(sets[[1L]])) {
+    qassertr(sets, "S[1,]")
+  } else {
+    qassertr(sets, "I")
+  }
+
   lapply(sets, unique)
 }
