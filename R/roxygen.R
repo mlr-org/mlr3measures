@@ -72,3 +72,19 @@ NULL
 #'   Additional arguments. Currently ignored.
 #' @keywords internal
 NULL
+
+#' @title Similarity Parameters
+#' @name similarity_params
+#'
+#' @param sets (`list()`)\cr
+#'   List of character or integer vectors.
+#'   `sets` must have at least 2 elements.
+#' @param p (`integer(1)`)\cr
+#'   Total number of possible elements.
+#' @param na_value (`numeric(1)`)\cr
+#'   Value that should be returned if the measure is not defined for the input
+#'   (as described in the note). Default is `NaN`.
+#' @param ... (`any`)\cr
+#'   Additional arguments. Currently ignored.
+#' @keywords internal
+NULL

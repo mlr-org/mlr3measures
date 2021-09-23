@@ -7,8 +7,8 @@
 #' The following information is available for each measure:
 #' * `id`: Name of the measure.
 #' * `title`: Short descriptive title.
-#' * `type`: `"binary"` for binary classification, `"classif"` for binary or multi-class classification or
-#'   `"regr"` for regression.
+#' * `type`: `"binary"` for binary classification, `"classif"` for binary or multi-class classification,
+#'   `"regr"` for regression and `"similarity"` for similarity measures.
 #' * `lower`: lower bound.
 #' * `upper`: upper bound.
 #' * `predict_type`: prediction type the measure operates on.
@@ -32,10 +32,10 @@ add_measure = function(obj, title, type, lower, upper, minimize) {
   assign(id, list(
     id = id,
     title = assert_string(title),
-    type = assert_choice(type, c("binary", "classif", "regr")),
+    type = assert_choice(type, c("binary", "classif", "regr", "similarity")),
     lower = assert_number(lower),
     upper = assert_number(upper),
-    predict_type = intersect(names(formals(obj)), c("response", "prob", "se")),
+    predict_type = intersect(names(formals(obj)), c("response", "prob", "se", "sets")),
     minimize = assert_flag(minimize, na.ok = TRUE),
     sample_weights = "sample_weights" %in% names(formals(obj))
   ), envir = measures)
