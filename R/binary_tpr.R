@@ -17,6 +17,8 @@
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
+#' `r format_bib("goutte_2005")`
+#'
 #' @inheritParams binary_params
 #' @template binary_example
 #' @export
