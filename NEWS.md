@@ -1,8 +1,9 @@
 # mlr3measures 0.4.0
 
+- New measures to calculate set similarities: `jaccard` and `phi`.
 - Many measures now support sample weights.
   Supported measures have `$sample_weights` set to `TRUE` in the `measures`
-  environmet.
+  environment.
 
 
 # mlr3measures 0.3.1
