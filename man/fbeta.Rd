@@ -43,7 +43,7 @@ It measures the effectiveness of retrieval with respect to a user who attaches \
 as much importance to recall as precision.
 For \eqn{\beta = 1}{beta = 1}, this measure is called "F1" score.
 }
-\note{
+\details{
 This measure is undefined if
 \itemize{
 \item TP = 0

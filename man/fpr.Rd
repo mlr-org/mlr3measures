@@ -36,7 +36,7 @@ Binary classification measure defined as \deqn{
 }
 Also know as fall out or probability of false alarm.
 }
-\note{
+\details{
 This measure is undefined if FP + TN = 0.
 }
 \section{Meta Information}{

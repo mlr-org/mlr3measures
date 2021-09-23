@@ -38,7 +38,7 @@ Regression measure defined as \deqn{
   sqrt(weighted.mean((log(1 + t) - log(1 + r))^2, w)).
 }
 }
-\note{
+\details{
 This measure is undefined if any element of \eqn{t} or \eqn{r} is less than or equal to \eqn{-1}.
 }
 \section{Meta Information}{

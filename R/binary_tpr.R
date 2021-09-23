@@ -8,7 +8,7 @@
 #' }
 #' Also know as "recall" or "sensitivity".
 #'
-#' @note
+#' @details
 #' This measure is undefined if TP + FN = 0.
 #'
 #' @templateVar mid tpr

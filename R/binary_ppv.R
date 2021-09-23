@@ -11,7 +11,7 @@
 #' @templateVar mid ppv
 #' @template binary_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if TP + FP = 0.
 #'
 #' @references

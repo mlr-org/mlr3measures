@@ -17,7 +17,7 @@
 #' @templateVar mid jaccard
 #' @template similarity_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if two or more sets are empty.
 #'
 #' @inheritParams similarity_params

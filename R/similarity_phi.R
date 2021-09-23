@@ -17,7 +17,7 @@
 #' @templateVar mid phi
 #' @template similarity_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if one set contains none or all possible elements.
 #'
 #' @inheritParams similarity_params

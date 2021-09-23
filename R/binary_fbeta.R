@@ -14,7 +14,7 @@
 #' @templateVar mid fbeta
 #' @template binary_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if
 #' * TP = 0
 #' * [precision] or [recall] is undefined, i.e. TP + FP = 0 or TP + FN = 0.

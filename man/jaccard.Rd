@@ -32,7 +32,7 @@ For two sets \eqn{A} and \eqn{B}, it is defined as
 If more than two sets are provided, the mean of all pairwise scores
 is calculated.
 }
-\note{
+\details{
 This measure is undefined if two or more sets are empty.
 }
 \section{Meta Information}{

@@ -13,7 +13,7 @@
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
 #'
-#' @note
+#' @details
 #' This measure is undefined if FP = 0 or FN = 0.
 #'
 #' @inheritParams binary_params

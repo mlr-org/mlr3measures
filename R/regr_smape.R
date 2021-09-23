@@ -10,7 +10,7 @@
 #' @templateVar mid smape
 #' @template regr_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 #'
 #' @inheritParams regr_params

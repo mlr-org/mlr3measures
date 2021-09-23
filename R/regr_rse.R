@@ -11,7 +11,7 @@
 #' @templateVar mid rse
 #' @template regr_template
 #'
-#' @note
+#' @details
 #' This measure is undefined for constant \eqn{t}.
 #'
 #' @inheritParams regr_params

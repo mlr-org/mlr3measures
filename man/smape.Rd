@@ -32,7 +32,7 @@ Regression measure defined as \deqn{
   2 * mean(abs(t - r) / (abs(t) + abs(r))).
 }
 }
-\note{
+\details{
 This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
 }
 \section{Meta Information}{

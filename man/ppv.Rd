@@ -39,7 +39,7 @@ Binary classification measure defined as \deqn{
 }
 Also know as "precision".
 }
-\note{
+\details{
 This measure is undefined if TP + FP = 0.
 }
 \section{Meta Information}{

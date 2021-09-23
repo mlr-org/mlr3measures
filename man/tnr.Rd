@@ -39,7 +39,7 @@ Binary classification measure defined as \deqn{
 }
 Also know as "specificity".
 }
-\note{
+\details{
 This measure is undefined if FP + TN = 0.
 }
 \section{Meta Information}{
