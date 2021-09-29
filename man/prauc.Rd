@@ -34,7 +34,7 @@ The PRC can be interpreted as the relationship between precision and recall (sen
 and is considered to be a more appropriate measure for unbalanced datasets than the ROC curve.
 The PRC is computed by integration of the piecewise function.
 }
-\note{
+\details{
 This measure is undefined if the true values are either all positive or
 all negative.
 }

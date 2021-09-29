@@ -10,7 +10,7 @@
 #' @templateVar mid mcc
 #' @template binary_template
 #'
-#' @note
+#' @details
 #' This above formula is undefined if any of the four sums in the denominator is 0.
 #' The denominator is then set to 1.
 #'

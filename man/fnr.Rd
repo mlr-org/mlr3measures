@@ -36,7 +36,7 @@ Binary classification measure defined as \deqn{
 }
 Also know as "miss rate".
 }
-\note{
+\details{
 This measure is undefined if TP + FN = 0.
 }
 \section{Meta Information}{

@@ -3,7 +3,6 @@
 #' * Type: `"<%= item$type %>"`
 #' * Range: <%= format_range(item) %>
 #' * Minimize: `<%= item$minimize %>`
-#' * Required prediction: `<%= item$predict_type %>`
 #'
 #' @family Similarity Measures
 #' @concept similarity_measure

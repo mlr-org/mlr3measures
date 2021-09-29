@@ -43,7 +43,7 @@ It measures the effectiveness of retrieval with respect to a user who attaches \
 as much importance to recall as precision.
 For \eqn{\beta = 1}{beta = 1}, this measure is called "F1" score.
 }
-\note{
+\details{
 This measure is undefined if
 \itemize{
 \item TP = 0
@@ -68,15 +68,15 @@ response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
 fbeta(truth, response, positive = "a")
 }
 \references{
-Sasaki, Yutaka, others (2007).
-\dQuote{The truth of the F-measure.}
-\emph{Teach Tutor mater}, \bold{1}(5), 1--5.
-\url{https://www.cs.odu.edu/~mukka/cs795sum10dm/Lecturenotes/Day3/F-measure-YS-26Oct07.pdf}.
-
 Rijsbergen, Van CJ (1979).
 \emph{Information Retrieval}, 2nd edition.
 Butterworth-Heinemann, Newton, MA, USA.
 ISBN 408709294.
+
+Goutte C, Gaussier E (2005).
+\dQuote{A Probabilistic Interpretation of Precision,  Recall and F-Score,  with Implication for Evaluation.}
+In \emph{Lecture Notes in Computer Science}, 345--359.
+\doi{10.1007/978-3-540-31865-1_25}.
 }
 \seealso{
 Other Binary Classification Measures: 

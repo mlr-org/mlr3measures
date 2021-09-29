@@ -10,7 +10,7 @@
 #' @templateVar mid fomr
 #' @template binary_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if FN + TN = 0.
 #'
 #' @references

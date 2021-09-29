@@ -14,13 +14,13 @@
 #' @templateVar mid fbeta
 #' @template binary_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if
 #' * TP = 0
 #' * [precision] or [recall] is undefined, i.e. TP + FP = 0 or TP + FN = 0.
 #'
 #' @references
-#' `r format_bib("sasaki_2007", "rijsbergen_1979")`
+#' `r format_bib("rijsbergen_1979", "goutte_2005")`
 #'
 #' @inheritParams binary_params
 #' @param beta (`numeric(1)`)\cr

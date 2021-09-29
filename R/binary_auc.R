@@ -8,7 +8,7 @@
 #' @templateVar mid auc
 #' @template binary_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if the true values are either all positive or
 #' all negative.
 #'

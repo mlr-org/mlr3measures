@@ -10,7 +10,7 @@
 #' @templateVar mid rmsle
 #' @template regr_template
 #'
-#' @note
+#' @details
 #' This measure is undefined if any element of \eqn{t} or \eqn{r} is less than or equal to \eqn{-1}.
 #'
 #' @inheritParams regr_params

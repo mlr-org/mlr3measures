@@ -8,7 +8,7 @@
 #' }
 #' Also know as "recall" or "sensitivity".
 #'
-#' @note
+#' @details
 #' This measure is undefined if TP + FN = 0.
 #'
 #' @templateVar mid tpr
@@ -16,6 +16,8 @@
 #'
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
+#'
+#' `r format_bib("goutte_2005")`
 #'
 #' @inheritParams binary_params
 #' @template binary_example

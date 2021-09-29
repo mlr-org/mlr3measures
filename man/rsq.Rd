@@ -35,7 +35,7 @@ Also known as coefficient of determination or explained variation.
 Subtracts the \code{\link[=rse]{rse()}} from 1, hence it compares the squared error of
 the predictions relative to a naive model predicting the mean.
 }
-\note{
+\details{
 This measure is undefined for constant \eqn{t}.
 }
 \section{Meta Information}{

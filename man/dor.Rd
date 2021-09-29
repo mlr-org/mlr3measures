@@ -35,7 +35,7 @@ Binary classification measure defined as \deqn{
    (TP/FP) / (FN/TN).
 }
 }
-\note{
+\details{
 This measure is undefined if FP = 0 or FN = 0.
 }
 \section{Meta Information}{

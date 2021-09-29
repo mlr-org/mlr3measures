@@ -31,7 +31,7 @@ Binary classification measure defined as \deqn{
    (TP * TN - FP * FN) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)).
 }
 }
-\note{
+\details{
 This above formula is undefined if any of the four sums in the denominator is 0.
 The denominator is then set to 1.
 }

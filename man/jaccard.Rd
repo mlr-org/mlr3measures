@@ -32,7 +32,7 @@ For two sets \eqn{A} and \eqn{B}, it is defined as
 If more than two sets are provided, the mean of all pairwise scores
 is calculated.
 }
-\note{
+\details{
 This measure is undefined if two or more sets are empty.
 }
 \section{Meta Information}{
@@ -41,7 +41,6 @@ This measure is undefined if two or more sets are empty.
 \item Type: \code{"similarity"}
 \item Range: \eqn{[0, 1]}{[0, 1]}
 \item Minimize: \code{FALSE}
-\item Required prediction: \code{sets}
 }
 }
 

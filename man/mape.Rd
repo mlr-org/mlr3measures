@@ -38,7 +38,7 @@ Regression measure defined as \deqn{
    weighted.mean(abs((t - r) / t), w).
  }
 }
-\note{
+\details{
 This measure is undefined if any element of \eqn{t} is \eqn{0}.
 }
 \section{Meta Information}{

@@ -33,7 +33,7 @@ Regression measure defined as \deqn{
 }
 Can be interpreted as squared error of the predictions relative to a naive model predicting the mean.
 }
-\note{
+\details{
 This measure is undefined for constant \eqn{t}.
 }
 \section{Meta Information}{

@@ -39,7 +39,7 @@ Binary classification measure defined as \deqn{
 }
 Also know as "precision".
 }
-\note{
+\details{
 This measure is undefined if TP + FP = 0.
 }
 \section{Meta Information}{
@@ -61,6 +61,11 @@ ppv(truth, response, positive = "a")
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Template:DiagnosticTesting_Diagram}
+
+Goutte C, Gaussier E (2005).
+\dQuote{A Probabilistic Interpretation of Precision,  Recall and F-Score,  with Implication for Evaluation.}
+In \emph{Lecture Notes in Computer Science}, 345--359.
+\doi{10.1007/978-3-540-31865-1_25}.
 }
 \seealso{
 Other Binary Classification Measures: 
