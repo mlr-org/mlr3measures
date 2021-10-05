@@ -48,9 +48,7 @@
 
 
 <meta property="og:title" content="Median Squared Error — medse" />
-<meta property="og:description" content="Regression measure defined as $$
-  \mathop{\mathrm{median}}_i \left[ \left( t_i - r_i \right)^2 \right].
-$$" />
+<meta property="og:description" content="Measure to compare true observed response with predicted response in regression tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -149,9 +147,7 @@ $$" />
     </div>
 
     <div class="ref-description">
-    <p>Regression measure defined as $$
-  \mathop{\mathrm{median}}_i \left[ \left( t_i - r_i \right)^2 \right].
-$$</p>
+    <p>Measure to compare true observed response with predicted response in regression tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>medse</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -181,6 +177,11 @@ Additional arguments. Currently ignored.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The Median Squared Error is defined as $$
+  \mathop{\mathrm{median}}_i \left[ \left( t_i - r_i \right)^2 \right].
+$$</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 
     

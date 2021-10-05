@@ -48,9 +48,9 @@
 
 
 <meta property="og:title" content="Area Under the ROC Curve — auc" />
-<meta property="og:description" content="Computes the area under the Receiver Operator Characteristic (ROC) curve.
-The AUC can be interpreted as the probability that a randomly chosen positive observation
-has a higher predicted probability than a randomly chosen negative observation." />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -149,9 +149,9 @@ has a higher predicted probability than a randomly chosen negative observation."
     </div>
 
     <div class="ref-description">
-    <p>Computes the area under the Receiver Operator Characteristic (ROC) curve.
-The AUC can be interpreted as the probability that a randomly chosen positive observation
-has a higher predicted probability than a randomly chosen negative observation.</p>
+    <p>Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>auc</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, <span class='va'>positive</span>, na_value <span class='op'>=</span> <span class='cn'>NaN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -194,7 +194,10 @@ Additional arguments. Currently ignored.</p></td>
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This measure is undefined if the true values are either all positive or
+    <p>Computes the area under the Receiver Operator Characteristic (ROC) curve.
+The AUC can be interpreted as the probability that a randomly chosen positive observation
+has a higher predicted probability than a randomly chosen negative observation.</p>
+<p>This measure is undefined if the true values are either all positive or
 all negative.</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 

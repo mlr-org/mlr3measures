@@ -48,13 +48,9 @@
 
 
 <meta property="og:title" content="F-beta Score — fbeta" />
-<meta property="og:description" content="Binary classification measure defined with \(P\) as precision() and \(R\) as
-recall() as $$
-   (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
-$$
-It measures the effectiveness of retrieval with respect to a user who attaches \(\beta\) times
-as much importance to recall as precision.
-For \(\beta = 1\), this measure is called &quot;F1&quot; score." />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+labels
+in binary classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -153,13 +149,9 @@ For \(\beta = 1\), this measure is called &quot;F1&quot; score." />
     </div>
 
     <div class="ref-description">
-    <p>Binary classification measure defined with \(P\) as <code><a href='ppv.html'>precision()</a></code> and \(R\) as
-<code><a href='tpr.html'>recall()</a></code> as $$
-   (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
-$$
-It measures the effectiveness of retrieval with respect to a user who attaches \(\beta\) times
-as much importance to recall as precision.
-For \(\beta = 1\), this measure is called "F1" score.</p>
+    <p>Measure to compare true observed labels with predicted
+labels
+in binary classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>fbeta</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, <span class='va'>positive</span>, beta <span class='op'>=</span> <span class='fl'>1</span>, na_value <span class='op'>=</span> <span class='cn'>NaN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -208,7 +200,13 @@ Additional arguments. Currently ignored.</p></td>
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This measure is undefined if</p><ul>
+    <p>The \(P\) as <code><a href='ppv.html'>precision()</a></code> and \(R\) as <code><a href='tpr.html'>recall()</a></code>, this F-beta Score is defined as $$
+   (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
+$$
+It measures the effectiveness of retrieval with respect to a user who attaches \(\beta\) times
+as much importance to recall as precision.
+For \(\beta = 1\), this measure is called "F1" score.</p>
+<p>This measure is undefined if</p><ul>
 <li><p>TP = 0</p></li>
 <li><p><a href='ppv.html'>precision</a> or <a href='tpr.html'>recall</a> is undefined, i.e. TP + FP = 0 or TP + FN = 0.</p></li>
 </ul>

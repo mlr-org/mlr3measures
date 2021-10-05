@@ -48,16 +48,9 @@
 
 
 <meta property="og:title" content="Balanced Accuracy — bacc" />
-<meta property="og:description" content="Computes the weighted balanced accuracy, suitable for imbalanced data sets.
-It is defined analogously to the definition in sklearn.
-First, the sample weights \(w\) are normalized per class:
-$$
- \hat{w}_i = \frac{w_i}{\sum_j 1(y_j = y_i) w_i}.
-$$
-The balanced accuracy is calculated as
-$$
- \frac{1}{\sum_i \hat{w}_i} \sum_i 1(r_i = t_i) \hat{w}_i.
-$$" />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+labels
+in multiclass classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -156,16 +149,9 @@ $$" />
     </div>
 
     <div class="ref-description">
-    <p>Computes the weighted balanced accuracy, suitable for imbalanced data sets.
-It is defined analogously to the definition in <a href='https://scikit-learn.org/'>sklearn</a>.</p>
-<p>First, the sample weights \(w\) are normalized per class:
-$$
- \hat{w}_i = \frac{w_i}{\sum_j 1(y_j = y_i) w_i}.
-$$
-The balanced accuracy is calculated as
-$$
- \frac{1}{\sum_i \hat{w}_i} \sum_i 1(r_i = t_i) \hat{w}_i.
-$$</p>
+    <p>Measure to compare true observed labels with predicted
+labels
+in multiclass classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>bacc</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, sample_weights <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -203,6 +189,18 @@ Additional arguments. Currently ignored.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The Balanced Accuracy computes the weighted balanced accuracy, suitable for imbalanced data sets.
+It is defined analogously to the definition in <a href='https://scikit-learn.org/'>sklearn</a>.</p>
+<p>First, the sample weights \(w\) are normalized per class:
+$$
+ \hat{w}_i = \frac{w_i}{\sum_j 1(y_j = y_i) w_i}.
+$$
+The balanced accuracy is calculated as
+$$
+ \frac{1}{\sum_i \hat{w}_i} \sum_i 1(r_i = t_i) \hat{w}_i.
+$$</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 
     

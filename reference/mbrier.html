@@ -48,12 +48,9 @@
 
 
 <meta property="og:title" content="Multiclass Brier Score — mbrier" />
-<meta property="og:description" content="Brier score for multi-class classification problems with \(r\) labels defined as $$
-   \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^r (I_{ij} - p_{ij})^2.
-$$
-\(I_{ij}\) is 1 if observation \(i\) has true label \(j\), and 0 otherwise.
-Note that there also is the more common definition of the Brier score for binary
-classification problems in bbrier()." />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+probabilities
+in multiclass classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -152,12 +149,9 @@ classification problems in bbrier()." />
     </div>
 
     <div class="ref-description">
-    <p>Brier score for multi-class classification problems with \(r\) labels defined as $$
-   \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^r (I_{ij} - p_{ij})^2.
-$$
-\(I_{ij}\) is 1 if observation \(i\) has true label \(j\), and 0 otherwise.</p>
-<p>Note that there also is the more common definition of the Brier score for binary
-classification problems in <code><a href='bbrier.html'>bbrier()</a></code>.</p>
+    <p>Measure to compare true observed labels with predicted
+probabilities
+in multiclass classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>mbrier</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -188,6 +182,14 @@ Additional arguments. Currently ignored.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Brier score for multi-class classification problems with \(r\) labels defined as $$
+   \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^r (I_{ij} - p_{ij})^2.
+$$
+\(I_{ij}\) is 1 if observation \(i\) has true label \(j\), and 0 otherwise.</p>
+<p>Note that there also is the more common definition of the Brier score for binary
+classification problems in <code><a href='bbrier.html'>bbrier()</a></code>.</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 
     

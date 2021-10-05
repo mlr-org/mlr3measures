@@ -48,11 +48,9 @@
 
 
 <meta property="og:title" content="Binary Brier Score — bbrier" />
-<meta property="og:description" content="Brier score for binary classification problems defined as $$
-   \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
-$$
-Note that this (more common) definition of the Brier score is equivalent to the
-original definition of the multi-class Brier score (see mbrier()) divided by 2." />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -151,11 +149,9 @@ original definition of the multi-class Brier score (see mbrier()) divided by 2."
     </div>
 
     <div class="ref-description">
-    <p>Brier score for binary classification problems defined as $$
-   \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
-$$</p>
-<p>Note that this (more common) definition of the Brier score is equivalent to the
-original definition of the multi-class Brier score (see <code><a href='mbrier.html'>mbrier()</a></code>) divided by 2.</p>
+    <p>Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>bbrier</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, <span class='va'>positive</span>, sample_weights <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -198,6 +194,13 @@ Additional arguments. Currently ignored.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The Binary Brier Score is defined as $$
+   \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
+$$</p>
+<p>Note that this (more common) definition of the Brier score is equivalent to the
+original definition of the multi-class Brier score (see <code><a href='mbrier.html'>mbrier()</a></code>) divided by 2.</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 
     

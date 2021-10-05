@@ -48,10 +48,9 @@
 
 
 <meta property="og:title" content="Area Under the Precision-Recall Curve — prauc" />
-<meta property="og:description" content="Computes the area under the Precision-Recall curve (PRC).
-The PRC can be interpreted as the relationship between precision and recall (sensitivity),
-and is considered to be a more appropriate measure for unbalanced datasets than the ROC curve.
-The PRC is computed by integration of the piecewise function." />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -150,10 +149,9 @@ The PRC is computed by integration of the piecewise function." />
     </div>
 
     <div class="ref-description">
-    <p>Computes the area under the Precision-Recall curve (PRC).
-The PRC can be interpreted as the relationship between precision and recall (sensitivity),
-and is considered to be a more appropriate measure for unbalanced datasets than the ROC curve.
-The PRC is computed by integration of the piecewise function.</p>
+    <p>Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>prauc</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>prob</span>, <span class='va'>positive</span>, na_value <span class='op'>=</span> <span class='cn'>NaN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -196,7 +194,11 @@ Additional arguments. Currently ignored.</p></td>
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This measure is undefined if the true values are either all positive or
+    <p>Computes the area under the Precision-Recall curve (PRC).
+The PRC can be interpreted as the relationship between precision and recall (sensitivity),
+and is considered to be a more appropriate measure for unbalanced datasets than the ROC curve.
+The PRC is computed by integration of the piecewise function.</p>
+<p>This measure is undefined if the true values are either all positive or
 all negative.</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 

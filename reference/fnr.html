@@ -48,10 +48,9 @@
 
 
 <meta property="og:title" content="False Negative Rate — fnr" />
-<meta property="og:description" content="Binary classification measure defined as $$
-   \frac{\mathrm{FN}}{\mathrm{TP} + \mathrm{FN}}.
-$$
-Also know as &quot;miss rate&quot;." />
+<meta property="og:description" content="Measure to compare true observed labels with predicted
+labels
+in binary classification tasks." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -150,10 +149,9 @@ Also know as &quot;miss rate&quot;." />
     </div>
 
     <div class="ref-description">
-    <p>Binary classification measure defined as $$
-   \frac{\mathrm{FN}}{\mathrm{TP} + \mathrm{FN}}.
-$$
-Also know as "miss rate".</p>
+    <p>Measure to compare true observed labels with predicted
+labels
+in binary classification tasks.</p>
     </div>
 
     <pre class="usage"><span class='fu'>fnr</span><span class='op'>(</span><span class='va'>truth</span>, <span class='va'>response</span>, <span class='va'>positive</span>, na_value <span class='op'>=</span> <span class='cn'>NaN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -196,7 +194,11 @@ Additional arguments. Currently ignored.</p></td>
     <p>Performance value as <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This measure is undefined if TP + FN = 0.</p>
+    <p>The False Negative Rate is defined as $$
+   \frac{\mathrm{FN}}{\mathrm{TP} + \mathrm{FN}}.
+$$
+Also know as "miss rate".</p>
+<p>This measure is undefined if TP + FN = 0.</p>
     <h2 class="hasAnchor" id="meta-information"><a class="anchor" href="#meta-information"></a>Meta Information</h2>
 
     
