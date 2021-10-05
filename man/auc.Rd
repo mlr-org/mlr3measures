@@ -29,11 +29,15 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
+Measure to compare true observed labels with predicted
+probabilities
+in binary classification tasks.
+}
+\details{
 Computes the area under the Receiver Operator Characteristic (ROC) curve.
 The AUC can be interpreted as the probability that a randomly chosen positive observation
 has a higher predicted probability than a randomly chosen negative observation.
-}
-\details{
+
 This measure is undefined if the true values are either all positive or
 all negative.
 }

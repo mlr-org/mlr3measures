@@ -29,13 +29,17 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Binary classification measure defined as \deqn{
+Measure to compare true observed labels with predicted
+labels
+in binary classification tasks.
+}
+\details{
+The False Discovery Rate is defined as \deqn{
    \frac{\mathrm{FP}}{\mathrm{TP} + \mathrm{FP}}.
 }{
    FP / (TP + FP).
 }
-}
-\details{
+
 This measure is undefined if TP + FP = 0.
 }
 \section{Meta Information}{

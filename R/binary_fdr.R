@@ -1,7 +1,7 @@
 #' @title False Discovery Rate
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The False Discovery Rate is defined as \deqn{
 #'    \frac{\mathrm{FP}}{\mathrm{TP} + \mathrm{FP}}.
 #' }{
 #'    FP / (TP + FP).

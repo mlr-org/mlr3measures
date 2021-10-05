@@ -1,8 +1,7 @@
 #' @title Jaccard Similarity Index
 #'
-#' @description
-#' Measure to compare two or more sets w.r.t. their similarity.
-#' For two sets \eqn{A} and \eqn{B}, it is defined as
+#' @details
+#' For two sets \eqn{A} and \eqn{B}, the Jaccard Index is defined as
 #' \deqn{
 #'   J(A, B) = \frac{|A \cap B|}{|A \cup B|}.
 #' }{

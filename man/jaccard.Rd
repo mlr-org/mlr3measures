@@ -23,7 +23,9 @@ Performance value as \code{numeric(1)}.
 }
 \description{
 Measure to compare two or more sets w.r.t. their similarity.
-For two sets \eqn{A} and \eqn{B}, it is defined as
+}
+\details{
+For two sets \eqn{A} and \eqn{B}, the Jaccard Index is defined as
 \deqn{
   J(A, B) = \frac{|A \cap B|}{|A \cup B|}.
 }{
@@ -31,8 +33,7 @@ For two sets \eqn{A} and \eqn{B}, it is defined as
 }
 If more than two sets are provided, the mean of all pairwise scores
 is calculated.
-}
-\details{
+
 This measure is undefined if two or more sets are empty.
 }
 \section{Meta Information}{

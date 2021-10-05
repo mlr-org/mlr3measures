@@ -1,7 +1,7 @@
 #' @title False Omission Rate
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The False Omission Rate is defined as \deqn{
 #'    \frac{\mathrm{FN}}{\mathrm{FN} + \mathrm{TN}}.
 #' }{
 #'    FN / (FN + TN).

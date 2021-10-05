@@ -1,7 +1,7 @@
 #' @title True Positive Rate
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The True Positive Rate is defined as \deqn{
 #'   \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}}.
 #' }{
 #'   TP / (TP + FN).

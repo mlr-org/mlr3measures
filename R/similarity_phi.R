@@ -1,8 +1,7 @@
 #' @title Phi Coefficient Similarity
 #'
-#' @description
-#' Measure to compare two or more sets w.r.t. their similarity.
-#' It is defined as the Pearson correlation between the binary
+#' @details
+#' The Phi Coefficient is defined as the Pearson correlation between the binary
 #' representation of two sets \eqn{A} and \eqn{B}.
 #' The binary representation for \eqn{A} is a logical vector of
 #' length \eqn{p} with the i-th element being 1 if the corresponding

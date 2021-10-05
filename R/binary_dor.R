@@ -1,7 +1,7 @@
 #' @title Diagnostic Odds Ratio
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The Diagnostic Odds Ratio is defined as \deqn{
 #'    \frac{\mathrm{TP}/\mathrm{FP}}{\mathrm{FN}/\mathrm{TN}}.
 #' }{
 #'    (TP/FP) / (FN/TN).

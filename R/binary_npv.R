@@ -1,7 +1,7 @@
 #' @title Negative Predictive Value
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The Negative Predictive Value is defined as \deqn{
 #'    \frac{\mathrm{TN}}{\mathrm{FN} + \mathrm{TN}}.
 #' }{
 #'    TN / (FN + TN).

@@ -22,7 +22,10 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Regression measure defined as \deqn{
+Measure to compare true observed response with predicted response in regression tasks.
+}
+\details{
+The Median Absolute Error is defined as \deqn{
   \mathop{\mathrm{median}}_i \left| t_i - r_i \right|.
 }{
   median(abs(t - r)).

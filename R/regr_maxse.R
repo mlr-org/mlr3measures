@@ -1,7 +1,7 @@
 #' @title Max Squared Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Max Squared Error is defined as \deqn{
 #'   \max \left( t_i - r_i \right)^2.
 #'  }{
 #'    max((t - r)^2).

@@ -22,7 +22,10 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Regression measure defined as \deqn{
+Measure to compare true observed response with predicted response in regression tasks.
+}
+\details{
+The Max Squared Error is defined as \deqn{
   \max \left( t_i - r_i \right)^2.
  }{
    max((t - r)^2).

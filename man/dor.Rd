@@ -29,13 +29,17 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Binary classification measure defined as \deqn{
+Measure to compare true observed labels with predicted
+labels
+in binary classification tasks.
+}
+\details{
+The Diagnostic Odds Ratio is defined as \deqn{
    \frac{\mathrm{TP}/\mathrm{FP}}{\mathrm{FN}/\mathrm{TN}}.
 }{
    (TP/FP) / (FN/TN).
 }
-}
-\details{
+
 This measure is undefined if FP = 0 or FN = 0.
 }
 \section{Meta Information}{

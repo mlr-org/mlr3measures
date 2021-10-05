@@ -28,7 +28,12 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Computes the weighted balanced accuracy, suitable for imbalanced data sets.
+Measure to compare true observed labels with predicted
+labels
+in multiclass classification tasks.
+}
+\details{
+The Balanced Accuracy computes the weighted balanced accuracy, suitable for imbalanced data sets.
 It is defined analogously to the definition in \href{https://scikit-learn.org/}{sklearn}.
 
 First, the sample weights \eqn{w} are normalized per class:

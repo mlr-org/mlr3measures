@@ -1,7 +1,7 @@
 #' @title True Negative Rate
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The True Negative Rate is defined as \deqn{
 #'    \frac{\mathrm{TN}}{\mathrm{FP} + \mathrm{TN}}.
 #' }{
 #'    TN / (FP + TN).

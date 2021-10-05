@@ -6,11 +6,7 @@
 \alias{mlr3measures-package}
 \title{mlr3measures: Performance Measures for 'mlr3'}
 \description{
-Implements multiple performance measures for
-    supervised learning.  Includes over 40 measures for regression and
-    classification. Additionally, meta information about the performance
-    measures can be queried, e.g. what the best and worst possible
-    performances scores are.
+Implements multiple performance measures for supervised learning. Includes over 40 measures for regression and classification. Additionally, meta information about the performance measures can be queried, e.g. what the best and worst possible performances scores are.
 }
 \seealso{
 Useful links:

@@ -32,14 +32,18 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Binary classification measure defined as \deqn{
+Measure to compare true observed labels with predicted
+labels
+in binary classification tasks.
+}
+\details{
+The True Negative Rate is defined as \deqn{
    \frac{\mathrm{TN}}{\mathrm{FP} + \mathrm{TN}}.
 }{
    TN / (FP + TN).
 }
 Also know as "specificity".
-}
-\details{
+
 This measure is undefined if FP + TN = 0.
 }
 \section{Meta Information}{

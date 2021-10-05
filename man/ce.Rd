@@ -28,7 +28,12 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Classification measure defined as \deqn{
+Measure to compare true observed labels with predicted
+labels
+in multiclass classification tasks.
+}
+\details{
+The Classification Error is defined as \deqn{
   \frac{1}{n} \sum_{i=1}^n w_i \left( t_i \neq r_i \right).
 }{
   weighted.mean(t != r, w).

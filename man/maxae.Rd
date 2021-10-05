@@ -22,7 +22,10 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Regression measure defined as \deqn{
+Measure to compare true observed response with predicted response in regression tasks.
+}
+\details{
+The Max Absolute Error is defined as \deqn{
   \max \left( \left| t_i - r_i \right| \right).
  }{
    max(abs(t - r)).

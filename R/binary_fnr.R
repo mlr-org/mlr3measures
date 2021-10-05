@@ -1,7 +1,7 @@
 #' @title False Negative Rate
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The False Negative Rate is defined as \deqn{
 #'    \frac{\mathrm{FN}}{\mathrm{TP} + \mathrm{FN}}.
 #' }{
 #'    FN / (TP + FN).

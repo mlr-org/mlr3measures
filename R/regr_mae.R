@@ -1,7 +1,7 @@
 #' @title Mean Absolute Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Mean Absolute Error is defined as \deqn{
 #'   \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
 #' }{
 #'   weighted.mean(abs(t - r), w).

@@ -1,3 +1,6 @@
+#' @description
+#' Measure to compare two or more sets w.r.t. their similarity.
+#'
 #' @section Meta Information:
 #' <% item = measures[[mid]] %>
 #' * Type: `"<%= item$type %>"`

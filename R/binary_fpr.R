@@ -1,7 +1,7 @@
 #' @title False Positive Rate
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The False Positive Rate is defined as \deqn{
 #'    \frac{\mathrm{FP}}{\mathrm{FP} + \mathrm{TN}}.
 #' }{
 #'    FP / (FP + TN).

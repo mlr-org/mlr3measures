@@ -32,7 +32,10 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Regression measure defined as \deqn{
+Measure to compare true observed response with predicted response in regression tasks.
+}
+\details{
+The Percent Bias is defined as \deqn{
   \frac{1}{n} \sum_{i=1}^n w_i \frac{\left( t_i - r_i \right)}{\left| t_i \right|}.
 }{
   weighted.mean((t - r) / abs(t), w).

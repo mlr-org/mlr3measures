@@ -22,7 +22,10 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Regression measures defined as Spearman's rank correlation coefficient between truth and response.
+Measure to compare true observed response with predicted response in regression tasks.
+}
+\details{
+Spearman's rho is defined as Spearman's rank correlation coefficient between truth and response.
 Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"spearman"}.
 }
 \section{Meta Information}{

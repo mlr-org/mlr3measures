@@ -29,14 +29,18 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Binary classification measure defined as \deqn{
+Measure to compare true observed labels with predicted
+labels
+in binary classification tasks.
+}
+\details{
+The False Positive Rate is defined as \deqn{
    \frac{\mathrm{FP}}{\mathrm{FP} + \mathrm{TN}}.
 }{
    FP / (FP + TN).
 }
 Also know as fall out or probability of false alarm.
-}
-\details{
+
 This measure is undefined if FP + TN = 0.
 }
 \section{Meta Information}{

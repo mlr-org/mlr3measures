@@ -1,7 +1,7 @@
 #' @title Sum of Squared Errors
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Sum of Squared Errors is defined as \deqn{
 #'   \sum_{i=1}^n \left( t_i - r_i \right)^2.
 #' }{
 #'   sum((t - r)^2).

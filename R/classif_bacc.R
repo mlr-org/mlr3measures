@@ -1,7 +1,7 @@
 #' @title Balanced Accuracy
 #'
-#' @description
-#' Computes the weighted balanced accuracy, suitable for imbalanced data sets.
+#' @details
+#' The Balanced Accuracy computes the weighted balanced accuracy, suitable for imbalanced data sets.
 #' It is defined analogously to the definition in [sklearn](https://scikit-learn.org/).
 #'
 #' First, the sample weights \eqn{w} are normalized per class:

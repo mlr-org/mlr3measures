@@ -22,7 +22,10 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
-Regression measure defined as Kendall's rank correlation coefficient between truth and response.
+Measure to compare true observed response with predicted response in regression tasks.
+}
+\details{
+Kendall's tau is defined as Kendall's rank correlation coefficient between truth and response.
 Calls \code{\link[stats:cor]{stats::cor()}} with \code{method} set to \code{"kendall"}.
 }
 \section{Meta Information}{

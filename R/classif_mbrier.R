@@ -1,6 +1,6 @@
 #' @title Multiclass Brier Score
 #'
-#' @description
+#' @details
 #' Brier score for multi-class classification problems with \eqn{r} labels defined as \deqn{
 #'    \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^r (I_{ij} - p_{ij})^2.
 #' }{

@@ -1,7 +1,7 @@
 #' @title Max Absolute Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Max Absolute Error is defined as \deqn{
 #'   \max \left( \left| t_i - r_i \right| \right).
 #'  }{
 #'    max(abs(t - r)).

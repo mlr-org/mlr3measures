@@ -1,7 +1,7 @@
 #' @title Mean Absolute Percent Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Mean Absolute Percent Error is defined as \deqn{
 #'   \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|.
 #'  }{
 #'    weighted.mean(abs((t - r) / t), w).

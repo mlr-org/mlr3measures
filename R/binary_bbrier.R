@@ -1,7 +1,7 @@
 #' @title Binary Brier Score
 #'
-#' @description
-#' Brier score for binary classification problems defined as \deqn{
+#' @details
+#' The Binary Brier Score is defined as \deqn{
 #'    \frac{1}{n} \sum_{i=1}^n w_i (I_i - p_i)^2.
 #' }{
 #'    weighted.mean(((t == positive) - p)^2, w).

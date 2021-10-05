@@ -1,7 +1,7 @@
 #' @title Spearman's rho
 #'
-#' @description
-#' Regression measures defined as Spearman's rank correlation coefficient between truth and response.
+#' @details
+#' Spearman's rho is defined as Spearman's rank correlation coefficient between truth and response.
 #' Calls [stats::cor()] with `method` set to `"spearman"`.
 #'
 #' @templateVar mid srho

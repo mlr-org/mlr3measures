@@ -1,7 +1,7 @@
 #' @title Positive Predictive Value
 #'
-#' @description
-#' Binary classification measure defined as \deqn{
+#' @details
+#' The Positive Predictive Value is defined as \deqn{
 #'    \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FP}}.
 #' }{
 #'    TP / (TP + FP).

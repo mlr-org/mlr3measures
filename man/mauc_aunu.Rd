@@ -36,6 +36,11 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(1)}.
 }
 \description{
+Measure to compare true observed labels with predicted
+probabilities
+in multiclass classification tasks.
+}
+\details{
 Multiclass AUC measures.
 \itemize{
 \item \emph{AUNU}: AUC of each class against the rest, using the uniform class

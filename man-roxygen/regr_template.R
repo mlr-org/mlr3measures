@@ -1,3 +1,6 @@
+#' @description
+#' Measure to compare true observed response with predicted response in regression tasks.
+#'
 #' @section Meta Information:
 #' <% item = measures[[mid]] %>
 #' * Type: `"<%= item$type %>"`

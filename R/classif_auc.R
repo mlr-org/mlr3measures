@@ -1,6 +1,6 @@
 #' @title Multiclass AUC Scores
 #'
-#' @description
+#' @details
 #' Multiclass AUC measures.
 #'
 #' * *AUNU*: AUC of each class against the rest, using the uniform class

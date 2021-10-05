@@ -1,5 +1,10 @@
-#' @section Meta Information:
 #' <% item = measures[[mid]] %>
+#' @description
+#' Measure to compare true observed labels with predicted
+#' <%= if (item$predict_type == "response") "labels" else "probabilities" %>
+#' in multiclass classification tasks.
+#'
+#' @section Meta Information:
 #' * Type: `"<%= item$type %>"`
 #' * Range: <%= format_range(item) %>
 #' * Minimize: `<%= item$minimize %>`

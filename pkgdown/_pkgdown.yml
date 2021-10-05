@@ -48,6 +48,9 @@ reference:
   - title: Regression Measures
     contents:
       - has_concept("regression_measure")
+  - title: Similarity Measures
+    contents:
+      - has_concept("similarity_measure")
   - title: Misc
     contents:
       - measures

@@ -1,7 +1,7 @@
 #' @title Median Absolute Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Median Absolute Error is defined as \deqn{
 #'   \mathop{\mathrm{median}}_i \left| t_i - r_i \right|.
 #' }{
 #'   median(abs(t - r)).

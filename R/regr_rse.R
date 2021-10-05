@@ -1,7 +1,7 @@
 #' @title Relative Squared Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Relative Squared Error is defined as \deqn{
 #'   \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2}.
 #' }{
 #'   sum((t - r)^2) / sum((t - mean(t))^2).

@@ -1,7 +1,7 @@
 #' @title Symmetric Mean Absolute Percent Error
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Symmetric Mean Absolute Percent Error is defined as \deqn{
 #'   \frac{2}{n} \sum_{i=1}^n \frac{\left| t_i - r_i \right|}{\left| t_i \right| + \left| r_i \right|}.
 #' }{
 #'   2 * mean(abs(t - r) / (abs(t) + abs(r))).

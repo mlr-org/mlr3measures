@@ -1,7 +1,7 @@
 #' @title R Squared
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' R Squared is defined as \deqn{
 #'   1 - \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2}.
 #' }{
 #'   1 - sum((t - r)^2) / sum((t - mean(t))^2).

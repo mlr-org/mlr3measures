@@ -1,7 +1,7 @@
 #' @title Sum of Absolute Errors
 #'
-#' @description
-#' Regression measure defined as \deqn{
+#' @details
+#' The Sum of Absolute Errors is defined as \deqn{
 #'   \sum_{i=1}^n \left| t_i - r_i \right|.
 #' }{
 #'   sum(abs((t - r))).

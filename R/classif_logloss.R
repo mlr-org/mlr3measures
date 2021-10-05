@@ -1,7 +1,7 @@
 #' @title Log Loss
 #'
-#' @description
-#' Classification measure defined as \deqn{
+#' @details
+#' The Log Loss is defined as \deqn{
 #'   -\frac{1}{n} \sum_{i=1}^n w_i \log \left(  p_i \right )
 #' }{
 #'   -weighted.mean(log(p), w)
