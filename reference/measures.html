@@ -194,42 +194,44 @@ Can also be <code>NA</code>.</p></li>
     <p>An object of class <code>environment</code> of length 54.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>measures</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;  [1] "tp"          "mauc_au1p"   "fbeta"       "fnr"         "mbrier"     
-#&gt;  [6] "bacc"        "jaccard"     "ktau"        "maxse"       "mape"       
-#&gt; [11] "maxae"       "mauc_au1u"   "ce"          "ppv"         "sensitivity"
-#&gt; [16] "specificity" "phi"         "recall"      "fn"          "precision"  
-#&gt; [21] "srho"        "fp"          "tpr"         "bbrier"      "bias"       
-#&gt; [26] "acc"         "mcc"         "auc"         "rae"         "rrse"       
-#&gt; [31] "smape"       "rse"         "npv"         "mauc_aunp"   "rsq"        
-#&gt; [36] "tnr"         "fomr"        "fdr"         "fpr"         "dor"        
-#&gt; [41] "pbias"       "logloss"     "prauc"       "mae"         "mauc_aunu"  
-#&gt; [46] "rmsle"       "rmse"        "medse"       "sse"         "medae"      
-#&gt; [51] "msle"        "sae"         "mse"         "tn"         </div><div class='input'><span class='va'>measures</span><span class='op'>$</span><span class='va'>tpr</span>
-</div><div class='output co'>#&gt; $id
-#&gt; [1] "tpr"
-#&gt; 
-#&gt; $title
-#&gt; [1] "True Positive Rate"
-#&gt; 
-#&gt; $type
-#&gt; [1] "binary"
-#&gt; 
-#&gt; $lower
-#&gt; [1] 0
-#&gt; 
-#&gt; $upper
-#&gt; [1] 1
-#&gt; 
-#&gt; $predict_type
-#&gt; [1] "response"
-#&gt; 
-#&gt; $minimize
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $sample_weights
-#&gt; [1] FALSE
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>measures</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1] "tp"          "mauc_au1p"   "fbeta"       "fnr"         "mbrier"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [6] "bacc"        "jaccard"     "ktau"        "maxse"       "mape"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [11] "maxae"       "mauc_au1u"   "ce"          "ppv"         "sensitivity"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [16] "specificity" "phi"         "recall"      "fn"          "precision"  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [21] "srho"        "fp"          "tpr"         "bbrier"      "bias"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [26] "acc"         "mcc"         "auc"         "rae"         "rrse"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [31] "smape"       "rse"         "npv"         "mauc_aunp"   "rsq"        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [36] "tnr"         "fomr"        "fdr"         "fpr"         "dor"        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [41] "pbias"       "logloss"     "prauc"       "mae"         "mauc_aunu"  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [46] "rmsle"       "rmse"        "medse"       "sse"         "medae"      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [51] "msle"        "sae"         "mse"         "tn"         </span>
+<span class='r-in'><span class='va'>measures</span><span class='op'>$</span><span class='va'>tpr</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $id</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "tpr"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $title</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "True Positive Rate"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "binary"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $lower</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $upper</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $predict_type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "response"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $minimize</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $sample_weights</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
