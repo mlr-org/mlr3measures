@@ -1,7 +1,7 @@
 #' @title F-beta Score
 #'
 #' @details
-#' The \eqn{P} as [precision()] and \eqn{R} as [recall()], this F-beta Score is defined as \deqn{
+#' With \eqn{P} as [precision()] and \eqn{R} as [recall()], the F-beta Score is defined as \deqn{
 #'    (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
 #' }{
 #'    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
@@ -14,9 +14,7 @@
 #' @template binary_template
 #'
 #' @details
-#' This measure is undefined if
-#' * TP = 0
-#' * [precision] or [recall] is undefined, i.e. TP + FP = 0 or TP + FN = 0.
+#' This measure is undefined if [precision] or [recall] is undefined, i.e. TP + FP = 0 or TP + FN = 0.
 #'
 #' @references
 #' `r format_bib("rijsbergen_1979", "goutte_2005")`
@@ -34,15 +32,13 @@ fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
 }
 
 fbeta_cm = function(m, beta = 1, na_value = NaN) {
-  pred_pos = sum(m[1L, ])
-  cond_pos = sum(m[, 1L])
-  if (m[1L, 1L] == 0L || pred_pos == 0L || cond_pos == 0L) {
+  if (m[1L, 1L] == 0L && (m[1L, 2L] == 0L || m[2L, 1L] == 0L)) {
     return(na_value)
   }
 
-  P = m[1L, 1L] / pred_pos
-  R = m[1L, 1L] / cond_pos
-  ((1 + beta^2) * P * R) / ((beta^2 * P) + R)
+  beta2 = beta^2
+  nom = (1 + beta2) * m[1L, 1L]
+  nom / (nom + beta2 * m[2L, 1L] + m[1L, 2L])
 }
 
 #' @include measures.R
