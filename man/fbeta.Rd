@@ -38,7 +38,7 @@ labels
 in binary classification tasks.
 }
 \details{
-The \eqn{P} as \code{\link[=precision]{precision()}} and \eqn{R} as \code{\link[=recall]{recall()}}, this F-beta Score is defined as \deqn{
+With \eqn{P} as \code{\link[=precision]{precision()}} and \eqn{R} as \code{\link[=recall]{recall()}}, the F-beta Score is defined as \deqn{
    (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
 }{
    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
@@ -47,11 +47,7 @@ It measures the effectiveness of retrieval with respect to a user who attaches \
 as much importance to recall as precision.
 For \eqn{\beta = 1}{beta = 1}, this measure is called "F1" score.
 
-This measure is undefined if
-\itemize{
-\item TP = 0
-\item \link{precision} or \link{recall} is undefined, i.e. TP + FP = 0 or TP + FN = 0.
-}
+This measure is undefined if \link{precision} or \link{recall} is undefined, i.e. TP + FP = 0 or TP + FN = 0.
 }
 \section{Meta Information}{
 

@@ -1,7 +1,7 @@
 #' @title F-beta Score
 #'
 #' @details
-#' The \eqn{P} as [precision()] and \eqn{R} as [recall()], this F-beta Score is defined as \deqn{
+#' With \eqn{P} as [precision()] and \eqn{R} as [recall()], the F-beta Score is defined as \deqn{
 #'    (1 + \beta^2) \frac{P \cdot R}{(\beta^2 P) + R}.
 #' }{
 #'    (1 + beta^2) * (P*R) / ((beta^2 * P) + R).
