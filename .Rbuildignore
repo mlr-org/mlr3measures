@@ -11,3 +11,4 @@
 ^\.ccache$
 ^tic\.R$
 ^\.lintr$
+^docs$
