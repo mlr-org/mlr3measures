@@ -1,7 +1,13 @@
+# mlr3measures 0.4.1
+
+* Calculation of `fbeta` is now more numerically more stable.
+* Improved documentation.
+
+
 # mlr3measures 0.4.0
 
-- New measures to calculate set similarities: `jaccard` and `phi`.
-- Many measures now support sample weights.
+* New measures to calculate set similarities: `jaccard` and `phi`.
+* Many measures now support sample weights.
   Supported measures have `$sample_weights` set to `TRUE` in the `measures`
   environment.
 
