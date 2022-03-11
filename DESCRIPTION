@@ -34,6 +34,7 @@ RoxygenNote: 7.1.2
 Collate:
     'assertions.R'
     'bibentries.R'
+    'obs_loss.R'
     'measures.R'
     'binary_auc.R'
     'binary_bbrier.R'

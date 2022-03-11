@@ -19,4 +19,4 @@ sae = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(sae, "Sum of Absolute Errors", "regr", 0, Inf, TRUE)
+add_measure(sae, "Sum of Absolute Errors", "regr", 0, Inf, TRUE, obs_loss = ae)

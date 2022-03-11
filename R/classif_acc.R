@@ -15,7 +15,7 @@
 #' @export
 acc = function(truth, response, sample_weights = NULL, ...) {
   assert_classif(truth, response = response)
-  wmean(truth == response, sample_weights)
+  wmean(zero_one(truth, response), sample_weights)
 }
 
 acc_cm = function(m, na_value = NaN) {
@@ -23,4 +23,4 @@ acc_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(acc, "Classification Accuracy", "classif", 0, 1, FALSE)
+add_measure(acc, "Classification Accuracy", "classif", 0, 1, FALSE, obs_loss = zero_one)

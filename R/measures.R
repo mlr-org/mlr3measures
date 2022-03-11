@@ -19,6 +19,7 @@
 #'   Can also be `NA`.
 #' * `sample_weights`: If `TRUE`, it is possible calculate a weighted measure.
 #'
+#' @include obs_loss.R
 #' @export
 #' @examples
 #' names(measures)
@@ -26,7 +27,7 @@
 measures = new.env(parent = emptyenv())
 
 # adds items to registry
-add_measure = function(obj, title, type, lower, upper, minimize) {
+add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NULL) {
   id = deparse(substitute(obj))
 
   ptype = intersect(names(formals(obj)), c("response", "prob", "se"))
@@ -42,6 +43,7 @@ add_measure = function(obj, title, type, lower, upper, minimize) {
     upper = assert_number(upper),
     predict_type = ptype,
     minimize = assert_flag(minimize, na.ok = TRUE),
+    obs_loss = assert_function(obs_loss, null.ok = TRUE),
     sample_weights = "sample_weights" %in% names(formals(obj))
   ), envir = measures)
 }
