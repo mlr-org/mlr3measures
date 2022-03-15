@@ -15,7 +15,7 @@
 #' @export
 acc = function(truth, response, sample_weights = NULL, ...) {
   assert_classif(truth, response = response)
-  wmean(zero_one(truth, response), sample_weights)
+  wmean(truth == response, sample_weights)
 }
 
 acc_cm = function(m, na_value = NaN) {
