@@ -15,6 +15,9 @@ predict_type: prediction type the measure operates on.
 "se" corresponds to to the vector of predicted standard errors for regression.
 minimize: If TRUE or FALSE, the objective is to minimize or maximize the measure, respectively.
 Can also be NA.
+obs_loss: Name of the function which is called to calculate the (unaggregated) loss per observation.
+aggregated: If TRUE, this function aggregates the losses to a single numeric value.
+Otherwise, a vector of losses is returned.
 sample_weights: If TRUE, it is possible calculate a weighted measure.
 
 '><title>Measure Registry — measures • mlr3measures</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="../deps/_Roboto-0.4.0/font.css" rel="stylesheet"><link href="../deps/_JetBrains%20Mono-0.4.0/font.css" rel="stylesheet"><link href="../deps/_Roboto%20Slab-0.4.0/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Measure Registry — measures"><meta property="og:description" content='The environment() measures keeps track of all measures in this package.
@@ -33,6 +36,9 @@ predict_type: prediction type the measure operates on.
 "se" corresponds to to the vector of predicted standard errors for regression.
 minimize: If TRUE or FALSE, the objective is to minimize or maximize the measure, respectively.
 Can also be NA.
+obs_loss: Name of the function which is called to calculate the (unaggregated) loss per observation.
+aggregated: If TRUE, this function aggregates the losses to a single numeric value.
+Otherwise, a vector of losses is returned.
 sample_weights: If TRUE, it is possible calculate a weighted measure.
 
 '><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -126,6 +132,9 @@ The following information is available for each measure:</p><ul><li><p><code>id<
 <code>"se"</code> corresponds to to the vector of predicted standard errors for regression.</p></li>
 <li><p><code>minimize</code>: If <code>TRUE</code> or <code>FALSE</code>, the objective is to minimize or maximize the measure, respectively.
 Can also be <code>NA</code>.</p></li>
+<li><p><code>obs_loss</code>: Name of the function which is called to calculate the (unaggregated) loss per observation.</p></li>
+<li><p><code>aggregated</code>: If <code>TRUE</code>, this function aggregates the losses to a single numeric value.
+Otherwise, a vector of losses is returned.</p></li>
 <li><p><code>sample_weights</code>: If <code>TRUE</code>, it is possible calculate a weighted measure.</p></li>
 </ul></div>
 
@@ -136,7 +145,7 @@ Can also be <code>NA</code>.</p></li>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>environment</code> of length 54.</p>
+    <p>An object of class <code>environment</code> of length 59.</p>
     </div>
 
     <div class="section level2">
@@ -148,11 +157,12 @@ Can also be <code>NA</code>.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [16] "specificity" "phi"         "recall"      "fn"          "precision"  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [21] "srho"        "fp"          "tpr"         "bbrier"      "bias"       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [26] "acc"         "mcc"         "auc"         "rae"         "rrse"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "smape"       "rse"         "npv"         "mauc_aunp"   "rsq"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "tnr"         "fomr"        "fdr"         "fpr"         "dor"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "pbias"       "logloss"     "prauc"       "mae"         "mauc_aunu"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [46] "rmsle"       "rmse"        "medse"       "sse"         "medae"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "msle"        "sae"         "mse"         "tn"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "sle"         "smape"       "se"          "ae"          "rse"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "npv"         "mauc_aunp"   "rsq"         "tnr"         "fomr"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "fdr"         "fpr"         "dor"         "pbias"       "logloss"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [46] "prauc"       "zero_one"    "sse"         "mae"         "mauc_aunu"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "rmsle"       "rmse"        "medse"       "medae"       "msle"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [56] "sae"         "ape"         "mse"         "tn"         </span>
 <span class="r-in"><span class="va">measures</span><span class="op">$</span><span class="va">tpr</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "tpr"</span>
@@ -174,6 +184,12 @@ Can also be <code>NA</code>.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $minimize</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $obs_loss</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $aggregated</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $sample_weights</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>

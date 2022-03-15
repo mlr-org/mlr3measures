@@ -19,6 +19,12 @@
     <loc>https://mlr3measures.mlr-org.com/reference/acc.html</loc>
   </url>
   <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/ae.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/ape.html</loc>
+  </url>
+  <url>
     <loc>https://mlr3measures.mlr-org.com/reference/auc.html</loc>
   </url>
   <url>
@@ -157,7 +163,13 @@
     <loc>https://mlr3measures.mlr-org.com/reference/sae.html</loc>
   </url>
   <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/se.html</loc>
+  </url>
+  <url>
     <loc>https://mlr3measures.mlr-org.com/reference/similarity_params.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/sle.html</loc>
   </url>
   <url>
     <loc>https://mlr3measures.mlr-org.com/reference/smape.html</loc>
@@ -179,5 +191,8 @@
   </url>
   <url>
     <loc>https://mlr3measures.mlr-org.com/reference/tpr.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3measures.mlr-org.com/reference/zero_one.html</loc>
   </url>
 </urlset>
