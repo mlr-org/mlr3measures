@@ -9,15 +9,27 @@
 \alias{sle}
 \title{Loss per Observation}
 \usage{
-zero_one(truth, response)
+zero_one(truth, response, ...)
 
-ae(truth, response)
+ae(truth, response, ...)
 
-ape(truth, response)
+ape(truth, response, ...)
 
-se(truth, response)
+se(truth, response, ...)
 
-sle(truth, response)
+sle(truth, response, ...)
+}
+\arguments{
+\item{truth}{(\code{factor()} | \code{numeric()})\cr
+True (observed) labels.
+The required type depends on the type of problem: factor for classification,
+numeric for regression.}
+
+\item{response}{(\code{factor()} | \code{numeric()})\cr
+Predicted labels. Must be of the same type as \code{truth}.}
+
+\item{...}{(any)\cr
+Additional parameters, currently ignored.}
 }
 \description{
 The functions calculate the unaggregated loss per observation.
