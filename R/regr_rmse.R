@@ -15,7 +15,7 @@
 #' @export
 rmse = function(truth, response, sample_weights = NULL, ...) {
   assert_regr(truth, response = response)
-  sqrt(wmean(se(truth, response), sample_weights))
+  sqrt(wmean(.se(truth, response), sample_weights))
 }
 
 #' @include measures.R

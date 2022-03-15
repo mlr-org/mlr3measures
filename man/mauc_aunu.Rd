@@ -104,7 +104,8 @@ Other Classification Measures:
 \code{\link{bacc}()},
 \code{\link{ce}()},
 \code{\link{logloss}()},
-\code{\link{mbrier}()}
+\code{\link{mbrier}()},
+\code{\link{zero_one}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

@@ -62,7 +62,8 @@ Other Classification Measures:
 \code{\link{bacc}()},
 \code{\link{logloss}()},
 \code{\link{mauc_aunu}()},
-\code{\link{mbrier}()}
+\code{\link{mbrier}()},
+\code{\link{zero_one}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

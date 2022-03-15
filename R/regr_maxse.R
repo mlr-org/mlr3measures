@@ -15,8 +15,8 @@
 #' @export
 maxse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-  max(se(truth, response))
+  max(.se(truth, response))
 }
 
 #' @include measures.R
-add_measure(maxse, "Max Squared Error", "regr", 0, Inf, TRUE)
+add_measure(maxse, "Max Squared Error", "regr", 0, Inf, TRUE, obs_loss = "se")

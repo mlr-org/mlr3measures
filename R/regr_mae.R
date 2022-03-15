@@ -15,8 +15,8 @@
 #' @export
 mae = function(truth, response, sample_weights = NULL, ...) {
   assert_regr(truth, response = response)
-  wmean(ae(truth, response), sample_weights)
+  wmean(.ae(truth, response), sample_weights)
 }
 
 #' @include measures.R
-add_measure(mae, "Mean Absolute Error", "regr", 0, Inf, TRUE)
+add_measure(mae, "Mean Absolute Error", "regr", 0, Inf, TRUE, obs_loss = "ae")

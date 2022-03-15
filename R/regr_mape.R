@@ -24,8 +24,8 @@ mape = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   if (any(abs(truth) < TOL)) {
     return(na_value)
   }
-  wmean(ape(truth, response), sample_weights)
+  wmean(.ape(truth, response), sample_weights)
 }
 
 #' @include measures.R
-add_measure(mape, "Mean Absolute Percent Error", "regr", 0, Inf, TRUE)
+add_measure(mape, "Mean Absolute Percent Error", "regr", 0, Inf, TRUE, obs_loss = "ape")

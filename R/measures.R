@@ -17,6 +17,9 @@
 #'   `"se"` corresponds to to the vector of predicted standard errors for regression.
 #' * `minimize`: If `TRUE` or `FALSE`, the objective is to minimize or maximize the measure, respectively.
 #'   Can also be `NA`.
+#' * `obs_loss`: Name of the function which is called to calculate the (unaggregated) loss per observation.
+#' * `aggregated`: If `TRUE`, this function aggregates the losses to a single numeric value.
+#'   Otherwise, a vector of losses is returned.
 #' * `sample_weights`: If `TRUE`, it is possible calculate a weighted measure.
 #'
 #' @export
@@ -26,7 +29,7 @@
 measures = new.env(parent = emptyenv())
 
 # adds items to registry
-add_measure = function(obj, title, type, lower, upper, minimize) {
+add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_character_, aggregated = TRUE) {
   id = deparse(substitute(obj))
 
   ptype = intersect(names(formals(obj)), c("response", "prob", "se"))
@@ -42,6 +45,8 @@ add_measure = function(obj, title, type, lower, upper, minimize) {
     upper = assert_number(upper),
     predict_type = ptype,
     minimize = assert_flag(minimize, na.ok = TRUE),
+    obs_loss = assert_string(obs_loss, na.ok = TRUE),
+    aggregated = assert_flag(aggregated),
     sample_weights = "sample_weights" %in% names(formals(obj))
   ), envir = measures)
 }

@@ -21,8 +21,8 @@ msle = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   if (min(truth, response) <= -1) {
     return(na_value)
   }
-  wmean(sle(truth, response), sample_weights)
+  wmean(.sle(truth, response), sample_weights)
 }
 
 #' @include measures.R
-add_measure(msle, "Mean Squared Log Error", "regr", 0, Inf, TRUE)
+add_measure(msle, "Mean Squared Log Error", "regr", 0, Inf, TRUE, obs_loss = "sle")

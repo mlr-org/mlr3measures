@@ -21,7 +21,7 @@ rmsle = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   if (min(truth, response) <= -1) {
     return(na_value)
   }
-  sqrt(wmean(sle(truth, response), sample_weights))
+  sqrt(wmean(.sle(truth, response), sample_weights))
 }
 
 #' @include measures.R

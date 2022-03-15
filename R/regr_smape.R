@@ -22,7 +22,7 @@ smape = function(truth, response, na_value = NaN, ...) {
   if (any(denom < TOL)) {
     return(na_value)
   }
-  2 * mean(ae(truth, response) / denom)
+  2 * mean(.ae(truth, response) / denom)
 }
 
 #' @include measures.R

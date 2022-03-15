@@ -15,8 +15,8 @@
 #' @export
 medae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-  median(ae(truth, response))
+  median(.ae(truth, response))
 }
 
 #' @include measures.R
-add_measure(medae, "Median Absolute Error", "regr", 0, Inf, TRUE)
+add_measure(medae, "Median Absolute Error", "regr", 0, Inf, TRUE, obs_loss = "ae")
