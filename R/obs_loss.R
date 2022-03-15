@@ -8,7 +8,7 @@
 #' @export
 zero_one = function(truth, response) {
   assert_classif(truth, response)
-  truth == response
+  truth != response
 }
 
 #' @rdname obs_loss
