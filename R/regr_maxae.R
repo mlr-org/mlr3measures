@@ -15,7 +15,7 @@
 #' @export
 maxae = function(truth, response, ...) {
   assert_regr(truth, response = response)
-  max(ae(truth, response))
+  max(.ae(truth, response))
 }
 
 #' @include measures.R

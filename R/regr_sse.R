@@ -15,7 +15,7 @@
 #' @export
 sse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-  sum(se(truth, response))
+  sum(.se(truth, response))
 }
 
 #' @include measures.R

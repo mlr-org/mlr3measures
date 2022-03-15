@@ -15,7 +15,7 @@
 #' @export
 medse = function(truth, response, ...) {
   assert_regr(truth, response = response)
-  median(se(truth, response))
+  median(.se(truth, response))
 }
 
 #' @include measures.R

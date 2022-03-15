@@ -26,7 +26,7 @@ rsq = function(truth, response, na_value = NaN, ...) {
   if (v < TOL) {
     return(na_value)
   }
-  1 - sum(se(truth, response)) / (v * (length(truth) - 1L))
+  1 - sum(.se(truth, response)) / (v * (length(truth) - 1L))
 }
 
 #' @include measures.R

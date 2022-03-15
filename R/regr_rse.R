@@ -23,7 +23,7 @@ rse = function(truth, response, na_value = NaN, ...) {
   if (v < TOL) {
     return(na_value)
   }
-  sum(se(truth, response)) / (v * (length(truth) - 1L))
+  sum(.se(truth, response)) / (v * (length(truth) - 1L))
 }
 
 #' @include measures.R

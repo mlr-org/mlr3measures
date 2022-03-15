@@ -27,7 +27,7 @@
 #' @export
 bbrier = function(truth, prob, positive, sample_weights = NULL, ...) {
   assert_binary(truth, prob = prob, positive = positive)
-  wmean(se(truth == positive, prob), sample_weights)
+  wmean(.se(truth == positive, prob), sample_weights)
 }
 
 #' @include measures.R

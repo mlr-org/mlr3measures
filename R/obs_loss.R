@@ -1,24 +1,58 @@
-# 0/1 loss for classification
-zero_one = function(truth, repsonse) {
+#' @title Loss per Observation
+#'
+#' @name obs_loss
+#' @description
+#' The functions calculate the unaggregated loss per observation.
+#' There are mainly used internally, but can also be called from \CRANpkg{mlr3}.
+#'
+#' @export
+zero_one = function(truth, response) {
+  assert_classif(truth, response)
   truth == response
 }
 
-# absolute error
+#' @rdname obs_loss
+#' @export
 ae = function(truth, response) {
+  assert_regr(truth, response)
+  .ae(truth, response)
+}
+
+.ae = function(truth, response) {
   abs(truth - response)
 }
 
-# absolute percent error
+
+#' @rdname obs_loss
+#' @export
 ape = function(truth, response) {
+  assert_regr(truth, response)
+  .ape(truth, response)
+}
+
+.ape = function(truth, response) {
   abs((truth - response) / truth)
 }
 
-# squared error
+
+#' @rdname obs_loss
+#' @export
 se = function(truth, response) {
+  assert_regr(truth, response)
+  .se(truth, response)
+}
+
+.se = function(truth, response) {
   (truth - response)^2
 }
 
-# squared log error
+#' @rdname obs_loss
+#' @export
 sle = function(truth, response) {
+  assert_regr(truth, response)
+  .sle(truth, response)
+}
+
+.sle = function(truth, response) {
   (log1p(truth) - log1p(response))^2
 }

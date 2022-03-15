@@ -21,7 +21,7 @@ msle = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
   if (min(truth, response) <= -1) {
     return(na_value)
   }
-  wmean(sle(truth, response), sample_weights)
+  wmean(.sle(truth, response), sample_weights)
 }
 
 #' @include measures.R

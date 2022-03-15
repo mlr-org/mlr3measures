@@ -15,7 +15,7 @@
 #' @export
 mse = function(truth, response, sample_weights = NULL, ...) {
   assert_regr(truth, response = response)
-  wmean(se(truth, response), sample_weights)
+  wmean(.se(truth, response), sample_weights)
 }
 
 #' @include measures.R
