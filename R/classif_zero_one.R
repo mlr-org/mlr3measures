@@ -14,7 +14,7 @@
 #' @export
 zero_one = function(truth, response, ...) {
   assert_classif(truth, response)
-  truth != response
+  as.integer(truth != response)
 }
 
 #' @include measures.R
