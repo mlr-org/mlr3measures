@@ -61,6 +61,8 @@ msle(truth, response)
 }
 \seealso{
 Other Regression Measures: 
+\code{\link{ae}()},
+\code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
 \code{\link{mae}()},
@@ -78,6 +80,8 @@ Other Regression Measures:
 \code{\link{rse}()},
 \code{\link{rsq}()},
 \code{\link{sae}()},
+\code{\link{se}()},
+\code{\link{sle}()},
 \code{\link{smape}()},
 \code{\link{srho}()},
 \code{\link{sse}()}

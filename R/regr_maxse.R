@@ -19,4 +19,4 @@ maxse = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(maxse, "Max Squared Error", "regr", 0, Inf, TRUE, obs_loss = se)
+add_measure(maxse, "Max Squared Error", "regr", 0, Inf, TRUE, obs_loss = "se")

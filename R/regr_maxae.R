@@ -19,4 +19,4 @@ maxae = function(truth, response, ...) {
 }
 
 #' @include measures.R
-add_measure(maxae, "Max Absolute Error", "regr", 0, Inf, TRUE, obs_loss = ae)
+add_measure(maxae, "Max Absolute Error", "regr", 0, Inf, TRUE, obs_loss = "ae")

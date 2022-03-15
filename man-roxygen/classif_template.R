@@ -4,12 +4,14 @@
 #' <%= if (item$predict_type == "response") "labels" else "probabilities" %>
 #' in multiclass classification tasks.
 #'
+#' <%= if (item$aggregated == FALSE) "Note that this is an unaggregated measure, returning the losses per observation." %>
+#'
 #' @section Meta Information:
 #' * Type: `"<%= item$type %>"`
-#' * Range: <%= format_range(item) %>
-#' * Minimize: `<%= item$minimize %>`
+#' * Range<%= if (!item$aggregated) " (per observation)" %>: <%= format_range(item) %>
+#' * Minimize<%= if (!item$aggregated) " (per observation)" %>: `<%= item$minimize %>`
 #' * Required prediction: `<%= item$predict_type %>`
 #'
 #' @family Classification Measures
 #' @concept classification_measure
-#' @return Performance value as `numeric(1)`.
+#' @return Performance value as `numeric(<%= if (item$aggregated) "1" else "length(truth)" %>)`.

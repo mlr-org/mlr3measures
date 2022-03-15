@@ -25,4 +25,4 @@ msle = function(truth, response, sample_weights = NULL, na_value = NaN, ...) {
 }
 
 #' @include measures.R
-add_measure(msle, "Mean Squared Log Error", "regr", 0, Inf, TRUE, obs_loss = sle)
+add_measure(msle, "Mean Squared Log Error", "regr", 0, Inf, TRUE, obs_loss = "sle")

@@ -19,4 +19,4 @@ mae = function(truth, response, sample_weights = NULL, ...) {
 }
 
 #' @include measures.R
-add_measure(mae, "Mean Absolute Error", "regr", 0, Inf, TRUE, obs_loss = ae)
+add_measure(mae, "Mean Absolute Error", "regr", 0, Inf, TRUE, obs_loss = "ae")
