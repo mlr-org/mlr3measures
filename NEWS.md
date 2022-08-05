@@ -1,3 +1,8 @@
+# mlr3measures 0.5.0
+
+* Added some observation-wise loss functions: `ae()`, `ape()`, `se()`, 
+  `sle()`, and `zero_one()`, 
+
 # mlr3measures 0.4.1
 
 * Calculation of `fbeta` is now more numerically more stable.
