@@ -35,4 +35,4 @@ gpr_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(gpr, "Geometric Mean of Precision and Recall", "binary", 0, 1, TRUE)
+add_measure(gpr, "Geometric Mean of Precision and Recall", "binary", 0, 1, FALSE)

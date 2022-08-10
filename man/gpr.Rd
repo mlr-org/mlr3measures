@@ -47,7 +47,7 @@ This measure is undefined if precision or recall is undefined, i.e. if TP + FP =
 \itemize{
 \item Type: \code{"binary"}
 \item Range: \eqn{[0, 1]}{[0, 1]}
-\item Minimize: \code{TRUE}
+\item Minimize: \code{FALSE}
 \item Required prediction: \code{response}
 }
 }

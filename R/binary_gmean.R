@@ -34,4 +34,4 @@ gmean_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(gmean, "Geometric Mean of Recall and Specificity", "binary", 0, 1, TRUE)
+add_measure(gmean, "Geometric Mean of Recall and Specificity", "binary", 0, 1, FALSE)
