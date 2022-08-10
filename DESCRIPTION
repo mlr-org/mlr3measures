@@ -45,6 +45,8 @@ Collate:
     'binary_fomr.R'
     'binary_fp.R'
     'binary_fpr.R'
+    'binary_gmean.R'
+    'binary_gpr.R'
     'binary_mcc.R'
     'binary_npv.R'
     'binary_ppv.R'

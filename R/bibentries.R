@@ -172,6 +172,16 @@ bibentries = c( # nolint start
     volume           = "6",
     number           = "59",
     pages            = "3010"
+  ),
+  he_2009            = bibentry("article",
+    title            = "Learning from Imbalanced Data",
+    author           = "Haibo He and Edwardo A. Garcia",
+    journal          = "IEEE Transactions on knowledge and data engineering",
+    volume           = "21",
+    number           = "9",
+    pages            = "1263--1284",
+    year             = "2009",
+    doi              = "https://doi.org/10.1109/TKDE.2008.239"
   )
 
 ) # nolint end

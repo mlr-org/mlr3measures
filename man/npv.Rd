@@ -74,6 +74,8 @@ Other Binary Classification Measures:
 \code{\link{fomr}()},
 \code{\link{fpr}()},
 \code{\link{fp}()},
+\code{\link{gmean}()},
+\code{\link{gpr}()},
 \code{\link{mcc}()},
 \code{\link{ppv}()},
 \code{\link{prauc}()},
