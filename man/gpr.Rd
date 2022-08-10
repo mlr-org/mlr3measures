@@ -63,7 +63,7 @@ gpr(truth, response, positive = "a")
 He H, Garcia EA (2009).
 \dQuote{Learning from Imbalanced Data.}
 \emph{IEEE Transactions on knowledge and data engineering}, \bold{21}(9), 1263--1284.
-\doi{https://doi.org/10.1109/TKDE.2008.239}.
+\doi{10.1109/TKDE.2008.239}.
 }
 \seealso{
 Other Binary Classification Measures: 

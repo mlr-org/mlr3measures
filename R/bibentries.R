@@ -181,7 +181,7 @@ bibentries = c( # nolint start
     number           = "9",
     pages            = "1263--1284",
     year             = "2009",
-    doi              = "https://doi.org/10.1109/TKDE.2008.239"
+    doi              = "10.1109/TKDE.2008.239"
   )
 
 ) # nolint end
