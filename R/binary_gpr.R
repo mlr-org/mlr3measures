@@ -31,7 +31,7 @@ gpr_cm = function(m, na_value = NaN) {
     return(na_value)
   }
 
-  sqrt(m[1L, 1L]^2 / (rs1 * cs1))
+  sqrt(m[1L, 1L] / rs1 * m[1L, 1L] / cs1))
 }
 
 #' @include measures.R
