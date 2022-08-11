@@ -25,13 +25,12 @@ gpr = function(truth, response, positive, na_value = NaN, ...) {
 }
 
 gpr_cm = function(m, na_value = NaN) {
-  rs1 = sum(m[1L, ])
-  cs1 = sum(m[, 1L])
-  if (rs1 == 0L || cs1 == 0L) {
+  sums = c(sum(m[1L, ]),  sum(m[, 1L]))
+  if (any(sums == 0L)) {
     return(na_value)
   }
 
-  sqrt(m[1L, 1L] / rs1 * m[1L, 1L] / cs1))
+  sqrt(prod(m[1L, 1L] / sums))
 }
 
 #' @include measures.R
