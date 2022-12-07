@@ -9,6 +9,5 @@
 ^\.github$
 ^\.pre-commit-config\.yaml$
 ^\.ccache$
-^tic\.R$
 ^\.lintr$
 ^docs$
