@@ -60,8 +60,8 @@ Other Binary Classification Measures:
 \code{\link{dor}()},
 \code{\link{fbeta}()},
 \code{\link{fdr}()},
-\code{\link{fnr}()},
 \code{\link{fn}()},
+\code{\link{fnr}()},
 \code{\link{fomr}()},
 \code{\link{fpr}()},
 \code{\link{gmean}()},
@@ -70,10 +70,10 @@ Other Binary Classification Measures:
 \code{\link{npv}()},
 \code{\link{ppv}()},
 \code{\link{prauc}()},
-\code{\link{tnr}()},
 \code{\link{tn}()},
-\code{\link{tpr}()},
-\code{\link{tp}()}
+\code{\link{tnr}()},
+\code{\link{tp}()},
+\code{\link{tpr}()}
 }
 \concept{Binary Classification Measures}
 \concept{binary_classification_measure}
