@@ -82,6 +82,8 @@ mauc_au1p = function(truth, prob, na_value = NaN, ...) {
   sum(c(m + t(m)) * c(weights)) / (2L * (nlevels(truth) - 1L))
 }
 
+#' @rdname mauc_aunu
+#' @export
 mauc_mu = function(truth, prob, na_value = NaN, ...) {
   assert_classif(truth, prob = prob)
 

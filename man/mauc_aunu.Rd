@@ -5,6 +5,7 @@
 \alias{mauc_aunp}
 \alias{mauc_au1u}
 \alias{mauc_au1p}
+\alias{mauc_mu}
 \title{Multiclass AUC Scores}
 \usage{
 mauc_aunu(truth, prob, na_value = NaN, ...)
@@ -14,6 +15,8 @@ mauc_aunp(truth, prob, na_value = NaN, ...)
 mauc_au1u(truth, prob, na_value = NaN, ...)
 
 mauc_au1p(truth, prob, na_value = NaN, ...)
+
+mauc_mu(truth, prob, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
