@@ -60,19 +60,19 @@ Other Binary Classification Measures:
 \code{\link{dor}()},
 \code{\link{fbeta}()},
 \code{\link{fdr}()},
-\code{\link{fnr}()},
 \code{\link{fn}()},
+\code{\link{fnr}()},
 \code{\link{fomr}()},
-\code{\link{fpr}()},
 \code{\link{fp}()},
+\code{\link{fpr}()},
 \code{\link{gmean}()},
 \code{\link{gpr}()},
 \code{\link{mcc}()},
 \code{\link{npv}()},
 \code{\link{ppv}()},
 \code{\link{prauc}()},
-\code{\link{tnr}()},
 \code{\link{tn}()},
+\code{\link{tnr}()},
 \code{\link{tpr}()}
 }
 \concept{Binary Classification Measures}

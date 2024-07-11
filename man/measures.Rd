@@ -29,6 +29,8 @@ The following information is available for each measure:
 \item \code{minimize}: If \code{TRUE} or \code{FALSE}, the objective is to minimize or maximize the measure, respectively.
 Can also be \code{NA}.
 \item \code{obs_loss}: Name of the function which is called to calculate the (unaggregated) loss per observation.
+\item \code{trafo}: Optional transformation function that is applied after aggregating the observation-wise
+losses.
 \item \code{aggregated}: If \code{TRUE}, this function aggregates the losses to a single numeric value.
 Otherwise, a vector of losses is returned.
 \item \code{sample_weights}: If \code{TRUE}, it is possible calculate a weighted measure.
