@@ -43,6 +43,8 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     assert_true(!is.na(obs_loss))
   }
 
+  assert(check_function(trafo), check_true(test_string(trafo, na.ok = TRUE) && is.na(trafo)))
+
   assign(id, list(
     id = id,
     title = assert_string(title),
@@ -54,6 +56,6 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     obs_loss = assert_string(obs_loss, na.ok = TRUE),
     aggregated = assert_flag(aggregated),
     sample_weights = "sample_weights" %in% names(formals(obj)),
-    trafo = assert(check_function(trafo), check_true(test_string(trafo, na.ok = TRUE) && is.na(trafo)))
+    trafo = trafo
   ), envir = measures)
 }
