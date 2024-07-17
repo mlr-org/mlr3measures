@@ -18,8 +18,7 @@
 #' * `minimize`: If `TRUE` or `FALSE`, the objective is to minimize or maximize the measure, respectively.
 #'   Can also be `NA`.
 #' * `obs_loss`: Name of the function which is called to calculate the (unaggregated) loss per observation.
-#' * `trafo`: Optional transformation function that is applied after aggregating the observation-wise
-#'   losses.
+#' * `trafo`: Optional `list()` of length 2, containing a transformation `"fn"` and its derivative `"deriv"`.
 #' * `aggregated`: If `TRUE`, this function aggregates the losses to a single numeric value.
 #'   Otherwise, a vector of losses is returned.
 #' * `sample_weights`: If `TRUE`, it is possible calculate a weighted measure.
@@ -39,11 +38,11 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     ptype = NA_character_
   }
 
-  if (is.function(trafo)) {
+  if (!mlr3misc::is_scalar_na(trafo)) {
+    assert_list(trafo, types = "function", len = 2L)
+    assert_permutation(names(trafo), c("fn", "deriv"))
     assert_true(!is.na(obs_loss))
   }
-
-  assert(check_function(trafo), check_true(test_string(trafo, na.ok = TRUE) && is.na(trafo)))
 
   assign(id, list(
     id = id,
