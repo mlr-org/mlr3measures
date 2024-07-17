@@ -38,7 +38,7 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     ptype = NA_character_
   }
 
-  if (!mlr3misc::is_scalar_na(trafo)) {
+  if (!identical(trafo, NA_character_)) {
     assert_list(trafo, types = "function", len = 2L)
     assert_permutation(names(trafo), c("fn", "deriv"))
     assert_true(!is.na(obs_loss))
