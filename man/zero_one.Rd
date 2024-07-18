@@ -2,9 +2,12 @@
 % Please edit documentation in R/classif_zero_one.R
 \name{zero_one}
 \alias{zero_one}
+\alias{one_zero}
 \title{Zero-One Classification Loss (per observation)}
 \usage{
 zero_one(truth, response, ...)
+
+one_zero(truth, response, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -27,6 +30,7 @@ Calculates the per-observation 0/1 loss as \deqn{
 }{
   t != r.
 }
+The one-zero loss is 1 - zero-one.
 
 Measure to compare true observed labels with predicted
 labels

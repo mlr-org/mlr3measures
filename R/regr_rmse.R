@@ -19,4 +19,4 @@ rmse = function(truth, response, sample_weights = NULL, ...) {
 }
 
 #' @include measures.R
-add_measure(rmse, "Root Mean Squared Error", "regr", 0, Inf, TRUE)
+add_measure(rmse, "Root Mean Squared Error", "regr", 0, Inf, TRUE, obs_loss = "se", trafo = list(fn = sqrt, deriv = function(x) 0.5 / sqrt(x)))

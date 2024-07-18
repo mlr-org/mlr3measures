@@ -23,4 +23,4 @@ acc_cm = function(m, na_value = NaN) {
 }
 
 #' @include measures.R
-add_measure(acc, "Classification Accuracy", "classif", 0, 1, FALSE, obs_loss = "zero_one")
+add_measure(acc, "Classification Accuracy", "classif", 0, 1, FALSE, obs_loss = "one_zero")
