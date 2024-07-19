@@ -23,9 +23,10 @@
 #' @template classif_template
 #'
 #' @details
-#' This above formula is undefined if any of the four sums in the denominator is 0.
+#' The above formula is undefined if any of the four sums in the denominator is 0 in the binary case and more generally if either \eqn{s^2 - sum(pk^2)} or \eqn{s^2 - sum(tk^2)} is equal to 0.
 #' The denominator is then set to 1.
-#' For the multi-class version, the minimum range is between -1 and 0 depending on the data.
+#' When there are more than two classes, the MCC will no longer range between −1 and +1.
+#' Instead, the minimum value will be between −1 and 0 depending on the true distribution. The maximum value is always +1.
 #'
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Phi_coefficient}
