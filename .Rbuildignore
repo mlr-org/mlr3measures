@@ -11,3 +11,4 @@
 ^\.ccache$
 ^\.lintr$
 ^docs$
+^scratch$
