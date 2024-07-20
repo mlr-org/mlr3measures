@@ -12,3 +12,4 @@
 ^\.lintr$
 ^docs$
 ^scratch$
+^revdep$

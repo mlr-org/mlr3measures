@@ -36,7 +36,7 @@ In the binary case, the Matthews Correlation Coefficient is defined as \deqn{
 }
 where \eqn{TP}, \eqn{FP}, \eqn{TN}, \eqn{TP} are the number of true positives, false positives, true negatives, and false negatives respectively.
 
-In the multi-class case, the Matthews Correlation Coefficient defined for a multi-class confusion matrix \enq{C} with \eqn{K} classes: \deqn{
+In the multi-class case, the Matthews Correlation Coefficient defined for a multi-class confusion matrix \eqn{C} with \eqn{K} classes: \deqn{
    \frac{c \cdot s - \sum_k^K p_k \cdot t_k}{\sqrt{(s^2 - \sum_k^K p_k^2) \cdot (s^2 - \sum_k^K t_k^2)}},
 }{
    (c * s - sum(pk * tk)) / sqrt((s^2 - sum(pk^2)) * (s^2 - sum(tk^2))),
