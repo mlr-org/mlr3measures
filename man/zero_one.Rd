@@ -55,7 +55,8 @@ Other Classification Measures:
 \code{\link{ce}()},
 \code{\link{logloss}()},
 \code{\link{mauc_aunu}()},
-\code{\link{mbrier}()}
+\code{\link{mbrier}()},
+\code{\link{mcc}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

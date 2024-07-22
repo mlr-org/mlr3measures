@@ -1,16 +1,17 @@
 # mlr3measures 0.6.0
 
 * Added binary classification measures `gmean` and `gpr`.
+* Added multiclass `mcc`.
+
 # mlr3measures 0.5.0
 
-* Added some observation-wise loss functions: `ae`, `ape`, `se`, 
-  `sle`, and `zero_one`, 
+* Added some observation-wise loss functions: `ae`, `ape`, `se`,
+  `sle`, and `zero_one`,
 
 # mlr3measures 0.4.1
 
 * Calculation of `fbeta` is now more numerically more stable.
 * Improved documentation.
-
 
 # mlr3measures 0.4.0
 
@@ -18,7 +19,6 @@
 * Many measures now support sample weights.
   Supported measures have `$sample_weights` set to `TRUE` in the `measures`
   environment.
-
 
 # mlr3measures 0.3.1
 
