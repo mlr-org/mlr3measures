@@ -6,7 +6,8 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-9754-0393")),
     person("Martin", "Binder", , "mlr.developer@mb706.com", role = "ctb"),
     person("Marc", "Becker", , "marcbecker@posteo.de", role = c("cre", "aut"),
-           comment = c(ORCID = "0000-0002-8115-0400"))
+           comment = c(ORCID = "0000-0002-8115-0400")),
+    person("Lona", "Koers", , , role = "aut")
   )
 Description: Implements multiple performance measures for supervised
     learning.  Includes over 40 measures for regression and
