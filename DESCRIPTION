@@ -1,7 +1,7 @@
 Package: mlr3measures
 Title: Performance Measures for 'mlr3'
-Version: 0.6.0
-Authors@R:c(
+Version: 0.6.0.9000
+Authors@R: c(
     person("Michel", "Lang", , "michellang@gmail.com", role = "aut",
            comment = c(ORCID = "0000-0001-9754-0393")),
     person("Martin", "Binder", , "mlr.developer@mb706.com", role = "ctb"),
