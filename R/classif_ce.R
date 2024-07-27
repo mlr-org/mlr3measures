@@ -2,10 +2,11 @@
 #'
 #' @details
 #' The Classification Error is defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n w_i \left( t_i \neq r_i \right).
+#'   \frac{1}{n} \sum_{i=1}^n w_i \mathbf{1} \left( t_i \neq r_i \right),
 #' }{
-#'   weighted.mean(t != r, w).
+#'   1 / n * sum(wi * 1(ti != ri)),
 #' }
+#' where \eqn{w_i} are normalized weights for each observation \eqn{x_i}.
 #'
 #' @templateVar mid ce
 #' @template classif_template

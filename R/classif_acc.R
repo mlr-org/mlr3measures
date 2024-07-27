@@ -1,11 +1,11 @@
 #' @title Classification Accuracy
 #'
 #' @details
-#' The Classification Accuracy is defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n w_i \left( t_i = r_i \right).
-#' }{
-#'   weighted.mean(t == r, w).
-#' }
+#' The Classification Accuracy is defined as
+#'  \deqn{
+#'   \frac{1}{n} \sum_{i=1}^n w_i \mathbf{1} \left( t_i = r_i \right),
+#' }{1 / n * sum(wi * 1(ti = ri))}
+#' where \eqn{w_i} are normalized weights for all observations \eqn{x_i}.
 #'
 #' @templateVar mid acc
 #' @template classif_template
