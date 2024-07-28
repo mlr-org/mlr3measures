@@ -2,7 +2,7 @@
 #'
 #' @details
 #' Calculates the geometric mean of [recall()] R and [specificity()] S as \deqn{
-#'    \sqrt{\mathrm{R} \mathrm{S}}.
+#'    \sqrt{\mathrm{R} \cdot \mathrm{S}}.
 #' }{
 #'    sqrt(R * S)
 #' }

@@ -2,7 +2,7 @@
 #'
 #' @details
 #' Calculates the geometric mean of [precision()] P and [recall()] R as \deqn{
-#'    \sqrt{\mathrm{P} \mathrm{R}}.
+#'    \sqrt{\mathrm{P} \cdot \mathrm{R}}.
 #' }{
 #'    sqrt(P * R)
 #' }
