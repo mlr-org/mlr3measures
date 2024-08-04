@@ -1,6 +1,6 @@
 #' @title Absolute Percentage Error (per observation)
 #'
-#' @description
+#' @details
 #' Calculates the per-observation absolute percentage error as \deqn{
 #'   \left| \frac{ t_i - r_i}{t_i} \right|.
 #' }{
