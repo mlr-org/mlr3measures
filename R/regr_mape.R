@@ -2,10 +2,11 @@
 #'
 #' @details
 #' The Mean Absolute Percent Error is defined as \deqn{
-#'   \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|.
+#'   \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|,
 #'  }{
-#'    weighted.mean(abs((t - r) / t), w).
+#'    weighted.mean(abs((t - r) / t), w),
 #'  }
+#' where \eqn{w_i} are normalized sample weights.
 #'
 #' @details
 #' This measure is undefined if any element of \eqn{t} is \eqn{0}.

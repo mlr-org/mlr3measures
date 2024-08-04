@@ -2,17 +2,17 @@
 #'
 #' @details
 #' The Relative Absolute Error is defined as \deqn{
-#'   \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|}.
+#'   \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|},
 #' }{
-#'   sum((t - r)^2) / sum((t - mean(t))^2).
+#'   sum((t - r)^2) / sum((t - mean(t))^2),
 #' }
+#' where \eqn{\bar{t} = \sum_{i=1}^n t_i}.
+#' This measure is undefined for constant \eqn{t}.
+#'
 #' Can be interpreted as absolute error of the predictions relative to a naive model predicting the mean.
 #'
 #' @templateVar mid rae
 #' @template regr_template
-#'
-#' @details
-#' This measure is undefined for constant \eqn{t}.
 #'
 #' @inheritParams regr_params
 #' @template regr_example
