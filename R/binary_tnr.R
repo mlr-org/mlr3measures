@@ -6,7 +6,7 @@
 #' }{
 #'    TN / (FP + TN).
 #' }
-#' Also know as "specificity".
+#' Also know as "specificity" or "selectivity".
 #'
 #' @templateVar mid tnr
 #' @template binary_template

@@ -2,10 +2,11 @@
 #'
 #' @details
 #' The Root Mean Squared Error is defined as \deqn{
-#'   \sqrt{\frac{1}{n} \sum_{i=1}^n w_i \left( t_i - r_i \right)^2}.
+#'   \sqrt{\frac{1}{n} \sum_{i=1}^n w_i \left( t_i - r_i \right)^2},
 #' }{
-#'   sqrt(weighted.mean((t - r)^2, w)).
+#'   sqrt(weighted.mean((t - r)^2, w)),
 #' }
+#' where \eqn{w_i} are normalized sample weights.
 #'
 #' @templateVar mid rmse
 #' @template regr_template
