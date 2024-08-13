@@ -37,9 +37,9 @@ Note that this is an unaggregated measure, returning the losses per observation.
 }
 \details{
 The Linear-Exponential Loss is defined as \deqn{
-  b ( \exp (t_i - r_i) - a (t_i - r_i) - 1 ),
+  b (\exp (t_i - r_i) - a (t_i - r_i) - 1),
 }{
-},
+}
 where \eqn{a \neq 0, b > 0}.
 }
 \section{Meta Information}{
