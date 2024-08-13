@@ -25,12 +25,16 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(length(truth))}.
 }
 \description{
-Calculates the per-observation 0/1 loss as \deqn{
-  t_i \neq r_1.
+Calculates the per-observation 0/1 (zero-one) loss as \deqn{
+  \mathbf{1} (t_i \neq r_1).
 }{
-  t != r.
+  1(t != r).
 }
-The one-zero loss is 1 - zero-one.
+The 1/0 (one-zero) loss is equal to 1 - zero-one and calculated as \deqn{
+  \mathbf{1} (t_i = r_i).
+}{
+  1(t_i = r_i).
+}
 
 Measure to compare true observed labels with predicted
 labels

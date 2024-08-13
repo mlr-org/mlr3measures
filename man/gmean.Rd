@@ -35,7 +35,7 @@ in binary classification tasks.
 }
 \details{
 Calculates the geometric mean of \code{\link[=recall]{recall()}} R and \code{\link[=specificity]{specificity()}} S as \deqn{
-   \sqrt{\mathrm{R} \mathrm{S}}.
+   \sqrt{\mathrm{R} \cdot \mathrm{S}}.
 }{
    sqrt(R * S)
 }

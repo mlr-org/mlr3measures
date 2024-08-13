@@ -182,6 +182,15 @@ bibentries = c( # nolint start
     pages            = "1263--1284",
     year             = "2009",
     doi              = "10.1109/TKDE.2008.239"
+  ),
+  varian_1975 = bibentry("incollection",
+    title        = "A Bayesian Approach to Real Estate Assessment",
+    author       = "Varian, Hal R.",
+    booktitle    = "Studies in Bayesian Econometrics and Statistics: In Honor of Leonard J. Savage",
+    editor       = "Stephen E. Fienberg and Arnold Zellner",
+    year         = "1975",
+    publisher    = "North-Holland",
+    address      = "Amsterdam",
+    pages        = "195--208"
   )
-
 ) # nolint end

@@ -35,7 +35,7 @@
 #' `r format_bib("matthews_1975")`
 #'
 #' @inheritParams classif_params
-#' @param positive (`character(1`) Name of the positive class in case of binary classification.
+#' @param positive (`character(1)`) Name of the positive class in case of binary classification.
 #'
 #' @template classif_example
 #' @export
