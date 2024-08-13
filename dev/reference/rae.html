@@ -84,10 +84,11 @@ Additional arguments. Currently ignored.</p></dd>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The Relative Absolute Error is defined as $$
-  \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|}.
+  \frac{\sum_{i=1}^n \left| t_i - r_i \right|}{\sum_{i=1}^n \left| t_i - \bar{t} \right|},
 $$
-Can be interpreted as absolute error of the predictions relative to a naive model predicting the mean.</p>
-<p>This measure is undefined for constant \(t\).</p>
+where \(\bar{t} = \sum_{i=1}^n t_i\).
+This measure is undefined for constant \(t\).</p>
+<p>Can be interpreted as absolute error of the predictions relative to a naive model predicting the mean.</p>
     </div>
     <div class="section level2">
     <h2 id="meta-information">Meta Information<a class="anchor" aria-label="anchor" href="#meta-information"></a></h2>
@@ -105,6 +106,7 @@ Can be interpreted as absolute error of the predictions relative to a naive mode
 <code><a href="ape.html">ape</a>()</code>,
 <code><a href="bias.html">bias</a>()</code>,
 <code><a href="ktau.html">ktau</a>()</code>,
+<code><a href="linex.html">linex</a>()</code>,
 <code><a href="mae.html">mae</a>()</code>,
 <code><a href="mape.html">mape</a>()</code>,
 <code><a href="maxae.html">maxae</a>()</code>,

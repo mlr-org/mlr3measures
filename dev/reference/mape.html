@@ -92,8 +92,9 @@ Additional arguments. Currently ignored.</p></dd>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The Mean Absolute Percent Error is defined as $$
-  \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|.
- $$</p>
+  \frac{1}{n} \sum_{i=1}^n w_i \left| \frac{ t_i - r_i}{t_i} \right|,
+ $$
+where \(w_i\) are normalized sample weights.</p>
 <p>This measure is undefined if any element of \(t\) is \(0\).</p>
     </div>
     <div class="section level2">
@@ -120,6 +121,7 @@ ISSN 0925-2312, <a href="https://doi.org/10.1016/j.neucom.2015.12.114" class="ex
 <code><a href="ape.html">ape</a>()</code>,
 <code><a href="bias.html">bias</a>()</code>,
 <code><a href="ktau.html">ktau</a>()</code>,
+<code><a href="linex.html">linex</a>()</code>,
 <code><a href="mae.html">mae</a>()</code>,
 <code><a href="maxae.html">maxae</a>()</code>,
 <code><a href="maxse.html">maxse</a>()</code>,

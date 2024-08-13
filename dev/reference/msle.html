@@ -92,9 +92,10 @@ Additional arguments. Currently ignored.</p></dd>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The Mean Squared Log Error is defined as $$
-  \frac{1}{n} \sum_{i=1}^n w_i \left( \ln (1 + t_i) - \ln (1 + r_i) \right)^2.
-$$</p>
-<p>This measure is undefined if any element of \(t\) or \(r\) is less than or equal to \(-1\).</p>
+  \frac{1}{n} \sum_{i=1}^n w_i \left( \ln (1 + t_i) - \ln (1 + r_i) \right)^2,
+$$
+where \(w_i\) are normalized sample weights.
+This measure is undefined if any element of \(t\) or \(r\) is less than or equal to \(-1\).</p>
     </div>
     <div class="section level2">
     <h2 id="meta-information">Meta Information<a class="anchor" aria-label="anchor" href="#meta-information"></a></h2>
@@ -112,6 +113,7 @@ $$</p>
 <code><a href="ape.html">ape</a>()</code>,
 <code><a href="bias.html">bias</a>()</code>,
 <code><a href="ktau.html">ktau</a>()</code>,
+<code><a href="linex.html">linex</a>()</code>,
 <code><a href="mae.html">mae</a>()</code>,
 <code><a href="mape.html">mape</a>()</code>,
 <code><a href="maxae.html">maxae</a>()</code>,

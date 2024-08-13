@@ -78,6 +78,9 @@ Additional arguments. Currently ignored.</p></dd>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Kendall's tau is defined as Kendall's rank correlation coefficient between truth and response.
+It is defined as $$
+  \tau = \frac{(\mathrm{number of concordant pairs)} - (\mathrm{number of discordant pairs)}}{\mathrm{(number of pairs)}}
+  $$
 Calls <code><a href="https://rdrr.io/r/stats/cor.html" class="external-link">stats::cor()</a></code> with <code>method</code> set to <code>"kendall"</code>.</p>
     </div>
     <div class="section level2">
@@ -103,6 +106,7 @@ Calls <code><a href="https://rdrr.io/r/stats/cor.html" class="external-link">sta
 <code><a href="ae.html">ae</a>()</code>,
 <code><a href="ape.html">ape</a>()</code>,
 <code><a href="bias.html">bias</a>()</code>,
+<code><a href="linex.html">linex</a>()</code>,
 <code><a href="mae.html">mae</a>()</code>,
 <code><a href="mape.html">mape</a>()</code>,
 <code><a href="maxae.html">maxae</a>()</code>,
