@@ -31,7 +31,7 @@ in binary classification tasks.
 }
 \details{
 This measure counts the true negatives, i.e. the number of
-predictions correctly indicating a negative class label.
+predictions correctly indicating a negative class label. This is sometimes also called a "correct rejection".
 }
 \section{Meta Information}{
 

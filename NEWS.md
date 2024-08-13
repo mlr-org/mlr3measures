@@ -1,5 +1,7 @@
 # mlr3measures (development version)
 
+* Added new measure `linex` (Linear-Exponential Loss).
+
 # mlr3measures 0.6.0
 
 * Added binary classification measures `gmean` and `gpr`.

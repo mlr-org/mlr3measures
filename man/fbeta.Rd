@@ -20,7 +20,7 @@ Name of the positive class.}
 
 \item{beta}{(\code{numeric(1)})\cr
 Parameter to give either precision or recall more weight.
-Default is 1, resulting in balanced weights.}
+Default is \code{1}, resulting in balanced weights.}
 
 \item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input

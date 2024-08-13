@@ -31,7 +31,7 @@ in binary classification tasks.
 }
 \details{
 This measure counts the true positives, i.e. the number of
-predictions correctly indicating a positive class label.
+predictions correctly indicating a positive class label. This is sometimes also called a "hit".
 }
 \section{Meta Information}{
 

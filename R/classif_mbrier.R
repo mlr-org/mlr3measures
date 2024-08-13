@@ -7,7 +7,7 @@
 #     1/n * sum_i sum_j (I_ij - p_ij)^2.
 #' }
 #' \eqn{I_{ij}}{I_ij} is 1 if observation \eqn{x_i} has true label \eqn{j}, and 0 otherwise.
-#' \eqn{p_{ij}{p_ij} is the probability that observation \eqn{x_i} belongs to class \eqn{j}.
+#' \eqn{p_{ij}}{p_ij} is the probability that observation \eqn{x_i} belongs to class \eqn{j}.
 #'
 #' Note that there also is the more common definition of the Brier score for binary
 #' classification problems in [bbrier()].

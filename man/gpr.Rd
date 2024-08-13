@@ -35,7 +35,7 @@ in binary classification tasks.
 }
 \details{
 Calculates the geometric mean of \code{\link[=precision]{precision()}} P and \code{\link[=recall]{recall()}} R as \deqn{
-   \sqrt{\mathrm{P} \mathrm{R}}.
+   \sqrt{\mathrm{P} \cdot \mathrm{R}}.
 }{
    sqrt(P * R)
 }

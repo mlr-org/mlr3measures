@@ -23,6 +23,7 @@ Useful links:
 Authors:
 \itemize{
   \item Michel Lang \email{michellang@gmail.com} (\href{https://orcid.org/0000-0001-9754-0393}{ORCID})
+  \item Lona Koers
 }
 
 Other contributors:

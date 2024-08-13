@@ -66,6 +66,7 @@ Collate:
     'regr_ape.R'
     'regr_bias.R'
     'regr_ktau.R'
+    'regr_linex.R'
     'regr_mae.R'
     'regr_mape.R'
     'regr_maxae.R'
