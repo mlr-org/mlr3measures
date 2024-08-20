@@ -22,7 +22,7 @@ The vector gets automatically normalized to sum to one.
 Defaults to equal sample weights.}
 
 \item{alpha}{\code{numeric(1)}\cr
-Alpha level.}
+The quantile to compute the pinball loss.}
 
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}

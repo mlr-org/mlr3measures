@@ -17,7 +17,7 @@
 #' @inheritParams regr_params
 #'
 #' @param alpha `numeric(1)`\cr
-#' Alpha level.
+#'  The quantile to compute the pinball loss.
 #'
 #' @template regr_example
 #' @export
