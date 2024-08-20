@@ -70,6 +70,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmsle}()},
 \code{\link{rrse}()},
