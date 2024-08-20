@@ -2,7 +2,7 @@
 #'
 #' @details
 #' The Median Squared Error is defined as \deqn{
-#'   \mathop{\mathrm{median}}_i \left[ \left( t_i - r_i \right)^2 \right].
+#'   \mathop{\mathrm{median}} \left[ \left( t_i - r_i \right)^2 \right].
 #' }{
 #'   median((t - r)^2).
 #' }

@@ -6,7 +6,7 @@
 #' }{
 #'   TP / (TP + FN).
 #' }
-#' Also know as "recall" or "sensitivity".
+#' This is also know as "recall", "sensitivity", or "probability of detection".
 #'
 #' @details
 #' This measure is undefined if TP + FN = 0.

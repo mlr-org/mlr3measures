@@ -45,7 +45,7 @@ The True Positive Rate is defined as \deqn{
 }{
   TP / (TP + FN).
 }
-Also know as "recall" or "sensitivity".
+This is also know as "recall", "sensitivity", or "probability of detection".
 
 This measure is undefined if TP + FN = 0.
 }
@@ -88,7 +88,6 @@ Other Binary Classification Measures:
 \code{\link{fpr}()},
 \code{\link{gmean}()},
 \code{\link{gpr}()},
-\code{\link{mcc}()},
 \code{\link{npv}()},
 \code{\link{ppv}()},
 \code{\link{prauc}()},

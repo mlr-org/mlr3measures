@@ -11,3 +11,7 @@
 ^\.ccache$
 ^\.lintr$
 ^docs$
+^scratch$
+^revdep$
+^CRAN-SUBMISSION$
+^cran-comments\.md$

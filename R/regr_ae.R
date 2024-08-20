@@ -1,6 +1,6 @@
 #' @title Absolute Error (per observation)
 #'
-#' @description
+#' @details
 #' Calculates the per-observation absolute error as \deqn{
 #'   \left| t_i - r_i \right|.
 #' }{

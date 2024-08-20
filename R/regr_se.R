@@ -1,6 +1,6 @@
 #' @title Squared Error (per observation)
 #'
-#' @description
+#' @details
 #' Calculates the per-observation squared error as \deqn{
 #'   \left( t_i - r_i \right)^2.
 #' }{

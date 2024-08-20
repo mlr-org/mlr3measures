@@ -36,10 +36,11 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 The Percent Bias is defined as \deqn{
-  \frac{1}{n} \sum_{i=1}^n w_i \frac{\left( t_i - r_i \right)}{\left| t_i \right|}.
+  \frac{1}{n} \sum_{i=1}^n w_i \frac{\left( t_i - r_i \right)}{\left| t_i \right|},
 }{
-  weighted.mean((t - r) / abs(t), w).
+  weighted.mean((t - r) / abs(t), w),
 }
+where \eqn{w_i} are normalized sample weights.
 Good predictions score close to 0.
 }
 \section{Meta Information}{
@@ -64,6 +65,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -72,6 +74,7 @@ Other Regression Measures:
 \code{\link{medse}()},
 \code{\link{mse}()},
 \code{\link{msle}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

@@ -35,7 +35,18 @@ List with two elements:
 }
 \description{
 Calculates the confusion matrix for a binary classification problem
-once and then calculates all confusion measures of this package.
+once and then calculates all binary confusion measures of this package.
+}
+\details{
+The binary confusion matrix is defined as \deqn{
+\begin{pmatrix}
+TP & FP \\
+FN & TN
+\end{pmatrix}.
+}{
+matrix(TP, FP, FN, TN).
+}
+If \code{relative = TRUE}, all values are divided by \eqn{n}.
 }
 \examples{
 set.seed(123)

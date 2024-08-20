@@ -2,6 +2,10 @@
 #'
 #' @details
 #' Kendall's tau is defined as Kendall's rank correlation coefficient between truth and response.
+#' It is defined as \deqn{
+#'   \tau = \frac{(\mathrm{number of concordant pairs)} - (\mathrm{number of discordant pairs)}}{\mathrm{(number of pairs)}}
+#'   }{
+#'     t = (number of concordant pairs) - (number of discordant pairs) / (number of pairs)}
 #' Calls [stats::cor()] with `method` set to `"kendall"`.
 #'
 #' @templateVar mid ktau

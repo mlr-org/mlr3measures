@@ -22,15 +22,16 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(length(truth))}.
 }
 \description{
+Measure to compare true observed response with predicted response in regression tasks.
+
+Note that this is an unaggregated measure, returning the losses per observation.
+}
+\details{
 Calculates the per-observation squared error as \deqn{
   \left( t_i - r_i \right)^2.
 }{
   (t - r)^2.
 }
-
-Measure to compare true observed response with predicted response in regression tasks.
-
-Note that this is an unaggregated measure, returning the losses per observation.
 }
 \section{Meta Information}{
 
@@ -48,6 +49,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -57,6 +59,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

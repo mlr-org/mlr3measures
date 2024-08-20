@@ -26,7 +26,7 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 The Median Absolute Error is defined as \deqn{
-  \mathop{\mathrm{median}}_i \left| t_i - r_i \right|.
+  \mathop{\mathrm{median}} \left| t_i - r_i \right|.
 }{
   median(abs(t - r)).
 }
@@ -53,6 +53,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -61,6 +62,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

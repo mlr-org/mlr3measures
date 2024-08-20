@@ -112,6 +112,7 @@ Other Classification Measures:
 \code{\link{ce}()},
 \code{\link{logloss}()},
 \code{\link{mbrier}()},
+\code{\link{mcc}()},
 \code{\link{zero_one}()}
 }
 \concept{Classification Measures}

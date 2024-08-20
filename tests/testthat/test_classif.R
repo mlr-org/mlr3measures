@@ -70,6 +70,10 @@ test_that("tests from Metrics", {
   expect_number(logloss(as_fac(1, 1, 0, 0), as_prob(0, 0, 1, 1)), lower = 10, upper = 50)
   expect_equal(logloss(as_fac(1, 1, 1, 0, 0, 0), as_prob(.5, .1, .01, .9, .75, .001)), 1.881797068998267)
 
+  expect_equal(mcc(factor(1:4, levels = 1:4), factor(1:4, levels = 1:4)), 1)
+  expect_equal(mcc(factor(1:4, levels = 1:4), factor(4:1, levels = 1:4)), - 1 /3)
+  expect_equal(mcc(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)), 2 / 3)
+
   # rater.a <- c(1, 2, 1)
   # rater.b <- c(1, 2, 2)
   # kappa <- ScoreQuadraticWeightedKappa(rater.a, rater.b)
