@@ -61,7 +61,9 @@ in multiclass classification tasks.</p>
 <span></span>
 <span><span class="fu">mauc_au1u</span><span class="op">(</span><span class="va">truth</span>, <span class="va">prob</span>, na_value <span class="op">=</span> <span class="cn">NaN</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">mauc_au1p</span><span class="op">(</span><span class="va">truth</span>, <span class="va">prob</span>, na_value <span class="op">=</span> <span class="cn">NaN</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">mauc_au1p</span><span class="op">(</span><span class="va">truth</span>, <span class="va">prob</span>, na_value <span class="op">=</span> <span class="cn">NaN</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">mauc_mu</span><span class="op">(</span><span class="va">truth</span>, <span class="va">prob</span>, na_value <span class="op">=</span> <span class="cn">NaN</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -114,10 +116,9 @@ distribution. Computes something like the AUC of <code>c(c - 1)</code> binary cl
 distribution. Computes something like AUC of <code>c(c - 1)</code> binary classifiers
 while considering the a-priori distribution of the classes as suggested
 in Ferri (2009). Note we deviate from the definition in
-Ferri (2009) by a factor of <code>c</code>.
-The person implementing this function and writing this very
-documentation right now cautions against using this measure because it is
-an imperfect generalization of AU1U.</p></li>
+Ferri (2009) by a factor of <code>c</code>.</p></li>
+<li><p><em>MU</em>: Multiclass AUC as defined in Kleinman and Page (2019).
+This measure is an average of the pairwise AUCs between all classes.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="meta-information">Meta Information<a class="anchor" aria-label="anchor" href="#meta-information"></a></h2>
@@ -142,6 +143,10 @@ IEEE.</p>
 <p>Hand, J D, Till, J R (2001).
 “A simple generalisation of the area under the ROC curve for multiple class classification problems.”
 <em>Machine learning</em>, <b>45</b>(2), 171–186.</p>
+<p>Kleiman R, Page D (2019).
+“AUC mu: A Performance Metric for Multi-Class Machine Learning Models.”
+In Chaudhuri, Kamalika, Salakhutdinov, Ruslan (eds.), <em>Proceedings of the 36th International Conference on Machine Learning</em>, volume 97 series Proceedings of Machine Learning Research, 3439–3447.
+PMLR.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
