@@ -115,18 +115,13 @@ mauc_mu = function(truth, prob, na_value = NaN, ...) {
     v = a[class_i, ] - a[class_j, ]
     scores = temp_preds %*% v
 
-    # calculate binary AUC
-    # order scores in decreasing order and order labels accordingly
-    response = temp_labels[order(scores, decreasing = TRUE)]
+    # calculate binary auc
+    i = which(temp_labels == 1)
+    n_pos = length(i)
+    n_neg = length(temp_labels) - n_pos
 
-    # calculate true positive rate and false positive rate
-    tpr = cumsum(response) / sum(response)
-    fpr = cumsum(!response) / sum(!response)
-
-    # calculate the AUC using the trapezoidal rule
-    tpr = c(0, tpr)
-    fpr = c(0, fpr)
-    sum(diff(fpr) * (tpr[-1] + tpr[-length(tpr)]) / 2)
+    r = rank(scores, ties.method = "average")
+    (mean(r[i]) - (as.numeric(n_pos) + 1) / 2) / as.numeric(n_neg)
   })
 
   sum(aucs * 1 / length(aucs))

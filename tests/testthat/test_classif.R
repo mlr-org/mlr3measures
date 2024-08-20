@@ -174,16 +174,14 @@ test_that("multiclass auc", {
   expect_equal(mauc_aunp(equalizer_truth, maxent_prob), 0.5)
   expect_equal(mauc_aunu(equalizer_truth, maxent_prob), 0.5)
   expect_equal(mauc_au1u(equalizer_truth, maxent_prob), 0.5)
-
-  # expect_equal(mauc_mu(equalizer_truth, maxent_prob), 0.5)
-  # does not give 0.5
+  expect_equal(mauc_mu(equalizer_truth, maxent_prob), 0.5)
 
   # reversing prob gives 1 - auc
   expect_equal(mauc_aunu(truth, prob), 1 - mauc_aunu(truth, 1 - prob))
   expect_equal(mauc_aunp(truth, prob), 1 - mauc_aunp(truth, 1 - prob))
   expect_equal(mauc_au1u(truth, prob), 1 - mauc_au1u(truth, 1 - prob))
   expect_equal(mauc_au1p(truth, prob), 1 - mauc_au1p(truth, 1 - prob))
-  expect_equal(mauc_mu(truth, prob)  , 1 - mauc_mu(truth, 1 - prob))
+  expect_equal(mauc_mu(truth, prob), 1 - mauc_mu(truth, 1 - prob))
 
   # manually calculate au1u, au1p
   compmat = sapply(levels(truth), function(t1) {
