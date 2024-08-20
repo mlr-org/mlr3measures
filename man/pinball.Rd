@@ -2,7 +2,7 @@
 % Please edit documentation in R/regr_pinball.R
 \name{pinball}
 \alias{pinball}
-\title{Pinball}
+\title{Average Pinball Loss}
 \usage{
 pinball(truth, response, sample_weights = NULL, alpha = 0.5, ...)
 }
@@ -21,6 +21,9 @@ Must have the same length as \code{truth}.
 The vector gets automatically normalized to sum to one.
 Defaults to equal sample weights.}
 
+\item{alpha}{\code{numeric(1)}\cr
+Alpha level.}
+
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
 }
@@ -31,7 +34,14 @@ Performance value as \code{numeric(1)}.
 Measure to compare true observed response with predicted response in regression tasks.
 }
 \details{
-The pinball loss for quantile regression.
+The pinball loss for quantile regression is defined as \deqn{
+\text{Average Pinball Loss} = \frac{1}{n} \sum_{i=1}^{n} w_{i}
+\begin{cases}
+q \cdot (t_i - r_i) & \text{if } t_i \geq r_i \\
+(1 - q) \cdot (r_i - t_i) & \text{if } t_i < r_i
+\end{cases}
+}
+where \eqn{q} is the quantile and \eqn{w_i} are normalized sample weights.
 }
 \section{Meta Information}{
 
