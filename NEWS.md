@@ -2,11 +2,12 @@
 
 * Added new measure `linex` (Linear-Exponential Loss).
 * Added new measure `pinball` (Average Pinball Loss).
+* Added new measure `mauc_mu` (Mu AUC).
 
 # mlr3measures 0.6.0
 
 * Added binary classification measures `gmean` and `gpr`.
-* Added multiclass `mcc`.
+* Added new measure `mcc` (Matthews Correlation Coefficient).
 
 # mlr3measures 0.5.0
 
