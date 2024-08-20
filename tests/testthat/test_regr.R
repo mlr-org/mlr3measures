@@ -85,4 +85,10 @@ test_that("tests from Metrics", {
   expect_equal(rsq(0:10, 2:12), 0.6)
   expect_equal(rsq(seq(0, 2, 0.5), seq(0, 2, 0.5)), 1.0)
   expect_equal(rsq(1:4, c(1, 2, 3, 5)), 0.8)
+
+  expect_equal(pinball(1:3, 1:3), 0)
+  expect_equal(pinball(1:3, c(0, 2, 3)), 1 / 6)
+  expect_equal(pinball(1:3, c(1, 2, 4)), 1 / 6)
+  expect_equal(pinball(1:3, c(1, 2, 4), alpha = 0.1), 0.3)
+  expect_equal(pinball(1:3, c(1, 2, 4), alpha = 0.4), 0.2)
 })

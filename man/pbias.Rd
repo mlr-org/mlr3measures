@@ -74,6 +74,7 @@ Other Regression Measures:
 \code{\link{medse}()},
 \code{\link{mse}()},
 \code{\link{msle}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

@@ -76,6 +76,7 @@ Collate:
     'regr_mse.R'
     'regr_msle.R'
     'regr_pbias.R'
+    'regr_pinball.R'
     'regr_rae.R'
     'regr_rmse.R'
     'regr_rmsle.R'
