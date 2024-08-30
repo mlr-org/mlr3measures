@@ -22,7 +22,7 @@
 #'   Ferri (2009) by a factor of `c`.
 #' * *MU*: Multiclass AUC as defined in Kleinman and Page (2019).
 #'   This measure is an average of the pairwise AUCs between all classes.
-#'
+#'   The measure was tested against the Python implementation by [Ross Kleinman](https://github.com/kleimanr/auc_mu).
 #' @templateVar mid mauc_aunu
 #' @template classif_template
 #'
