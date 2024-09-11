@@ -1,4 +1,4 @@
-# mlr3measures (development version)
+# mlr3measures 1.0.0
 
 * Added new measure `linex` (Linear-Exponential Loss).
 * Added new measure `pinball` (Average Pinball Loss).
