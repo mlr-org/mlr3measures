@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">mlr3measures</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.6.0</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,9 @@
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html"><span class="fa fa-file-alt"></span> Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://mlr3book.mlr-org.com"><span class="fa fa-link"></span> mlr3book</a></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://github.com/mlr-org/mlr3measures/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mlr-org/mlr3measures/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/"><span class="fa fa-comments"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://stackoverflow.com/questions/tagged/mlr"><span class="fa fab fa-stack-overflow"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://mlr-org.com/"><span class="fa fa-rss"></span></a></li>
@@ -37,7 +39,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Max Squared Error</h1>
-      <small class="dont-index">Source: <a href="https://github.com/mlr-org/mlr3measures/blob/v0.6.0/R/regr_maxse.R" class="external-link"><code>R/regr_maxse.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mlr-org/mlr3measures/blob/main/R/regr_maxse.R" class="external-link"><code>R/regr_maxse.R</code></a></small>
       <div class="d-none name"><code>maxse.Rd</code></div>
     </div>
 
@@ -97,6 +99,7 @@ Additional arguments. Currently ignored.</p></dd>
 <code><a href="ape.html">ape</a>()</code>,
 <code><a href="bias.html">bias</a>()</code>,
 <code><a href="ktau.html">ktau</a>()</code>,
+<code><a href="linex.html">linex</a>()</code>,
 <code><a href="mae.html">mae</a>()</code>,
 <code><a href="mape.html">mape</a>()</code>,
 <code><a href="maxae.html">maxae</a>()</code>,
@@ -105,6 +108,7 @@ Additional arguments. Currently ignored.</p></dd>
 <code><a href="mse.html">mse</a>()</code>,
 <code><a href="msle.html">msle</a>()</code>,
 <code><a href="pbias.html">pbias</a>()</code>,
+<code><a href="pinball.html">pinball</a>()</code>,
 <code><a href="rae.html">rae</a>()</code>,
 <code><a href="rmse.html">rmse</a>()</code>,
 <code><a href="rmsle.html">rmsle</a>()</code>,
@@ -133,7 +137,7 @@ Additional arguments. Currently ignored.</p></dd>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Michel Lang, Marc Becker.</p>
+  <p>Developed by Michel Lang, Marc Becker, Lona Koers.</p>
 </div>
 
 <div class="pkgdown-footer-right">
