@@ -1,6 +1,7 @@
 # mlr3measures (development version)
 
 * BREAKIG CHANGE: removed `rse`, `rsq`, `rrse`, and `rae`.
+* Measures `sae` and `sse` gain `sample_weights` (unnormalized weights).
 
 # mlr3measures 1.0.0
 

@@ -70,22 +70,6 @@ test_that("tests from Metrics", {
 
   expect_equal(rmsle(c(exp(5) - 1), c(exp(1) - 1)), 4)
 
-  expect_equal(rae(0:10, 30:40), 11)
-  expect_equal(rae(seq(0, 2, 0.5), seq(0, 2, 0.5)), 0.0)
-  expect_equal(rae(1:4, c(1, 2, 3, 5)), 0.25)
-
-  expect_equal(rrse(0:10, 2:12), sqrt(0.4))
-  expect_equal(rrse(seq(0, 2, 0.5), seq(0, 2, 0.5)), 0.0)
-  expect_equal(rrse(1:4, c(1, 2, 3, 5)), sqrt(0.2))
-
-  expect_equal(rse(0:10, 2:12), 0.4)
-  expect_equal(rse(seq(0, 2, 0.5), seq(0, 2, 0.5)), 0.0)
-  expect_equal(rse(1:4, c(1, 2, 3, 5)), 0.2)
-
-  expect_equal(rsq(0:10, 2:12), 0.6)
-  expect_equal(rsq(seq(0, 2, 0.5), seq(0, 2, 0.5)), 1.0)
-  expect_equal(rsq(1:4, c(1, 2, 3, 5)), 0.8)
-
   expect_equal(pinball(1:3, 1:3), 0)
   expect_equal(pinball(1:3, c(0, 2, 3)), 1 / 6)
   expect_equal(pinball(1:3, c(1, 2, 4)), 1 / 6)
