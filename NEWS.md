@@ -1,5 +1,7 @@
 # mlr3measures (development version)
 
+* BREAKIG CHANGE: removed `rse`, `rsq`, `rrse`, and `rae`.
+
 # mlr3measures 1.0.0
 
 * Added new measure `linex` (Linear-Exponential Loss).
