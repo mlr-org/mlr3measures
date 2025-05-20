@@ -3,6 +3,7 @@
 #' @details
 #' This measure counts the false positives (type 1 error), i.e. the number of
 #' predictions indicating a positive class label while in fact it is negative.
+#' This is sometimes also called a "false alarm".
 #'
 #' @templateVar mid fp
 #' @template binary_template

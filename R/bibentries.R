@@ -182,6 +182,26 @@ bibentries = c( # nolint start
     pages            = "1263--1284",
     year             = "2009",
     doi              = "10.1109/TKDE.2008.239"
+  ),
+  kleinman_2019      = bibentry("incollection",
+    title            = "AUC mu: A Performance Metric for Multi-Class Machine Learning Models",
+    author           = "Ross Kleiman and David Page",
+    booktitle        = "Proceedings of the 36th International Conference on Machine Learning",
+    pages            = "3439--3447",
+    year             = "2019",
+    editor           = "Chaudhuri, Kamalika and Salakhutdinov, Ruslan",
+    volume           = "97",
+    series           = "Proceedings of Machine Learning Research",
+    publisher        = "PMLR"
+  ),
+  varian_1975 = bibentry("incollection",
+    title        = "A Bayesian Approach to Real Estate Assessment",
+    author       = "Varian, Hal R.",
+    booktitle    = "Studies in Bayesian Econometrics and Statistics: In Honor of Leonard J. Savage",
+    editor       = "Stephen E. Fienberg and Arnold Zellner",
+    year         = "1975",
+    publisher    = "North-Holland",
+    address      = "Amsterdam",
+    pages        = "195--208"
   )
-
 ) # nolint end

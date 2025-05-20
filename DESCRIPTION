@@ -1,18 +1,16 @@
 Package: mlr3measures
 Title: Performance Measures for 'mlr3'
-Version: 0.5.0-9000
-Authors@R:
-    c(person(given = "Michel",
-             family = "Lang",
-             role = c("cre", "aut"),
-             email = "michellang@gmail.com",
-             comment = c(ORCID = "0000-0001-9754-0393")),
-      person(given = "Martin",
-             family = "Binder",
-             role = "ctb",
-             email = "mlr.developer@mb706.com"))
-Description: Implements multiple performance measures for
-    supervised learning.  Includes over 40 measures for regression and
+Version: 1.0.0.9000
+Authors@R: c(
+    person("Michel", "Lang", , "michellang@gmail.com", role = "aut",
+           comment = c(ORCID = "0000-0001-9754-0393")),
+    person("Martin", "Binder", , "mlr.developer@mb706.com", role = "ctb"),
+    person("Marc", "Becker", , "marcbecker@posteo.de", role = c("cre", "aut"),
+           comment = c(ORCID = "0000-0002-8115-0400")),
+    person("Lona", "Koers", , , role = "aut")
+  )
+Description: Implements multiple performance measures for supervised
+    learning.  Includes over 40 measures for regression and
     classification. Additionally, meta information about the performance
     measures can be queried, e.g. what the best and worst possible
     performances scores are.
@@ -24,11 +22,12 @@ Depends:
     R (>= 3.1.0)
 Imports:
     checkmate,
+    mlr3misc,
     PRROC
 Suggests:
     testthat (>= 3.0.0)
-Encoding: UTF-8
 Config/testthat/edition: 3
+Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Collate:
@@ -47,7 +46,6 @@ Collate:
     'binary_fpr.R'
     'binary_gmean.R'
     'binary_gpr.R'
-    'binary_mcc.R'
     'binary_npv.R'
     'binary_ppv.R'
     'binary_prauc.R'
@@ -61,6 +59,7 @@ Collate:
     'classif_ce.R'
     'classif_logloss.R'
     'classif_mbrier.R'
+    'classif_mcc.R'
     'classif_zero_one.R'
     'confusion_matrix.R'
     'helper.R'
@@ -68,6 +67,7 @@ Collate:
     'regr_ape.R'
     'regr_bias.R'
     'regr_ktau.R'
+    'regr_linex.R'
     'regr_mae.R'
     'regr_mape.R'
     'regr_maxae.R'
@@ -77,6 +77,7 @@ Collate:
     'regr_mse.R'
     'regr_msle.R'
     'regr_pbias.R'
+    'regr_pinball.R'
     'regr_rae.R'
     'regr_rmse.R'
     'regr_rmsle.R'

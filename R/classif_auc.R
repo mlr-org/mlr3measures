@@ -20,15 +20,14 @@
 #'   while considering the a-priori distribution of the classes as suggested
 #'   in Ferri (2009). Note we deviate from the definition in
 #'   Ferri (2009) by a factor of `c`.
-#'   The person implementing this function and writing this very
-#'   documentation right now cautions against using this measure because it is
-#'   an imperfect generalization of AU1U.
-#'
+#' * *MU*: Multiclass AUC as defined in Kleinman and Page (2019).
+#'   This measure is an average of the pairwise AUCs between all classes.
+#'   The measure was tested against the Python implementation by [Ross Kleinman](https://github.com/kleimanr/auc_mu).
 #' @templateVar mid mauc_aunu
 #' @template classif_template
 #'
 #' @references
-#' `r format_bib("fawcett_2001", "ferri_2009", "hand_2001")`
+#' `r format_bib("fawcett_2001", "ferri_2009", "hand_2001", "kleinman_2019")`
 #'
 #' @inheritParams classif_params
 #' @template classif_example
@@ -83,11 +82,57 @@ mauc_au1p = function(truth, prob, na_value = NaN, ...) {
   sum(c(m + t(m)) * c(weights)) / (2L * (nlevels(truth) - 1L))
 }
 
+#' @rdname mauc_aunu
+#' @export
+mauc_mu = function(truth, prob, na_value = NaN, ...) {
+  assert_classif(truth, prob = prob)
+
+  if (length(unique(truth)) != nlevels(truth)) {
+    warning("Measure is undefined if there isn't at least one sample per class.")
+    return(na_value)
+  }
+
+  n_classes = nlevels(truth)
+
+  # partition matrix
+  a = matrix(1, n_classes, n_classes) - diag(n_classes)
+  rownames(a) = levels(truth)
+
+  # iterate over all pairwise combinations of classes
+  pairwise_combinations = combn(levels(truth), 2, simplify = FALSE)
+  aucs = mlr3misc::map_dbl(pairwise_combinations, function(pair) {
+    # subset predictions to instances where the true class is one of the two paired classes
+    class_i = pair[1]
+    preds_i = prob[truth == class_i, , drop = FALSE]
+    n_i = nrow(preds_i)
+    class_j = pair[2]
+    preds_j = prob[truth == class_j, , drop = FALSE]
+    n_j = nrow(preds_j)
+
+    # calculate pairwise scores
+    temp_preds = rbind(preds_i, preds_j)
+    temp_labels = c(rep(0, n_i), rep(1, n_j))
+    v = a[class_i, ] - a[class_j, ]
+    scores = temp_preds %*% v
+
+    # calculate binary auc
+    i = which(temp_labels == 1)
+    n_pos = length(i)
+    n_neg = length(temp_labels) - n_pos
+
+    r = rank(scores, ties.method = "average")
+    (mean(r[i]) - (as.numeric(n_pos) + 1) / 2) / as.numeric(n_neg)
+  })
+
+  sum(aucs * 1 / length(aucs))
+}
+
 #' @include measures.R
 add_measure(mauc_aunu, "Average 1 vs. rest multiclass AUC", "classif", 0, 1, FALSE)
 add_measure(mauc_aunp, "Weighted average 1 vs. rest multiclass AUC", "classif", 0, 1, FALSE)
 add_measure(mauc_au1u, "Average 1 vs. 1 multiclass AUC", "classif", 0, 1, FALSE)
 add_measure(mauc_au1p, "Weighted average 1 vs. 1 multiclass AUC", "classif", 0, 1, FALSE)
+add_measure(mauc_mu, "Multiclass mu AUC", "classif", 0, 1, FALSE)
 
 # returns a numeric length nlevel(truth), with one-vs-rest AUC
 onevrestauc = function(prob, truth) {

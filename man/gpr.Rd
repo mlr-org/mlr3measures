@@ -35,7 +35,7 @@ in binary classification tasks.
 }
 \details{
 Calculates the geometric mean of \code{\link[=precision]{precision()}} P and \code{\link[=recall]{recall()}} R as \deqn{
-   \sqrt{\mathrm{P} \mathrm{R}}.
+   \sqrt{\mathrm{P} \cdot \mathrm{R}}.
 }{
    sqrt(P * R)
 }
@@ -78,7 +78,6 @@ Other Binary Classification Measures:
 \code{\link{fp}()},
 \code{\link{fpr}()},
 \code{\link{gmean}()},
-\code{\link{mcc}()},
 \code{\link{npv}()},
 \code{\link{ppv}()},
 \code{\link{prauc}()},

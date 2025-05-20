@@ -70,6 +70,10 @@ test_that("tests from Metrics", {
   expect_number(logloss(as_fac(1, 1, 0, 0), as_prob(0, 0, 1, 1)), lower = 10, upper = 50)
   expect_equal(logloss(as_fac(1, 1, 1, 0, 0, 0), as_prob(.5, .1, .01, .9, .75, .001)), 1.881797068998267)
 
+  expect_equal(mcc(factor(1:4, levels = 1:4), factor(1:4, levels = 1:4)), 1)
+  expect_equal(mcc(factor(1:4, levels = 1:4), factor(4:1, levels = 1:4)), - 1 /3)
+  expect_equal(mcc(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)), 2 / 3)
+
   # rater.a <- c(1, 2, 1)
   # rater.b <- c(1, 2, 2)
   # kappa <- ScoreQuadraticWeightedKappa(rater.a, rater.b)
@@ -144,6 +148,7 @@ test_that("multiclass auc", {
   expect_equal(mauc_aunp(truth, prob), 1)
   expect_equal(mauc_au1u(truth, prob), 1)
   expect_equal(mauc_au1p(truth, prob), 1)
+  expect_equal(mauc_mu(truth, prob), 1)
 
   auc(truth = factor(c("a", "nota", "nota")), prob = c(1, 0, 0), positive = "a")
 
@@ -169,13 +174,14 @@ test_that("multiclass auc", {
   expect_equal(mauc_aunp(equalizer_truth, maxent_prob), 0.5)
   expect_equal(mauc_aunu(equalizer_truth, maxent_prob), 0.5)
   expect_equal(mauc_au1u(equalizer_truth, maxent_prob), 0.5)
+  expect_equal(mauc_mu(equalizer_truth, maxent_prob), 0.5)
 
   # reversing prob gives 1 - auc
   expect_equal(mauc_aunu(truth, prob), 1 - mauc_aunu(truth, 1 - prob))
   expect_equal(mauc_aunp(truth, prob), 1 - mauc_aunp(truth, 1 - prob))
   expect_equal(mauc_au1u(truth, prob), 1 - mauc_au1u(truth, 1 - prob))
   expect_equal(mauc_au1p(truth, prob), 1 - mauc_au1p(truth, 1 - prob))
-
+  expect_equal(mauc_mu(truth, prob), 1 - mauc_mu(truth, 1 - prob))
 
   # manually calculate au1u, au1p
   compmat = sapply(levels(truth), function(t1) {
@@ -197,5 +203,4 @@ test_that("multiclass auc", {
 
   expect_equal(mauc_aunu(truth, prob), mean(compvec))
   expect_equal(mauc_aunp(truth, prob), sum(compvec * table(truth) / length(truth)))
-
 })

@@ -2,17 +2,18 @@
 #'
 #' @details
 #' The Relative Squared Error is defined as \deqn{
-#'   \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2}.
+#'   \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2},
 #' }{
-#'   sum((t - r)^2) / sum((t - mean(t))^2).
+#'   sum((t - r)^2) / sum((t - mean(t))^2),
 #' }
+#' where \eqn{\bar{t} = \sum_{i=1}^n t_i}.
+#'
 #' Can be interpreted as squared error of the predictions relative to a naive model predicting the mean.
+#'
+#' This measure is undefined for constant \eqn{t}.
 #'
 #' @templateVar mid rse
 #' @template regr_template
-#'
-#' @details
-#' This measure is undefined for constant \eqn{t}.
 #'
 #' @inheritParams regr_params
 #' @template regr_example

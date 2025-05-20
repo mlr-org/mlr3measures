@@ -6,6 +6,7 @@
 #' }{
 #'   weighted.mean((r - t) / abs(t), w).
 #' }
+#' where \eqn{w_i} are normalized sample weights.
 #' Good predictions score close to 0.
 #'
 #' @templateVar mid pbias

@@ -38,12 +38,13 @@ probabilities
 in multiclass classification tasks.
 }
 \details{
-The Log Loss is defined as \deqn{
+The Log Loss (a.k.a Benoulli Loss, Logistic Loss, Cross-Entropy Loss) is defined as
+\deqn{
   -\frac{1}{n} \sum_{i=1}^n w_i \log \left(  p_i \right )
 }{
   -weighted.mean(log(p), w)
 }
-where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i}.
+where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i} and \eqn{w_i} are normalized weights for each observation \eqn{x_i}.
 }
 \section{Meta Information}{
 
@@ -70,6 +71,7 @@ Other Classification Measures:
 \code{\link{ce}()},
 \code{\link{mauc_aunu}()},
 \code{\link{mbrier}()},
+\code{\link{mcc}()},
 \code{\link{zero_one}()}
 }
 \concept{Classification Measures}

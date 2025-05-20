@@ -30,10 +30,12 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 R Squared is defined as \deqn{
-  1 - \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2}.
+  1 - \frac{\sum_{i=1}^n \left( t_i - r_i \right)^2}{\sum_{i=1}^n \left( t_i - \bar{t} \right)^2},
 }{
-  1 - sum((t - r)^2) / sum((t - mean(t))^2).
+  1 - sum((t - r)^2) / sum((t - mean(t))^2),
 }
+where \eqn{\bar{t} = \sum_{i=1}^n t_i}.
+
 Also known as coefficient of determination or explained variation.
 Subtracts the \code{\link[=rse]{rse()}} from 1, hence it compares the squared error of
 the predictions relative to a naive model predicting the mean.
@@ -62,6 +64,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -71,6 +74,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

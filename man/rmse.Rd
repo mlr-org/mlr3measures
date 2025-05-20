@@ -32,10 +32,11 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 The Root Mean Squared Error is defined as \deqn{
-  \sqrt{\frac{1}{n} \sum_{i=1}^n w_i \left( t_i - r_i \right)^2}.
+  \sqrt{\frac{1}{n} \sum_{i=1}^n w_i \left( t_i - r_i \right)^2},
 }{
-  sqrt(weighted.mean((t - r)^2, w)).
+  sqrt(weighted.mean((t - r)^2, w)),
 }
+where \eqn{w_i} are normalized sample weights.
 }
 \section{Meta Information}{
 
@@ -59,6 +60,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -68,6 +70,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmsle}()},
 \code{\link{rrse}()},

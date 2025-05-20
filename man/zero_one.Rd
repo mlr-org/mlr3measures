@@ -2,9 +2,12 @@
 % Please edit documentation in R/classif_zero_one.R
 \name{zero_one}
 \alias{zero_one}
+\alias{one_zero}
 \title{Zero-One Classification Loss (per observation)}
 \usage{
 zero_one(truth, response, ...)
+
+one_zero(truth, response, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -22,10 +25,15 @@ Additional arguments. Currently ignored.}
 Performance value as \code{numeric(length(truth))}.
 }
 \description{
-Calculates the per-observation 0/1 loss as \deqn{
-  t_i \neq r_1.
+Calculates the per-observation 0/1 (zero-one) loss as \deqn{
+  \mathbf{1} (t_i \neq r_1).
 }{
-  t != r.
+  1(t != r).
+}
+The 1/0 (one-zero) loss is equal to 1 - zero-one and calculated as \deqn{
+  \mathbf{1} (t_i = r_i).
+}{
+  1(t_i = r_i).
 }
 
 Measure to compare true observed labels with predicted
@@ -51,7 +59,8 @@ Other Classification Measures:
 \code{\link{ce}()},
 \code{\link{logloss}()},
 \code{\link{mauc_aunu}()},
-\code{\link{mbrier}()}
+\code{\link{mbrier}()},
+\code{\link{mcc}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

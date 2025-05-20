@@ -32,10 +32,11 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 The Mean Squared Error is defined as \deqn{
-  \frac{1}{n} w_i \sum_{i=1}^n \left( t_i - r_i \right)^2.
+  \frac{1}{n} \sum_{i=1}^n w_i \left( t_i - r_i \right)^2,
 }{
-  weighted.mean((t - r)^2, w).
+  weighted.mean((t - r)^2, w),
 }
+where \eqn{w_i} are normalized sample weights.
 }
 \section{Meta Information}{
 
@@ -59,6 +60,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -67,6 +69,7 @@ Other Regression Measures:
 \code{\link{medse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

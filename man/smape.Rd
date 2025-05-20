@@ -35,7 +35,7 @@ The Symmetric Mean Absolute Percent Error is defined as \deqn{
   2 * mean(abs(t - r) / (abs(t) + abs(r))).
 }
 
-This measure is undefined if if any \eqn{|t| + |r|} is \eqn{0}.
+This measure is undefined if if any \eqn{|t| + |r|} is equal to \eqn{0}.
 }
 \section{Meta Information}{
 
@@ -59,6 +59,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mae}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
@@ -68,6 +69,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},

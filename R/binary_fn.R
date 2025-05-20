@@ -3,7 +3,7 @@
 #' @details
 #' This measure counts the false negatives (type 2 error), i.e. the number of
 #' predictions indicating a negative class label while in fact it is positive.
-#' This is sometimes also called a "false alarm".
+#' This is sometimes also called a "miss" or an "underestimation".
 #'
 #' @templateVar mid fn
 #' @template binary_template

@@ -18,6 +18,7 @@
 #' * `minimize`: If `TRUE` or `FALSE`, the objective is to minimize or maximize the measure, respectively.
 #'   Can also be `NA`.
 #' * `obs_loss`: Name of the function which is called to calculate the (unaggregated) loss per observation.
+#' * `trafo`: Optional `list()` of length 2, containing a transformation `"fn"` and its derivative `"deriv"`.
 #' * `aggregated`: If `TRUE`, this function aggregates the losses to a single numeric value.
 #'   Otherwise, a vector of losses is returned.
 #' * `sample_weights`: If `TRUE`, it is possible calculate a weighted measure.
@@ -29,12 +30,18 @@
 measures = new.env(parent = emptyenv())
 
 # adds items to registry
-add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_character_, aggregated = TRUE) {
+add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_character_, trafo = NA_character_, aggregated = TRUE) {
   id = deparse(substitute(obj))
 
   ptype = intersect(names(formals(obj)), c("response", "prob", "se"))
   if (length(ptype) == 0L) {
     ptype = NA_character_
+  }
+
+  if (!identical(trafo, NA_character_)) {
+    assert_list(trafo, types = "function", len = 2L)
+    assert_permutation(names(trafo), c("fn", "deriv"))
+    assert_true(!is.na(obs_loss))
   }
 
   assign(id, list(
@@ -47,6 +54,7 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     minimize = assert_flag(minimize, na.ok = TRUE),
     obs_loss = assert_string(obs_loss, na.ok = TRUE),
     aggregated = assert_flag(aggregated),
-    sample_weights = "sample_weights" %in% names(formals(obj))
+    sample_weights = "sample_weights" %in% names(formals(obj)),
+    trafo = trafo
   ), envir = measures)
 }

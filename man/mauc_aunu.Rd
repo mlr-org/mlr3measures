@@ -5,6 +5,7 @@
 \alias{mauc_aunp}
 \alias{mauc_au1u}
 \alias{mauc_au1p}
+\alias{mauc_mu}
 \title{Multiclass AUC Scores}
 \usage{
 mauc_aunu(truth, prob, na_value = NaN, ...)
@@ -14,6 +15,8 @@ mauc_aunp(truth, prob, na_value = NaN, ...)
 mauc_au1u(truth, prob, na_value = NaN, ...)
 
 mauc_au1p(truth, prob, na_value = NaN, ...)
+
+mauc_mu(truth, prob, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -60,9 +63,9 @@ distribution. Computes something like AUC of \code{c(c - 1)} binary classifiers
 while considering the a-priori distribution of the classes as suggested
 in Ferri (2009). Note we deviate from the definition in
 Ferri (2009) by a factor of \code{c}.
-The person implementing this function and writing this very
-documentation right now cautions against using this measure because it is
-an imperfect generalization of AU1U.
+\item \emph{MU}: Multiclass AUC as defined in Kleinman and Page (2019).
+This measure is an average of the pairwise AUCs between all classes.
+The measure was tested against the Python implementation by \href{https://github.com/kleimanr/auc_mu}{Ross Kleinman}.
 }
 }
 \section{Meta Information}{
@@ -97,6 +100,11 @@ Ferri, César, Hernández-Orallo, José, Modroiu, R (2009).
 Hand, J D, Till, J R (2001).
 \dQuote{A simple generalisation of the area under the ROC curve for multiple class classification problems.}
 \emph{Machine learning}, \bold{45}(2), 171--186.
+
+Kleiman R, Page D (2019).
+\dQuote{AUC mu: A Performance Metric for Multi-Class Machine Learning Models.}
+In Chaudhuri, Kamalika, Salakhutdinov, Ruslan (eds.), \emph{Proceedings of the 36th International Conference on Machine Learning}, volume 97 series Proceedings of Machine Learning Research, 3439--3447.
+PMLR.
 }
 \seealso{
 Other Classification Measures: 
@@ -105,6 +113,7 @@ Other Classification Measures:
 \code{\link{ce}()},
 \code{\link{logloss}()},
 \code{\link{mbrier}()},
+\code{\link{mcc}()},
 \code{\link{zero_one}()}
 }
 \concept{Classification Measures}

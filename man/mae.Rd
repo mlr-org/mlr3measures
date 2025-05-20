@@ -32,10 +32,11 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 The Mean Absolute Error is defined as \deqn{
-  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|.
+  \frac{1}{n} \sum_{i=1}^n w_i \left| t_i - r_i \right|,
 }{
-  weighted.mean(abs(t - r), w).
+  weighted.mean(abs(t - r), w),
 }
+where \eqn{w_i} are normalized sample weights.
 }
 \section{Meta Information}{
 
@@ -59,6 +60,7 @@ Other Regression Measures:
 \code{\link{ape}()},
 \code{\link{bias}()},
 \code{\link{ktau}()},
+\code{\link{linex}()},
 \code{\link{mape}()},
 \code{\link{maxae}()},
 \code{\link{maxse}()},
@@ -67,6 +69,7 @@ Other Regression Measures:
 \code{\link{mse}()},
 \code{\link{msle}()},
 \code{\link{pbias}()},
+\code{\link{pinball}()},
 \code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},
