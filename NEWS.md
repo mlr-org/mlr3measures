@@ -1,10 +1,14 @@
+# dev
+
+* fix: Define bias measures correctly.
+
 # mlr3measures 0.6.0
 
 * Added binary classification measures `gmean` and `gpr`.
 # mlr3measures 0.5.0
 
-* Added some observation-wise loss functions: `ae`, `ape`, `se`, 
-  `sle`, and `zero_one`, 
+* Added some observation-wise loss functions: `ae`, `ape`, `se`,
+  `sle`, and `zero_one`,
 
 # mlr3measures 0.4.1
 
