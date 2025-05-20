@@ -81,26 +81,14 @@ Matthews BW (1975).
 \doi{10.1016/0005-2795(75)90109-9}.
 }
 \seealso{
-Other Binary Classification Measures: 
-\code{\link{auc}()},
-\code{\link{bbrier}()},
-\code{\link{dor}()},
-\code{\link{fbeta}()},
-\code{\link{fdr}()},
-\code{\link{fn}()},
-\code{\link{fnr}()},
-\code{\link{fomr}()},
-\code{\link{fp}()},
-\code{\link{fpr}()},
-\code{\link{gmean}()},
-\code{\link{gpr}()},
-\code{\link{npv}()},
-\code{\link{ppv}()},
-\code{\link{prauc}()},
-\code{\link{tn}()},
-\code{\link{tnr}()},
-\code{\link{tp}()},
-\code{\link{tpr}()}
+Other Classification Measures: 
+\code{\link{acc}()},
+\code{\link{bacc}()},
+\code{\link{ce}()},
+\code{\link{logloss}()},
+\code{\link{mauc_aunu}()},
+\code{\link{mbrier}()},
+\code{\link{zero_one}()}
 }
 \concept{Classification Measures}
 \concept{classification_measure}
