@@ -23,6 +23,14 @@ wmean = function(x, w) { # a better stats::weighted.mean
   sum(x * (w / sum(w)))
 }
 
+wsum = function(x, w) { # sum(w * x) that asserts w and accepts NULL
+  if (is.null(w)) {
+    return(sum(x))
+  }
+  assert_numeric(w, lower = 0, finite = TRUE, any.missing = FALSE, len = length(x))
+  sum(x * w)
+}
+
 # confusion matrix
 cm = function(truth, response, positive = NULL) {
   if (!is.null(positive)) {

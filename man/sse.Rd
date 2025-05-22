@@ -4,7 +4,7 @@
 \alias{sse}
 \title{Sum of Squared Errors}
 \usage{
-sse(truth, response, ...)
+sse(truth, response, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{numeric()})\cr
@@ -14,6 +14,12 @@ Must have the same length as \code{response}.}
 \item{response}{(\code{numeric()})\cr
 Predicted response values.
 Must have the same length as \code{truth}.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+Weights for this function are not normalized.
+Defaults to sample weights 1.}
 
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
@@ -26,10 +32,11 @@ Measure to compare true observed response with predicted response in regression 
 }
 \details{
 The Sum of Squared Errors is defined as \deqn{
-  \sum_{i=1}^n \left( t_i - r_i \right)^2.
+  \sum_{i=1}^n w_i \left( t_i - r_i \right)^2.
 }{
-  sum((t - r)^2).
+  sum(w * (t - r)^2).
 }
+where \eqn{w_i} are unnormalized weights for each observation \eqn{x_i}, defaulting to 1.
 }
 \section{Meta Information}{
 
@@ -64,12 +71,8 @@ Other Regression Measures:
 \code{\link{msle}()},
 \code{\link{pbias}()},
 \code{\link{pinball}()},
-\code{\link{rae}()},
 \code{\link{rmse}()},
 \code{\link{rmsle}()},
-\code{\link{rrse}()},
-\code{\link{rse}()},
-\code{\link{rsq}()},
 \code{\link{sae}()},
 \code{\link{se}()},
 \code{\link{sle}()},
