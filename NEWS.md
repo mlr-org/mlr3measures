@@ -1,4 +1,5 @@
 # mlr3measures (development version)
+* fix: Define bias measures correctly.
 
 # mlr3measures 1.0.0
 
