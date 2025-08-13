@@ -3,6 +3,7 @@ test_that("trigger all", {
   truth = 1 + runif(N)
   response = 1 + runif(N)
   tol = sqrt(.Machine$double.eps)
+  sample_weights = runif(length(truth))
 
   for (m in as.list(measures)) {
     if (m$type != "regr") {
@@ -13,14 +14,13 @@ test_that("trigger all", {
     perf = f(truth = truth, response = response)
     if (m$aggregated) {
       expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
-    } else {
-      expect_numeric(perf, any.missing = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
-    }
 
-    if ("sample_weights" %in% names(formals(f))) {
-      sample_weights = runif(length(truth))
-      perf = f(truth = truth, response = response, sample_weights = sample_weights)
-      expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+      if ("sample_weights" %in% names(formals(f))) {
+        perf = f(truth = truth, response = response, sample_weights = sample_weights)
+        expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+      }
+    } else {
+      expect_numeric(perf, len = N, any.missing = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
     }
   }
 })
