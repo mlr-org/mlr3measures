@@ -27,7 +27,9 @@
 #' @examples
 #' names(measures)
 #' measures$tpr
+#' as.data.frame(measures)
 measures = new.env(parent = emptyenv())
+class(measures) = c("MeasureEnv", class(measures))
 
 # adds items to registry
 add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_character_, trafo = NA_character_, aggregated = TRUE) {
@@ -57,4 +59,22 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     sample_weights = "sample_weights" %in% names(formals(obj)),
     trafo = trafo
   ), envir = measures)
+}
+
+#' @export
+print.MeasureEnv = function(x, ...) {
+  cat(sprintf("Environment with %i measures, see `names(measures)` and `as.data.frame(measures)`\n", length(x)))
+}
+
+#' @export
+as.data.frame.MeasureEnv = function(x, ...) {
+  data.frame(
+    id = vapply(x, function(x) x$id, NA_character_, USE.NAMES = FALSE),
+    title = vapply(x, function(x) x$title, NA_character_, USE.NAMES = FALSE),
+    type = vapply(x, function(x) x$type, NA_character_, USE.NAMES = FALSE),
+    lower = vapply(x, function(x) x$lower, NA_real_, USE.NAMES = FALSE),
+    upper = vapply(x, function(x) x$upper, NA_real_, USE.NAMES = FALSE),
+    minimize = vapply(x, function(x) x$minimize, NA, USE.NAMES = FALSE),
+    sample_weights = vapply(x, function(x) x$sample_weights, NA, USE.NAMES = FALSE)
+  )
 }
