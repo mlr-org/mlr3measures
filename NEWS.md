@@ -1,6 +1,9 @@
 # mlr3measures (development version)
 * fix: Define bias measures correctly.
 
+* BREAKING CHANGE: removed `rse`, `rsq`, `rrse`, and `rae`.
+* Measures `sae` and `sse` gain `sample_weights` (unnormalized weights).
+
 # mlr3measures 1.0.0
 
 * Added new measure `linex` (Linear-Exponential Loss).
