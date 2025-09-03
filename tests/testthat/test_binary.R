@@ -2,26 +2,27 @@ run_all_measures = function(truth, response, prob, positive, na_allowed = FALSE)
   conf = cm(truth, response, positive = positive)
   na_value = if (na_allowed) 123456789 else NaN
   tol = sqrt(.Machine$double.eps)
+  sample_weights = runif(length(truth))
 
   for (m in as.list(measures)) {
     if (m$type != "binary") {
       next
     }
-    f = match.fun(m$id)
-    perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value)
 
+    f = match.fun(m$id)
+    f_cm = get0(sprintf("%s_cm", m$id))
+
+    perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value)
     if (!(na_allowed && identical(perf, na_value))) {
       expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
     }
 
-    f_cm = get0(sprintf("%s_cm", m$id))
     if (!is.null(f_cm)) {
-      expect_equal(perf, f_cm(conf, na_value = na_value), label = m$id)
+      expect_identical(perf, f_cm(conf, na_value = na_value), label = m$id)
     }
 
     if ("sample_weights" %in% names(formals(f))) {
-      sample_weights = runif(length(truth))
-      perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value)
+      perf = f(truth = truth, response = response, prob = prob, positive = positive, na_value = na_value, sample_weights = sample_weights)
       expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
     }
   }

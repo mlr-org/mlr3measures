@@ -3,6 +3,7 @@ test_that("trigger all", {
   truth = 1 + runif(N)
   response = 1 + runif(N)
   tol = sqrt(.Machine$double.eps)
+  sample_weights = runif(length(truth))
 
   for (m in as.list(measures)) {
     if (m$type != "regr") {
@@ -13,23 +14,22 @@ test_that("trigger all", {
     perf = f(truth = truth, response = response)
     if (m$aggregated) {
       expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
-    } else {
-      expect_numeric(perf, any.missing = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
-    }
 
-    if ("sample_weights" %in% names(formals(f))) {
-      sample_weights = runif(length(truth))
-      perf = f(truth = truth, response = response, sample_weights = sample_weights)
-      expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+      if ("sample_weights" %in% names(formals(f))) {
+        perf = f(truth = truth, response = response, sample_weights = sample_weights)
+        expect_number(perf, na.ok = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
+      }
+    } else {
+      expect_numeric(perf, len = N, any.missing = FALSE, lower = m$lower - tol, upper = m$upper + tol, label = m$id)
     }
   }
 })
 
 test_that("tests from Metrics", {
   expect_equal(bias(1, 1), 0)
-  expect_equal(bias(c(-1, -100, 17.5), c(0, 0, 0)), mean(c(-1, -100, 17.5)))
+  expect_equal(bias(c(-1, -100, 17.5), c(0, 0, 0)), mean(c(1, 100, -17.5)))
 
-  expect_equal(pbias(c(1, 2, 3), c(1, 3, 2)), mean(c(0, -1 / 2, 1 / 3)))
+  expect_equal(pbias(c(1, 2, 3), c(1, 3, 2)), mean(c(0, 1 / 2, -1 / 3)))
   expect_equal(pbias(c(1, 2, 0), c(1, 2, 1)), NaN)
   expect_equal(pbias(0, 0), NaN)
   expect_equal(pbias(c(-1.1, 1.1), c(-1, 1)), 0)
