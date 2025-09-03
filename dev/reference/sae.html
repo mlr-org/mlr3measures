@@ -55,7 +55,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">sae</span><span class="op">(</span><span class="va">truth</span>, <span class="va">response</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">sae</span><span class="op">(</span><span class="va">truth</span>, <span class="va">response</span>, sample_weights <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -74,6 +74,14 @@ Predicted response values.
 Must have the same length as <code>truth</code>.</p></dd>
 
 
+<dt id="arg-sample-weights">sample_weights<a class="anchor" aria-label="anchor" href="#arg-sample-weights"></a></dt>
+<dd><p>(<code><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric()</a></code>)<br>
+Vector of non-negative and finite sample weights.
+Must have the same length as <code>truth</code>.
+Weights for this function are not normalized.
+Defaults to sample weights 1.</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>(<code>any</code>)<br>
 Additional arguments. Currently ignored.</p></dd>
@@ -86,8 +94,9 @@ Additional arguments. Currently ignored.</p></dd>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The Sum of Absolute Errors is defined as $$
-  \sum_{i=1}^n \left| t_i - r_i \right|.
-$$</p>
+  \sum_{i=1}^n w_i \left| t_i - r_i \right|.
+$$
+where \(w_i\) are unnormalized weights for each observation \(x_i\), defaulting to 1.</p>
     </div>
     <div class="section level2">
     <h2 id="meta-information">Meta Information<a class="anchor" aria-label="anchor" href="#meta-information"></a></h2>
@@ -116,12 +125,8 @@ $$</p>
 <code><a href="msle.html">msle</a>()</code>,
 <code><a href="pbias.html">pbias</a>()</code>,
 <code><a href="pinball.html">pinball</a>()</code>,
-<code><a href="rae.html">rae</a>()</code>,
 <code><a href="rmse.html">rmse</a>()</code>,
 <code><a href="rmsle.html">rmsle</a>()</code>,
-<code><a href="rrse.html">rrse</a>()</code>,
-<code><a href="rse.html">rse</a>()</code>,
-<code><a href="rsq.html">rsq</a>()</code>,
 <code><a href="se.html">se</a>()</code>,
 <code><a href="sle.html">sle</a>()</code>,
 <code><a href="smape.html">smape</a>()</code>,

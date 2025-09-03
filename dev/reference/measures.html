@@ -123,25 +123,25 @@ Otherwise, a vector of losses is returned.</p></li>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>MeasureEnv</code> (inherits from <code>environment</code>) of length 65.</p>
+    <p>An object of class <code>MeasureEnv</code> (inherits from <code>environment</code>) of length 61.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">measures</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "rmsle"       "one_zero"    "mauc_au1u"   "rse"         "bbrier"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "msle"        "maxae"       "zero_one"    "tnr"         "sse"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "pbias"       "mauc_aunp"   "precision"   "smape"       "fomr"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "mae"         "phi"         "tn"          "ape"         "mauc_aunu"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "pinball"     "fnr"         "tp"          "srho"        "ae"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [26] "rsq"         "jaccard"     "npv"         "sle"         "dor"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "bacc"        "ppv"         "medse"       "auc"         "rae"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "sae"         "rmse"        "ktau"        "tpr"         "mcc"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "linex"       "fn"          "maxse"       "gmean"       "fp"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [46] "bias"        "fdr"         "prauc"       "logloss"     "mauc_mu"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "mse"         "fpr"         "mbrier"      "ce"          "recall"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [56] "gpr"         "specificity" "se"          "rrse"        "acc"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [61] "fbeta"       "medae"       "sensitivity" "mape"        "mauc_au1p"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "rmsle"       "one_zero"    "mauc_au1u"   "bbrier"      "msle"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "maxae"       "zero_one"    "sse"         "tnr"         "pbias"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "mauc_aunp"   "precision"   "smape"       "fomr"        "mae"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "phi"         "ape"         "tn"          "mauc_aunu"   "pinball"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "fnr"         "tp"          "srho"        "ae"          "jaccard"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [26] "npv"         "sle"         "dor"         "bacc"        "ppv"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "medse"       "auc"         "sae"         "rmse"        "ktau"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "tpr"         "mcc"         "linex"       "fn"          "maxse"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "gmean"       "fp"          "bias"        "fdr"         "prauc"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [46] "logloss"     "mauc_mu"     "mse"         "fpr"         "mbrier"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "ce"          "recall"      "gpr"         "specificity" "se"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [56] "acc"         "fbeta"       "medae"       "sensitivity" "mape"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [61] "mauc_au1p"  </span>
 <span class="r-in"><span><span class="va">measures</span><span class="op">$</span><span class="va">tpr</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "tpr"</span>
@@ -181,134 +181,126 @@ Otherwise, a vector of losses is returned.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1        rmsle                 Root Mean Squared Log Error       regr     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     one_zero                   One-Zero Utility Function    classif     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    mauc_au1u              Average 1 vs. 1 multiclass AUC    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4          rse                      Relative Squared Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       bbrier                          Binary Brier Score     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         msle                      Mean Squared Log Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        maxae                          Max Absolute Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     zero_one                Zero-One Classification Loss    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       bbrier                          Binary Brier Score     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         msle                      Mean Squared Log Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        maxae                          Max Absolute Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     zero_one                Zero-One Classification Loss    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8          sse                       Sum of Squared Errors       regr     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9          tnr                          True Negative Rate     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         sse                       Sum of Squared Errors       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       pbias                                Percent Bias       regr  -Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   mauc_aunp  Weighted average 1 vs. rest multiclass AUC    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   precision                                   Precision     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       smape       Symmetric Mean Absolute Percent Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15        fomr                         False Omission Rate     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16         mae                         Mean Absolute Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17         phi                  Phi Coefficient Similarity similarity    -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       pbias                                Percent Bias       regr  -Inf</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   mauc_aunp  Weighted average 1 vs. rest multiclass AUC    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   precision                                   Precision     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       smape       Symmetric Mean Absolute Percent Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        fomr                         False Omission Rate     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15         mae                         Mean Absolute Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16         phi                  Phi Coefficient Similarity similarity    -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17         ape Absolute Percentage Error (per observation)       regr     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18          tn                              True Negatives     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19         ape Absolute Percentage Error (per observation)       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   mauc_aunu           Average 1 vs. rest multiclass AUC    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21     pinball                                     Pinball       regr  -Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22         fnr                         False Negative Rate     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23          tp                              True Positives     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24        srho                              Spearman's rho       regr    -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25          ae            Absolute Error (per observation)       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26         rsq                                   R Squared       regr  -Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27     jaccard                    Jaccard Similarity Index similarity     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28         npv                   Negative Predictive Value     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29         sle         Squared Log Error (per observation)       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30         dor                       Diagnostic Odds Ratio     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31        bacc                           Balanced Accuracy    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32         ppv                   Positive Predictive Value     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33       medse                        Median Squared Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34         auc                    Area Under the ROC Curve     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35         rae                     Relative Absolute Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36         sae                      Sum of Absolute Errors       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37        rmse                     Root Mean Squared Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38        ktau                               Kendall's tau       regr    -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39         tpr                          True Positive Rate     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40         mcc            Matthews Correlation Coefficient    classif    -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41       linex   Linear-exponential Loss (per observation)       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42          fn                             False Negatives     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43       maxse                           Max Squared Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44       gmean    Geometric Mean of Recall and Specificity     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45          fp                             False Positives     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46        bias                                        Bias       regr  -Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47         fdr                        False Discovery Rate     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48       prauc                      Precision-Recall Curve     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49     logloss                                    Log Loss    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50     mauc_mu                           Multiclass mu AUC    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51         mse                          Mean Squared Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52         fpr                         False Positive Rate     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53      mbrier                      Multiclass Brier Score    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54          ce                        Classification Error    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55      recall                                      Recall     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56         gpr      Geometric Mean of Precision and Recall     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57 specificity                                 Specificity     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58          se             Squared Error (per observation)       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59        rrse                 Root Relative Squared Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60         acc                     Classification Accuracy    classif     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61       fbeta                                F-beta score     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62       medae                       Median Absolute Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63 sensitivity                                 Sensitivity     binary     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64        mape                 Mean Absolute Percent Error       regr     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65   mauc_au1p     Weighted average 1 vs. 1 multiclass AUC    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19   mauc_aunu           Average 1 vs. rest multiclass AUC    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20     pinball                                     Pinball       regr  -Inf</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21         fnr                         False Negative Rate     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22          tp                              True Positives     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23        srho                              Spearman's rho       regr    -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24          ae            Absolute Error (per observation)       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25     jaccard                    Jaccard Similarity Index similarity     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26         npv                   Negative Predictive Value     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27         sle         Squared Log Error (per observation)       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28         dor                       Diagnostic Odds Ratio     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29        bacc                           Balanced Accuracy    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30         ppv                   Positive Predictive Value     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31       medse                        Median Squared Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32         auc                    Area Under the ROC Curve     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33         sae                      Sum of Absolute Errors       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34        rmse                     Root Mean Squared Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35        ktau                               Kendall's tau       regr    -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36         tpr                          True Positive Rate     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37         mcc            Matthews Correlation Coefficient    classif    -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38       linex   Linear-exponential Loss (per observation)       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39          fn                             False Negatives     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40       maxse                           Max Squared Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41       gmean    Geometric Mean of Recall and Specificity     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42          fp                             False Positives     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43        bias                                        Bias       regr  -Inf</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44         fdr                        False Discovery Rate     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45       prauc                      Precision-Recall Curve     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46     logloss                                    Log Loss    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47     mauc_mu                           Multiclass mu AUC    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48         mse                          Mean Squared Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49         fpr                         False Positive Rate     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50      mbrier                      Multiclass Brier Score    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51          ce                        Classification Error    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52      recall                                      Recall     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53         gpr      Geometric Mean of Precision and Recall     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54 specificity                                 Specificity     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55          se             Squared Error (per observation)       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56         acc                     Classification Accuracy    classif     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57       fbeta                                F-beta score     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58       medae                       Median Absolute Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59 sensitivity                                 Sensitivity     binary     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60        mape                 Mean Absolute Percent Error       regr     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61   mauc_au1p     Weighted average 1 vs. 1 multiclass AUC    classif     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    upper minimize sample_weights</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    Inf     TRUE           TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2      1    FALSE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3      1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      1     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8      1     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4      1     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7      1     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    Inf     TRUE           TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9      1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   Inf       NA           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   Inf       NA           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11     1    FALSE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14     2     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15     1     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13     2     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14     1     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17   Inf     TRUE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18   Inf    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22     1     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   Inf    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21     1     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22   Inf    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25     1    FALSE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 26     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30   Inf    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31     1    FALSE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28   Inf    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29     1    FALSE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31   Inf     TRUE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 32     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37   Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33   Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34   Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41     1    FALSE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 42   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46   Inf       NA           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47     1     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49   Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51   Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52     1     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53     2     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54     1     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43   Inf       NA           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44     1     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46   Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48   Inf     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49     1     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50     2     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51     1     TRUE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55   Inf     TRUE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56     1    FALSE           TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 57     1    FALSE          FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60     1    FALSE           TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59     1    FALSE          FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60   Inf     TRUE           TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 61     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62   Inf     TRUE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63     1    FALSE          FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64   Inf     TRUE           TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65     1    FALSE          FALSE</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
