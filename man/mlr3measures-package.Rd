@@ -11,7 +11,7 @@ Implements multiple performance measures for supervised learning. Includes over 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https:///mlr3measures.mlr-org.com}
+  \item \url{https://mlr3measures.mlr-org.com}
   \item \url{https://github.com/mlr-org/mlr3measures}
   \item Report bugs at \url{https://github.com/mlr-org/mlr3measures/issues}
 }

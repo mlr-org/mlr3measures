@@ -15,7 +15,7 @@ Description: Implements multiple performance measures for supervised
     measures can be queried, e.g. what the best and worst possible
     performances scores are.
 License: LGPL-3
-URL: https:///mlr3measures.mlr-org.com,
+URL: https://mlr3measures.mlr-org.com,
     https://github.com/mlr-org/mlr3measures
 BugReports: https://github.com/mlr-org/mlr3measures/issues
 Depends:
