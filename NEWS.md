@@ -1,8 +1,8 @@
-# mlr3measures (development version)
-* fix: Define bias measures correctly.
+# mlr3measures 1.1.0
 
-* BREAKING CHANGE: removed `rse`, `rsq`, `rrse`, and `rae`.
-* Measures `sae` and `sse` gain `sample_weights` (unnormalized weights).
+* fix: Define bias measures correctly.
+* BREAKING CHANGE: Deprecate `rse`, `rsq`, `rrse`, and `rae`.
+* feat: Measures `sae` and `sse` gain `sample_weights` (unnormalized weights).
 
 # mlr3measures 1.0.0
 
