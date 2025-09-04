@@ -48,9 +48,13 @@
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/pinball.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/ppv.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/prauc.html</loc></url>
+<url><loc>https://mlr3measures.mlr-org.com/dev/reference/rae.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/regr_params.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/rmse.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/rmsle.html</loc></url>
+<url><loc>https://mlr3measures.mlr-org.com/dev/reference/rrse.html</loc></url>
+<url><loc>https://mlr3measures.mlr-org.com/dev/reference/rse.html</loc></url>
+<url><loc>https://mlr3measures.mlr-org.com/dev/reference/rsq.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/sae.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/se.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/similarity_params.html</loc></url>
