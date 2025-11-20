@@ -35,4 +35,12 @@ logloss = function(truth, prob, sample_weights = NULL, eps = 1e-15, ...) {
 }
 
 #' @include measures.R
-add_measure(logloss, "Log Loss", "classif", 0, Inf, TRUE)
+add_measure(logloss, "Log Loss", "classif", 0, Inf, TRUE, obs_loss = "obs_logloss")
+
+#' @export
+obs_logloss = function(truth, prob) {
+  assert_classif(truth, prob = prob)
+
+  ii = match(as.character(truth), colnames(prob))
+  -log(prob[cbind(seq_len(nrow(prob)), ii)])
+}
