@@ -31,6 +31,7 @@ bbrier = function(truth, prob, positive, sample_weights = NULL, ...) {
 #' @include measures.R
 add_measure(bbrier, "Binary Brier Score", "binary", 0, 1, TRUE, obs_loss = "se_binary")
 
+#' @export
 se_binary = function(truth, prob, ...) {
   assert_classif(truth, prob = prob)
   positive = levels(truth)[1L]
