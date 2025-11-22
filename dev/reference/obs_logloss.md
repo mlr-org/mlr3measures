@@ -6,5 +6,5 @@ Observation-wise loss function for
 ## Usage
 
 ``` r
-obs_logloss(truth, prob)
+obs_logloss(truth, prob, eps = 1e-15, ...)
 ```

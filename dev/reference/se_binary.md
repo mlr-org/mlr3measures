@@ -6,5 +6,5 @@ Observation-wise loss function for
 ## Usage
 
 ``` r
-se_binary(truth, prob, ...)
+se_binary(truth, prob, positive, ...)
 ```
