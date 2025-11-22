@@ -39,8 +39,7 @@ add_measure(bbrier, "Binary Brier Score", "binary", 0, 1, TRUE, obs_loss = "se_b
 #'
 #' @export
 #' @keywords internal
-se_binary = function(truth, prob, ...) {
-  assert_classif(truth, prob = prob)
-  positive = levels(truth)[1L]
+se_binary = function(truth, prob, positive, ...) {
+  assert_binary(truth, prob = prob, positive = positive)
   ((truth == positive) - prob)^2
 }

@@ -44,9 +44,9 @@ add_measure(logloss, "Log Loss", "classif", 0, Inf, TRUE, obs_loss = "obs_loglos
 #'
 #' @export
 #' @keywords internal
-obs_logloss = function(truth, prob) {
+obs_logloss = function(truth, prob, eps = 1e-15, ...) {
   assert_classif(truth, prob = prob)
-  eps = 1e-15
+  assert_number(eps, lower = 0, upper = 1)
 
   ii = match(as.character(truth), colnames(prob))
   p = prob[cbind(seq_len(nrow(prob)), ii)]
