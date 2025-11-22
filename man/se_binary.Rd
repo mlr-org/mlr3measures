@@ -4,7 +4,7 @@
 \alias{se_binary}
 \title{Binary Squared Error}
 \usage{
-se_binary(truth, prob, ...)
+se_binary(truth, prob, positive, ...)
 }
 \description{
 Observation-wise loss function for \code{\link[=bbrier]{bbrier()}}.

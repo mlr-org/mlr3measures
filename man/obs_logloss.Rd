@@ -4,7 +4,7 @@
 \alias{obs_logloss}
 \title{Observation-wise Log Loss}
 \usage{
-obs_logloss(truth, prob)
+obs_logloss(truth, prob, eps = 1e-15, ...)
 }
 \description{
 Observation-wise loss function for \code{\link[=logloss]{logloss()}}.
