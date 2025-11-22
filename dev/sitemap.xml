@@ -43,6 +43,7 @@
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/mse.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/msle.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/npv.html</loc></url>
+<url><loc>https://mlr3measures.mlr-org.com/dev/reference/obs_logloss.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/pbias.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/phi.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/pinball.html</loc></url>
@@ -57,6 +58,7 @@
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/rsq.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/sae.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/se.html</loc></url>
+<url><loc>https://mlr3measures.mlr-org.com/dev/reference/se_binary.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/similarity_params.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/sle.html</loc></url>
 <url><loc>https://mlr3measures.mlr-org.com/dev/reference/smape.html</loc></url>
