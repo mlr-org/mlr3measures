@@ -2,6 +2,10 @@
 
 ## mlr3measures (development version)
 
+## mlr3measures 1.2.0
+
+CRAN release: 2025-11-25
+
 - feat: Add observation-wise loss functions for `bbrier` and `logloss`.
 
 ## mlr3measures 1.1.0

@@ -17,13 +17,13 @@ Source:
 [`DESCRIPTION`](https://github.com/mlr-org/mlr3measures/blob/main/DESCRIPTION)
 
 Lang M, Becker M, Koers L (2025). *mlr3measures: Performance Measures
-for 'mlr3'*. R package version 1.1.0.9000,
+for 'mlr3'*. R package version 1.2.0.9000,
 <https://mlr3measures.mlr-org.com>.
 
     @Manual{,
       title = {mlr3measures: Performance Measures for 'mlr3'},
       author = {Michel Lang and Marc Becker and Lona Koers},
       year = {2025},
-      note = {R package version 1.1.0.9000},
+      note = {R package version 1.2.0.9000},
       url = {https://mlr3measures.mlr-org.com},
     }
