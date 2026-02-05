@@ -6,7 +6,7 @@ regression tasks.
 ## Usage
 
 ``` r
-smape(truth, response, na_value = NaN, ...)
+smape(truth, response, sample_weights = NULL, na_value = NaN, ...)
 ```
 
 ## Arguments
@@ -20,6 +20,13 @@ smape(truth, response, na_value = NaN, ...)
 
   ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
   Predicted response values. Must have the same length as `truth`.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - na_value:
 
