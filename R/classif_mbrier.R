@@ -21,12 +21,12 @@
 #' @inheritParams classif_params
 #' @template classif_example
 #' @export
-mbrier = function(truth, prob, ...) {
+mbrier = function(truth, prob, sample_weights = NULL, ...) {
   assert_classif(truth, prob = prob)
 
   mat01 = contr.treatment(colnames(prob), contrasts = FALSE)
   mat01 = mat01[match(truth, rownames(mat01)), ]
-  mean(rowSums(.se(mat01, prob)))
+  wmean(rowSums(.se(mat01, prob)), sample_weights)
 }
 
 #' @include measures.R

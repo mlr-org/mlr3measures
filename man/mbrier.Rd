@@ -4,7 +4,7 @@
 \alias{mbrier}
 \title{Multiclass Brier Score}
 \usage{
-mbrier(truth, prob, ...)
+mbrier(truth, prob, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -15,6 +15,12 @@ Must have the same levels and length as \code{response}.}
 Matrix of predicted probabilities, each column is a vector of probabilities for a
 specific class label.
 Columns must be named with levels of \code{truth}.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}
