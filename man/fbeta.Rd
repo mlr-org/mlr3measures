@@ -4,7 +4,15 @@
 \alias{fbeta}
 \title{F-beta Score}
 \usage{
-fbeta(truth, response, positive, beta = 1, na_value = NaN, ...)
+fbeta(
+  truth,
+  response,
+  positive,
+  sample_weights = NULL,
+  beta = 1,
+  na_value = NaN,
+  ...
+)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -17,6 +25,12 @@ Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{beta}{(\code{numeric(1)})\cr
 Parameter to give either precision or recall more weight.
