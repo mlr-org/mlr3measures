@@ -19,9 +19,9 @@
 #' @inheritParams binary_params
 #' @template binary_example
 #' @export
-dor = function(truth, response, positive, na_value = NaN, ...) {
+dor = function(truth, response, positive, sample_weights = NULL, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  dor_cm(cm(truth, response, positive), na_value)
+  dor_cm(cm(truth, response, positive, sample_weights), na_value)
 }
 
 dor_cm = function(m, na_value = NaN) {

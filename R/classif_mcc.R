@@ -39,10 +39,10 @@
 #'
 #' @template classif_example
 #' @export
-mcc = function(truth, response, positive = NULL, ...) {
+mcc = function(truth, response, positive = NULL, sample_weights = NULL, ...) {
   assert_classif(truth, response = response)
 
-  mcc_cm(cm(truth, response, positive))
+  mcc_cm(cm(truth, response, positive, sample_weights))
 }
 
 mcc_cm = function(m, na_value = NaN) {

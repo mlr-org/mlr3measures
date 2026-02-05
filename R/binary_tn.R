@@ -13,9 +13,9 @@
 #' @inheritParams binary_params
 #' @template binary_example
 #' @export
-tn = function(truth, response, positive, ...) {
+tn = function(truth, response, positive, sample_weights = NULL, ...) {
   assert_binary(truth, response = response, positive = positive)
-  tn_cm(cm(truth, response, positive))
+  tn_cm(cm(truth, response, positive, sample_weights))
 }
 
 tn_cm = function(m, na_value = NaN) {
