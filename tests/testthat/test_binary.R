@@ -119,6 +119,54 @@ test_that("confusion measures", {
   expect_equal(tpr(response, truth, positive = "a"), TP / (TP + FN))
 })
 
+test_that("weighted confusion measures", {
+  truth = factor(c("a", "a", "b", "b"), levels = c("a", "b"))
+  response = factor(c("a", "b", "a", "b"), levels = c("a", "b"))
+  # Unweighted: TP=1, TN=1, FP=1, FN=1
+  # Weighted (2,1,1,2): TP=2, TN=2, FP=1, FN=1
+  w = c(2, 1, 1, 2)
+
+  # Weighted counts
+  TP = tp(truth, response, positive = "a", sample_weights = w)
+  TN = tn(truth, response, positive = "a", sample_weights = w)
+  FP = fp(truth, response, positive = "a", sample_weights = w)
+  FN = fn(truth, response, positive = "a", sample_weights = w)
+
+  expect_equal(TP, 2)
+  expect_equal(TN, 2)
+
+  expect_equal(FP, 1)
+  expect_equal(FN, 1)
+
+  # Derived measures with weights
+  expect_equal(tpr(truth, response, positive = "a", sample_weights = w), TP / (TP + FN))
+  expect_equal(fpr(truth, response, positive = "a", sample_weights = w), FP / (FP + TN))
+  expect_equal(tnr(truth, response, positive = "a", sample_weights = w), TN / (FP + TN))
+  expect_equal(fnr(truth, response, positive = "a", sample_weights = w), FN / (TP + FN))
+  expect_equal(ppv(truth, response, positive = "a", sample_weights = w), TP / (TP + FP))
+  expect_equal(npv(truth, response, positive = "a", sample_weights = w), TN / (FN + TN))
+  expect_equal(fdr(truth, response, positive = "a", sample_weights = w), FP / (TP + FP))
+  expect_equal(fomr(truth, response, positive = "a", sample_weights = w), FN / (FN + TN))
+  expect_equal(dor(truth, response, positive = "a", sample_weights = w), (TP / FP) / (FN / TN))
+  expect_equal(mcc(truth, response, positive = "a", sample_weights = w),
+    (TP * TN - FP * FN) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)))
+
+  # Composite measures
+  expect_equal(fbeta(truth, response, positive = "a", sample_weights = w),
+    2 * TP / (2 * TP + FP + FN))
+  expect_equal(gmean(truth, response, positive = "a", sample_weights = w),
+    sqrt((TP / (TP + FN)) * (TN / (FP + TN))))
+  expect_equal(gpr(truth, response, positive = "a", sample_weights = w),
+    sqrt((TP / (TP + FP)) * (TP / (TP + FN))))
+
+  # Uniform weights should equal unweighted
+  w_uniform = c(1, 1, 1, 1)
+  expect_equal(tpr(truth, response, positive = "a", sample_weights = w_uniform),
+    tpr(truth, response, positive = "a"))
+  expect_equal(fbeta(truth, response, positive = "a", sample_weights = w_uniform),
+    fbeta(truth, response, positive = "a"))
+})
+
 test_that("bbrier", {
   N = 30L
   truth = ssample(letters[1:2], N)
