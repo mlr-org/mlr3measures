@@ -75,6 +75,7 @@ as.data.frame.MeasureEnv = function(x, ...) {
     lower = vapply(x, function(x) x$lower, NA_real_, USE.NAMES = FALSE),
     upper = vapply(x, function(x) x$upper, NA_real_, USE.NAMES = FALSE),
     minimize = vapply(x, function(x) x$minimize, NA, USE.NAMES = FALSE),
+    obs_loss = vapply(x, function(x) !is.na(x$obs_loss), NA, USE.NAMES = FALSE),
     sample_weights = vapply(x, function(x) x$sample_weights, NA, USE.NAMES = FALSE)
   )
 }
