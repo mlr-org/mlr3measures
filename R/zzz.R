@@ -1,5 +1,5 @@
 #' @importFrom utils head combn
-#' @importFrom stats cor median var relevel contr.treatment
+#' @importFrom stats cor median var relevel contr.treatment xtabs
 #' @import checkmate
 "_PACKAGE"
 

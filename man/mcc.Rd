@@ -4,7 +4,7 @@
 \alias{mcc}
 \title{Matthews Correlation Coefficient}
 \usage{
-mcc(truth, response, positive = NULL, ...)
+mcc(truth, response, positive = NULL, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -16,6 +16,12 @@ Predicted response labels.
 Must have the same levels and length as \code{truth}.}
 
 \item{positive}{(\code{character(1)}) Name of the positive class in case of binary classification.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}

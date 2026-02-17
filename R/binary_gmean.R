@@ -19,9 +19,9 @@
 #' @inheritParams binary_params
 #' @template binary_example
 #' @export
-gmean = function(truth, response, positive, na_value = NaN, ...) {
+gmean = function(truth, response, positive, sample_weights = NULL, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  gmean_cm(cm(truth, response, positive), na_value)
+  gmean_cm(cm(truth, response, positive, sample_weights), na_value)
 }
 
 gmean_cm = function(m, na_value = NaN) {

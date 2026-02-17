@@ -32,12 +32,15 @@ wsum = function(x, w) { # sum(w * x) that asserts w and accepts NULL
 }
 
 # confusion matrix
-cm = function(truth, response, positive = NULL) {
+cm = function(truth, response, positive = NULL, sample_weights = NULL) {
   if (!is.null(positive)) {
     truth = relevel(truth, positive)
     response = relevel(response, positive)
   }
-  table(response, truth, useNA = "ifany")
+  if (is.null(sample_weights)) {
+    return(table(response, truth, useNA = "ifany"))
+  }
+  xtabs(sample_weights ~ response + truth, addNA = TRUE)
 }
 
 # used in roxygen templates

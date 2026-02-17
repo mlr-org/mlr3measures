@@ -4,7 +4,7 @@
 \alias{tp}
 \title{True Positives}
 \usage{
-tp(truth, response, positive, ...)
+tp(truth, response, positive, sample_weights = NULL, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -17,6 +17,12 @@ Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{...}{(\code{any})\cr
 Additional arguments. Currently ignored.}

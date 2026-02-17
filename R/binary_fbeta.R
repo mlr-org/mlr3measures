@@ -25,10 +25,10 @@
 #'   Default is `1`, resulting in balanced weights.
 #' @template binary_example
 #' @export
-fbeta = function(truth, response, positive, beta = 1, na_value = NaN, ...) {
+fbeta = function(truth, response, positive, sample_weights = NULL, beta = 1, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
   assert_number(beta, lower = 0)
-  fbeta_cm(cm(truth, response, positive), beta, na_value)
+  fbeta_cm(cm(truth, response, positive, sample_weights), beta, na_value)
 }
 
 fbeta_cm = function(m, beta = 1, na_value = NaN) {

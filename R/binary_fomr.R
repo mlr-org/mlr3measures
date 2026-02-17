@@ -19,9 +19,9 @@
 #' @inheritParams binary_params
 #' @template binary_example
 #' @export
-fomr = function(truth, response, positive, na_value = NaN, ...) {
+fomr = function(truth, response, positive, sample_weights = NULL, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  fomr_cm(cm(truth, response, positive))
+  fomr_cm(cm(truth, response, positive, sample_weights))
 }
 
 fomr_cm = function(m, na_value = NaN) {

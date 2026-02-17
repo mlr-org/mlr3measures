@@ -4,7 +4,7 @@
 \alias{gmean}
 \title{Geometric Mean of Recall and Specificity}
 \usage{
-gmean(truth, response, positive, na_value = NaN, ...)
+gmean(truth, response, positive, sample_weights = NULL, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -17,6 +17,12 @@ Must have the exactly same two levels and the same length as \code{truth}.}
 
 \item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input

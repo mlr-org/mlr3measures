@@ -20,9 +20,9 @@
 #' @inheritParams binary_params
 #' @template binary_example
 #' @export
-fnr = function(truth, response, positive, na_value = NaN, ...) {
+fnr = function(truth, response, positive, sample_weights = NULL, na_value = NaN, ...) {
   assert_binary(truth, response = response, positive = positive, na_value = na_value)
-  fnr_cm(cm(truth, response, positive), na_value)
+  fnr_cm(cm(truth, response, positive, sample_weights), na_value)
 }
 
 fnr_cm = function(m, na_value = NaN) {
