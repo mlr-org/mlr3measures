@@ -6,7 +6,7 @@ classification tasks.
 ## Usage
 
 ``` r
-tp(truth, response, positive, ...)
+tp(truth, response, positive, sample_weights = NULL, ...)
 ```
 
 ## Arguments
@@ -27,6 +27,13 @@ tp(truth, response, positive, ...)
 
   (`character(1))`  
   Name of the positive class.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - ...:
 

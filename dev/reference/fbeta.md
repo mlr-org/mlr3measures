@@ -6,7 +6,15 @@ classification tasks.
 ## Usage
 
 ``` r
-fbeta(truth, response, positive, beta = 1, na_value = NaN, ...)
+fbeta(
+  truth,
+  response,
+  positive,
+  sample_weights = NULL,
+  beta = 1,
+  na_value = NaN,
+  ...
+)
 ```
 
 ## Arguments
@@ -27,6 +35,13 @@ fbeta(truth, response, positive, beta = 1, na_value = NaN, ...)
 
   (`character(1))`  
   Name of the positive class.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - beta:
 

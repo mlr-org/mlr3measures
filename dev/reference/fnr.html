@@ -61,7 +61,7 @@ in binary classification tasks.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fnr</span><span class="op">(</span><span class="va">truth</span>, <span class="va">response</span>, <span class="va">positive</span>, na_value <span class="op">=</span> <span class="cn">NaN</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fnr</span><span class="op">(</span><span class="va">truth</span>, <span class="va">response</span>, <span class="va">positive</span>, sample_weights <span class="op">=</span> <span class="cn">NULL</span>, na_value <span class="op">=</span> <span class="cn">NaN</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -83,6 +83,14 @@ Must have the exactly same two levels and the same length as <code>truth</code>.
 <dt id="arg-positive">positive<a class="anchor" aria-label="anchor" href="#arg-positive"></a></dt>
 <dd><p>(<code>character(1))</code><br>
 Name of the positive class.</p></dd>
+
+
+<dt id="arg-sample-weights">sample_weights<a class="anchor" aria-label="anchor" href="#arg-sample-weights"></a></dt>
+<dd><p>(<code><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric()</a></code>)<br>
+Vector of non-negative and finite sample weights.
+Must have the same length as <code>truth</code>.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.</p></dd>
 
 
 <dt id="arg-na-value">na_value<a class="anchor" aria-label="anchor" href="#arg-na-value"></a></dt>

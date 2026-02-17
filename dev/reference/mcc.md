@@ -6,7 +6,7 @@ multiclass classification tasks.
 ## Usage
 
 ``` r
-mcc(truth, response, positive = NULL, ...)
+mcc(truth, response, positive = NULL, sample_weights = NULL, ...)
 ```
 
 ## Arguments
@@ -27,6 +27,13 @@ mcc(truth, response, positive = NULL, ...)
 
   (`character(1)`) Name of the positive class in case of binary
   classification.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - ...:
 
