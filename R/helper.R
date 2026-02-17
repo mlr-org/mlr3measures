@@ -40,7 +40,7 @@ cm = function(truth, response, positive = NULL, sample_weights = NULL) {
   if (is.null(sample_weights)) {
     return(table(response, truth, useNA = "ifany"))
   }
-  xtabs(sample_weights ~ response + truth)
+  xtabs(sample_weights ~ response + truth, addNA = TRUE)
 }
 
 # used in roxygen templates
