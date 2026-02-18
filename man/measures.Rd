@@ -25,7 +25,7 @@ The following information is available for each measure:
 \item \code{predict_type}: prediction type the measure operates on.
 \code{"response"} corresponds to class labels for classification and the numeric response for regression.
 \code{"prob"} corresponds to class probabilities, provided as a matrix with class labels as column names.
-\code{"se"} corresponds to to the vector of predicted standard errors for regression.
+\code{"se"} corresponds to the vector of predicted standard errors for regression.
 \item \code{minimize}: If \code{TRUE} or \code{FALSE}, the objective is to minimize or maximize the measure, respectively.
 Can also be \code{NA}.
 \item \code{obs_loss}: Name of the function which is called to calculate the (unaggregated) loss per observation.
