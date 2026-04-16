@@ -46,9 +46,9 @@ auc = function(truth, prob, positive, sample_weights = NULL, na_value = NaN, ...
 
   i = which(truth == positive)
 
-  # Two paths share the Mann-Whitney rank-sum identity but differ in how ranks
-  # are built: rank() is a single C-level pass, while the weighted branch needs
-  # order() + rle() to assign shared weighted ranks across tied prob values.
+  # Unweighted path uses the rank-sum identity via a single C-level rank() call.
+  # Weighted path computes the Mann-Whitney U directly: a sort + cumsum over
+  # negative weights, with rle() to share values across tied prob groups.
   if (is.null(sample_weights)) {
     # Unweighted: AUC = (sum_{i in pos} r_i - n+(n+ + 1)/2) / (n+ * n-),
     # where r_i is the average rank of prob[i] in the combined sample.
@@ -66,18 +66,10 @@ auc = function(truth, prob, positive, sample_weights = NULL, na_value = NaN, ...
   } else {
     assert_numeric(sample_weights, lower = 0, finite = TRUE, any.missing = FALSE, len = length(truth))
 
-    # Weighted AUC via the rank-sum identity in weighted form. The weighted
-    # rank is the direct analog of rank(..., ties.method = "average"):
-    #   wr_i = W_<i + W_=i / 2 + w_i / 2,
-    # i.e. the sum of weights of all observations <= prob[i] with ties at half
-    # (W_<i strictly below, W_=i tied including self). Then
-    #   sum_i w_i^+ wr_i = ((W+)^2 + sum_i (w_i^+)^2) / 2 + sum_i w_i^+ U_i^w,
-    # with U_i^w = sum_j w_j^- [I(p_j^- < p_i^+) + 1/2 I(p_j^- = p_i^+)]. The
-    # sum_i (w_i^+)^2 term accounts for the self-contribution of each positive
-    # to its own weighted rank. Rearranging:
-    #   AUC_w = (sum_i w_i^+ wr_i - ((W+)^2 + sum_i (w_i^+)^2) / 2) / (W+ W-).
-    # Setting all w = 1 recovers n+(n+ + 1)/2 and the unweighted formula above.
-    # Derivation: notes-ml/content/01_auc.tex, "Weighted AUC" section.
+    # Weighted AUC via the direct Mann-Whitney form:
+    #   AUC_w = sum_i w_i^+ U_i^w / (W+ W-),
+    # with U_i^w = W_<i^- + W_=i^- / 2, i.e. the weight of negatives strictly
+    # below prob[i] plus half the weight of negatives tied with prob[i].
     w1 = sum(sample_weights[i])
     w0 = sum(sample_weights) - w1
 
@@ -85,29 +77,45 @@ auc = function(truth, prob, positive, sample_weights = NULL, na_value = NaN, ...
       return(na_value)
     }
 
-    # Compute wr (weighted rank vector) in one O(n log n) sort + O(n) sweep.
+    # Compute U in one O(n log n) sort + O(n) sweep over negative weights.
     # permutation placing observations in ascending prob order
     ord = order(prob)
-    # running total along the sort order: cw[k] = sum of weights of the
-    # first k observations in sorted order = W of all obs with prob <= prob[ord[k]]
-    cw = cumsum(sample_weights[ord])
+    # mask out positives: only negatives contribute to U
+    w_neg = sample_weights[ord] * (truth[ord] != positive)
+    # running total along the sort order: cw[k] = weight of negatives with
+    # prob <= prob[ord[k]]
+    cw = cumsum(w_neg)
     # run-length encode the sorted prob values: each run is a tie group
     run = rle(prob[ord])
     # end[g] = sorted-order index of the last obs in tie group g,
-    # so cw[end[g]] = W_<s + W_=s for that group's distinct value s
+    # so cw[end[g]] = W_<s^- + W_=s^- for that group's distinct value s
+    # end[g] = sorted-order index of the last element of tie group g. Because
+    # cw is cumulative over sorted order, cw[end[g]] is the total negative
+    # weight accumulated up to and including group g, i.e. W_<=s^- for that
+    # group's shared prob value s. Split that into
+    #   cw[end[g]] = W_<s^- (negatives strictly below s)
+    #              + W_=s^- (negatives tied exactly at s).
     end = cumsum(run$lengths)
-    # w_eq[g] = W_=s for group g, obtained as the diff of consecutive cw[end];
-    # prepending 0 makes the first group equal to cw[end[1]] itself
-    w_eq = cw[end] - c(0, cw[end[-length(end)]])
-    # every member of tie group g shares the part W_<s + W_=s/2 = cw[end] - w_eq/2;
-    # adding the member's own w_i/2 completes wr_i = W_<i + W_=i/2 + w_i/2
-    wr_sorted = rep(cw[end] - w_eq / 2, run$lengths) + sample_weights[ord] / 2
-    # allocate wr in original (unsorted) order
-    wr = numeric(length(prob))
-    # invert the sort: the ord[k]-th original observation has weighted rank wr_sorted[k]
-    wr[ord] = wr_sorted
 
-    (sum(sample_weights[i] * wr[i]) - (w1 * w1 + sum(sample_weights[i]^2)) / 2) / (w1 * w0)
+    # W_=s^- for group g is just how much cw grew inside the group, i.e. the
+    # difference between cw at the end of this group and cw at the end of the
+    # previous group. For g = 1 there is no previous group, so we treat it as
+    # 0. `c(0, cw[end[-length(end)]])` is [0, cw[end[1]], ..., cw[end[G-1]]],
+    # giving a vectorized diff. (Equivalent to diff(c(0, cw[end])).)
+    w_eq = cw[end] - c(0, cw[end[-length(end)]])
+
+    # Every observation in tie group g gets the same Mann-Whitney contribution
+    #   u = W_<s^- + W_=s^- / 2.
+    # Rewriting using the quantities we already have:
+    #   u = (W_<s^- + W_=s^-) - W_=s^- / 2 = cw[end[g]] - w_eq[g] / 2.
+    # rep(..., run$lengths) expands the per-group u back to one value per
+    # observation, still in sorted order.
+    u_sorted = rep(cw[end] - w_eq / 2, run$lengths)
+    # allocate u in original (unsorted) order
+    u = numeric(length(prob))
+    u[ord] = u_sorted
+
+    sum(sample_weights[i] * u[i]) / (w1 * w0)
   }
 }
 
