@@ -58,6 +58,7 @@ auc = function(truth, prob, positive, sample_weights = NULL, na_value = NaN, ...
     run = rle(prob[ord])
     end = cumsum(run$lengths)
     w_eq = cw[end] - c(0, cw[end[-length(end)]])
+    # wr_sorted = ave(cw, prob[ord], FUN = mean) - ave(sample_weights[ord], prob[ord], FUN = sum) / 2
     wr_sorted = rep(cw[end] - w_eq / 2, run$lengths)
     wr = numeric(length(prob))
     wr[ord] = wr_sorted
