@@ -25,7 +25,7 @@ gpr = function(truth, response, positive, sample_weights = NULL, na_value = NaN,
 }
 
 gpr_cm = function(m, na_value = NaN) {
-  sums = c(sum(m[1L, ]),  sum(m[, 1L]))
+  sums = c(sum(m[1L, ]), sum(m[, 1L]))
   if (any(sums == 0L)) {
     return(na_value)
   }

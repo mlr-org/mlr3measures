@@ -11,7 +11,8 @@ div = function(nominator, denominator, na_value) {
   }
 }
 
-wmean = function(x, w) { # a better stats::weighted.mean
+wmean = function(x, w) {
+  # a better stats::weighted.mean
   if (is.null(w)) {
     return(mean(x))
   }
@@ -23,7 +24,8 @@ wmean = function(x, w) { # a better stats::weighted.mean
   sum(x * (w / sum(w)))
 }
 
-wsum = function(x, w) { # sum(w * x) that asserts w and accepts NULL
+wsum = function(x, w) {
+  # sum(w * x) that asserts w and accepts NULL
   if (is.null(w)) {
     return(sum(x))
   }
@@ -48,11 +50,13 @@ format_range = function(item) {
   l = item$lower
   u = item$upper
 
-  str = sprintf("%s%s, %s%s",
+  str = sprintf(
+    "%s%s, %s%s",
     if (is.finite(l)) "[" else "(",
     if (is.finite(l)) c(l, l) else c("-\\infty", "-Inf"),
     if (is.finite(u)) c(u, u) else c("\\infty", "Inf"),
-    if (is.finite(u)) "]" else ")")
+    if (is.finite(u)) "]" else ")"
+  )
   paste0("\\eqn{", str[1L], "}{", str[2L], "}")
 }
 

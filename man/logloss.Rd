@@ -44,7 +44,8 @@ The Log Loss (a.k.a Benoulli Loss, Logistic Loss, Cross-Entropy Loss) is defined
 }{
   -weighted.mean(log(p), w)
 }
-where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i} and \eqn{w_i} are normalized weights for each observation \eqn{x_i}.
+where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i},
+and \eqn{w_i} are normalized weights for each observation \eqn{x_i}.
 }
 \section{Meta Information}{
 

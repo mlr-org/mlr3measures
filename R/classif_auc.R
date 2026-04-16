@@ -137,24 +137,29 @@ add_measure(mauc_mu, "Multiclass mu AUC", "classif", 0, 1, FALSE)
 # returns a numeric length nlevel(truth), with one-vs-rest AUC
 onevrestauc = function(prob, truth) {
   ntotal = nrow(prob)
-  vapply(levels(truth), function(cls) {
-    nrest = sum(truth != cls)
-    if (nrest == ntotal) {
-      # this class has no members. What happened?
-      #  - If we were called by mauc_aunu --> this does never happen, because we return(NA) if there are empty classes
-      #  - If we were called by mauc_aunp --> this value gets multiplied with 0 and should result in 0
-      # therefore we don't want to return Inf here, but a final value that does not matter in the end
-      return(0)
-    }
+  vapply(
+    levels(truth),
+    function(cls) {
+      nrest = sum(truth != cls)
+      if (nrest == ntotal) {
+        # this class has no members. What happened?
+        #  - If we were called by mauc_aunu --> this does never happen, because we return(NA) if there are empty classes
+        #  - If we were called by mauc_aunp --> this value gets multiplied with 0 and should result in 0
+        # therefore we don't want to return Inf here, but a final value that does not matter in the end
+        return(0)
+      }
 
-    r = rank(c(prob[truth == cls, cls], prob[truth != cls, cls]), ties.method = "average")
-    # simplify the following:
-    # (sum(r[seq_len(nrest)]) - nrest * (nrest + 1) / 2) / (nrest * (ntotal - nrest))
-    (mean(r[seq_len(ntotal - nrest)]) - (ntotal - nrest + 1) / 2) / nrest
-  }, FUN.VALUE = NA_real_)
+      r = rank(c(prob[truth == cls, cls], prob[truth != cls, cls]), ties.method = "average")
+      # simplify the following:
+      # (sum(r[seq_len(nrest)]) - nrest * (nrest + 1) / 2) / (nrest * (ntotal - nrest))
+      (mean(r[seq_len(ntotal - nrest)]) - (ntotal - nrest + 1) / 2) / nrest
+    },
+    FUN.VALUE = NA_real_
+  )
 }
 
 # calculates \cite{hand_2001} pairwise asymmetric(!) AUC matrix
+# nolint next
 colAUC = function(prob, truth) {
   prob = as.matrix(prob) # turn numeric vector to column if necessary
   truth = as.factor(truth) # turn logical to factor
@@ -169,7 +174,9 @@ colAUC = function(prob, truth) {
   for (i in levels(truth)) {
     ni = sum(truth == i) # avoid integer overflow
     for (j in levels(truth)) {
-      if (i == j) next
+      if (i == j) {
+        next
+      }
       nj = sum(truth == j) # avoid integer overflow
       r = rank(c(prob[truth == i, i], prob[truth == j, i]), ties.method = "average")
       # simplify the following:
