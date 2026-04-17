@@ -203,7 +203,7 @@ as.data.frame(measures)
 #> 31     1    FALSE    FALSE           TRUE
 #> 32     1    FALSE    FALSE           TRUE
 #> 33   Inf     TRUE     TRUE          FALSE
-#> 34     1    FALSE    FALSE          FALSE
+#> 34     1    FALSE    FALSE           TRUE
 #> 35   Inf     TRUE    FALSE          FALSE
 #> 36   Inf     TRUE     TRUE           TRUE
 #> 37   Inf     TRUE     TRUE           TRUE

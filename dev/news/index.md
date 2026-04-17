@@ -2,6 +2,9 @@
 
 ## mlr3measures (development version)
 
+- feat: [`auc()`](https://mlr3measures.mlr-org.com/dev/reference/auc.md)
+  gains `sample_weights` for weighted AUC.
+
 ## mlr3measures 1.2.0
 
 CRAN release: 2025-11-25
