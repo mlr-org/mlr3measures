@@ -1,5 +1,17 @@
 # Changelog
 
+## mlr3measures 1.3.0
+
+- feat: [`auc()`](https://mlr3measures.mlr-org.com/reference/auc.md)
+  gains `sample_weights` for weighted AUC.
+- feat: Confusion matrix based measures gain `sample_weights`
+  ([\#71](https://github.com/mlr-org/mlr3measures/issues/71)).
+- feat:
+  [`mbrier()`](https://mlr3measures.mlr-org.com/reference/mbrier.md) and
+  [`smape()`](https://mlr3measures.mlr-org.com/reference/smape.md) gain
+  `sample_weights`
+  ([\#72](https://github.com/mlr-org/mlr3measures/issues/72)).
+
 ## mlr3measures 1.2.0
 
 CRAN release: 2025-11-25
@@ -41,7 +53,7 @@ CRAN release: 2022-08-05
 
 CRAN release: 2022-01-13
 
-- Calculation of `fbeta` is now more numerically more stable.
+- Calculation of `fbeta` is now numerically more stable.
 - Improved documentation.
 
 ## mlr3measures 0.4.0

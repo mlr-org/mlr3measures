@@ -6,7 +6,7 @@ regression tasks.
 ## Usage
 
 ``` r
-smape(truth, response, na_value = NaN, ...)
+smape(truth, response, sample_weights = NULL, na_value = NaN, ...)
 ```
 
 ## Arguments
@@ -20,6 +20,13 @@ smape(truth, response, na_value = NaN, ...)
 
   ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
   Predicted response values. Must have the same length as `truth`.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - na_value:
 
@@ -42,7 +49,7 @@ The Symmetric Mean Absolute Percent Error is defined as \$\$ \frac{2}{n}
 \sum\_{i=1}^n \frac{\left\| t_i - r_i \right\|}{\left\| t_i \right\| +
 \left\| r_i \right\|}. \$\$
 
-This measure is undefined if if any \\\|t\| + \|r\|\\ is equal to \\0\\.
+This measure is undefined if any \\\|t\| + \|r\|\\ is equal to \\0\\.
 
 ## Meta Information
 

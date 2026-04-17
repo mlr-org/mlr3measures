@@ -6,7 +6,7 @@ multiclass classification tasks.
 ## Usage
 
 ``` r
-mcc(truth, response, positive = NULL, ...)
+mcc(truth, response, positive = NULL, sample_weights = NULL, ...)
 ```
 
 ## Arguments
@@ -27,6 +27,13 @@ mcc(truth, response, positive = NULL, ...)
 
   (`character(1)`) Name of the positive class in case of binary
   classification.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - ...:
 
@@ -62,8 +69,8 @@ for a multi-class confusion matrix \\C\\ with \\K\\ classes: \$\$
   \\k\\.
 
 The above formula is undefined if any of the four sums in the
-denominator is 0 in the binary case and more generally if either \\s^2 -
-\sum_k^K p_k^2\\ or \\s^2 - \sum_k^K t_k^2)\\ is equal to 0. The
+denominator is 0 in the binary case, and more generally if either
+\\s^2 - \sum_k^K p_k^2\\ or \\s^2 - \sum_k^K t_k^2)\\ is equal to 0. The
 denominator is then set to 1.
 
 When there are more than two classes, the MCC will no longer range

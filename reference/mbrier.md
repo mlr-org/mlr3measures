@@ -6,7 +6,7 @@ multiclass classification tasks.
 ## Usage
 
 ``` r
-mbrier(truth, prob, ...)
+mbrier(truth, prob, sample_weights = NULL, ...)
 ```
 
 ## Arguments
@@ -23,6 +23,13 @@ mbrier(truth, prob, ...)
   Matrix of predicted probabilities, each column is a vector of
   probabilities for a specific class label. Columns must be named with
   levels of `truth`.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - ...:
 

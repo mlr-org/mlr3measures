@@ -21,8 +21,7 @@ or maximized. The following information is available for each measure:
   corresponds to class labels for classification and the numeric
   response for regression. `"prob"` corresponds to class probabilities,
   provided as a matrix with class labels as column names. `"se"`
-  corresponds to to the vector of predicted standard errors for
-  regression.
+  corresponds to the vector of predicted standard errors for regression.
 
 - `minimize`: If `TRUE` or `FALSE`, the objective is to minimize or
   maximize the measure, respectively. Can also be `NA`.
@@ -97,7 +96,7 @@ measures$tpr
 #> [1] TRUE
 #> 
 #> $sample_weights
-#> [1] FALSE
+#> [1] TRUE
 #> 
 #> $trafo
 #> [1] NA
@@ -169,70 +168,70 @@ as.data.frame(measures)
 #> 63 sensitivity                                 Sensitivity     binary     0
 #> 64        mape                 Mean Absolute Percent Error       regr     0
 #> 65   mauc_au1p     Weighted average 1 vs. 1 multiclass AUC    classif     0
-#>    upper minimize sample_weights
-#> 1    Inf     TRUE           TRUE
-#> 2      1    FALSE          FALSE
-#> 3      1    FALSE          FALSE
-#> 4    Inf     TRUE          FALSE
-#> 5      1     TRUE           TRUE
-#> 6    Inf     TRUE           TRUE
-#> 7    Inf     TRUE          FALSE
-#> 8      1     TRUE          FALSE
-#> 9      1    FALSE          FALSE
-#> 10   Inf     TRUE           TRUE
-#> 11   Inf       NA           TRUE
-#> 12     1    FALSE          FALSE
-#> 13     1    FALSE          FALSE
-#> 14     2     TRUE          FALSE
-#> 15     1     TRUE          FALSE
-#> 16   Inf     TRUE           TRUE
-#> 17     1    FALSE          FALSE
-#> 18   Inf    FALSE          FALSE
-#> 19   Inf     TRUE          FALSE
-#> 20     1    FALSE          FALSE
-#> 21   Inf     TRUE           TRUE
-#> 22     1     TRUE          FALSE
-#> 23   Inf    FALSE          FALSE
-#> 24     1    FALSE          FALSE
-#> 25   Inf     TRUE          FALSE
-#> 26     1    FALSE          FALSE
-#> 27     1    FALSE          FALSE
-#> 28     1    FALSE          FALSE
-#> 29   Inf     TRUE          FALSE
-#> 30   Inf    FALSE          FALSE
-#> 31     1    FALSE           TRUE
-#> 32     1    FALSE          FALSE
-#> 33   Inf     TRUE          FALSE
-#> 34     1    FALSE          FALSE
-#> 35   Inf     TRUE          FALSE
-#> 36   Inf     TRUE           TRUE
-#> 37   Inf     TRUE           TRUE
-#> 38     1    FALSE          FALSE
-#> 39     1    FALSE          FALSE
-#> 40     1    FALSE          FALSE
-#> 41   Inf     TRUE          FALSE
-#> 42   Inf     TRUE          FALSE
-#> 43   Inf     TRUE          FALSE
-#> 44     1    FALSE          FALSE
-#> 45   Inf     TRUE          FALSE
-#> 46   Inf       NA           TRUE
-#> 47     1     TRUE          FALSE
-#> 48     1    FALSE          FALSE
-#> 49   Inf     TRUE           TRUE
-#> 50     1    FALSE          FALSE
-#> 51   Inf     TRUE           TRUE
-#> 52     1     TRUE          FALSE
-#> 53     2     TRUE          FALSE
-#> 54     1     TRUE           TRUE
-#> 55     1    FALSE          FALSE
-#> 56     1    FALSE          FALSE
-#> 57     1    FALSE          FALSE
-#> 58   Inf     TRUE          FALSE
-#> 59   Inf     TRUE          FALSE
-#> 60     1    FALSE           TRUE
-#> 61     1    FALSE          FALSE
-#> 62   Inf     TRUE          FALSE
-#> 63     1    FALSE          FALSE
-#> 64   Inf     TRUE           TRUE
-#> 65     1    FALSE          FALSE
+#>    upper minimize obs_loss sample_weights
+#> 1    Inf     TRUE    FALSE           TRUE
+#> 2      1    FALSE    FALSE          FALSE
+#> 3      1    FALSE    FALSE          FALSE
+#> 4    Inf     TRUE    FALSE          FALSE
+#> 5      1     TRUE     TRUE           TRUE
+#> 6    Inf     TRUE     TRUE           TRUE
+#> 7    Inf     TRUE     TRUE          FALSE
+#> 8      1     TRUE    FALSE          FALSE
+#> 9      1    FALSE    FALSE           TRUE
+#> 10   Inf     TRUE     TRUE           TRUE
+#> 11   Inf       NA    FALSE           TRUE
+#> 12     1    FALSE    FALSE          FALSE
+#> 13     1    FALSE    FALSE           TRUE
+#> 14     2     TRUE    FALSE           TRUE
+#> 15     1     TRUE    FALSE           TRUE
+#> 16   Inf     TRUE     TRUE           TRUE
+#> 17     1    FALSE    FALSE          FALSE
+#> 18   Inf    FALSE    FALSE           TRUE
+#> 19   Inf     TRUE    FALSE          FALSE
+#> 20     1    FALSE    FALSE          FALSE
+#> 21   Inf     TRUE    FALSE           TRUE
+#> 22     1     TRUE    FALSE           TRUE
+#> 23   Inf    FALSE    FALSE           TRUE
+#> 24     1    FALSE    FALSE          FALSE
+#> 25   Inf     TRUE    FALSE          FALSE
+#> 26     1    FALSE    FALSE          FALSE
+#> 27     1    FALSE    FALSE          FALSE
+#> 28     1    FALSE    FALSE           TRUE
+#> 29   Inf     TRUE    FALSE          FALSE
+#> 30   Inf    FALSE    FALSE           TRUE
+#> 31     1    FALSE    FALSE           TRUE
+#> 32     1    FALSE    FALSE           TRUE
+#> 33   Inf     TRUE     TRUE          FALSE
+#> 34     1    FALSE    FALSE           TRUE
+#> 35   Inf     TRUE    FALSE          FALSE
+#> 36   Inf     TRUE     TRUE           TRUE
+#> 37   Inf     TRUE     TRUE           TRUE
+#> 38     1    FALSE    FALSE          FALSE
+#> 39     1    FALSE    FALSE           TRUE
+#> 40     1    FALSE    FALSE           TRUE
+#> 41   Inf     TRUE    FALSE          FALSE
+#> 42   Inf     TRUE    FALSE           TRUE
+#> 43   Inf     TRUE     TRUE          FALSE
+#> 44     1    FALSE    FALSE           TRUE
+#> 45   Inf     TRUE    FALSE           TRUE
+#> 46   Inf       NA    FALSE           TRUE
+#> 47     1     TRUE    FALSE           TRUE
+#> 48     1    FALSE    FALSE          FALSE
+#> 49   Inf     TRUE     TRUE           TRUE
+#> 50     1    FALSE    FALSE          FALSE
+#> 51   Inf     TRUE     TRUE           TRUE
+#> 52     1     TRUE    FALSE           TRUE
+#> 53     2     TRUE    FALSE           TRUE
+#> 54     1     TRUE     TRUE           TRUE
+#> 55     1    FALSE    FALSE           TRUE
+#> 56     1    FALSE    FALSE           TRUE
+#> 57     1    FALSE    FALSE           TRUE
+#> 58   Inf     TRUE    FALSE          FALSE
+#> 59   Inf     TRUE    FALSE          FALSE
+#> 60     1    FALSE     TRUE           TRUE
+#> 61     1    FALSE    FALSE           TRUE
+#> 62   Inf     TRUE     TRUE          FALSE
+#> 63     1    FALSE    FALSE           TRUE
+#> 64   Inf     TRUE     TRUE           TRUE
+#> 65     1    FALSE    FALSE          FALSE
 ```

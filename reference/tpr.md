@@ -6,11 +6,18 @@ classification tasks.
 ## Usage
 
 ``` r
-tpr(truth, response, positive, na_value = NaN, ...)
+tpr(truth, response, positive, sample_weights = NULL, na_value = NaN, ...)
 
-recall(truth, response, positive, na_value = NaN, ...)
+recall(truth, response, positive, sample_weights = NULL, na_value = NaN, ...)
 
-sensitivity(truth, response, positive, na_value = NaN, ...)
+sensitivity(
+  truth,
+  response,
+  positive,
+  sample_weights = NULL,
+  na_value = NaN,
+  ...
+)
 ```
 
 ## Arguments
@@ -31,6 +38,13 @@ sensitivity(truth, response, positive, na_value = NaN, ...)
 
   (`character(1))`  
   Name of the positive class.
+
+- sample_weights:
+
+  ([`numeric()`](https://rdrr.io/r/base/numeric.html))  
+  Vector of non-negative and finite sample weights. Must have the same
+  length as `truth`. The vector gets automatically normalized to sum to
+  one. Defaults to equal sample weights.
 
 - na_value:
 
