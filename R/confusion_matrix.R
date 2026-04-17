@@ -40,9 +40,14 @@ confusion_matrix = function(truth, response, positive, na_value = NaN, relative 
   m = cm(truth, response, positive)
 
   ids = c("acc", "ce", "dor", "fbeta", "fdr", "fnr", "fomr", "fpr", "mcc", "npv", "ppv", "tnr", "tpr")
-  measures = vapply(ids, function(id) {
-    do.call(paste0(id, "_cm"), list(m = m, na_value = na_value))
-  }, FUN.VALUE = NA_real_, USE.NAMES = FALSE)
+  measures = vapply(
+    ids,
+    function(id) {
+      do.call(paste0(id, "_cm"), list(m = m, na_value = na_value))
+    },
+    FUN.VALUE = NA_real_,
+    USE.NAMES = FALSE
+  )
   names(measures) = replace(ids, ids == "fbeta", "f1")
 
   if (relative) {

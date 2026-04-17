@@ -7,7 +7,8 @@
 #' }{
 #'   -weighted.mean(log(p), w)
 #' }
-#' where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i} and \eqn{w_i} are normalized weights for each observation \eqn{x_i}.
+#' where \eqn{p_i}{p} is the probability for the true class of observation \eqn{i},
+#' and \eqn{w_i} are normalized weights for each observation \eqn{x_i}.
 #'
 #' @templateVar mid logloss
 #' @template classif_template

@@ -32,7 +32,17 @@ measures = new.env(parent = emptyenv())
 class(measures) = c("MeasureEnv", class(measures))
 
 # adds items to registry
-add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_character_, trafo = NA_character_, aggregated = TRUE) {
+add_measure = function(
+  obj,
+  title,
+  type,
+  lower,
+  upper,
+  minimize,
+  obs_loss = NA_character_,
+  trafo = NA_character_,
+  aggregated = TRUE
+) {
   id = deparse(substitute(obj))
 
   ptype = intersect(names(formals(obj)), c("response", "prob", "se"))
@@ -46,19 +56,23 @@ add_measure = function(obj, title, type, lower, upper, minimize, obs_loss = NA_c
     assert_true(!is.na(obs_loss))
   }
 
-  assign(id, list(
-    id = id,
-    title = assert_string(title),
-    type = assert_choice(type, c("binary", "classif", "regr", "similarity")),
-    lower = assert_number(lower),
-    upper = assert_number(upper),
-    predict_type = ptype,
-    minimize = assert_flag(minimize, na.ok = TRUE),
-    obs_loss = assert_string(obs_loss, na.ok = TRUE),
-    aggregated = assert_flag(aggregated),
-    sample_weights = "sample_weights" %in% names(formals(obj)),
-    trafo = trafo
-  ), envir = measures)
+  assign(
+    id,
+    list(
+      id = id,
+      title = assert_string(title),
+      type = assert_choice(type, c("binary", "classif", "regr", "similarity")),
+      lower = assert_number(lower),
+      upper = assert_number(upper),
+      predict_type = ptype,
+      minimize = assert_flag(minimize, na.ok = TRUE),
+      obs_loss = assert_string(obs_loss, na.ok = TRUE),
+      aggregated = assert_flag(aggregated),
+      sample_weights = "sample_weights" %in% names(formals(obj)),
+      trafo = trafo
+    ),
+    envir = measures
+  )
 }
 
 #' @export

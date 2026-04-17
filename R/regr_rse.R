@@ -1,4 +1,3 @@
-
 #' @title Relative Squared Error
 #'
 #' @details

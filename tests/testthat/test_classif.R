@@ -64,15 +64,21 @@ test_that("tests from Metrics", {
 
   expect_equal(ce(factor(c(1, 2, 3, 4), levels = 1:4), factor(c(1, 2, 3, 3), levels = 1:4)), 1 / 4)
   lvls = c("cat", "dog", "bird", "fish")
-  expect_equal(ce(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)), 1 / 3)
+  expect_equal(
+    ce(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)),
+    1 / 3
+  )
 
   expect_equal(logloss(as_fac(1, 1, 0, 0), as_prob(1, 1, 0, 0)), 0)
   expect_number(logloss(as_fac(1, 1, 0, 0), as_prob(0, 0, 1, 1)), lower = 10, upper = 50)
   expect_equal(logloss(as_fac(1, 1, 1, 0, 0, 0), as_prob(.5, .1, .01, .9, .75, .001)), 1.881797068998267)
 
   expect_equal(mcc(factor(1:4, levels = 1:4), factor(1:4, levels = 1:4)), 1)
-  expect_equal(mcc(factor(1:4, levels = 1:4), factor(4:1, levels = 1:4)), - 1 /3)
-  expect_equal(mcc(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)), 2 / 3)
+  expect_equal(mcc(factor(1:4, levels = 1:4), factor(4:1, levels = 1:4)), -1 / 3)
+  expect_equal(
+    mcc(factor(c("cat", "dog", "bird"), levels = lvls), factor(c("cat", "dog", "fish"), levels = lvls)),
+    2 / 3
+  )
 
   # rater.a <- c(1, 2, 1)
   # rater.b <- c(1, 2, 2)
@@ -152,7 +158,6 @@ test_that("multiclass auc", {
 
   auc(truth = factor(c("a", "nota", "nota")), prob = c(1, 0, 0), positive = "a")
 
-
   truth = ssample(c("a", "b", "c"), 100)
   prob = matrix(runif(300), ncol = 3)
   colnames(prob) = levels(truth)
@@ -163,7 +168,8 @@ test_that("multiclass auc", {
   equalizer_truth = unlist(list(
     truth,
     factor(truth, levels = c("b", "c", "a"), labels = c("a", "b", "c")),
-    factor(truth, levels = c("c", "a", "b"), labels = c("a", "b", "c"))))
+    factor(truth, levels = c("c", "a", "b"), labels = c("a", "b", "c"))
+  ))
 
   expect_equal(mauc_aunu(equalizer_truth, equalizer_prob), mauc_aunp(equalizer_truth, equalizer_prob))
   expect_equal(mauc_au1u(equalizer_truth, equalizer_prob), mauc_au1p(equalizer_truth, equalizer_prob))
