@@ -41,7 +41,7 @@ The Symmetric Mean Absolute Percent Error is defined as \deqn{
   2 * mean(abs(t - r) / (abs(t) + abs(r))).
 }
 
-This measure is undefined if if any \eqn{|t| + |r|} is equal to \eqn{0}.
+This measure is undefined if any \eqn{|t| + |r|} is equal to \eqn{0}.
 }
 \section{Meta Information}{
 
