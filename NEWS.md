@@ -1,5 +1,7 @@
 # mlr3measures (development version)
 
+* feat: `auc()` gains `sample_weights` for weighted AUC.
+
 # mlr3measures 1.2.0
 
 * feat: Add observation-wise loss functions for `bbrier` and `logloss`.

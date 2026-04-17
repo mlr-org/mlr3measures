@@ -167,6 +167,30 @@ test_that("weighted confusion measures", {
     fbeta(truth, response, positive = "a"))
 })
 
+test_that("weighted auc", {
+  truth = factor(c("a", "a", "b", "b"), levels = c("a", "b"))
+  prob = c(0.9, 0.6, 0.7, 0.2)
+
+  # uniform weights equal unweighted
+  expect_equal(
+    auc(truth, prob, "a", sample_weights = rep(1, 4)),
+    auc(truth, prob, "a")
+  )
+
+  # duplicating observations via integer weights equals repeating them
+  w = c(2, 1, 1, 2)
+  truth_rep = truth[rep(seq_along(truth), w)]
+  prob_rep = prob[rep(seq_along(prob), w)]
+  expect_equal(
+    auc(truth, prob, "a", sample_weights = w),
+    auc(truth_rep, prob_rep, "a")
+  )
+
+  # degenerate weights return na_value
+  expect_equal(auc(truth, prob, "a", sample_weights = c(0, 0, 1, 1), na_value = NA_real_), NA_real_)
+  expect_equal(auc(truth, prob, "a", sample_weights = c(1, 1, 0, 0), na_value = NA_real_), NA_real_)
+})
+
 test_that("bbrier", {
   N = 30L
   truth = ssample(letters[1:2], N)
