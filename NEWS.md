@@ -1,5 +1,7 @@
 # mlr3measures (development version)
 
+* feat: `auc()` gains `sample_weights` for weighted AUC.
+
 # mlr3measures 1.2.0
 
 * feat: Add observation-wise loss functions for `bbrier` and `logloss`.
@@ -28,7 +30,7 @@
 
 # mlr3measures 0.4.1
 
-* Calculation of `fbeta` is now more numerically more stable.
+* Calculation of `fbeta` is now numerically more stable.
 * Improved documentation.
 
 # mlr3measures 0.4.0

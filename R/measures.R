@@ -14,7 +14,7 @@
 #' * `predict_type`: prediction type the measure operates on.
 #'   `"response"` corresponds to class labels for classification and the numeric response for regression.
 #'   `"prob"` corresponds to class probabilities, provided as a matrix with class labels as column names.
-#'   `"se"` corresponds to to the vector of predicted standard errors for regression.
+#'   `"se"` corresponds to the vector of predicted standard errors for regression.
 #' * `minimize`: If `TRUE` or `FALSE`, the objective is to minimize or maximize the measure, respectively.
 #'   Can also be `NA`.
 #' * `obs_loss`: Name of the function which is called to calculate the (unaggregated) loss per observation.

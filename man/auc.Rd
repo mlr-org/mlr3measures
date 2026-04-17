@@ -4,7 +4,7 @@
 \alias{auc}
 \title{Area Under the ROC Curve}
 \usage{
-auc(truth, prob, positive, na_value = NaN, ...)
+auc(truth, prob, positive, sample_weights = NULL, na_value = NaN, ...)
 }
 \arguments{
 \item{truth}{(\code{factor()})\cr
@@ -17,6 +17,12 @@ Must have exactly same length as \code{truth}.}
 
 \item{positive}{(\verb{character(1))}\cr
 Name of the positive class.}
+
+\item{sample_weights}{(\code{numeric()})\cr
+Vector of non-negative and finite sample weights.
+Must have the same length as \code{truth}.
+The vector gets automatically normalized to sum to one.
+Defaults to equal sample weights.}
 
 \item{na_value}{(\code{numeric(1)})\cr
 Value that should be returned if the measure is not defined for the input
@@ -37,6 +43,25 @@ in binary classification tasks.
 Computes the area under the Receiver Operator Characteristic (ROC) curve.
 The AUC can be interpreted as the probability that a randomly chosen positive observation
 has a higher predicted probability than a randomly chosen negative observation.
+
+For \eqn{n^+} positive and \eqn{n^-} negative observations with \eqn{R_i^+} the rank of the
+\eqn{i}-th positive observation's predicted probability (average ranks for ties), the AUC
+is estimated as \deqn{
+  \widehat{\operatorname{AUC}} = \frac{1}{n^+ n^-} \left( \sum_{i=1}^{n^+} R_i^+ \; - \; \frac{n^+(n^+ + 1)}{2} \right).
+}{
+  AUC = (sum(R_pos) - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg).
+}
+
+If \code{sample_weights} are provided, let \eqn{w_i^+} be the weight of the \eqn{i}-th positive observation with
+predicted probability \eqn{p_i^+}, \eqn{W^+ = \sum_i w_i^+}, and \eqn{W^-} the total weight of the
+negative observations. Define the weighted Mann-Whitney contribution of positive observation \eqn{i} as
+\eqn{U_i^w = W_{< p_i^+}^- + \tfrac{1}{2} W_{= p_i^+}^-},
+i.e. the total weight of negative observations with a smaller predicted probability plus half the weight
+of negatives tied with \eqn{p_i^+}. The weighted AUC is then \deqn{
+  \widehat{\operatorname{AUC}}_w = \frac{1}{W^+ W^-} \sum_{i=1}^{n^+} w_i^+ U_i^w.
+}{
+  AUC_w = sum(w_pos * U_pos) / (W_pos * W_neg).
+}
 
 This measure is undefined if the true values are either all positive or
 all negative.
