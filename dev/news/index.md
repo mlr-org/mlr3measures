@@ -46,7 +46,7 @@ CRAN release: 2022-08-05
 
 CRAN release: 2022-01-13
 
-- Calculation of `fbeta` is now more numerically more stable.
+- Calculation of `fbeta` is now numerically more stable.
 - Improved documentation.
 
 ## mlr3measures 0.4.0

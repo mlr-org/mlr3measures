@@ -21,8 +21,7 @@ or maximized. The following information is available for each measure:
   corresponds to class labels for classification and the numeric
   response for regression. `"prob"` corresponds to class probabilities,
   provided as a matrix with class labels as column names. `"se"`
-  corresponds to to the vector of predicted standard errors for
-  regression.
+  corresponds to the vector of predicted standard errors for regression.
 
 - `minimize`: If `TRUE` or `FALSE`, the objective is to minimize or
   maximize the measure, respectively. Can also be `NA`.
