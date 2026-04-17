@@ -1,6 +1,8 @@
-# mlr3measures (development version)
+# mlr3measures 1.3.0
 
 * feat: `auc()` gains `sample_weights` for weighted AUC.
+* feat: Confusion matrix based measures gain `sample_weights` (#71).
+* feat: `mbrier()` and `smape()` gain `sample_weights` (#72).
 
 # mlr3measures 1.2.0
 
