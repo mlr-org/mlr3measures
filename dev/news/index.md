@@ -4,6 +4,8 @@
 
 ## mlr3measures 1.3.0
 
+CRAN release: 2026-04-17
+
 - feat: [`auc()`](https://mlr3measures.mlr-org.com/dev/reference/auc.md)
   gains `sample_weights` for weighted AUC.
 - feat: Confusion matrix based measures gain `sample_weights`
