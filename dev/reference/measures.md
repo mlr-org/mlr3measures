@@ -45,11 +45,6 @@ or maximized. The following information is available for each measure:
 measures
 ```
 
-## Format
-
-An object of class `MeasureEnv` (inherits from `environment`) of length
-65.
-
 ## Examples
 
 ``` r

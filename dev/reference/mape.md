@@ -65,7 +65,7 @@ This measure is undefined if any element of \\t\\ is \\0\\.
 
 de Myttenaere, Arnaud, Golden, Boris, Le Grand, Bénédicte, Rossi,
 Fabrice (2016). “Mean Absolute Percentage Error for regression models.”
-*Neurocomputing*, **192**, 38-48. ISSN 0925-2312,
+*Neurocomputing*, **192**, 38-48. ISSN 0925-2312.
 [doi:10.1016/j.neucom.2015.12.114](https://doi.org/10.1016/j.neucom.2015.12.114)
 .
 
