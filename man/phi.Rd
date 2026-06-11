@@ -77,8 +77,8 @@ Bommert A, Lang M (2021).
 Package \CRANpkg{stabm} which implements many more stability measures with included
 correction for chance.
 
-Other Similarity Measures: 
-\code{\link{jaccard}()}
+Other Similarity Measures:
+\code{\link[=jaccard]{jaccard()}}
 }
 \concept{Similarity Measures}
 \concept{similarity_measure}

@@ -53,14 +53,14 @@ Note that this is an unaggregated measure, returning the losses per observation.
 }
 
 \seealso{
-Other Classification Measures: 
-\code{\link{acc}()},
-\code{\link{bacc}()},
-\code{\link{ce}()},
-\code{\link{logloss}()},
-\code{\link{mauc_aunu}()},
-\code{\link{mbrier}()},
-\code{\link{mcc}()}
+Other Classification Measures:
+\code{\link[=acc]{acc()}},
+\code{\link[=bacc]{bacc()}},
+\code{\link[=ce]{ce()}},
+\code{\link[=logloss]{logloss()}},
+\code{\link[=mauc_aunu]{mauc_aunu()}},
+\code{\link[=mbrier]{mbrier()}},
+\code{\link[=mcc]{mcc()}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

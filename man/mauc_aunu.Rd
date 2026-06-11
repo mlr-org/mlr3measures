@@ -107,14 +107,14 @@ In Chaudhuri, Kamalika, Salakhutdinov, Ruslan (eds.), \emph{Proceedings of the 3
 PMLR.
 }
 \seealso{
-Other Classification Measures: 
-\code{\link{acc}()},
-\code{\link{bacc}()},
-\code{\link{ce}()},
-\code{\link{logloss}()},
-\code{\link{mbrier}()},
-\code{\link{mcc}()},
-\code{\link{zero_one}()}
+Other Classification Measures:
+\code{\link[=acc]{acc()}},
+\code{\link[=bacc]{bacc()}},
+\code{\link[=ce]{ce()}},
+\code{\link[=logloss]{logloss()}},
+\code{\link[=mbrier]{mbrier()}},
+\code{\link[=mcc]{mcc()}},
+\code{\link[=zero_one]{zero_one()}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

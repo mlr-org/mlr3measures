@@ -64,25 +64,25 @@ In \emph{Proceedings of the 23rd International Conference on Machine Learning}.
 ISBN 9781595933836.
 }
 \seealso{
-Other Binary Classification Measures: 
-\code{\link{auc}()},
-\code{\link{bbrier}()},
-\code{\link{dor}()},
-\code{\link{fbeta}()},
-\code{\link{fdr}()},
-\code{\link{fn}()},
-\code{\link{fnr}()},
-\code{\link{fomr}()},
-\code{\link{fp}()},
-\code{\link{fpr}()},
-\code{\link{gmean}()},
-\code{\link{gpr}()},
-\code{\link{npv}()},
-\code{\link{ppv}()},
-\code{\link{tn}()},
-\code{\link{tnr}()},
-\code{\link{tp}()},
-\code{\link{tpr}()}
+Other Binary Classification Measures:
+\code{\link[=auc]{auc()}},
+\code{\link[=bbrier]{bbrier()}},
+\code{\link[=dor]{dor()}},
+\code{\link[=fbeta]{fbeta()}},
+\code{\link[=fdr]{fdr()}},
+\code{\link[=fn]{fn()}},
+\code{\link[=fnr]{fnr()}},
+\code{\link[=fomr]{fomr()}},
+\code{\link[=fp]{fp()}},
+\code{\link[=fpr]{fpr()}},
+\code{\link[=gmean]{gmean()}},
+\code{\link[=gpr]{gpr()}},
+\code{\link[=npv]{npv()}},
+\code{\link[=ppv]{ppv()}},
+\code{\link[=tn]{tn()}},
+\code{\link[=tnr]{tnr()}},
+\code{\link[=tp]{tp()}},
+\code{\link[=tpr]{tpr()}}
 }
 \concept{Binary Classification Measures}
 \concept{binary_classification_measure}

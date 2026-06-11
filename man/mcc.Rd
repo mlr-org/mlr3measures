@@ -92,14 +92,14 @@ Matthews BW (1975).
 \doi{10.1016/0005-2795(75)90109-9}.
 }
 \seealso{
-Other Classification Measures: 
-\code{\link{acc}()},
-\code{\link{bacc}()},
-\code{\link{ce}()},
-\code{\link{logloss}()},
-\code{\link{mauc_aunu}()},
-\code{\link{mbrier}()},
-\code{\link{zero_one}()}
+Other Classification Measures:
+\code{\link[=acc]{acc()}},
+\code{\link[=bacc]{bacc()}},
+\code{\link[=ce]{ce()}},
+\code{\link[=logloss]{logloss()}},
+\code{\link[=mauc_aunu]{mauc_aunu()}},
+\code{\link[=mbrier]{mbrier()}},
+\code{\link[=zero_one]{zero_one()}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}
