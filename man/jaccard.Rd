@@ -73,8 +73,8 @@ Bommert A, Lang M (2021).
 Package \CRANpkg{stabm} which implements many more stability measures with included
 correction for chance.
 
-Other Similarity Measures: 
-\code{\link{phi}()}
+Other Similarity Measures:
+\code{\link[=phi]{phi()}}
 }
 \concept{Similarity Measures}
 \concept{similarity_measure}

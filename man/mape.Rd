@@ -64,36 +64,37 @@ mape(truth, response)
 de Myttenaere, Arnaud, Golden, Boris, Le Grand, Bénédicte, Rossi, Fabrice (2016).
 \dQuote{Mean Absolute Percentage Error for regression models.}
 \emph{Neurocomputing}, \bold{192}, 38-48.
-ISSN 0925-2312, \doi{10.1016/j.neucom.2015.12.114}.
+ISSN 0925-2312.
+\doi{10.1016/j.neucom.2015.12.114}.
 }
 \seealso{
-Other Regression Measures: 
-\code{\link{ae}()},
-\code{\link{ape}()},
-\code{\link{bias}()},
-\code{\link{ktau}()},
-\code{\link{linex}()},
-\code{\link{mae}()},
-\code{\link{maxae}()},
-\code{\link{maxse}()},
-\code{\link{medae}()},
-\code{\link{medse}()},
-\code{\link{mse}()},
-\code{\link{msle}()},
-\code{\link{pbias}()},
-\code{\link{pinball}()},
-\code{\link{rae}()},
-\code{\link{rmse}()},
-\code{\link{rmsle}()},
-\code{\link{rrse}()},
-\code{\link{rse}()},
-\code{\link{rsq}()},
-\code{\link{sae}()},
-\code{\link{se}()},
-\code{\link{sle}()},
-\code{\link{smape}()},
-\code{\link{srho}()},
-\code{\link{sse}()}
+Other Regression Measures:
+\code{\link[=ae]{ae()}},
+\code{\link[=ape]{ape()}},
+\code{\link[=bias]{bias()}},
+\code{\link[=ktau]{ktau()}},
+\code{\link[=linex]{linex()}},
+\code{\link[=mae]{mae()}},
+\code{\link[=maxae]{maxae()}},
+\code{\link[=maxse]{maxse()}},
+\code{\link[=medae]{medae()}},
+\code{\link[=medse]{medse()}},
+\code{\link[=mse]{mse()}},
+\code{\link[=msle]{msle()}},
+\code{\link[=pbias]{pbias()}},
+\code{\link[=pinball]{pinball()}},
+\code{\link[=rae]{rae()}},
+\code{\link[=rmse]{rmse()}},
+\code{\link[=rmsle]{rmsle()}},
+\code{\link[=rrse]{rrse()}},
+\code{\link[=rse]{rse()}},
+\code{\link[=rsq]{rsq()}},
+\code{\link[=sae]{sae()}},
+\code{\link[=se]{se()}},
+\code{\link[=sle]{sle()}},
+\code{\link[=smape]{smape()}},
+\code{\link[=srho]{srho()}},
+\code{\link[=sse]{sse()}}
 }
 \concept{Regression Measures}
 \concept{regression_measure}

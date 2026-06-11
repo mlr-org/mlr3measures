@@ -57,14 +57,14 @@ response = factor(sample(lvls, 10, replace = TRUE), levels = lvls)
 acc(truth, response)
 }
 \seealso{
-Other Classification Measures: 
-\code{\link{bacc}()},
-\code{\link{ce}()},
-\code{\link{logloss}()},
-\code{\link{mauc_aunu}()},
-\code{\link{mbrier}()},
-\code{\link{mcc}()},
-\code{\link{zero_one}()}
+Other Classification Measures:
+\code{\link[=bacc]{bacc()}},
+\code{\link[=ce]{ce()}},
+\code{\link[=logloss]{logloss()}},
+\code{\link[=mauc_aunu]{mauc_aunu()}},
+\code{\link[=mbrier]{mbrier()}},
+\code{\link[=mcc]{mcc()}},
+\code{\link[=zero_one]{zero_one()}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

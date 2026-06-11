@@ -69,14 +69,14 @@ Brier GW (1950).
 \doi{10.1175/1520-0493(1950)078<0001:vofeit>2.0.co;2}.
 }
 \seealso{
-Other Classification Measures: 
-\code{\link{acc}()},
-\code{\link{bacc}()},
-\code{\link{ce}()},
-\code{\link{logloss}()},
-\code{\link{mauc_aunu}()},
-\code{\link{mcc}()},
-\code{\link{zero_one}()}
+Other Classification Measures:
+\code{\link[=acc]{acc()}},
+\code{\link[=bacc]{bacc()}},
+\code{\link[=ce]{ce()}},
+\code{\link[=logloss]{logloss()}},
+\code{\link[=mauc_aunu]{mauc_aunu()}},
+\code{\link[=mcc]{mcc()}},
+\code{\link[=zero_one]{zero_one()}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}

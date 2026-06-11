@@ -79,14 +79,14 @@ In \emph{2015 International Joint Conference on Neural Networks (IJCNN)}.
 \doi{10.1109/ijcnn.2015.7280767}.
 }
 \seealso{
-Other Classification Measures: 
-\code{\link{acc}()},
-\code{\link{ce}()},
-\code{\link{logloss}()},
-\code{\link{mauc_aunu}()},
-\code{\link{mbrier}()},
-\code{\link{mcc}()},
-\code{\link{zero_one}()}
+Other Classification Measures:
+\code{\link[=acc]{acc()}},
+\code{\link[=ce]{ce()}},
+\code{\link[=logloss]{logloss()}},
+\code{\link[=mauc_aunu]{mauc_aunu()}},
+\code{\link[=mbrier]{mbrier()}},
+\code{\link[=mcc]{mcc()}},
+\code{\link[=zero_one]{zero_one()}}
 }
 \concept{Classification Measures}
 \concept{classification_measure}
