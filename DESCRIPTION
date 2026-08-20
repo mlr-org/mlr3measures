@@ -93,4 +93,4 @@ Collate:
     'similarity_jaccard.R'
     'similarity_phi.R'
     'zzz.R'
-Config/roxygen2/version: 8.0.0.9000
+Config/roxygen2/version: 8.1.0
